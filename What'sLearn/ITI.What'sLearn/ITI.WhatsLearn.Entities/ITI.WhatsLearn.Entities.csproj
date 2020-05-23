@@ -63,6 +63,10 @@
     <Compile Include="CourseVedio\CourseVedioConfiguration.cs" />
     <Compile Include="Course\Course.cs" />
     <Compile Include="Course\CourseConfiguration.cs" />
+    <Compile Include="FinishedCourse\FinishedCourse.cs" />
+    <Compile Include="FinishedCourse\FinishedCourseConfigurations.cs" />
+    <Compile Include="TrackCourse\TrackCourse.cs" />
+    <Compile Include="TrackCourse\TrackCourseConfigurations.cs" />
     <Compile Include="TrackDocumet\TrackDocument.cs" />
     <Compile Include="TrackDocumet\TrackDocumentConfiguration.cs" />
     <Compile Include="MainCategoryDocument\MainCategoryDocument.cs" />

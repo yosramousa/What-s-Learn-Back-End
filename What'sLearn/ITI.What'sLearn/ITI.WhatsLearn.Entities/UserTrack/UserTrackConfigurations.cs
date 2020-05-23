@@ -21,6 +21,8 @@ namespace ITI.WhatsLearn.Entities
             HasRequired(i => i.Track)
                 .WithMany(i => i.Users)
                 .HasForeignKey(i => i.TrackID);
+            HasMany(i => i.FinishedCourses)
+                     .WithRequired(i => i.UserTrack);
         }
     }
 }

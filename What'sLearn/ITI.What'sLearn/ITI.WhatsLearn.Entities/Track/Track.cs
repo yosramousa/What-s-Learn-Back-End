@@ -19,5 +19,6 @@ namespace ITI.WhatsLearn.Entities
         public virtual ICollection<TrackLink> Trackinks { get; set; }
         public virtual ICollection<TrackVedio> TrackVedios { get; set; }
         public virtual ICollection<UserTrack> Users { get; set; }
+        public virtual ICollection<TrackCourse> Courses { get; set; }
     }
 }

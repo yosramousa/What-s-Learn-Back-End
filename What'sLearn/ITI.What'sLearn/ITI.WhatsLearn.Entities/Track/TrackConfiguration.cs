@@ -35,17 +35,11 @@ namespace ITI.WhatsLearn.Entities
                 .WithMany(i => i.Tracks)
                 .HasForeignKey(i => i.SubCategoryID);
 
-            //HasMany(i => i.MainCategoryLinks)
-            //    .WithRequired(i => i.MainCategory);
+            HasMany(i => i.Users)
+                        .WithRequired(i => i.Track);
 
-            //HasMany(i => i.MainCategoryDocuments)
-            //    .WithRequired(i => i.MainCategory);
-
-            //HasMany(i => i.MainCategoryVedios)
-            //  .WithRequired(i => i.MainCategory);
-
-            //HasMany(i => i.SubCategories)
-            // .WithRequired(i => i.MainCategory);
+            HasMany(i => i.Courses)
+                           .WithRequired(i => i.Track);
 
         }
     }

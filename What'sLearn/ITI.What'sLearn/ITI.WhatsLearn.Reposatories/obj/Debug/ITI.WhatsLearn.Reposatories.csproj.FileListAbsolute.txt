@@ -1,0 +1,5 @@
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Reposatories.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Reposatories.pdb
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.csproj.CoreCompileInputs.cache
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.pdb

@@ -1,0 +1,6 @@
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Debug\ITI.WhatsLearnServices.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Debug\ITI.WhatsLearnServices.pdb
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Debug\ITI.WhatsLearnServices.csprojAssemblyReference.cache
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Debug\ITI.WhatsLearnServices.csproj.CoreCompileInputs.cache
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Debug\ITI.WhatsLearnServices.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Debug\ITI.WhatsLearnServices.pdb

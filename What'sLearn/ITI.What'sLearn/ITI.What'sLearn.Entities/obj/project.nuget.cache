@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UUZW9qT87574SzZ0Xat+X17VFJIzw+lmsYPfyfOpnU39tUhh5bEnrXYFQNDVkJfvZbamWpmT483267oYsO1GiA==",
+  "dgSpecHash": "AwOvDrbn4ld0rRVpru/KiWCFqlM10XYyKhJu/rX46KFmtMKx0m2NPLgYbjV81I/f2GoIH2YUatlrhXcalG2THQ==",
   "success": true,
   "projectFilePath": "E:\\ITI\\FinalProject\\BackEnd\\What'sLearn\\ITI.What'sLearn\\ITI.What'sLearn.Entities\\ITI.What'sLearn.Entities.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\EL-YaMaMa\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\EL-YaMaMa\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\EL-YaMaMa\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],

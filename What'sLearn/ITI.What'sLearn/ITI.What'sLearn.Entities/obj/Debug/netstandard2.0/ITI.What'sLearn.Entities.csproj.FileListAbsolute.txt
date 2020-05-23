@@ -1,0 +1,5 @@
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.What'sLearn.Entities\bin\Debug\netstandard2.0\ITI.What'sLearn.Entities.deps.json
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.What'sLearn.Entities\bin\Debug\netstandard2.0\ITI.What'sLearn.Entities.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.What'sLearn.Entities\obj\Debug\netstandard2.0\ITI.What'sLearn.Entities.csprojAssemblyReference.cache
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.What'sLearn.Entities\obj\Debug\netstandard2.0\ITI.What'sLearn.Entities.AssemblyInfoInputs.cache
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.What'sLearn.Entities\obj\Debug\netstandard2.0\ITI.What'sLearn.Entities.AssemblyInfo.cs

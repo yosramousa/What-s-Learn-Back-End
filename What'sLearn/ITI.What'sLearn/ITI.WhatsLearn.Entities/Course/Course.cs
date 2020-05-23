@@ -1,4 +1,4 @@
-﻿using ITI.WhatsLearn.Entities.FinishedCourse;
+﻿using ITI.WhatsLearn.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

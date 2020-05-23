@@ -15,6 +15,7 @@ namespace ITI.WhatsLearn.Entities
         public virtual ICollection<SubCategoryLink> SubCategoryLinks { get; set; }
         public virtual ICollection<SubCategoryDocument> SubCategoryDocuments { get; set; }
         public virtual ICollection<SubCategoryVedio> SubCategoryVedios { get; set; }
+        public virtual ICollection<Track> Tracks { get; set; }
         public virtual MainCategory MainCategory { get; set; }
         public int MainCategoryID { get; set; }
     }

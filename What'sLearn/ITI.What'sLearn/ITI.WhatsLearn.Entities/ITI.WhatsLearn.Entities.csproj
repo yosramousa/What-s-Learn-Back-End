@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Admin.cs" />
+    <Compile Include="Admin\AdminConfiguration.cs" />
     <Compile Include="BaseModel\BaseModel.cs" />
     <Compile Include="BaseModel\BaseModelConfiguration.cs" />
     <Compile Include="CourseDocument\CourseDocument.cs" />
@@ -61,17 +63,27 @@
     <Compile Include="CourseVedio\CourseVedioConfiguration.cs" />
     <Compile Include="Course\Course.cs" />
     <Compile Include="Course\CourseConfiguration.cs" />
+    <Compile Include="TrackDocumet\TrackDocument.cs" />
+    <Compile Include="TrackDocumet\TrackDocumentConfiguration.cs" />
     <Compile Include="MainCategoryDocument\MainCategoryDocument.cs" />
     <Compile Include="MainCategoryDocument\MainCategoryDocumentConfiguration.cs" />
+    <Compile Include="TrackLink\TrackLink.cs" />
+    <Compile Include="TrackLink\TrackLinkConfiguration.cs" />
     <Compile Include="MainCategoryLink\MainCategoryLink.cs" />
     <Compile Include="MainCategoryLink\MainCategoryLinkConfiguration.cs" />
+    <Compile Include="TrackVedio\TrackVedio.cs" />
+    <Compile Include="TrackVedio\TrackVedioConfiguration.cs" />
     <Compile Include="MainCategoryVedio\MainCategoryVedio.cs" />
     <Compile Include="MainCategoryVedio\MainCategoryVedioConfiguration.cs" />
     <Compile Include="MainCategory\MainCategory.cs" />
     <Compile Include="MainCategory\MainCategoyConfiguration.cs" />
     <Compile Include="Message\Message.cs" />
     <Compile Include="Message\MessageConfiguration.cs" />
+    <Compile Include="Person\Person.cs" />
+    <Compile Include="Person\PersonConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Skill\Skill.cs" />
+    <Compile Include="Skill\SkillConfiguration.cs" />
     <Compile Include="SubCategoryDocument\SubCategoryDocument.cs" />
     <Compile Include="SubCategoryDocument\SubCategoryDocumentConfiguration.cs" />
     <Compile Include="SubCategoryLink\SubCategoryLink.cs" />
@@ -80,11 +92,24 @@
     <Compile Include="SubCategoryVedio\SubCategoryVedioConfiguration.cs" />
     <Compile Include="SubCategory\SubCategory.cs" />
     <Compile Include="SubCategory\SubCategoryConfiguration.cs" />
+    <Compile Include="Track\TrackConfiguration.cs" />
+    <Compile Include="Track\Track.cs" />
+    <Compile Include="UserCertificate\UserCertificate.cs" />
+    <Compile Include="UserCertificate\UserCertificateConfiguration.cs" />
+    <Compile Include="UserSkill\UserSkill.cs" />
+    <Compile Include="UserSkill\UserSkillConfiguration.cs" />
+    <Compile Include="UserSocialLink\UserSocialLink.cs" />
+    <Compile Include="UserSocialLink\UserSocialLinkConfiguration.cs" />
+    <Compile Include="UserTrack\UserTrack.cs" />
+    <Compile Include="UserTrack\UserTrackConfigurations.cs" />
+    <Compile Include="User\User.cs" />
+    <Compile Include="User\UserConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

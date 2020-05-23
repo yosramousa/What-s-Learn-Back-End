@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Entities
 {
-    public class SubCategoryConfiguration :EntityTypeConfiguration<SubCategory>
+    public class TrackConfiguration : EntityTypeConfiguration<Track>
     {
-        public SubCategoryConfiguration()
+        public TrackConfiguration()
         {
-            ToTable("SubCategory");
-
+            ToTable("Track");
+            
             Property(i => i.Name)
                 .HasColumnName("Name")
                 .HasMaxLength(250)
@@ -31,20 +31,22 @@ namespace ITI.WhatsLearn.Entities
             Property(i => i.IsDeleted)
                 .IsRequired();
 
-            HasMany(i => i.SubCategoryLinks)
-                .WithRequired(i => i.SubCategory);
+            HasRequired(i => i.SubCategory)
+                .WithMany(i => i.Tracks)
+                .HasForeignKey(i => i.SubCategoryID);
 
-            HasMany(i => i.SubCategoryDocuments)
-                .WithRequired(i => i.SubCategory);
+            //HasMany(i => i.MainCategoryLinks)
+            //    .WithRequired(i => i.MainCategory);
 
-            HasMany(i => i.SubCategoryVedios)
-              .WithRequired(i => i.SubCategory);
-            HasMany(i => i.Tracks)
-            .WithRequired(i => i.SubCategory);
+            //HasMany(i => i.MainCategoryDocuments)
+            //    .WithRequired(i => i.MainCategory);
 
-            HasRequired(i => i.MainCategory)
-                .WithMany(i => i.SubCategories)
-                .HasForeignKey(i => i.MainCategoryID);
+            //HasMany(i => i.MainCategoryVedios)
+            //  .WithRequired(i => i.MainCategory);
+
+            //HasMany(i => i.SubCategories)
+            // .WithRequired(i => i.MainCategory);
+
         }
     }
 }

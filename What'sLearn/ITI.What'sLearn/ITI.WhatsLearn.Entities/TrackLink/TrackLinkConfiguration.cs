@@ -25,7 +25,7 @@ namespace ITI.WhatsLearn.Entities
                     .IsRequired();
 
             HasRequired(i => i.Track)
-                .WithMany(i => i.Trackinks)
+                .WithMany(i => i.TrackLinks)
                 .HasForeignKey(i => i.TrackID);
 
         }

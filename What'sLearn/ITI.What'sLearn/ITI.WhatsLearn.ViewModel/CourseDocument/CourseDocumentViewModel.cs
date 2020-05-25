@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.ViewModel
 {
-    public class Class1
+   public  class CourseDocumentViewModel
     {
+        public int ID { get; set; }
+        public string File { get; set; }
+        public string Description { get; set; }
     }
 }

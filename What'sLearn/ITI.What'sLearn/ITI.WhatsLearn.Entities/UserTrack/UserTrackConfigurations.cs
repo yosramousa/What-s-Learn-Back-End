@@ -15,6 +15,9 @@ namespace ITI.WhatsLearn.Entities
             Property(i => i.Date)
               .HasColumnName("Date")
               .IsRequired();
+            Property(i => i.IsApproveed)
+             .HasColumnName("IsApproveed")
+             .IsRequired();
             HasRequired(i => i.User)
                 .WithMany(i => i.Tracks)
                 .HasForeignKey(i => i.UserID);

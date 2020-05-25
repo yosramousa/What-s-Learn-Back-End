@@ -13,6 +13,10 @@ namespace ITI.WhatsLearn.Entities
         {
             ToTable("Message");
 
+            Property(i => i.FullName)
+                .HasColumnName("FullName")
+                .HasMaxLength(50)
+                .IsRequired();
             Property(i => i.Email)
                 .HasColumnName("Email")
                 .HasMaxLength(50)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Entities
 {
-    public class Track
+    public class Track:BaseModel
     {
         public string Name { get; set; }
         public string Discription { get; set; }

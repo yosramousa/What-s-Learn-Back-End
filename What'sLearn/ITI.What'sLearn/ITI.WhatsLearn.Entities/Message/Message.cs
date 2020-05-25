@@ -12,7 +12,6 @@ namespace ITI.WhatsLearn.Entities
         public string Text { get; set; }
         public DateTime SendTime { get; set; }
         public bool IsRead { get; set; }
-
-
+        
     }
 }

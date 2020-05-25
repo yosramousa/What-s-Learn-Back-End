@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Entities
 {
-    public class FinishedCourse
+    public class FinishedCourse:BaseModel
     {
         public Course course { get; set; }
         public int  courseID { get; set; }

@@ -1,5 +1,15 @@
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Reposatories.dll.config
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Reposatories.dll
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Reposatories.pdb
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\EntityFramework.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\EntityFramework.SqlServer.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Entities.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Entities.pdb
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Entities.dll.config
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\EntityFramework.xml
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\EntityFramework.SqlServer.xml
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.csprojAssemblyReference.cache
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.csproj.CoreCompileInputs.cache
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.csproj.CopyComplete
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.dll
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.pdb

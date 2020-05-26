@@ -44,6 +44,8 @@ namespace ITI.WhatsLearnServices
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
+
+
         public IEnumerable<CourseDocumentViewModel> Get(Expression<Func<CourseDocument, bool>> filter)
         {
             var query =

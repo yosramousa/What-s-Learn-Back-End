@@ -19,10 +19,6 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = model.Name,
                 Discription = model.Discription,
                 Image = model.Image,
-                Documents = model.MainCategoryDocuments.Select(i => i.ToViewModel()).ToArray(),
-                Vedios = model.MainCategoryVedios.Select(i => i.ToViewModel()).ToArray(),
-                Links = model.MainCategoryLinks.Select(i => i.ToViewModel()).ToArray(),
-                SubCategories=model.SubCategories.Select(i => i.ToViewModel()).ToArray()
             };
         }
         public static MainCategory ToModel(this MainCategoryEditViewModel editModel)

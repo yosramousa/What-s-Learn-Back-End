@@ -1,15 +1,3 @@
-E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.csprojAssemblyReference.cache
-E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.csproj.CoreCompileInputs.cache
-E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\ITI.WhatsLearn.Entities.dll.config
-E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\ITI.WhatsLearn.Entities.dll
-E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\ITI.WhatsLearn.Entities.pdb
-E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\EntityFramework.dll
-E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\EntityFramework.SqlServer.dll
-E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\EntityFramework.xml
-E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\EntityFramework.SqlServer.xml
-E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.csproj.CopyComplete
-E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.dll
-E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.pdb
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\ITI.WhatsLearn.Entities.dll.config
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\ITI.WhatsLearn.Entities.dll
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\ITI.WhatsLearn.Entities.pdb
@@ -22,3 +10,15 @@ F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.csproj.CopyComplete
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.dll
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.pdb
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\ITI.WhatsLearn.Entities.dll.config
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\ITI.WhatsLearn.Entities.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\ITI.WhatsLearn.Entities.pdb
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\EntityFramework.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\EntityFramework.SqlServer.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\EntityFramework.xml
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\bin\Debug\EntityFramework.SqlServer.xml
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.csprojAssemblyReference.cache
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.csproj.CoreCompileInputs.cache
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.csproj.CopyComplete
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.pdb

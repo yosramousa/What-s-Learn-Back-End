@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>e32d8cf6-328c-4917-aef9-91ac6e3dc11e</ProjectGuid>
+    <ProjectGuid>{E32D8CF6-328C-4917-AEF9-91AC6E3DC11E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ITI.WhatsLearnServices</RootNamespace>
@@ -31,24 +31,44 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Admin\AdminService.cs" />
+    <Compile Include="CourseDocument\CourseDocumentService.cs" />
+    <Compile Include="CourseLink\CourseLinkService.cs" />
+    <Compile Include="CourseVedio\CourseVedioService.cs" />
+    <Compile Include="Course\CourseService.cs" />
+    <Compile Include="FinishedCourse\FinishedCourseService.cs" />
+    <Compile Include="MainCategoryDocument\MainCategoryDocumentService.cs" />
+    <Compile Include="MainCategoryLink\MainCategoryLinkService.cs" />
+    <Compile Include="MainCategoryVedio\MainCategoryVedioService.cs" />
+    <Compile Include="MainCategory\MainCategoryService.cs" />
+    <Compile Include="Message\MessageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Skill\SkillService.cs" />
+    <Compile Include="SubCategory\SubCategoryService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITI.WhatsLearn.Entities\ITI.WhatsLearn.Entities.csproj">
+      <Project>{D6B1BE35-2000-42A3-B3C8-834D0E8D7AB0}</Project>
+      <Name>ITI.WhatsLearn.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ITI.WhatsLearn.Reposatories\ITI.WhatsLearn.Reposatories.csproj">
+      <Project>{4D4F2C21-611B-4316-96F3-5ACE123737FE}</Project>
+      <Name>ITI.WhatsLearn.Reposatories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ITI.WhatsLearn.ViewModel\ITI.WhatsLearn.ViewModel.csproj">
+      <Project>{C3D1E8DE-7607-4226-8EE4-52DA9ACCFB8E}</Project>
+      <Name>ITI.WhatsLearn.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

@@ -55,6 +55,9 @@
     <Compile Include="CourseVedio\CourseVedioEditViewModel.cs" />
     <Compile Include="CourseVedio\CourseVedioExtensions.cs" />
     <Compile Include="CourseVedio\CourseVedioViewModel.cs" />
+    <Compile Include="FinishedCourse\FinishedCourseEditViewModel.cs" />
+    <Compile Include="FinishedCourse\FinishedCourseExtentions.cs" />
+    <Compile Include="FinishedCourse\FinishedCourseViewModel.cs" />
     <Compile Include="Skill\SkillEditViewModel.cs" />
     <Compile Include="Skill\SkillExtensions.cs" />
     <Compile Include="Skill\SkillViewModel.cs" />
@@ -98,6 +101,15 @@
     <Compile Include="MainCategoryDocument\MainCategoryDocumentEditViewModel.cs" />
     <Compile Include="MainCategoryDocument\MainCategoryDocumentExtensions.cs" />
     <Compile Include="MainCategoryDocument\MainCategoryDocumentViewModel.cs" />
+    <Compile Include="UserSkill\UserSkillEditViewModel.cs" />
+    <Compile Include="UserSkill\UserSkillExtentions.cs" />
+    <Compile Include="UserSkill\UserSkillViewModel.cs" />
+    <Compile Include="UserSocialLink\UserSocialLinkEditViewModel.cs" />
+    <Compile Include="UserSocialLink\UserSocialLinkExtentions.cs" />
+    <Compile Include="UserSocialLink\UserSocialLinkViewModel.cs" />
+    <Compile Include="User\UserEditViewModel.cs" />
+    <Compile Include="User\UserExtentions.cs" />
+    <Compile Include="User\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ITI.WhatsLearn.Entities\ITI.WhatsLearn.Entities.csproj">

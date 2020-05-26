@@ -12,28 +12,28 @@ namespace ITI.WhatsLearnServices
     {
         UnitOfWork unitOfWork;
         Generic<Admin> DepartmentRepo;
-        //public AdminService(UnitOfWork _unitOfWork)
-        //{
-        //    unitOfWork = _unitOfWork;
-        //    DepartmentRepo = unitOfWork.AdminRepo;
-        //}
+        public AdminService(UnitOfWork _unitOfWork)
+        {
+            unitOfWork = _unitOfWork;
+            DepartmentRepo = unitOfWork.AdminRepo;
+        }
         //public AdmEditViewModel Add(AdmEditViewModel P)
         //{
-        //    Department PP = DepartmentRepo.Add(P.ToModel());
-        //    unitOfWork.();
-        //    return PP.ToEditableViewModel();
-        //}
-        //public DepartmentEditViewModel Update(DepartmentEditViewModel P)
-        //{
-        //    Department PP = DepartmentRepo.Update(P.ToModel());
+        //    Admin PP = DepartmentRepo.Add(P.ToModel());
         //    unitOfWork.Commit();
         //    return PP.ToEditableViewModel();
         //}
-        //public DepartmentViewModel GetByID(int id)
+        //public AdmEditViewModel Update(AdmEditViewModel P)
+        //{
+        //    Admin PP = DepartmentRepo.Update(P.ToModel());
+        //    unitOfWork.Commit();
+        //    return PP.ToEditableViewModel();
+        //}
+        //public AdminViewModel GetByID(int id)
         //{
         //    return DepartmentRepo.GetByID(id)?.ToViewModel();
         //}
-        //public IEnumerable<DepartmentViewModel> Get(int id, string name, string phone, int pageIndex, int pageSize = 20)
+        //public IEnumerable<AdminViewModel> Get(int id, string name, string phone, int pageIndex, int pageSize = 20)
         //{
         //    var query =
         //        DepartmentRepo.GetAll();

@@ -39,10 +39,10 @@ namespace ITI.WhatsLearn.Entities
 
             HasMany(i => i.CourseVedios)
               .WithRequired(i => i.Course);
-            HasMany(i => i.TrackCourses)
+            HasMany(i => i.Tracks)
                           .WithRequired(i => i.Course);
 
-            HasMany(i => i.UserTrackCourses)
+            HasMany(i => i.UserTracks)
                 .WithRequired(i => i.course);
 
         }

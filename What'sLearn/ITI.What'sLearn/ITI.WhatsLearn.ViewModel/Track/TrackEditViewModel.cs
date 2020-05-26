@@ -8,17 +8,33 @@ using System.Web;
 
 namespace ITI.WhatsLearn.ViewModel
 {
-   public  class TrackCourseCourseEditViewModel
+   public  class TrackEditViewModel
     {
-        [Required]
+  
         public int ID { get; set; }
 
         [Required]
-        public int TrackCourseID { get; set; }
+        [MaxLength(250)]
+        public string Name { get; set; }
 
         [Required]
-        public int CourseID { get; set; }
+        [MaxLength(1000)]
+        public string Discription { get; set; }
 
 
+        public HttpPostedFileBase Photo { get; set; }
+
+        public String Image { get; set; }
+        [Required]
+        public int SubCategoryID { get; set; }
+
+        [Required]
+        public TrackLinkEditViewModel[] Links { get; set; }
+
+        [Required]
+        public TrackDocumentEditViewModel[] Documents { get; set; }
+
+        [Required]
+        public TrackVedioEditViewModel[] Videos { get; set; }
     }
 }

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Entities
 {
-    public class TrackCourseConfiguration : EntityTypeConfiguration<TrackCourse>
+    public class TrackConfiguration : EntityTypeConfiguration<Track>
     {
-        public TrackCourseConfiguration()
+        public TrackConfiguration()
         {
-            ToTable("TrackCourse");
+            ToTable("Track");
             
             Property(i => i.Name)
                 .HasColumnName("Name")
@@ -32,14 +32,14 @@ namespace ITI.WhatsLearn.Entities
                 .IsRequired();
 
             HasRequired(i => i.SubCategory)
-                .WithMany(i => i.TrackCourses)
+                .WithMany(i => i.Tracks)
                 .HasForeignKey(i => i.SubCategoryID);
 
             HasMany(i => i.Users)
-                        .WithRequired(i => i.TrackCourse);
+                        .WithRequired(i => i.Track);
 
             HasMany(i => i.Courses)
-                           .WithRequired(i => i.TrackCourse);
+                           .WithRequired(i => i.Track);
 
         }
     }

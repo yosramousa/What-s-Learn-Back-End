@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Entities
 {
-     public class UserTrackCourse:BaseModel
+     public class UserTrack:BaseModel
     {
         public User User { get; set; }
         public int UserID { get; set; }
 
-        public TrackCourse TrackCourse { get; set; }
-        public int TrackCourseID { get; set; }
+        public Track Track { get; set; }
+        public int TrackID { get; set; }
         public DateTime Date { get; set; }
         public bool IsApproveed { get; set; } = false;
 

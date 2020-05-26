@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Entities
 {
-    public class TrackCourseedioConfiguration :EntityTypeConfiguration<TrackCourseVedio>
+    public class TrackedioConfiguration :EntityTypeConfiguration<TrackVedio>
     {
-        public TrackCourseedioConfiguration()
+        public TrackedioConfiguration()
         {
-            ToTable("TrackCourseVedio");
+            ToTable("TrackVedio");
 
             Property(i => i.Vedio)
                     .HasColumnName("Vedio")
@@ -24,9 +24,9 @@ namespace ITI.WhatsLearn.Entities
                     .HasMaxLength(250)
                     .IsRequired();
 
-            HasRequired(i => i.TrackCourse)
-                .WithMany(i => i.TrackCourseVedios)
-                .HasForeignKey(i => i.TrackCourseID);
+            HasRequired(i => i.Track)
+                .WithMany(i => i.TrackVedios)
+                .HasForeignKey(i => i.TrackID);
         }
 
     }

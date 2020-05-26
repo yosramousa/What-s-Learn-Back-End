@@ -13,10 +13,10 @@ namespace ITI.WhatsLearn.ViewModel
         {
             return new FinishedCourseViewModel()
             {
-                TrackCourseName = model.UserTrackCourse.TrackCourse.Name,
-                UserName = model.UserTrackCourse.User.Name,
+                TrackName = model.UserTrack.Track.Name,
+                UserName = model.UserTrack.User.Name,
                 CourseName = model.course.Name,
-                UserTrackCourseID =model.UserTrackCourseID               
+                UserTrackID = model.UserTrackID               
 
             };
         }
@@ -25,7 +25,7 @@ namespace ITI.WhatsLearn.ViewModel
             return new FinishedCourse()
             {
                 courseID = editModel.CourseID,
-                UserTrackCourseID =editModel.UserTrackCourseID
+                UserTrackID = editModel.UserTrackID
 
             };
         }
@@ -33,10 +33,10 @@ namespace ITI.WhatsLearn.ViewModel
         {
             return new FinishedCourseEditViewModel
             {
-                TrackCourseID = model.UserTrackCourse.TrackCourse.ID,
-                UserID = model.UserTrackCourse.User.ID,
+                TrackID = model.UserTrack.Track.ID,
+                UserID = model.UserTrack.User.ID,
                 CourseID = model.course.ID ,
-                UserTrackCourseID = model.UserTrackCourseID
+                UserTrackID = model.UserTrackID
 
             };
         }

@@ -14,12 +14,12 @@ namespace ITI.WhatsLearn.Entities
             ToTable("FinishedCourse");
 
             HasRequired(i => i.course)
-                .WithMany(i => i.UserTrackCourses)
+                .WithMany(i => i.UserTracks)
                 .HasForeignKey(i => i.courseID);
 
-            HasRequired(i => i.UserTrackCourse)
+            HasRequired(i => i.UserTrack)
                 .WithMany(i => i.FinishedCourses)
-                .HasForeignKey(i => i.UserTrackCourseID);
+                .HasForeignKey(i => i.UserTrackID);
         }
     }
 }

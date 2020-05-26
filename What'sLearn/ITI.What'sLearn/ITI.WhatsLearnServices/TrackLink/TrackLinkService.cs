@@ -10,49 +10,49 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Services
 {
-    public class TrackCourseLinkService
+    public class TrackLinkService
     {
         
         UnitOfWork unitOfWork;
-        Generic<TrackCourseLink> TrackCourseLinkRepo;
-        public TrackCourseLinkService(UnitOfWork _unitOfWork)
+        Generic<TrackLink> TrackLinkRepo;
+        public TrackLinkService(UnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
-            TrackCourseLinkRepo = unitOfWork.TrackCourseLinkRepo;
+            TrackLinkRepo = unitOfWork.TrackLinkRepo;
         }
-        public TrackCourseLinkEditViewModel Add(TrackCourseLinkEditViewModel P)
+        public TrackLinkEditViewModel Add(TrackLinkEditViewModel P)
         {
-            TrackCourseLink PP = TrackCourseLinkRepo.Add(P.ToModel());
+            TrackLink PP = TrackLinkRepo.Add(P.ToModel());
             unitOfWork.Commit();
             return PP.ToEditableViewModel();
         }
-        public TrackCourseLinkEditViewModel Update(TrackCourseLinkEditViewModel P)
+        public TrackLinkEditViewModel Update(TrackLinkEditViewModel P)
         {
-            TrackCourseLink PP = TrackCourseLinkRepo.Update(P.ToModel());
+            TrackLink PP = TrackLinkRepo.Update(P.ToModel());
             unitOfWork.Commit();
             return PP.ToEditableViewModel();
         }
-        public TrackCourseLink GetByID(int id)
+        public TrackLink GetByID(int id)
         {
-            return TrackCourseLinkRepo.GetByID(id);
+            return TrackLinkRepo.GetByID(id);
         }
-        public IEnumerable<TrackCourseLinkViewModel> GetAll(){
+        public IEnumerable<TrackLinkViewModel> GetAll(){
             var query =
-                TrackCourseLinkRepo.GetAll();
+                TrackLinkRepo.GetAll();
                
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<TrackCourseLinkViewModel> Get(int id, string desc, int pageIndex, int pageSize = 20)
+        public IEnumerable<TrackLinkViewModel> Get(int id, string desc, int pageIndex, int pageSize = 20)
         {
             var query =
-                TrackCourseLinkRepo.Get
+                TrackLinkRepo.Get
                     (i => i.ID == id || i.Description == desc );
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)
         {
-            TrackCourseLinkRepo.Remove(TrackCourseLinkRepo.GetByID(id));
+            TrackLinkRepo.Remove(TrackLinkRepo.GetByID(id));
             unitOfWork.Commit();
         }
     

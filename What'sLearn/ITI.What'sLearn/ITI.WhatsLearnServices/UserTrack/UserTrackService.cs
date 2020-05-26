@@ -10,50 +10,50 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Services
 {
-    public class UserTrackCourseService
+    public class UserTrackService
     {
 
         UnitOfWork unitOfWork;
-        Generic<UserTrackCourse> UserTrackCourseRepo;
-        public UserTrackCourseService(UnitOfWork _unitOfWork)
+        Generic<UserTrack> UserTrackRepo;
+        public UserTrackService(UnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
-            UserTrackCourseRepo = unitOfWork.UserTrackCourseRepo;
+            UserTrackRepo = unitOfWork.UserTrackRepo;
         }
-        public UserTrackCourseEditViewModel Add(UserTrackCourseEditViewModel P)
+        public UserTrackEditViewModel Add(UserTrackEditViewModel P)
         {
-            UserTrackCourse PP = UserTrackCourseRepo.Add(P.ToModel());
+            UserTrack PP = UserTrackRepo.Add(P.ToModel());
             unitOfWork.Commit();
             return PP.ToEditableViewModel();
         }
-        public UserTrackCourseEditViewModel Update(UserTrackCourseEditViewModel P)
+        public UserTrackEditViewModel Update(UserTrackEditViewModel P)
         {
-            UserTrackCourse PP = UserTrackCourseRepo.Update(P.ToModel());
+            UserTrack PP = UserTrackRepo.Update(P.ToModel());
             unitOfWork.Commit();
             return PP.ToEditableViewModel();
         }
-        public UserTrackCourse GetByID(int id)
+        public UserTrack GetByID(int id)
         {
-            return UserTrackCourseRepo.GetByID(id);
+            return UserTrackRepo.GetByID(id);
         }
-        public IEnumerable<UserTrackCourseViewModel> GetAll()
+        public IEnumerable<UserTrackViewModel> GetAll()
         {
             var query =
-                UserTrackCourseRepo.GetAll();
+                UserTrackRepo.GetAll();
 
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<UserTrackCourseViewModel> Get(int id, string TrackCourseName, string username, int pageIndex, int pageSize = 20)
+        public IEnumerable<UserTrackViewModel> Get(int id, string TrackName, string username, int pageIndex, int pageSize = 20)
         {
             var query =
-                UserTrackCourseRepo.Get
-                    (i => i.ID == id || i.TrackCourse.Name == TrackCourseName || i.User.Name == username);
+                UserTrackRepo.Get
+                    (i => i.ID == id || i.Track.Name == TrackName || i.User.Name == username);
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)
         {
-            UserTrackCourseRepo.Remove(UserTrackCourseRepo.GetByID(id));
+            UserTrackRepo.Remove(UserTrackRepo.GetByID(id));
             unitOfWork.Commit();
         }
 

@@ -12,11 +12,11 @@ namespace ITI.WhatsLearn.ViewModel
         public int ID { get; set; }
 
         [Required]
-        public int TrackCourseID { get; set; }
+        public int TrackID { get; set; }
         [Required]
         public int UserID { get; set; }
         [Required]
         public int CourseID { get; set; }
-        public int UserTrackCourseID { get; set; }
+        public int UserTrackID { get; set; }
     }
 }

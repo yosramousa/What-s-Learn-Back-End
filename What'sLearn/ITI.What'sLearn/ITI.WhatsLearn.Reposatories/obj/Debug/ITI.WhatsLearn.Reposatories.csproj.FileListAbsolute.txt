@@ -28,5 +28,3 @@ F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.csproj.CopyComplete
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.dll
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.pdb
-F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.Migrations.asd.resources
-F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.csproj.GenerateResource.cache

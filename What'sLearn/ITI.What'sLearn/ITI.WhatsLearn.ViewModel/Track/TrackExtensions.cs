@@ -9,7 +9,7 @@ namespace ITI.WhatsLearn.ViewModel
 {
     public static class TrackExtensions
     {
-        public static TrackViewModel ToViewModel(this Trac model)
+        public static TrackViewModel ToViewModel(this Track model)
         {
             return new TrackViewModel
             {
@@ -32,10 +32,10 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = editModel.Name,
                 Discription = editModel.Discription,
                 Image = editModel.Image,
-                TrackLinks = editModel.Links.Select(i=>i.ToModel()).ToList(),
+                TrackLinks = editModel.Links.Select(i => i.ToModel()).ToList(),
                 TrackDocuments = editModel.Documents.Select(i => i.ToModel()).ToList(),
                 TrackVedios = editModel.Videos.Select(i => i.ToModel()).ToList(),
-                SubCategoryID=editModel.SubCategoryID
+                SubCategoryID = editModel.SubCategoryID
             };
         }
         public static TrackEditViewModel ToEditableViewModel(this Track model)
@@ -49,7 +49,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Links = model.TrackLinks.Select(i => i.ToEditableViewModel()).ToArray(),
                 Documents = model.TrackDocuments.Select(i => i.ToEditableViewModel()).ToArray(),
                 Videos = model.TrackVedios.Select(i => i.ToEditableViewModel()).ToArray(),
-                SubCategoryID=model.SubCategoryID
+                SubCategoryID = model.SubCategoryID
             };
         }
 

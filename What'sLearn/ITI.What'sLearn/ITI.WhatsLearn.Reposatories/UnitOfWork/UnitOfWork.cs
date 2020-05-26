@@ -9,7 +9,7 @@ namespace ITI.WhatsLearn.Reposatories
 {
     public class UnitOfWork
     {
-        public EntitiesContext Context { get; set; }
+        private EntitiesContext context { get; set; }
         public Generic<Admin> AdminRepo { get; set; }
         public Generic<Course> CourseRepo { get; set; }
         public Generic<CourseDocument> CourseDocumentRepo { get; set; }
@@ -36,5 +36,99 @@ namespace ITI.WhatsLearn.Reposatories
         public Generic<UserSkill> UserSkillRepo { get; set; }
         public Generic<UserSocialLink> UserSocialLinkRepo { get; set; }
         public Generic<UserTrack> UserTrackRepo { get; set; }
+
+        public UnitOfWork
+            (
+             EntitiesContext _context,
+             Generic<Admin> adminRepo,
+             Generic<Course> courseRepo,
+             Generic<CourseDocument> courseDocumentRepo,
+             Generic<CourseLink> courseLinkRepo,
+             Generic<CourseVedio> courseVedioRepo,
+             Generic<FinishedCourse> finishedCourseRepo,
+             Generic<MainCategory> mainCategoryRepo,
+             Generic<MainCategoryDocument> mainCategoryDocumentRepo,
+             Generic<MainCategoryLink> mainCategoryLinkRepo,
+             Generic<MainCategoryVedio> mainCategoryVedioRepo,
+             Generic<Message> messageRepo,
+             Generic<Skill> skillRepo,
+             Generic<SubCategory> subCategoryRepo,
+             Generic<SubCategoryDocument> subCategoryDocumentRepo,
+             Generic<SubCategoryLink> subCategoryLinkRepo,
+             Generic<SubCategoryVedio> subCategoryVedioRepo,
+             Generic<Track> trackRepo,
+             Generic<TrackCourse> trackCourseRepo,
+             Generic<TrackDocument> trackDocumentRepo,
+             Generic<TrackLink> trackLinkRepo,
+             Generic<TrackVedio> trackVedioRepo,
+             Generic<User> userRepo,
+             Generic<UserCertificate> userCertificateRepo,
+             Generic<UserSkill> userSkillRepo,
+             Generic<UserSocialLink> userSocialLinkRepo,
+             Generic<UserTrack> userTrackRepo
+
+
+        )
+        {
+            context = _context;
+            AdminRepo = adminRepo;
+            AdminRepo.Context = context;
+            CourseRepo = courseRepo;
+            CourseRepo.Context = context;
+            CourseDocumentRepo = courseDocumentRepo;
+            CourseDocumentRepo.Context = context;
+            CourseVedioRepo = courseVedioRepo;
+            CourseVedioRepo.Context = context;
+            CourseLinkRepo = courseLinkRepo;
+            CourseLinkRepo.Context = context;
+            FinishedCourseRepo = finishedCourseRepo;
+            FinishedCourseRepo.Context = context;
+            MainCategoryRepo = mainCategoryRepo;
+            MainCategoryRepo.Context = context;
+            MainCategoryDocumentRepo = mainCategoryDocumentRepo;
+            MainCategoryDocumentRepo.Context = context;
+            MainCategoryLinkRepo = mainCategoryLinkRepo;
+            MainCategoryLinkRepo.Context = context;
+            MainCategoryVedioRepo = mainCategoryVedioRepo;
+            MainCategoryVedioRepo.Context = context;
+            MessageRepo = messageRepo;
+            MessageRepo.Context = context;
+            SkillRepo = skillRepo;
+            SkillRepo.Context = context;
+            SubCategoryRepo = subCategoryRepo;
+            SubCategoryRepo.Context = context;
+            SubCategoryDocumentRepo = subCategoryDocumentRepo;
+            SubCategoryDocumentRepo.Context = context;
+            SubCategoryLinkRepo = subCategoryLinkRepo;
+            SubCategoryLinkRepo.Context = context;
+            SubCategoryVedioRepo = subCategoryVedioRepo;
+            SubCategoryVedioRepo.Context = context;
+            TrackRepo = trackRepo;
+            TrackRepo.Context = context;
+            TrackCourseRepo =trackCourseRepo;
+            TrackCourseRepo.Context = context;
+            TrackDocumentRepo = trackDocumentRepo;
+            TrackDocumentRepo.Context = context;
+            TrackLinkRepo = trackLinkRepo;
+            TrackLinkRepo.Context = context;
+            TrackVedioRepo = trackVedioRepo;
+            TrackVedioRepo.Context = context;
+            UserRepo = userRepo;
+            UserRepo.Context = context;
+            UserCertificateRepo = userCertificateRepo;
+            UserCertificateRepo.Context = context;
+            UserSkillRepo = userSkillRepo;
+            UserSkillRepo.Context = context;
+            UserSocialLinkRepo = userSocialLinkRepo;
+            UserSocialLinkRepo.Context = context;
+            UserTrackRepo = userTrackRepo;
+            UserTrackRepo.Context = context;
+         
+
+        }
+        public int Commit()
+        {
+            return context.SaveChanges();
+        }
     }
 }

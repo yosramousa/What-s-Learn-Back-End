@@ -39,11 +39,11 @@ namespace ITI.WhatsLearn.Reposatories
         {
             return dbSet.FirstOrDefault(i => i.ID == id);
         }
-        public IEnumerable<T> GetAll()
+        public IQueryable<T> GetAll()
         {
            return dbSet ;
         }
-        public IEnumerable<T> Get(Expression<Func<T, bool>> filter)
+        public IQueryable<T> Get(Expression<Func<T, bool>> filter)
         {
             return dbSet.Where(filter);
         }

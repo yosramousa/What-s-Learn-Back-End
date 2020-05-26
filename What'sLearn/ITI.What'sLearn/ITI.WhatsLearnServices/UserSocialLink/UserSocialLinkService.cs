@@ -24,13 +24,13 @@ namespace ITI.WhatsLearn.Services
         {
             UserSocialLink PP = UserSocialLinkRepo.Add(P.ToModel());
             unitOfWork.Commit();
-            return PP.ToEditViewModel();
+            return PP.ToEditableViewModel();
         }
         public UserSocialLinkEditViewModel Update(UserSocialLinkEditViewModel P)
         {
             UserSocialLink PP = UserSocialLinkRepo.Update(P.ToModel());
             unitOfWork.Commit();
-            return PP.ToEditViewModel();
+            return PP.ToEditableViewModel();
         }
         public UserSocialLink GetByID(int id)
         {

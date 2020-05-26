@@ -8,17 +8,14 @@ using System.Web;
 
 namespace ITI.WhatsLearn.ViewModel
 {
-   public  class TrackCourseEditViewModel
+    public class UserCertificateEditViewModel
     {
         [Required]
         public int ID { get; set; }
-
         [Required]
-        public int TrackID { get; set; }
-
+        [MaxLength(250)]
+        public string Title { get; set; }
         [Required]
-        public int CourseID { get; set; }
-
-
+        public virtual int UserID{ get; set; }
     }
 }

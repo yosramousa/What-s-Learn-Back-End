@@ -10,50 +10,50 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Services
 {
-    public class UserSkillService
+    public class UserService
     {
 
         UnitOfWork unitOfWork;
-        Generic<UserSkill> UserSkillRepo;
-        public UserSkillService(UnitOfWork _unitOfWork)
+        Generic<User> UserRepo;
+        public UserService(UnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
-            UserSkillRepo = unitOfWork.UserSkillRepo;
+            UserRepo = unitOfWork.UserRepo;
         }
-        public UserSkillEditViewModel Add(UserSkillEditViewModel P)
+        public UserEditViewModel Add(UserEditViewModel P)
         {
-            UserSkill PP = UserSkillRepo.Add(P.ToModel());
+            User PP = UserRepo.Add(P.ToModel());
             unitOfWork.Commit();
-            return PP.ToEditViewModel();
+            return PP.ToEditableViewModel();
         }
-        public UserSkillEditViewModel Update(UserSkillEditViewModel P)
+        public UserEditViewModel Update(UserEditViewModel P)
         {
-            UserSkill PP = UserSkillRepo.Update(P.ToModel());
+            User PP = UserRepo.Update(P.ToModel());
             unitOfWork.Commit();
-            return PP.ToEditViewModel();
+            return PP.ToEditableViewModel();
         }
-        public UserSkill GetByID(int id)
+        public User GetByID(int id)
         {
-            return UserSkillRepo.GetByID(id);
+            return UserRepo.GetByID(id);
         }
-        public IEnumerable<UserSkillViewModel> GetAll()
+        public IEnumerable<UserViewModel> GetAll()
         {
             var query =
-                UserSkillRepo.GetAll();
+                UserRepo.GetAll();
 
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<UserSkillViewModel> Get(int id, string skill, string Username, int pageIndex, int pageSize = 20)
+        public IEnumerable<UserViewModel> Get(int id, string skill, string Username, int pageIndex, int pageSize = 20)
         {
             var query =
-                UserSkillRepo.Get
-                    (i => i.ID == id || i.Skill.skill == skill || i.User.Name == Username);
+                UserRepo.Get
+                    (i => i.ID == id);
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)
         {
-            UserSkillRepo.Remove(UserSkillRepo.GetByID(id));
+            UserRepo.GetByID(id);
             unitOfWork.Commit();
         }
 

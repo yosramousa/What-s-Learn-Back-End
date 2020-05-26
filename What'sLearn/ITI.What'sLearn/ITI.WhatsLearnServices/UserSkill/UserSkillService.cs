@@ -24,13 +24,13 @@ namespace ITI.WhatsLearn.Services
         {
             UserSkill PP = UserSkillRepo.Add(P.ToModel());
             unitOfWork.Commit();
-            return PP.ToEditViewModel();
+            return PP.ToEditableViewModel();
         }
         public UserSkillEditViewModel Update(UserSkillEditViewModel P)
         {
             UserSkill PP = UserSkillRepo.Update(P.ToModel());
             unitOfWork.Commit();
-            return PP.ToEditViewModel();
+            return PP.ToEditableViewModel();
         }
         public UserSkill GetByID(int id)
         {

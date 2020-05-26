@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.ViewModel
 {
-   public  class TrackCourseViewModel
+    public class UserCertificateViewModel
     {
         public int ID { get; set; }
-        public String TrackName { get; set; }
-        public String CourseName { get; set; }
+        public string Title { get; set; }
+        public virtual string UserName { get; set; }
+ 
     }
 }

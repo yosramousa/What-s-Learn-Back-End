@@ -12,7 +12,7 @@ namespace ITI.WhatsLearn.Services
 {
     public class TrackCourseService
     {
-
+        
         UnitOfWork unitOfWork;
         Generic<TrackCourse> TrackCourseRepo;
         public TrackCourseService(UnitOfWork _unitOfWork)
@@ -36,18 +36,17 @@ namespace ITI.WhatsLearn.Services
         {
             return TrackCourseRepo.GetByID(id);
         }
-        public IEnumerable<TrackCourseViewModel> GetAll()
-        {
+        public IEnumerable<TrackCourseViewModel> GetAll(){
             var query =
                 TrackCourseRepo.GetAll();
-
+               
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<TrackCourseViewModel> Get(int id, string TrackName, int pageIndex, int pageSize = 20)
+        public IEnumerable<TrackCourseViewModel> Get(int id, string Trackname, int pageIndex, int pageSize = 20)
         {
             var query =
                 TrackCourseRepo.Get
-                    (i => i.ID == id || i.Track.Name == TrackName);
+                    (i => i.ID == id || i.Track.Name == Trackname );
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
@@ -56,6 +55,6 @@ namespace ITI.WhatsLearn.Services
             TrackCourseRepo.Remove(TrackCourseRepo.GetByID(id));
             unitOfWork.Commit();
         }
-
+    
     }
 }

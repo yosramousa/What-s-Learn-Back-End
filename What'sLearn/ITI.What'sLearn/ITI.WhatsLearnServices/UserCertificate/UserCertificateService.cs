@@ -10,51 +10,52 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Services
 {
-    public class UserService
+    public class UserCertificateService
     {
-        
+
         UnitOfWork unitOfWork;
-        Generic<User> UserRepo;
-        public UserService(UnitOfWork _unitOfWork)
+        Generic<UserCertificate> UserCertificateRepo;
+        public UserCertificateService(UnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
-            UserRepo = unitOfWork.UserRepo;
+            UserCertificateRepo = unitOfWork.UserCertificateRepo;
         }
-        public UserEditViewModel Add(UserEditViewModel P)
+        public UserCertificateEditViewModel Add(UserCertificateEditViewModel P)
         {
-            User PP = UserRepo.Add(P.ToModel());
+            UserCertificate PP = UserCertificateRepo.Add(P.ToModel());
             unitOfWork.Commit();
-            return PP.ToEditViewModel();
+            return PP.ToEditableViewModel();
         }
-        public UserEditViewModel Update(UserEditViewModel P)
+        public UserCertificateEditViewModel Update(UserCertificateEditViewModel P)
         {
-            User PP = UserRepo.Update(P.ToModel());
+            UserCertificate PP = UserCertificateRepo.Update(P.ToModel());
             unitOfWork.Commit();
-            return PP.ToEditViewModel();
+            return PP.ToEditableViewModel();
         }
-        public User GetByID(int id)
+        public UserCertificate GetByID(int id)
         {
-            return UserRepo.GetByID(id);
+            return UserCertificateRepo.GetByID(id);
         }
-        public IEnumerable<UserViewModel> GetAll(){
+        public IEnumerable<UserCertificateViewModel> GetAll()
+        {
             var query =
-                UserRepo.GetAll();
-               
+                UserCertificateRepo.GetAll();
+
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<UserViewModel> Get(int id, string name, string email, int pageIndex, int pageSize = 20)
+        public IEnumerable<UserCertificateViewModel> Get(int id, string skill, string UserCertificatename, int pageIndex, int pageSize = 20)
         {
             var query =
-                UserRepo.Get
-                    (i => i.ID == id || i.Name == name || i.Email == email);
+                UserCertificateRepo.Get
+                    (i => i.ID == id);
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)
         {
-            UserRepo.Remove(UserRepo.GetByID(id));
+            UserCertificateRepo.GetByID(id);
             unitOfWork.Commit();
         }
-    
+
     }
 }

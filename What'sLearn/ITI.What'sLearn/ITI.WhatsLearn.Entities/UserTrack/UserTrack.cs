@@ -9,10 +9,10 @@ namespace ITI.WhatsLearn.Entities
      public class UserTrack:BaseModel
     {
         public User User { get; set; }
-        public User UserID { get; set; }
+        public int UserID { get; set; }
 
         public Track Track { get; set; }
-        public Track TrackID { get; set; }
+        public int TrackID { get; set; }
         public DateTime Date { get; set; }
         public bool IsApproveed { get; set; } = false;
 

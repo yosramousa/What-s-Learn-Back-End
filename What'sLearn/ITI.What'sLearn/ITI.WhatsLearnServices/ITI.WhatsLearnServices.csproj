@@ -54,7 +54,20 @@
     <Compile Include="Message\MessageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skill\SkillService.cs" />
+    <Compile Include="SubCategoryDocument\SubCategoryDocumentService.cs" />
+    <Compile Include="SubCategoryLink\SubCategoryLinkService.cs" />
+    <Compile Include="SubCategoryVedio\SubCategoryVedioService.cs" />
     <Compile Include="SubCategory\SubCategoryService.cs" />
+    <Compile Include="TrackCourse\TrackCourseService.cs" />
+    <Compile Include="TrackDocumet\TrackDocumentService.cs" />
+    <Compile Include="TrackLink\TrackLinkService.cs" />
+    <Compile Include="TrackVedio\TrackVedioService.cs" />
+    <Compile Include="Track\TrackService.cs" />
+    <Compile Include="UserCertificate\UserCertificateService.cs" />
+    <Compile Include="UserSkill\UserSkillService.cs" />
+    <Compile Include="UserSocialLink\UserSocialLinkService.cs" />
+    <Compile Include="UserTrack\UserTrackService.cs" />
+    <Compile Include="User\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ITI.WhatsLearn.Entities\ITI.WhatsLearn.Entities.csproj">

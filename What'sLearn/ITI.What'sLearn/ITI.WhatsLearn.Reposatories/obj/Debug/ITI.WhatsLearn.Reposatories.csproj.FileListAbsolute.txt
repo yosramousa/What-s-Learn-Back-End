@@ -13,3 +13,18 @@ E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposator
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.csproj.CopyComplete
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.dll
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Reposatories.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Reposatories.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Reposatories.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\EntityFramework.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\EntityFramework.SqlServer.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Entities.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Entities.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\ITI.WhatsLearn.Entities.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\EntityFramework.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Debug\EntityFramework.SqlServer.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.csprojAssemblyReference.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.csproj.CoreCompileInputs.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.csproj.CopyComplete
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Debug\ITI.WhatsLearn.Reposatories.pdb

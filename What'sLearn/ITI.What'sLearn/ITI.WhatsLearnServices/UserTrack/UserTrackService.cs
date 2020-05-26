@@ -12,7 +12,7 @@ namespace ITI.WhatsLearn.Services
 {
     public class UserTrackService
     {
-        
+
         UnitOfWork unitOfWork;
         Generic<UserTrack> UserTrackRepo;
         public UserTrackService(UnitOfWork _unitOfWork)
@@ -24,29 +24,30 @@ namespace ITI.WhatsLearn.Services
         {
             UserTrack PP = UserTrackRepo.Add(P.ToModel());
             unitOfWork.Commit();
-            return PP.ToEditViewModel();
+            return PP.ToEditableViewModel();
         }
         public UserTrackEditViewModel Update(UserTrackEditViewModel P)
         {
             UserTrack PP = UserTrackRepo.Update(P.ToModel());
             unitOfWork.Commit();
-            return PP.ToEditViewModel();
+            return PP.ToEditableViewModel();
         }
         public UserTrack GetByID(int id)
         {
             return UserTrackRepo.GetByID(id);
         }
-        public IEnumerable<UserTrackViewModel> GetAll(){
+        public IEnumerable<UserTrackViewModel> GetAll()
+        {
             var query =
                 UserTrackRepo.GetAll();
-               
+
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<UserTrackViewModel> Get(int id, string Trackname, string UserName, int pageIndex, int pageSize = 20)
+        public IEnumerable<UserTrackViewModel> Get(int id, string TrackName, string username, int pageIndex, int pageSize = 20)
         {
             var query =
                 UserTrackRepo.Get
-                    (i => i.ID == id || i.Track.Name == Trackname || i.User.Name == UserName);
+                    (i => i.ID == id || i.Track.Name == TrackName || i.User.Name == username);
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
@@ -55,6 +56,6 @@ namespace ITI.WhatsLearn.Services
             UserTrackRepo.Remove(UserTrackRepo.GetByID(id));
             unitOfWork.Commit();
         }
-    
+
     }
 }

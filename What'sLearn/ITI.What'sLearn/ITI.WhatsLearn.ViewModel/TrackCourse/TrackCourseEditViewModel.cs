@@ -10,7 +10,7 @@ namespace ITI.WhatsLearn.ViewModel
 {
    public  class TrackEditViewModel
     {
-        [Required]
+       
         public int ID { get; set; }
 
         [Required]

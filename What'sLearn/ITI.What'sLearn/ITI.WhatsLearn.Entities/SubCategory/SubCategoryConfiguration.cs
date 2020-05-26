@@ -39,7 +39,7 @@ namespace ITI.WhatsLearn.Entities
 
             HasMany(i => i.SubCategoryVedios)
               .WithRequired(i => i.SubCategory);
-            HasMany(i => i.Tracks)
+            HasMany(i => i.TrackCourses)
             .WithRequired(i => i.SubCategory);
 
             HasRequired(i => i.MainCategory)

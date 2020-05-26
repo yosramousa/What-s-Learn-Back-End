@@ -10,8 +10,8 @@ namespace ITI.WhatsLearn.Entities
     {
         public Course course { get; set; }
         public int  courseID { get; set; }
-        public UserTrack UserTrack { get; set; }
-        public int UserTrackID { get; set; }
+        public UserTrackCourse UserTrackCourse { get; set; }
+        public int UserTrackCourseID { get; set; }
 
     }
 }

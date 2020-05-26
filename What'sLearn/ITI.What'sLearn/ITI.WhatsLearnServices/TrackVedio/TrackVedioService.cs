@@ -10,49 +10,49 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Services
 {
-    public class TrackVedioService
+    public class TrackCourseVedioService
     {
         
         UnitOfWork unitOfWork;
-        Generic<TrackVedio> TrackVedioRepo;
-        public TrackVedioService(UnitOfWork _unitOfWork)
+        Generic<TrackCourseVedio> TrackCourseVedioRepo;
+        public TrackCourseVedioService(UnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
-            TrackVedioRepo = unitOfWork.TrackVedioRepo;
+            TrackCourseVedioRepo = unitOfWork.TrackCourseVedioRepo;
         }
-        public TrackVedioEditViewModel Add(TrackVedioEditViewModel P)
+        public TrackCourseVedioEditViewModel Add(TrackCourseVedioEditViewModel P)
         {
-            TrackVedio PP = TrackVedioRepo.Add(P.ToModel());
+            TrackCourseVedio PP = TrackCourseVedioRepo.Add(P.ToModel());
             unitOfWork.Commit();
             return PP.ToEditableViewModel();
         }
-        public TrackVedioEditViewModel Update(TrackVedioEditViewModel P)
+        public TrackCourseVedioEditViewModel Update(TrackCourseVedioEditViewModel P)
         {
-            TrackVedio PP = TrackVedioRepo.Update(P.ToModel());
+            TrackCourseVedio PP = TrackCourseVedioRepo.Update(P.ToModel());
             unitOfWork.Commit();
             return PP.ToEditableViewModel();
         }
-        public TrackVedio GetByID(int id)
+        public TrackCourseVedio GetByID(int id)
         {
-            return TrackVedioRepo.GetByID(id);
+            return TrackCourseVedioRepo.GetByID(id);
         }
-        public IEnumerable<TrackVedioViewModel> GetAll(){
+        public IEnumerable<TrackCourseVedioViewModel> GetAll(){
             var query =
-                TrackVedioRepo.GetAll();
+                TrackCourseVedioRepo.GetAll();
                
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<TrackVedioViewModel> Get(int id, string desc, int pageIndex, int pageSize = 20)
+        public IEnumerable<TrackCourseVedioViewModel> Get(int id, string desc, int pageIndex, int pageSize = 20)
         {
             var query =
-                TrackVedioRepo.Get
+                TrackCourseVedioRepo.Get
                     (i => i.ID == id || i.Description == desc );
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)
         {
-            TrackVedioRepo.Remove(TrackVedioRepo.GetByID(id));
+            TrackCourseVedioRepo.Remove(TrackCourseVedioRepo.GetByID(id));
             unitOfWork.Commit();
         }
     

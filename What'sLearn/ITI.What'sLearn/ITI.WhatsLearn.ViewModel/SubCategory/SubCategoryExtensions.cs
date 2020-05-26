@@ -21,7 +21,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Vedios = model.SubCategoryVedios.Select(i => i.ToViewModel()).ToArray(),
                 Links = model.SubCategoryLinks.Select(i => i.ToViewModel()).ToArray(),
                 MainCategoryName=model.MainCategory.Name
-                //Tracks = model.Tracks.Select(i => i.ToViewModel()).ToArray()
+                //TrackCourses = model.TrackCourses.Select(i => i.ToViewModel()).ToArray()
             };
         }
         public static SubCategory ToModel(this SubCategoryEditViewModel editModel)

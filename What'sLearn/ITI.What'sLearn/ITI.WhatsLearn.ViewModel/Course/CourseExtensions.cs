@@ -21,7 +21,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Vedios = model.CourseVedios.Select(i => i.ToViewModel()).ToArray(),
                 Links = model.CourseLinks.Select(i => i.ToViewModel()).ToArray(),
 
-                Tracks = model.Tracks.Select(i => i.Track.ToViewModel()).ToArray()
+                TrackCourses = model.TrackCourses.Select(i => i.TrackCourse.ToViewModel()).ToArray()
 
 
             };

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Entities
 {
-    public class TrackDocumentConfiguration :EntityTypeConfiguration<TrackDocument>
+    public class TrackCourseDocumentConfiguration :EntityTypeConfiguration<TrackCourseDocument>
     {
-        public TrackDocumentConfiguration()
+        public TrackCourseDocumentConfiguration()
         {
-            ToTable("TrackDocument");
+            ToTable("TrackCourseDocument");
 
             Property(i => i.File)
                     .HasColumnName("File")
@@ -24,9 +24,9 @@ namespace ITI.WhatsLearn.Entities
                     .HasMaxLength(250)
                     .IsRequired();
 
-            HasRequired(i => i.Track)
-                .WithMany(i => i.TrackDocuments)
-                .HasForeignKey(i => i.TrackID);
+            HasRequired(i => i.TrackCourse)
+                .WithMany(i => i.TrackCourseDocuments)
+                .HasForeignKey(i => i.TrackCourseID);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace ITI.WhatsLearn.ViewModel
         public SubCategoryDocumentViewModel[] Documents { get; set; }
         public SubCategoryVedioViewModel[] Vedios { get; set; }
         public String MainCategoryName { get; set; }
-        public TrackViewModel[] Tracks { get; set; }
+        public TrackCourseViewModel[] TrackCourses { get; set; }
 
 
 

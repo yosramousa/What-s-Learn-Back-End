@@ -13,6 +13,6 @@ namespace ITI.WhatsLearn.Entities
         public virtual ICollection<UserCertificate> Certificates { get; set; }
         public virtual ICollection<UserSocialLink> SocialLinks { get; set; }
         public virtual ICollection<UserSkill> Skills { get; set; }
-        public virtual ICollection<UserTrack> Tracks { get; set; }
+        public virtual ICollection<UserTrackCourse> TrackCourses { get; set; }
     }
 }

@@ -8,13 +8,13 @@ using System.Web;
 
 namespace ITI.WhatsLearn.ViewModel
 {
-   public  class TrackCourseEditViewModel
+   public  class TrackCourseCourseEditViewModel
     {
         [Required]
         public int ID { get; set; }
 
         [Required]
-        public int TrackID { get; set; }
+        public int TrackCourseID { get; set; }
 
         [Required]
         public int CourseID { get; set; }

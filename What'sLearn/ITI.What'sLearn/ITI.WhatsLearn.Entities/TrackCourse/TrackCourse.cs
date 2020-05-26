@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Entities
 {
-    public  class TrackCourse:BaseModel
+    public  class TrackCourseCourse:BaseModel
     {
-        public Track Track { get; set; }
-        public int  TrackID { get; set; }
+        public TrackCourse TrackCourse { get; set; }
+        public int  TrackCourseID { get; set; }
         public Course Course { get; set; }
         public int CourseID { get; set; }
 

@@ -21,3 +21,4 @@ E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.csproj.CopyComplete
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.dll
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Entities\obj\Debug\ITI.WhatsLearn.Entities.csprojAssemblyReference.cache

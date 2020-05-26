@@ -77,8 +77,7 @@ namespace ITI.WhatsLearn.Reposatories
                 (new SubCategoryVedioConfiguration());
             modelBuilder.Configurations.Add
                 (new TrackConfiguration());
-            modelBuilder.Configurations.Add
-                (new TrackCourseConfigurations());
+           
             modelBuilder.Configurations.Add
                 (new TrackCourseConfigurations());
             modelBuilder.Configurations.Add

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Entities
 {
-    public class TrackLinkConfiguration : EntityTypeConfiguration<TrackLink>
+    public class TrackCourseLinkConfiguration : EntityTypeConfiguration<TrackCourseLink>
     {
-        public TrackLinkConfiguration()
+        public TrackCourseLinkConfiguration()
         {
-            ToTable("TrackLink");
+            ToTable("TrackCourseLink");
 
             Property(i => i.Link)
                     .HasColumnName("Link")
@@ -24,9 +24,9 @@ namespace ITI.WhatsLearn.Entities
                     .HasMaxLength(250)
                     .IsRequired();
 
-            HasRequired(i => i.Track)
-                .WithMany(i => i.TrackLinks)
-                .HasForeignKey(i => i.TrackID);
+            HasRequired(i => i.TrackCourse)
+                .WithMany(i => i.TrackCourseLinks)
+                .HasForeignKey(i => i.TrackCourseID);
 
         }
     }

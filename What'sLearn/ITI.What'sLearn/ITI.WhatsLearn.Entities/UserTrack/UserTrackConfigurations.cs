@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Entities
 {
-    public class UserTrackConfigurations: EntityTypeConfiguration<UserTrack>
+    public class UserTrackCourseConfigurations: EntityTypeConfiguration<UserTrackCourse>
     {
-        public UserTrackConfigurations()
+        public UserTrackCourseConfigurations()
         {
-            ToTable("UserTrack");
+            ToTable("UserTrackCourse");
             Property(i => i.Date)
               .HasColumnName("Date")
               .IsRequired();
@@ -19,13 +19,13 @@ namespace ITI.WhatsLearn.Entities
              .HasColumnName("IsApproveed")
              .IsRequired();
             HasRequired(i => i.User)
-                .WithMany(i => i.Tracks)
+                .WithMany(i => i.TrackCourses)
                 .HasForeignKey(i => i.UserID);
-            HasRequired(i => i.Track)
+            HasRequired(i => i.TrackCourse)
                 .WithMany(i => i.Users)
-                .HasForeignKey(i => i.TrackID);
+                .HasForeignKey(i => i.TrackCourseID);
             HasMany(i => i.FinishedCourses)
-                     .WithRequired(i => i.UserTrack);
+                     .WithRequired(i => i.UserTrackCourse);
         }
     }
 }

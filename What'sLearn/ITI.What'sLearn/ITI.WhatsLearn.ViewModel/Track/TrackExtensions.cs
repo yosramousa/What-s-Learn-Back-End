@@ -9,7 +9,7 @@ namespace ITI.WhatsLearn.ViewModel
 {
     public static class TrackExtensions
     {
-        public static TrackViewModel ToViewModel(this Track model)
+        public static TrackViewModel ToViewModel(this Trac model)
         {
             return new TrackViewModel
             {

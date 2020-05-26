@@ -23,7 +23,7 @@ namespace ITI.WhatsLearn.Entities
                WithRequired(i => i.User);
             HasMany(i => i.Skills).
              WithRequired(i => i.User);
-            HasMany(i => i.Tracks)
+            HasMany(i => i.TrackCourses)
                        .WithRequired(i => i.User);
 
         }

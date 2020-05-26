@@ -15,7 +15,7 @@ namespace ITI.WhatsLearn.ViewModel
         public CourseLinkViewModel[] Links { get; set; }
         public CourseDocumentViewModel[] Documents { get; set; }
         public CourseVedioViewModel[] Vedios { get; set; }
-        public TrackViewModel[] Tracks { get; set; }
+        public TrackCourseViewModel[] TrackCourses { get; set; }
         
 
 

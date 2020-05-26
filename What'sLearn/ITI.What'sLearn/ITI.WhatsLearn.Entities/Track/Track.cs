@@ -16,10 +16,10 @@ namespace ITI.WhatsLearn.Entities
         public virtual SubCategory SubCategory { get; set; }
         public int SubCategoryID { get; set; }
 
-        public virtual ICollection<TrackDocument> TrackDocuments { get; set; }
-        public virtual ICollection<TrackLink> TrackLinks { get; set; }
-        public virtual ICollection<TrackVedio> TrackVedios { get; set; }
-        public virtual ICollection<UserTrack> Users { get; set; }
-        public virtual ICollection<TrackCourse> Courses { get; set; }
+        public virtual ICollection<TrackCourseDocument> TrackCourseDocuments { get; set; }
+        public virtual ICollection<TrackCourseLink> TrackCourseLinks { get; set; }
+        public virtual ICollection<TrackCourseVedio> TrackCourseVedios { get; set; }
+        public virtual ICollection<UserTrackCourse> Users { get; set; }
+        public virtual ICollection<TrackCourseCourse> Courses { get; set; }
     }
 }

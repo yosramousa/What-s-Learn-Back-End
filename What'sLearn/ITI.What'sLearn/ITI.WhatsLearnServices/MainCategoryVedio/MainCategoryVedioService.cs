@@ -52,6 +52,8 @@ namespace ITI.WhatsLearnServices
         public void Remove(int id)
         {
             MainCategoryVedioRepo.Remove(MainCategoryVedioRepo.GetByID(id));
+            unitOfWork.Commit();
+
         }
     }
 }

@@ -10,9 +10,9 @@ namespace ITI.WhatsLearn.ViewModel
    public static class CourseDocumentExtensions
     {
 
-        public static CourseDocumentViewModel ToViewModel(this CourseDocument model)
+        public static CourseDocumentEditViewModel ToViewModel(this CourseDocument model)
         {
-            return new CourseDocumentViewModel()
+            return new CourseDocumentEditViewModel()
             {
                 ID = model.ID,
                 File = model.File,

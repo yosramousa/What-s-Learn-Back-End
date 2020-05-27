@@ -64,3 +64,4 @@ E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentat
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csproj.CopyComplete
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.dll
 E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.pdb
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csprojAssemblyReference.cache

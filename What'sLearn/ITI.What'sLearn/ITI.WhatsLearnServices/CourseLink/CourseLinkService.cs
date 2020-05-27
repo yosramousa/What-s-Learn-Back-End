@@ -36,7 +36,7 @@ namespace ITI.WhatsLearnServices
         {
             return CourseLinkRepo.GetByID(id)?.ToViewModel();
         }
-        public IEnumerable<CourseLinkViewModel> Get(int pageIndex, int pageSize = 20)
+        public IEnumerable<CourseLinkViewModel> GetAll(int pageIndex, int pageSize = 20)
         {
             var query =
                 CourseLinkRepo.GetAll();
@@ -52,6 +52,8 @@ namespace ITI.WhatsLearnServices
         public void Remove(int id)
         {
             CourseLinkRepo.Remove(CourseLinkRepo.GetByID(id));
+            unitOfWork.Commit();
+
         }
 
     }

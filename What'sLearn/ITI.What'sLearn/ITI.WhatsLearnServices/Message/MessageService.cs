@@ -51,6 +51,8 @@ namespace ITI.WhatsLearnServices
         public void Remove(int id)
         {
             MessageRepo.Remove(MessageRepo.GetByID(id));
+            unitOfWork.Commit();
+
         }
     }
 }

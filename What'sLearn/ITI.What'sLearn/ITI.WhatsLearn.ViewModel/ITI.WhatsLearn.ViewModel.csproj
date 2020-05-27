@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminEditViewModel.cs" />
+    <Compile Include="Admin\AdminExtentions.cs" />
+    <Compile Include="Admin\AdminViewModel.cs" />
     <Compile Include="Course\CourseEditViewModel.cs" />
     <Compile Include="Course\CourseExtensions.cs" />
     <Compile Include="Course\CourseViewModel.cs" />
@@ -58,6 +61,7 @@
     <Compile Include="FinishedCourse\FinishedCourseEditViewModel.cs" />
     <Compile Include="FinishedCourse\FinishedCourseExtentions.cs" />
     <Compile Include="FinishedCourse\FinishedCourseViewModel.cs" />
+    <Compile Include="Result\ResultViewModel.cs" />
     <Compile Include="Skill\SkillEditViewModel.cs" />
     <Compile Include="Skill\SkillExtensions.cs" />
     <Compile Include="Skill\SkillViewModel.cs" />

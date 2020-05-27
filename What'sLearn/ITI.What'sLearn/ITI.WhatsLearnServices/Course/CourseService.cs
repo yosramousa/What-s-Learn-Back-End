@@ -35,22 +35,30 @@ namespace ITI.WhatsLearnServices
         {
             return CourseRepo.GetByID(id)?.ToViewModel();
         }
-        public IEnumerable<CourseViewModel> Get(int pageIndex, int pageSize = 20)
+        public IEnumerable<CourseViewModel> GetAll(int pageIndex, int pageSize = 20)
         {
             var query =
                 CourseRepo.GetAll();
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<CourseViewModel> Get(Expression<Func<Course, bool>> filter)
+        public IEnumerable<CourseViewModel> Get(Expression<Func<CourseViewModel, bool>> filter)
         {
+            Expression converted = Expression.Convert
+             (filter.Body, typeof(CourseViewModel));
+
+            var convertedFilter = Expression.Lambda<Func<Course, bool>>
+             (converted, filter.Parameters);
+
             var query =
-                CourseRepo.Get(filter);
+                AdminRepo.Get(convertedFilter);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)
         {
             CourseRepo.Remove(CourseRepo.GetByID(id));
+            unitOfWork.Commit();
+
         }
     }
 }

@@ -37,7 +37,7 @@ namespace ITI.WhatsLearnServices
         {
             return CourseDocumentRepo.GetByID(id)?.ToViewModel();
         }
-        public IEnumerable<CourseDocumentViewModel> GetAll(int pageIndex, int pageSize = 20)
+        public IEnumerable<CourseDocumentEditViewModel> GetAll(int pageIndex, int pageSize = 20)
         {
             var query =
                 CourseDocumentRepo.GetAll();
@@ -46,7 +46,7 @@ namespace ITI.WhatsLearnServices
         }
 
 
-        public IEnumerable<CourseDocumentViewModel> Get(Expression<Func<CourseDocument, bool>> filter)
+        public IEnumerable<CourseDocumentEditViewModel> Get(Expression<Func<CourseDocument, bool>> filter)
         {
             var query =
                 CourseDocumentRepo.Get(filter);
@@ -55,6 +55,8 @@ namespace ITI.WhatsLearnServices
         public void Remove(int id)
         {
             CourseDocumentRepo.Remove(CourseDocumentRepo.GetByID(id));
+            unitOfWork.Commit();
+
         }
     }
 }

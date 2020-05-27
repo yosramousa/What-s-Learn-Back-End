@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.ViewModel
 {
-   public  class TrackViewModel: ILevelViewModel
+   public  class TrackViewModel
     {
         public int ID { get; set; }
         public string Name { get; set; }

@@ -17,13 +17,11 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = model.Name,
                 Discription = model.Discription,
                 Image = model.Image,
-                Documents = model.SubCategoryDocuments.Select(i => i.ToViewModel()).ToList(),
-                Vedios = model.SubCategoryVedios.Select(i => i.ToViewModel()).ToList(),
-                Links = model.SubCategoryLinks.Select(i => i.ToViewModel()).ToList(),
-                Parent = model.MainCategory.Name,
-                Childs = model.Tracks.Select(i => i.ToViewModel()).ToList()
-
-     
+                Documents = model.SubCategoryDocuments.Select(i => i.ToViewModel()).ToArray(),
+                Vedios = model.SubCategoryVedios.Select(i => i.ToViewModel()).ToArray(),
+                Links = model.SubCategoryLinks.Select(i => i.ToViewModel()).ToArray(),
+                MainCategoryName=model.MainCategory.Name
+                //TrackCourses = model.TrackCourses.Select(i => i.ToViewModel()).ToArray()
             };
         }
         public static SubCategory ToModel(this SubCategoryEditViewModel editModel)

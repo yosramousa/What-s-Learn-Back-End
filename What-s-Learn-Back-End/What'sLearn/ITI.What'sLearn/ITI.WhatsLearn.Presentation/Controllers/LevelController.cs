@@ -11,11 +11,11 @@ namespace ITI.WhatsLearn.Presentation.Controllers
     public class LevelController : ApiController
     {
 
-        [HttpGet]
-        public ResultViewModel<IEnumerable<MainCategoryViewModel>>GetCategories(int PagSize,int PageIndex)
-        {
+        //[HttpGet]
+        //public ResultViewModel<IEnumerable<MainCategoryViewModel>>GetCategories(int PagSize,int PageIndex)
+        //{
            
 
-        }
+        //}
     }
 }

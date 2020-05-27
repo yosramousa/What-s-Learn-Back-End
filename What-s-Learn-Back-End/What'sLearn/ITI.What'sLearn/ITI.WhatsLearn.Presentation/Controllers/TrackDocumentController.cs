@@ -10,10 +10,10 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation
 {
-    public class TrackCourseController : ApiController
+    public class TrackDocumentController : ApiController
     {
         private readonly TrackCourseService TrackCourseService;
-        public TrackCourseController(TrackCourseService _TrackCourseService)
+        public TrackDocumentController(TrackCourseService _TrackCourseService)
         {
             TrackCourseService = _TrackCourseService;
         }

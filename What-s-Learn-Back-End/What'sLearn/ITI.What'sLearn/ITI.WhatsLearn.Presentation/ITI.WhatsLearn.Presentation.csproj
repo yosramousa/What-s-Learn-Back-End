@@ -121,7 +121,18 @@
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\SubCategoryController.cs" />
+    <Compile Include="Controllers\UserTrackController.cs" />
+    <Compile Include="Controllers\SubCategoryVedioController .cs" />
+    <Compile Include="Controllers\SubCategoryDocumentController.cs" />
+    <Compile Include="Controllers\UserSkillController.cs" />
+    <Compile Include="Controllers\UserCertificateController.cs" />
+    <Compile Include="Controllers\TrackVideoController.cs" />
+    <Compile Include="Controllers\SubCategoryLinkController.cs" />
+    <Compile Include="Controllers\UserSocialLinkController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\TrackLinkController.cs" />
     <Compile Include="Controllers\TrackController.cs" />
+    <Compile Include="Controllers\TrackDocumentController.cs" />
     <Compile Include="Controllers\TrackCourseController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

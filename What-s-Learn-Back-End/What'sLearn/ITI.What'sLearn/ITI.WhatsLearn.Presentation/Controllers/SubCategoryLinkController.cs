@@ -10,24 +10,24 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation
 {
-    public class TrackCourseController : ApiController
+    public class SubCategoryLinkController : ApiController
     {
-        private readonly TrackCourseService TrackCourseService;
-        public TrackCourseController(TrackCourseService _TrackCourseService)
+        private readonly SubCategoryLinkService SubCategoryLinkService;
+        public SubCategoryLinkController(SubCategoryLinkService _SubCategoryLinkService)
         {
-            TrackCourseService = _TrackCourseService;
+            SubCategoryLinkService = _SubCategoryLinkService;
         }
 
         [HttpGet]
-        public ResultViewModel<IEnumerable<TrackCourseViewModel>> GetList()
+        public ResultViewModel<IEnumerable<SubCategoryLinkViewModel>> GetList()
         {
-            ResultViewModel<IEnumerable<TrackCourseViewModel>> result
-                = new ResultViewModel<IEnumerable<TrackCourseViewModel>>();
+            ResultViewModel<IEnumerable<SubCategoryLinkViewModel>> result
+                = new ResultViewModel<IEnumerable<SubCategoryLinkViewModel>>();
             try
             {
-                var TrackCourses = TrackCourseService.GetAll();
+                var SubCategoryLinks = SubCategoryLinkService.GetAll();
                 result.Successed = true;
-                result.Data = TrackCourses;
+                result.Data = SubCategoryLinks;
             }
             catch (Exception ex)
             {
@@ -39,10 +39,10 @@ namespace ITI.WhatsLearn.Presentation
 
 
         [HttpPost]
-        public ResultViewModel<TrackCourseEditViewModel> Post(TrackCourseEditViewModel TrackCourse)
+        public ResultViewModel<SubCategoryLinkEditViewModel> Post(SubCategoryLinkEditViewModel SubCategoryLink)
         {
-            ResultViewModel<TrackCourseEditViewModel> result
-                = new ResultViewModel<TrackCourseEditViewModel>();
+            ResultViewModel<SubCategoryLinkEditViewModel> result
+                = new ResultViewModel<SubCategoryLinkEditViewModel>();
 
             try
             {
@@ -52,11 +52,11 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    TrackCourseEditViewModel selectedTrackCourse
-                        = TrackCourseService.Add(TrackCourse);
+                    SubCategoryLinkEditViewModel selectedSubCategoryLink
+                        = SubCategoryLinkService.Add(SubCategoryLink);
 
                     result.Successed = true;
-                    result.Data = selectedTrackCourse;
+                    result.Data = selectedSubCategoryLink;
                 }
             }
             catch (Exception ex)
@@ -68,10 +68,10 @@ namespace ITI.WhatsLearn.Presentation
         }
 
         [HttpPost]
-        public ResultViewModel<TrackCourseEditViewModel> Update(TrackCourseEditViewModel TrackCourse)
+        public ResultViewModel<SubCategoryLinkEditViewModel> Update(SubCategoryLinkEditViewModel SubCategoryLink)
         {
-            ResultViewModel<TrackCourseEditViewModel> result
-                = new ResultViewModel<TrackCourseEditViewModel>();
+            ResultViewModel<SubCategoryLinkEditViewModel> result
+                = new ResultViewModel<SubCategoryLinkEditViewModel>();
 
             try
             {
@@ -81,8 +81,8 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    TrackCourseEditViewModel selectedEmp
-                        = TrackCourseService.Update(TrackCourse);
+                    SubCategoryLinkEditViewModel selectedEmp
+                        = SubCategoryLinkService.Update(SubCategoryLink);
 
                     result.Successed = true;
                     result.Data = selectedEmp;
@@ -99,15 +99,15 @@ namespace ITI.WhatsLearn.Presentation
 
 
         [HttpGet]
-        public ResultViewModel<TrackCourseViewModel> GetByID(int id)
+        public ResultViewModel<SubCategoryLinkViewModel> GetByID(int id)
         {
-            ResultViewModel<TrackCourseViewModel> result
-                = new ResultViewModel<TrackCourseViewModel>();
+            ResultViewModel<SubCategoryLinkViewModel> result
+                = new ResultViewModel<SubCategoryLinkViewModel>();
             try
             {
-                var TrackCourse = TrackCourseService.GetByID(id)?.ToViewModel();
+                var SubCategoryLink = SubCategoryLinkService.GetByID(id)?.ToViewModel();
                 result.Successed = true;
-                result.Data = TrackCourse;
+                result.Data = SubCategoryLink;
             }
             catch (Exception ex)
             {
@@ -120,13 +120,13 @@ namespace ITI.WhatsLearn.Presentation
         [HttpGet]
         public string Delete(int id)
         {
-            if (TrackCourseService.GetByID(id) != null)
+            if (SubCategoryLinkService.GetByID(id) != null)
             {
-                TrackCourseService.Remove(id);
-                return "TrackCourse Deleted Sucessfully";
+                SubCategoryLinkService.Remove(id);
+                return "SubCategoryLink Deleted Sucessfully";
             }
             else
-                return "TrackCourse Not Found !";
+                return "SubCategoryLink Not Found !";
         }
 
     }

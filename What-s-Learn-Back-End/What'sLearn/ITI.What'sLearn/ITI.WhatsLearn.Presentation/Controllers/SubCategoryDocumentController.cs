@@ -10,24 +10,24 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation
 {
-    public class TrackCourseController : ApiController
+    public class SubCategoryDocumentController : ApiController
     {
-        private readonly TrackCourseService TrackCourseService;
-        public TrackCourseController(TrackCourseService _TrackCourseService)
+        private readonly UserSkillService UserSkillService;
+        public SubCategoryDocumentController(UserSkillService _UserSkillService)
         {
-            TrackCourseService = _TrackCourseService;
+            UserSkillService = _UserSkillService;
         }
 
         [HttpGet]
-        public ResultViewModel<IEnumerable<TrackCourseViewModel>> GetList()
+        public ResultViewModel<IEnumerable<UserSkillViewModel>> GetList()
         {
-            ResultViewModel<IEnumerable<TrackCourseViewModel>> result
-                = new ResultViewModel<IEnumerable<TrackCourseViewModel>>();
+            ResultViewModel<IEnumerable<UserSkillViewModel>> result
+                = new ResultViewModel<IEnumerable<UserSkillViewModel>>();
             try
             {
-                var TrackCourses = TrackCourseService.GetAll();
+                var UserSkills = UserSkillService.GetAll();
                 result.Successed = true;
-                result.Data = TrackCourses;
+                result.Data = UserSkills;
             }
             catch (Exception ex)
             {
@@ -39,10 +39,10 @@ namespace ITI.WhatsLearn.Presentation
 
 
         [HttpPost]
-        public ResultViewModel<TrackCourseEditViewModel> Post(TrackCourseEditViewModel TrackCourse)
+        public ResultViewModel<UserSkillEditViewModel> Post(UserSkillEditViewModel UserSkill)
         {
-            ResultViewModel<TrackCourseEditViewModel> result
-                = new ResultViewModel<TrackCourseEditViewModel>();
+            ResultViewModel<UserSkillEditViewModel> result
+                = new ResultViewModel<UserSkillEditViewModel>();
 
             try
             {
@@ -52,11 +52,11 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    TrackCourseEditViewModel selectedTrackCourse
-                        = TrackCourseService.Add(TrackCourse);
+                    UserSkillEditViewModel selectedUserSkill
+                        = UserSkillService.Add(UserSkill);
 
                     result.Successed = true;
-                    result.Data = selectedTrackCourse;
+                    result.Data = selectedUserSkill;
                 }
             }
             catch (Exception ex)
@@ -68,10 +68,10 @@ namespace ITI.WhatsLearn.Presentation
         }
 
         [HttpPost]
-        public ResultViewModel<TrackCourseEditViewModel> Update(TrackCourseEditViewModel TrackCourse)
+        public ResultViewModel<UserSkillEditViewModel> Update(UserSkillEditViewModel UserSkill)
         {
-            ResultViewModel<TrackCourseEditViewModel> result
-                = new ResultViewModel<TrackCourseEditViewModel>();
+            ResultViewModel<UserSkillEditViewModel> result
+                = new ResultViewModel<UserSkillEditViewModel>();
 
             try
             {
@@ -81,8 +81,8 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    TrackCourseEditViewModel selectedEmp
-                        = TrackCourseService.Update(TrackCourse);
+                    UserSkillEditViewModel selectedEmp
+                        = UserSkillService.Update(UserSkill);
 
                     result.Successed = true;
                     result.Data = selectedEmp;
@@ -99,15 +99,15 @@ namespace ITI.WhatsLearn.Presentation
 
 
         [HttpGet]
-        public ResultViewModel<TrackCourseViewModel> GetByID(int id)
+        public ResultViewModel<UserSkillViewModel> GetByID(int id)
         {
-            ResultViewModel<TrackCourseViewModel> result
-                = new ResultViewModel<TrackCourseViewModel>();
+            ResultViewModel<UserSkillViewModel> result
+                = new ResultViewModel<UserSkillViewModel>();
             try
             {
-                var TrackCourse = TrackCourseService.GetByID(id)?.ToViewModel();
+                var UserSkill = UserSkillService.GetByID(id)?.ToViewModel();
                 result.Successed = true;
-                result.Data = TrackCourse;
+                result.Data = UserSkill;
             }
             catch (Exception ex)
             {
@@ -120,13 +120,13 @@ namespace ITI.WhatsLearn.Presentation
         [HttpGet]
         public string Delete(int id)
         {
-            if (TrackCourseService.GetByID(id) != null)
+            if (UserSkillService.GetByID(id) != null)
             {
-                TrackCourseService.Remove(id);
-                return "TrackCourse Deleted Sucessfully";
+                UserSkillService.Remove(id);
+                return "UserSkill Deleted Sucessfully";
             }
             else
-                return "TrackCourse Not Found !";
+                return "UserSkill Not Found !";
         }
 
     }

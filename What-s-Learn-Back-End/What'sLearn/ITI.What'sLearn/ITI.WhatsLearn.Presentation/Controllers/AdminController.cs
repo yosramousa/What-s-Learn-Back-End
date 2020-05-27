@@ -1,4 +1,5 @@
-﻿using ITI.WhatsLearn.ViewModel;
+﻿using BroadCaster.Helpers;
+using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
 using System;
 using System.Collections.Generic;
@@ -83,16 +84,19 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             return result;
         }
         [HttpPost]
-        public ResultViewModel<AdminViewModel> Login(AdminViewModel Admin)
+
+        public ResultViewModel<LoginModel> Login(LoginModel _loginModel)
         {
-            ResultViewModel<AdminViewModel> result
-              = new ResultViewModel<AdminViewModel>();
+            ResultViewModel<LoginModel> result
+              = new ResultViewModel<LoginModel>();
+            if (!ModelState.IsValid)
+            {
+                result.Message = "In Valid Model State";
+            }
             try
             {
-                var user = GetByID(Admin.ID);
-                    //adminService.Get(i => i.Name == Admin.Name && i.Password == Admin.Password);
-
-                if (user == null)
+                AdminViewModel admin = adminService.Get(_loginModel.Email, _loginModel.Password)?.First();
+                if (admin == null)
                 {
                     result.Successed = false;
                     result.Message = "Invalid User Name Or password";
@@ -100,9 +104,14 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 else
                 {
                     result.Successed = true;
-                    //Admin.Token = SecurityHelper.GenerateToken(user);
-                    Admin.Password = null;
-                    result.Data = Admin;
+                    _loginModel.Role = "Admin";
+                    _loginModel.ID = admin.ID;
+                    _loginModel.Name = admin.Name;
+                    _loginModel.Token = SecurityHelper.GenerateToken(_loginModel);
+                    _loginModel.Password = null;
+
+                
+                    result.Data = _loginModel;
                 }
 
             }
@@ -113,6 +122,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
         }
+
+      
         [HttpGet]
         public ResultViewModel<AdminEditViewModel> Update(AdminEditViewModel Admin)
         {

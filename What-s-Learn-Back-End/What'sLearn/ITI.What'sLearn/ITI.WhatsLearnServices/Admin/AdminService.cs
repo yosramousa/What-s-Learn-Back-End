@@ -41,6 +41,16 @@ namespace ITI.WhatsLearnServices
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
+        public IEnumerable<AdminViewModel> Get(string Email, string Password)
+        {
+            var query =
+                AdminRepo.Get
+                    (i => i.Email == Email && i.Password == Password);
+
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+
+
         public void Remove(int id)
         {
             AdminRepo.Remove(AdminRepo.GetByID(id));

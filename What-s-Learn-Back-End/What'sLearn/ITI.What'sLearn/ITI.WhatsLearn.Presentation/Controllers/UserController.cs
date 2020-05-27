@@ -1,4 +1,6 @@
-﻿using ITI.WhatsLearn.Entities;
+﻿using BroadCaster.Helpers;
+using ITI.WhatsLearn.Entities;
+using ITI.WhatsLearn.Presentation.Filters;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
 using System;
@@ -10,6 +12,7 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation
 {
+  
     public class UserController : ApiController
     {
         private readonly UserService UserService;
@@ -18,6 +21,44 @@ namespace ITI.WhatsLearn.Presentation
             UserService = _UserService;
         }
 
+        [HttpPost]
+        public ResultViewModel<LoginModel> Login(LoginModel _loginModel)
+        {
+            ResultViewModel<LoginModel> result
+              = new ResultViewModel<LoginModel>();
+            if (!ModelState.IsValid)
+            {
+                result.Message = "In Valid Model State";
+            }
+            try
+            {
+                UserViewModel user = UserService.Get(_loginModel.Email, _loginModel.Password)?.First();
+                if (user == null)
+                {
+                    result.Successed = false;
+                    result.Message = "Invalid User Name Or password";
+                }
+                else
+                {
+                     result.Successed = true;
+                    _loginModel.Role = "User";
+                    _loginModel.ID =user.ID;
+                    _loginModel.Name = user.Name;
+                    _loginModel.Token = SecurityHelper.GenerateToken(_loginModel);
+                    _loginModel.Password = null;
+                   
+                  
+                    result.Data = _loginModel;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+        }
         [HttpGet]
         public ResultViewModel<IEnumerable<UserViewModel>> GetList()
         {
@@ -36,8 +77,7 @@ namespace ITI.WhatsLearn.Presentation
             }
             return result;
         }
-
-
+       
         [HttpPost]
         public ResultViewModel<UserEditViewModel> Post(UserEditViewModel User)
         {
@@ -66,7 +106,7 @@ namespace ITI.WhatsLearn.Presentation
             }
             return result;
         }
-
+        //[AUTHORIZE(Roles = "User,Admin")]
         [HttpPost]
         public ResultViewModel<UserEditViewModel> Update(UserEditViewModel User)
         {
@@ -95,10 +135,9 @@ namespace ITI.WhatsLearn.Presentation
             }
             return result;
         }
-
-
-
         [HttpGet]
+        [AUTHORIZE(Roles = "User,Admin")]
+        
         public ResultViewModel<UserViewModel> GetByID(int id)
         {
             ResultViewModel<UserViewModel> result
@@ -116,7 +155,7 @@ namespace ITI.WhatsLearn.Presentation
             }
             return result;
         }
-
+        [AUTHORIZE(Roles = "Admin")]
         [HttpGet]
         public string Delete(int id)
         {

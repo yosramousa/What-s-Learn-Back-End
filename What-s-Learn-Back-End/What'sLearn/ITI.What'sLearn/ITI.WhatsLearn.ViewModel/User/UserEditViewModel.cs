@@ -10,8 +10,8 @@ namespace ITI.WhatsLearn.ViewModel
 {
     public class UserEditViewModel
     {
-        [Required]
-        public int ID { get; set; }
+        
+        public int ID { get; set; } = 0;
         public string Education { get; set; }
         [Required]
         [MaxLength(250)]

@@ -43,7 +43,7 @@ namespace ITI.WhatsLearn.Services
 
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<UserViewModel> Get(int id, string skill, string Username, int pageIndex, int pageSize = 20)
+        public IEnumerable<UserViewModel> Get(int id, int pageIndex, int pageSize = 20)
         {
             var query =
                 UserRepo.Get
@@ -51,9 +51,17 @@ namespace ITI.WhatsLearn.Services
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
+        public IEnumerable<UserViewModel> Get(string Email, string Password)
+        {
+            var query =
+                UserRepo.Get
+                    (i => i.Email==Email&& i.Password==Password);
+          
+            return query.ToList().Select(i => i.ToViewModel());
+        }
         public void Remove(int id)
         {
-            UserRepo.GetByID(id);
+            UserRepo.Remove(UserRepo.GetByID(id));
             unitOfWork.Commit();
         }
 

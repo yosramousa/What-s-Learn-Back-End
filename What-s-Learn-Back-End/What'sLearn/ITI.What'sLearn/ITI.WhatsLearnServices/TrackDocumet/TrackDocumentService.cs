@@ -34,7 +34,7 @@ namespace ITI.WhatsLearn.Services
         }
         public CourseViewModel GetByID(int id)
         {
-            return CourseRepo.GetByID(id);
+            return CourseRepo.GetByID(id).ToViewModel();
         }
         public IEnumerable<CourseViewModel> GetAll(){
             var query =

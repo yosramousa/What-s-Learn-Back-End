@@ -12,22 +12,22 @@ namespace ITI.WhatsLearn.Presentation
 {
     public class UserTrackController : ApiController
     {
-        private readonly UserCertificateService UserCertificateService;
-        public UserTrackController(UserCertificateService _UserCertificateService)
+        private readonly UserTrackService UserTrackService;
+        public UserTrackController(UserTrackService _UserTrackService)
         {
-            UserCertificateService = _UserCertificateService;
+            UserTrackService = _UserTrackService;
         }
 
         [HttpGet]
-        public ResultViewModel<IEnumerable<UserCertificateViewModel>> GetList()
+        public ResultViewModel<IEnumerable<UserTrackViewModel>> GetList()
         {
-            ResultViewModel<IEnumerable<UserCertificateViewModel>> result
-                = new ResultViewModel<IEnumerable<UserCertificateViewModel>>();
+            ResultViewModel<IEnumerable<UserTrackViewModel>> result
+                = new ResultViewModel<IEnumerable<UserTrackViewModel>>();
             try
             {
-                var UserCertificates = UserCertificateService.GetAll();
+                var UserTracks = UserTrackService.GetAll(pageIndex:0);
                 result.Successed = true;
-                result.Data = UserCertificates;
+                result.Data = UserTracks;
             }
             catch (Exception ex)
             {
@@ -39,10 +39,10 @@ namespace ITI.WhatsLearn.Presentation
 
 
         [HttpPost]
-        public ResultViewModel<UserCertificateEditViewModel> Post(UserCertificateEditViewModel UserCertificate)
+        public ResultViewModel<UserTrackEditViewModel> Post(UserTrackEditViewModel UserTrack)
         {
-            ResultViewModel<UserCertificateEditViewModel> result
-                = new ResultViewModel<UserCertificateEditViewModel>();
+            ResultViewModel<UserTrackEditViewModel> result
+                = new ResultViewModel<UserTrackEditViewModel>();
 
             try
             {
@@ -52,11 +52,11 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    UserCertificateEditViewModel selectedUserCertificate
-                        = UserCertificateService.Add(UserCertificate);
+                    UserTrackEditViewModel selectedUserTrack
+                        = UserTrackService.Add(UserTrack);
 
                     result.Successed = true;
-                    result.Data = selectedUserCertificate;
+                    result.Data = selectedUserTrack;
                 }
             }
             catch (Exception ex)
@@ -68,10 +68,10 @@ namespace ITI.WhatsLearn.Presentation
         }
 
         [HttpPost]
-        public ResultViewModel<UserCertificateEditViewModel> Update(UserCertificateEditViewModel UserCertificate)
+        public ResultViewModel<UserTrackEditViewModel> Update(UserTrackEditViewModel UserTrack)
         {
-            ResultViewModel<UserCertificateEditViewModel> result
-                = new ResultViewModel<UserCertificateEditViewModel>();
+            ResultViewModel<UserTrackEditViewModel> result
+                = new ResultViewModel<UserTrackEditViewModel>();
 
             try
             {
@@ -81,8 +81,8 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    UserCertificateEditViewModel selectedEmp
-                        = UserCertificateService.Update(UserCertificate);
+                    UserTrackEditViewModel selectedEmp
+                        = UserTrackService.Update(UserTrack);
 
                     result.Successed = true;
                     result.Data = selectedEmp;
@@ -99,15 +99,15 @@ namespace ITI.WhatsLearn.Presentation
 
 
         [HttpGet]
-        public ResultViewModel<UserCertificateViewModel> GetByID(int id)
+        public ResultViewModel<UserTrackViewModel> GetByID(int id)
         {
-            ResultViewModel<UserCertificateViewModel> result
-                = new ResultViewModel<UserCertificateViewModel>();
+            ResultViewModel<UserTrackViewModel> result
+                = new ResultViewModel<UserTrackViewModel>();
             try
             {
-                var UserCertificate = UserCertificateService.GetByID(id)?.ToViewModel();
+                var UserTrack = UserTrackService.GetByID(id)?.ToViewModel();
                 result.Successed = true;
-                result.Data = UserCertificate;
+                result.Data = UserTrack;
             }
             catch (Exception ex)
             {
@@ -120,13 +120,13 @@ namespace ITI.WhatsLearn.Presentation
         [HttpGet]
         public string Delete(int id)
         {
-            if (UserCertificateService.GetByID(id) != null)
+            if (UserTrackService.GetByID(id) != null)
             {
-                UserCertificateService.Remove(id);
-                return "UserCertificate Deleted Sucessfully";
+                UserTrackService.Remove(id);
+                return "UserTrack Deleted Sucessfully";
             }
             else
-                return "UserCertificate Not Found !";
+                return "UserTrack Not Found !";
         }
 
     }

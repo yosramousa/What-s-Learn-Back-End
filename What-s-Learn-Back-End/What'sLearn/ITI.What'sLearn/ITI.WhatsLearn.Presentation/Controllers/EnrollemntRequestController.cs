@@ -19,7 +19,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
         }
         [HttpGet]
-        public ResultViewModel<IEnumerable<EnrollemntRequestViewModel>> GetList(int PagIndex, int Pagsize)
+        public ResultViewModel<IEnumerable<EnrollemntRequestViewModel>> GetList(int PageIndex, int PageSize)
         {
 
             ResultViewModel<IEnumerable<EnrollemntRequestViewModel>> result
@@ -27,7 +27,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
             try
             {
-                var tracksRequest = userTrackService.GetEnrollRequest(pageIndex: PagIndex, pageSize: Pagsize);
+                var tracksRequest = userTrackService.GetEnrollRequest(pageIndex: PageIndex, pageSize: PageSize);
                 result.Successed = true;
                 result.Data = tracksRequest.Select(i => new EnrollemntRequestViewModel()
                 {
@@ -88,9 +88,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             try
             {
-                UserTrack u = userTrackService.GetByID(id);
-                u.IsApproveed = true;
-                userTrackService.Update(u.ToEditableViewModel());
+               
+                userTrackService.Approve(id);
                 return "Track Approved Sucessfully";
             }
             catch (Exception e)

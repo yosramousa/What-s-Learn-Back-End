@@ -35,12 +35,18 @@ namespace ITI.WhatsLearnServices
             return AdminRepo.GetByID(id);
         }
 
-        public void ChangeStatus(int id)
+        public bool ChangeStatus(int id)
         {
-
+           
             Admin admin = GetByID(id);
-            admin.IsActive = !admin.IsActive;
-            unitOfWork.Commit();
+            if (admin != null)
+            {
+                admin.IsActive = !admin.IsActive;
+                unitOfWork.Commit();
+                return true;
+            }
+            return false;
+
            
         }
         public IEnumerable<AdminViewModel> GetAll(int pageIndex, int pageSize = 20)

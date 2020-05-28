@@ -64,7 +64,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     ID = u.ID,
                     Name = u.Name,
                     Status = u.IsActive ? "Active" : "Disable",
-                   
+
 
                 });
                 result.Successed = true;
@@ -100,9 +100,17 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             try
             {
                 Admin admin = adminService.GetByID(id);
-                result.Successed = true;
-                result.Message = "Sucess";
-                result.Data = admin.ToViewModel();
+                if (admin != null)
+                {
+                    result.Successed = true;
+                    result.Message = "Sucess";
+                    result.Data = admin.ToViewModel();
+                }
+                else
+                {
+                    result.Successed = false;
+                    result.Message = "Admin Not Found";
+                }
             }
             catch (Exception ex)
             {
@@ -116,11 +124,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             try
             {
-                adminService.ChangeStatus(id);
-                //Admin u = adminService.GetByID(id);
-                //u.IsActive = !u.IsActive;
-                //adminService.Update(u.ToEditableViewModel());
-                return "Status Updated Sucessfully";
+                if (adminService.ChangeStatus(id))
+                    return "Status Updated Sucessfully";
+                else
+                    return "Admin Not Found";
             }
             catch (Exception e)
             {
@@ -138,7 +145,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                
+
                     result.Message = "In Valid Model State";
                 }
                 else

@@ -11,7 +11,7 @@ namespace ITI.WhatsLearn.Entities
         public string Name { get; set; }
         public string Discription { get; set; }
         public string Image { get; set; }
-        public bool IsDeleted { get; set; }
+       
         public virtual ICollection<MainCategoryLink> MainCategoryLinks { get; set; }
         public virtual ICollection<MainCategoryDocument> MainCategoryDocuments { get; set; }
         public virtual ICollection<MainCategoryVedio> MainCategoryVedios { get; set; }

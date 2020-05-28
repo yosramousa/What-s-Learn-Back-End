@@ -34,7 +34,8 @@ namespace ITI.WhatsLearnServices
         }
         public MainCategoryViewModel GetByID(int id)
         {
-            return MainCategoryRepo.GetByID(id)?.ToViewModel();
+            MainCategoryViewModel m = MainCategoryRepo.GetByID(id)?.ToViewModel();
+            return m;
         }
         public IEnumerable<MainCategoryViewModel> GetAll(int pageIndex, int pageSize = 20)
         {

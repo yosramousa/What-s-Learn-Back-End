@@ -41,15 +41,16 @@ namespace ITI.WhatsLearn.Reposatories
         }
         public T GetByID(int id)
         {
-            return dbSet.FirstOrDefault(i => i.ID == id);
+           
+            return dbSet.Where(i=> i.IsDeleted==false).FirstOrDefault(i => i.ID == id);
         }
         public IQueryable<T> GetAll()
         {
-           return dbSet ;
+           return dbSet.Where(i=> i.IsDeleted==false) ;
         }
         public IQueryable<T> Get(Expression<Func<T, bool>> filter)
         {
-            return dbSet.Where(filter);
+            return GetAll().Where(filter);
         }
     }
 }

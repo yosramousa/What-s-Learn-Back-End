@@ -81,12 +81,21 @@ namespace ITI.WhatsLearn.Services
 
             unitOfWork.Commit();
         }
-        public void ChangeStatus(int id)
+        public bool ChangeStatus(int id)
         {
 
             User user = GetByID(id);
-            user.IsActive = !user.IsActive;
-            unitOfWork.Commit();
+            if(user!=null)
+            {
+                user.IsActive = !user.IsActive;
+                unitOfWork.Commit();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+           
 
         }
     }

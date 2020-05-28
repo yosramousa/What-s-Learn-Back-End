@@ -107,31 +107,40 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             try
             {
                 User user = userService.GetByID(id);
-                UserDetailsViewModel userDetails = new UserDetailsViewModel()
+                if (user != null)
                 {
-                    ID = user.ID,
-                    Name = user.Name,
-                    Email = user.Email,
-                    Adress = user.Adress,
-                    Age = user.Age,
-                    Education = user.Education,
-                    Gender = user.Gender,
-                    Phone = user.Phone,
-                    Image = user.Image,
-                    Tracks = user.Tracks.Select(i => new UserTracksViewModel
+                    UserDetailsViewModel userDetails = new UserDetailsViewModel()
                     {
-                        TrackName = i.Track.Name,
-                        FinshedCourses = i.FinishedCourses.Select(x => x.course.Name)?.ToList(),
-                        Progress = i.FinishedCourses != null ? i.FinishedCourses.Count() / i.Track.Courses.Count() : 0,
-                        CuurentCourse = i.FinishedCourses != null ? i.Track.Courses.Skip(i.FinishedCourses.Count()).First().Course.Name : i.Track.Courses.First().Course.Name,
-                        FutureCourses = i.FinishedCourses != null ? i.Track.Courses.Skip(i.FinishedCourses.Count() + 1).Select(x => x.Course.Name).ToList() : i.Track.Courses.Select(x => x.Course.Name).ToList(),
-                    }).ToList()
+                        ID = user.ID,
+                        Name = user.Name,
+                        Email = user.Email,
+                        Adress = user.Adress,
+                        Age = user.Age,
+                        Education = user.Education,
+                        Gender = user.Gender,
+                        Phone = user.Phone,
+                        Image = user.Image,
+                        Tracks = user.Tracks.Select(i => new UserTracksViewModel
+                        {
+                            TrackName = i.Track.Name,
+                            FinshedCourses = i.FinishedCourses.Select(x => x.course.Name)?.ToList(),
+                            Progress = i.FinishedCourses != null ? i.FinishedCourses.Count() / i.Track.Courses.Count() : 0,
+                            CuurentCourse = i.FinishedCourses != null ? i.Track.Courses.Skip(i.FinishedCourses.Count()).First().Course.Name : i.Track.Courses.First().Course.Name,
+                            FutureCourses = i.FinishedCourses != null ? i.Track.Courses.Skip(i.FinishedCourses.Count() + 1).Select(x => x.Course.Name).ToList() : i.Track.Courses.Select(x => x.Course.Name).ToList(),
+                        }).ToList()
 
 
-                };
-                result.Successed = true;
-                result.Message = "Sucess";
-                result.Data = userDetails;
+                    };
+                    result.Successed = true;
+                    result.Message = "Sucess";
+                    result.Data = userDetails;
+                }
+                else
+                {
+                    result.Successed = false;
+                    result.Message = "User Not Found";
+
+                }
             }
             catch (Exception ex)
             {
@@ -140,6 +149,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
         }
+        [HttpGet]
         public String ChangeStatus(int id)
         {
             try
@@ -147,12 +157,15 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 //User u = userService.GetByID(id);
                 //u.IsActive = !u.IsActive;
                 //userService.Update(u.ToEditableViewModel());
-                userService.ChangeStatus(id);
-                return "Status Updated Sucessfully";
+                if (userService.ChangeStatus(id))
+                    return "Status Updated Sucessfully";
+                else
+                    return "User Not Found";
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                return "Status Not Updated ";
+                return "Error";
             }
         }
 

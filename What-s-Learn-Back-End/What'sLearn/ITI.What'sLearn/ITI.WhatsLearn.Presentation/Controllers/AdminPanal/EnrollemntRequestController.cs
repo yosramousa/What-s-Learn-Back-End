@@ -7,9 +7,11 @@ using System.Net.Http;
 using System.Web.Http;
 using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearn.Entities;
+using ITI.WhatsLearn.Presentation.Filters;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
+    [AUTHORIZE(Roles = "Admin")]
     public class EnrollemntRequestController : ApiController
     {
         UserTrackService userTrackService;

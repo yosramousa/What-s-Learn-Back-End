@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class test : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -101,8 +101,8 @@
                         Name = c.String(nullable: false, maxLength: 250),
                         Discription = c.String(nullable: false, maxLength: 1000),
                         Image = c.String(maxLength: 500),
-                        IsDeleted = c.Boolean(nullable: false),
                         SubCategoryID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.SubCategory", t => t.SubCategoryID, cascadeDelete: true)
@@ -116,8 +116,8 @@
                         Name = c.String(nullable: false, maxLength: 250),
                         Discription = c.String(nullable: false, maxLength: 1000),
                         Image = c.String(maxLength: 500),
-                        IsDeleted = c.Boolean(nullable: false),
                         MainCategoryID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.MainCategory", t => t.MainCategoryID, cascadeDelete: true)
@@ -299,6 +299,7 @@
                     {
                         ID = c.Int(nullable: false, identity: true),
                         Education = c.String(nullable: false, maxLength: 250),
+                        SignedTime = c.DateTime(nullable: false),
                         Name = c.String(),
                         Email = c.String(),
                         Password = c.String(),

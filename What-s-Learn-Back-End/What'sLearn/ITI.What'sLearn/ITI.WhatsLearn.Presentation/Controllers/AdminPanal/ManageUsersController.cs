@@ -1,4 +1,5 @@
 ﻿using ITI.WhatsLearn.Entities;
+using ITI.WhatsLearn.Presentation.Filters;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
 
@@ -11,6 +12,7 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
+   [AUTHORIZE(Roles = "Admin")]
     public class ManageUsersController : ApiController
     {
 
@@ -123,14 +125,13 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                         Tracks = user.Tracks.Select(i => new UserTracksViewModel
                         {
                             TrackName = i.Track.Name,
-                            FinshedCourses = i.FinishedCourses.Select(x => x.course.Name)?.ToList(),
-                            Progress = i.FinishedCourses != null ? i.FinishedCourses.Count() / i.Track.Courses.Count() : 0,
-                            CuurentCourse = i.FinishedCourses != null ? i.Track.Courses.Skip(i.FinishedCourses.Count()).First().Course.Name : i.Track.Courses.First().Course.Name,
-                            FutureCourses = i.FinishedCourses != null ? i.Track.Courses.Skip(i.FinishedCourses.Count() + 1).Select(x => x.Course.Name).ToList() : i.Track.Courses.Select(x => x.Course.Name).ToList(),
+                            FinshedCourses = i.FinishedCourses?.Select(x => x.course.Name).ToList(),
+                            Progress = ((float)i.FinishedCourses.Count() / i.Track.Courses.Count()) * 100,
+                            CuurentCourse = i.Track.Courses.Skip(i.FinishedCourses.Count()).First().Course.Name,
+                            FutureCourses = i.FinishedCourses.Count() > 0 ? i.Track.Courses.Skip(i.FinishedCourses.Count() + 1).Select(x => x.Course.Name).ToList() : i.Track.Courses.Select(x => x.Course.Name).ToList(),
                         }).ToList()
-
-
                     };
+
                     result.Successed = true;
                     result.Message = "Sucess";
                     result.Data = userDetails;
@@ -154,9 +155,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             try
             {
-                //User u = userService.GetByID(id);
-                //u.IsActive = !u.IsActive;
-                //userService.Update(u.ToEditableViewModel());
+
                 if (userService.ChangeStatus(id))
                     return "Status Updated Sucessfully";
                 else
@@ -169,13 +168,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
         }
 
-        //Name
-        //Stauts
-        //Tracks (Name)
-        //Details >>UserProfule
-        //Delete 
-        //Search (Name :0 ,Track:1)
-        //Pagntion (PageSize , PageIndex), Filte
 
     }
 }
+

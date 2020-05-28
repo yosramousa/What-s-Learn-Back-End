@@ -1,4 +1,5 @@
 ﻿using ITI.WhatsLearn.Entities;
+using ITI.WhatsLearn.Presentation.Filters;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
@@ -11,6 +12,7 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
+    [AUTHORIZE(Roles ="Admin")]
     public class MangeAdminsController : ApiController
     {
 
@@ -169,9 +171,11 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         //Stauts
 
         //Details >>AdminProfile
+        //Add
         //Delete 
         //Search (Name :0 ,Track:1)
         //Pagntion (PageSize , PageIndex), Filte
+
 
     }
 }

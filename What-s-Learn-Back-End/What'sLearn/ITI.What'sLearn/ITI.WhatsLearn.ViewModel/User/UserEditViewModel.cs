@@ -31,6 +31,7 @@ namespace ITI.WhatsLearn.ViewModel
         public char Gender { get; set; }
         [Required]
         public string Phone { get; set; }
+        public DateTime SignedTime { get; set; } = DateTime.Now;
 
         public bool IsActive { get; set; } = true;
 

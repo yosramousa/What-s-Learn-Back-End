@@ -34,3 +34,18 @@ F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What's
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.Entities.dll.config
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\EntityFramework.xml
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.csproj.CopyComplete
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.csprojAssemblyReference.cache
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.csproj.CoreCompileInputs.cache
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.pdb
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.ViewModel.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.ViewModel.pdb
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.Entities.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.Reposatories.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\EntityFramework.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.Entities.pdb
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.Entities.dll.config
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.Reposatories.pdb
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.Reposatories.dll.config
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\EntityFramework.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.csproj.CopyComplete

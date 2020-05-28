@@ -15,10 +15,13 @@ namespace ITI.WhatsLearnServices
 
         UnitOfWork unitOfWork;
         Generic<MainCategory> MainCategoryRepo;
+        Generic<SubCategory> subCategoryRepo;
+
         public MainCategoryService(UnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
             MainCategoryRepo = unitOfWork.MainCategoryRepo;
+            subCategoryRepo = unitOfWork.SubCategoryRepo;
         }
         public MainCategoryEditViewModel Add(MainCategoryEditViewModel MainCategory)
         {
@@ -41,20 +44,27 @@ namespace ITI.WhatsLearnServices
         {
             var query =
                 MainCategoryRepo.GetAll();
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<MainCategoryViewModel> Get(Expression<Func<MainCategory, bool>> filter)
+        public IEnumerable<MainCategoryViewModel> GetByName(string Name)
         {
             var query =
-                MainCategoryRepo.Get(filter);
+                MainCategoryRepo.Get(i=>i.Name==Name);
             return query.ToList().Select(i => i.ToViewModel());
         }
+
+      
         public void Remove(int id)
         {
             MainCategoryRepo.Remove(MainCategoryRepo.GetByID(id));
             unitOfWork.Commit();
 
+        }
+
+        public int Count()
+        {
+            return MainCategoryRepo.Count();
         }
 
     }

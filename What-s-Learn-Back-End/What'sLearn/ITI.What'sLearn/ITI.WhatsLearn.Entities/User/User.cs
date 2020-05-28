@@ -11,7 +11,6 @@ namespace ITI.WhatsLearn.Entities
     {
         public string Education { get; set; }
         public DateTime SignedTime { get; set; } = DateTime.Now;
-
         public virtual ICollection<UserCertificate> Certificates { get; set; }
         public virtual ICollection<UserSocialLink> SocialLinks { get; set; }
         public virtual ICollection<UserSkill> Skills { get; set; }

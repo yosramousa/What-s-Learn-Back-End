@@ -42,12 +42,11 @@ namespace ITI.WhatsLearn.Services
                
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<TrackViewModel> Get(int id, string name, int pageIndex, int pageSize = 20)
+        public IEnumerable<TrackViewModel> GetAll( int pageIndex, int pageSize = 20)
         {
             var query =
-                TrackRepo.Get
-                    (i => i.ID == id || i.Name == name );
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+              TrackRepo.GetAll();
+            query = query.OrderByDescending(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)
@@ -55,6 +54,10 @@ namespace ITI.WhatsLearn.Services
             TrackRepo.Remove(TrackRepo.GetByID(id));
             unitOfWork.Commit();
         }
-    
+
+        public int Count()
+        {
+            return TrackRepo.Count();
+        }
     }
 }

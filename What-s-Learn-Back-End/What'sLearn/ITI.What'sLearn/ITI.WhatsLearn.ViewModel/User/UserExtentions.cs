@@ -15,7 +15,7 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = model.ID,
                 Education = model.Education,
-
+                SignedTime = model.SignedTime,
 
                 Name = model.Name,
                 Adress = model.Adress,
@@ -45,7 +45,9 @@ namespace ITI.WhatsLearn.ViewModel
                 IsActive = editModel.IsActive,
                 IsDeleted = editModel.IsDeleted,
                 Password = editModel.Password,
-                Phone = editModel.Phone
+                Phone = editModel.Phone,
+                SignedTime = editModel.SignedTime,
+
             };
         }
         public static UserEditViewModel ToEditableViewModel(this User model)
@@ -54,6 +56,7 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = model.ID,
                 Education = model.Education,
+                SignedTime = model.SignedTime,
 
                 Name = model.Name,
                 Adress = model.Adress,

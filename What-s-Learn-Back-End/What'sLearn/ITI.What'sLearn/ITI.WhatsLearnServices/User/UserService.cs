@@ -98,5 +98,12 @@ namespace ITI.WhatsLearn.Services
            
 
         }
+
+        public int Count()
+        {
+            return UserRepo.Count();
+        }
+        
+
     }
 }

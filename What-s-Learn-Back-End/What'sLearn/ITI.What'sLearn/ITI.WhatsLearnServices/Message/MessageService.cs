@@ -39,7 +39,7 @@ namespace ITI.WhatsLearnServices
         {
             var query =
                 MessageRepo.GetAll();
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<MessageViewModel> Get(Expression<Func<Message, bool>> filter)

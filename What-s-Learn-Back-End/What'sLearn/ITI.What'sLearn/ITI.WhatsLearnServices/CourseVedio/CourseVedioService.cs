@@ -40,7 +40,7 @@ namespace ITI.WhatsLearnServices
         {
             var query =
                 CourseVedioRepo.GetAll();
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<CourseVedioViewModel> Get(Expression<Func<CourseVedio, bool>> filter)

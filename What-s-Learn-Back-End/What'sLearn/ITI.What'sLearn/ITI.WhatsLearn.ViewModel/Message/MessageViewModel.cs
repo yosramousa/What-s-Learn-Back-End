@@ -14,5 +14,7 @@ namespace ITI.WhatsLearn.ViewModel
         public string Text { get; set; }
         public DateTime SendTime { get; set; }
         public bool IsRead { get; set; }
+        public bool IsDeleted { get; set; }
+
     }
 }

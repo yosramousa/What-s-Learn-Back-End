@@ -19,6 +19,9 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = model.Name,
                 Discription = model.Discription,
                 Image = model.Image,
+                Parent = null,
+                Child = model.SubCategories.Select(i => i.Name).ToList()
+                
             };
         }
         public static MainCategory ToModel(this MainCategoryEditViewModel editModel)
@@ -32,7 +35,7 @@ namespace ITI.WhatsLearn.ViewModel
                 MainCategoryLinks = editModel.Links.Select(i => i.ToModel()).ToList(),
                 MainCategoryDocuments=editModel.Documents.Select(i=>i.ToModel()).ToList(),
                 MainCategoryVedios = editModel.Vedios.Select(i => i.ToModel()).ToList()
-            };
+                };
         }
         public static MainCategoryEditViewModel ToEditableViewModel(this MainCategory model)
         {
@@ -44,7 +47,9 @@ namespace ITI.WhatsLearn.ViewModel
                 Image=model.Image,
                 Links=model.MainCategoryLinks.Select(i=>i.ToEditableViewModel()).ToArray(),
                 Documents = model.MainCategoryDocuments.Select(i => i.ToEditableViewModel()).ToArray(),
-                Vedios = model.MainCategoryVedios.Select(i => i.ToEditableViewModel()).ToArray()
+                Vedios = model.MainCategoryVedios.Select(i => i.ToEditableViewModel()).ToArray(),
+                Parent = null,
+                Child = model.SubCategories.Select(i => i.Name).ToList()
             };
         }
 

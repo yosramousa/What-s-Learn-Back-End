@@ -7,13 +7,13 @@ namespace ITI.WhatsLearn.Reposatories.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class init : IMigrationMetadata
+    public sealed partial class test : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(test));
         
         string IMigrationMetadata.Id
         {
-            get { return "202005281952334_init"; }
+            get { return "202005280259540_test"; }
         }
         
         string IMigrationMetadata.Source

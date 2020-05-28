@@ -1,0 +1,387 @@
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Presentation.dll.config
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Presentation.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Presentation.pdb
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csc.exe
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csc.exe.config
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csc.rsp
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csi.exe
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csi.exe.config
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csi.rsp
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.Managed.Core.targets
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.AppContext.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Collections.Immutable.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Console.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Globalization.Calendars.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.Compression.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.FileSystem.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Net.Http.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Net.Sockets.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Reflection.Metadata.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.ValueTuple.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.XmlDocument.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.XPath.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\vbc.exe
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\vbc.exe.config
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\vbc.rsp
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\VBCSCompiler.exe
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\VBCSCompiler.exe.config
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Newtonsoft.Json.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Net.Http.Formatting.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.WebHost.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Newtonsoft.Json.xml
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Net.Http.Formatting.xml
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.xml
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.WebHost.xml
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csproj.CoreCompileInputs.cache
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csproj.CopyComplete
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.dll
+E:\ITI\FinalProject\BackEnd\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Presentation.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Presentation.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Presentation.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csc.exe
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csc.exe.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csc.rsp
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csi.exe
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csi.exe.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csi.rsp
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.Managed.Core.targets
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.Win32.Primitives.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.AppContext.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Collections.Immutable.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Console.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Globalization.Calendars.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.Compression.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.Compression.ZipFile.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.FileSystem.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Net.Http.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Net.Sockets.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Reflection.Metadata.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Threading.Tasks.Extensions.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.ValueTuple.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.XmlDocument.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.XPath.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\vbc.exe
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\vbc.exe.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\vbc.rsp
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\VBCSCompiler.exe
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\VBCSCompiler.exe.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Newtonsoft.Json.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Net.Http.Formatting.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.WebHost.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Newtonsoft.Json.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Net.Http.Formatting.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.WebHost.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csprojAssemblyReference.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csproj.CoreCompileInputs.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csproj.CopyComplete
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Entities.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.ViewModel.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearnServices.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\EntityFramework.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Reposatories.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Entities.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Entities.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.ViewModel.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearnServices.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\EntityFramework.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Reposatories.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Reposatories.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.Integration.WebApi.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\EntityFramework.SqlServer.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Bcl.AsyncInterfaces.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Runtime.CompilerServices.Unsafe.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Threading.Tasks.Extensions.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.Integration.WebApi.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.Integration.WebApi.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\EntityFramework.SqlServer.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Bcl.AsyncInterfaces.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Runtime.CompilerServices.Unsafe.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Threading.Tasks.Extensions.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csprojAssemblyReference.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csproj.CoreCompileInputs.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Presentation.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Presentation.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Presentation.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csc.exe
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csc.exe.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csc.rsp
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csi.exe
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csi.exe.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csi.rsp
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.Managed.Core.targets
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.Win32.Primitives.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.AppContext.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Collections.Immutable.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Console.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Globalization.Calendars.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.Compression.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.Compression.ZipFile.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.FileSystem.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Net.Http.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Net.Sockets.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Reflection.Metadata.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Threading.Tasks.Extensions.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.ValueTuple.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.XmlDocument.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.XPath.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\vbc.exe
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\vbc.exe.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\vbc.rsp
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\VBCSCompiler.exe
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\VBCSCompiler.exe.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.Integration.WebApi.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\EntityFramework.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\EntityFramework.SqlServer.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Entities.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Reposatories.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.ViewModel.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearnServices.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Bcl.AsyncInterfaces.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Newtonsoft.Json.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Net.Http.Formatting.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Runtime.CompilerServices.Unsafe.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Threading.Tasks.Extensions.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.WebHost.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Entities.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Entities.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Reposatories.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Reposatories.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.ViewModel.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearnServices.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.Integration.WebApi.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.Integration.WebApi.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\EntityFramework.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\EntityFramework.SqlServer.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Bcl.AsyncInterfaces.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Runtime.CompilerServices.Unsafe.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Threading.Tasks.Extensions.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Newtonsoft.Json.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Net.Http.Formatting.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.WebHost.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csproj.CopyComplete
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.IdentityModel.Logging.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.IdentityModel.Tokens.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Security.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Security.Jwt.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Security.OAuth.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Owin.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.IdentityModel.Tokens.Jwt.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.Owin.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.IdentityModel.Logging.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.IdentityModel.Tokens.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Security.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Security.Jwt.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Security.OAuth.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.IdentityModel.Tokens.Jwt.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.Owin.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Presentation.dll.config
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Presentation.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Presentation.pdb
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csc.exe
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csc.exe.config
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csc.rsp
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csi.exe
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csi.exe.config
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\csi.rsp
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.Managed.Core.targets
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.AppContext.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Collections.Immutable.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Console.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Globalization.Calendars.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.Compression.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.FileSystem.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Net.Http.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Net.Sockets.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Reflection.Metadata.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.ValueTuple.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.XmlDocument.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.XPath.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\vbc.exe
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\vbc.exe.config
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\vbc.rsp
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\VBCSCompiler.exe
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\roslyn\VBCSCompiler.exe.config
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.Integration.WebApi.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\EntityFramework.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\EntityFramework.SqlServer.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Entities.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Reposatories.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.ViewModel.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearnServices.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Bcl.AsyncInterfaces.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.IdentityModel.Logging.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.IdentityModel.Tokens.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Security.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Security.Jwt.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Security.OAuth.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Newtonsoft.Json.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Owin.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.IdentityModel.Tokens.Jwt.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Net.Http.Formatting.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Runtime.CompilerServices.Unsafe.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Threading.Tasks.Extensions.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.Owin.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.WebHost.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Entities.pdb
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Entities.dll.config
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Reposatories.pdb
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.Reposatories.dll.config
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearn.ViewModel.pdb
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\ITI.WhatsLearnServices.pdb
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.pdb
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.Integration.WebApi.pdb
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Autofac.Integration.WebApi.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\EntityFramework.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\EntityFramework.SqlServer.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Bcl.AsyncInterfaces.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.IdentityModel.Logging.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.IdentityModel.Tokens.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Security.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Security.Jwt.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.Owin.Security.OAuth.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.IdentityModel.Tokens.Jwt.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Threading.Tasks.Extensions.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.Owin.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Newtonsoft.Json.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Net.Http.Formatting.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\System.Web.Http.WebHost.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csprojAssemblyReference.cache
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csproj.CoreCompileInputs.cache
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.csproj.CopyComplete
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.dll
+E:\ITI\FinalProject\BackEnd\What-s-Learn-Back-End\What-s-Learn-Back-End\What'sLearn\ITI.What'sLearn\ITI.WhatsLearn.Presentation\obj\Debug\ITI.WhatsLearn.Presentation.pdb

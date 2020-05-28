@@ -35,7 +35,6 @@ namespace ITI.WhatsLearn.Presentation
             config.Routes.MapHttpRoute(
              name: "SerachionApi",
              routeTemplate: "{controller}/{action}/{SerachOption}/{SerachText}/{PageIndex}/{PageSize}"
-<<<<<<< HEAD:What-s-Learn-Back-End/What-s-Learn-Back-End/What'sLearn/ITI.What'sLearn/ITI.WhatsLearn.Presentation/App_Start/WebApiConfig.cs
 
          );
             config.Routes.MapHttpRoute(
@@ -47,10 +46,8 @@ namespace ITI.WhatsLearn.Presentation
            name: "managecategoryDelete",
            routeTemplate: "{controller}/{action}/{SearchIn}/{Num}"
            );
-=======
            
-         );
->>>>>>> b1df7ede4a62a97a9a2169d7bb14264b51a28b29:What-s-Learn-Back-End/What'sLearn/ITI.What'sLearn/ITI.WhatsLearn.Presentation/App_Start/WebApiConfig.cs
+         
 
            _ = config.Routes.MapHttpRoute(
      name: "managecategorysearche",

@@ -22,10 +22,6 @@ namespace ITI.WhatsLearn.ViewModel
         public bool IsDeleted { get; set; }
 
         public List<TrackViewModel> Tracks { get; set; }
-<<<<<<< HEAD:What-s-Learn-Back-End/What-s-Learn-Back-End/What'sLearn/ITI.What'sLearn/ITI.WhatsLearn.ViewModel/User/UserViewModel.cs
         public DateTime SignedTime { get; set; } 
-
-=======
->>>>>>> b1df7ede4a62a97a9a2169d7bb14264b51a28b29:What-s-Learn-Back-End/What'sLearn/ITI.What'sLearn/ITI.WhatsLearn.ViewModel/User/UserViewModel.cs
     }
 }

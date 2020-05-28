@@ -142,18 +142,19 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminPanal\ManageSkillsController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\CourseDocumentController.cs" />
     <Compile Include="Controllers\CourseLinkController.cs" />
     <Compile Include="Controllers\CourseVedioController.cs" />
-    <Compile Include="Controllers\EnrollemntRequestController.cs" />
+    <Compile Include="Controllers\AdminPanal\EnrollemntRequestController.cs" />
     <Compile Include="Controllers\FinishedCourseController.cs" />
     <Compile Include="Controllers\MainCategoryController.cs" />
     <Compile Include="Controllers\MainCategoryDocumentController.cs" />
     <Compile Include="Controllers\MainCategoryLinkController.cs" />
     <Compile Include="Controllers\MainCategoryVedioController.cs" />
-    <Compile Include="Controllers\ManageUsersController.cs" />
-    <Compile Include="Controllers\MangeAdminController.cs" />
+    <Compile Include="Controllers\AdminPanal\ManageUsersController.cs" />
+    <Compile Include="Controllers\AdminPanal\MangeAdminController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\SubCategoryController.cs" />

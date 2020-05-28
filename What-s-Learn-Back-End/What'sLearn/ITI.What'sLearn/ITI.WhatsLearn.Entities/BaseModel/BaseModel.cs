@@ -9,5 +9,7 @@ namespace ITI.WhatsLearn.Entities
     public class BaseModel
     {
         public virtual int ID { get; set; }
+        public virtual bool IsDeleted { get; set; }
+
     }
 }

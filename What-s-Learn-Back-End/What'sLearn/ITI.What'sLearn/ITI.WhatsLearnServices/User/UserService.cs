@@ -43,27 +43,51 @@ namespace ITI.WhatsLearn.Services
 
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<UserViewModel> Get(int id, int pageIndex, int pageSize = 20)
+        public IEnumerable<UserViewModel> GetAll(int pageIndex, int pageSize = 20)
         {
             var query =
-                UserRepo.Get
-                    (i => i.ID == id);
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+                UserRepo.GetAll();
+            query = query.OrderByDescending(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<UserViewModel> Get(string Email, string Password)
         {
             var query =
                 UserRepo.Get
-                    (i => i.Email==Email&& i.Password==Password);
-          
+                    (i => i.Email == Email && i.Password == Password);
+
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<UserViewModel> SearchByName(string Name, int pageIndex=0, int pageSize = 20)
+        {
+            var query =
+                UserRepo.Get
+                    (i => i.Name == Name);
+            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<UserViewModel> SearchByTrackName(string TrackName, int pageIndex=0, int pageSize = 20)
+        {
+            var query =
+                UserRepo.Get
+                    (i => i.Tracks.Where(x => x.Track.Name == TrackName).Count() > 0);
+            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)
         {
             UserRepo.Remove(UserRepo.GetByID(id));
+
+
             unitOfWork.Commit();
         }
+        public void ChangeStatus(int id)
+        {
 
+            User user = GetByID(id);
+            user.IsActive = !user.IsActive;
+            unitOfWork.Commit();
+
+        }
     }
 }

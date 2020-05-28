@@ -27,6 +27,16 @@ namespace ITI.WhatsLearn.Presentation
                     id = RouteParameter.Optional 
                 }
             );
+            config.Routes.MapHttpRoute(
+              name: "PagintionApi",
+              routeTemplate: "{controller}/{action}/{PageIndex}/{PageSize}"
+            
+          );
+            config.Routes.MapHttpRoute(
+             name: "SerachionApi",
+             routeTemplate: "{controller}/{action}/{SerachOption}/{SerachText}/{PageIndex}/{PageSize}"
+           
+         );
 
             config.Formatters.Clear();
             config.Formatters.Add(new JsonMediaTypeFormatter());

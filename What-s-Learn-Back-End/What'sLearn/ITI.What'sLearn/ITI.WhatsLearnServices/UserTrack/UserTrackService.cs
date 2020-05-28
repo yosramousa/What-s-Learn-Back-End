@@ -36,21 +36,42 @@ namespace ITI.WhatsLearn.Services
         {
             return UserTrackRepo.GetByID(id);
         }
-        public IEnumerable<UserTrackViewModel> GetAll()
+        public IEnumerable<UserTrackViewModel> GetAll(int pageIndex, int pageSize = 20)
         {
             var query =
                 UserTrackRepo.GetAll();
-
-            return query.ToList().Select(i => i.ToViewModel());
-        }
-        public IEnumerable<UserTrackViewModel> Get(int id, string TrackName, string username, int pageIndex, int pageSize = 20)
-        {
-            var query =
-                UserTrackRepo.Get
-                    (i => i.ID == id || i.Track.Name == TrackName || i.User.Name == username);
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
+      
+
+        public IEnumerable<UserTrackViewModel> GetEnrollRequest(int pageIndex, int pageSize = 20)
+        {
+            var query =
+                UserTrackRepo.Get
+                    (i => i.IsApproveed==false);
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+
+        public IEnumerable<UserTrackViewModel> SearchByName(string Name, int pageIndex = 0, int pageSize = 20)
+        {
+            var query =
+                UserTrackRepo.Get
+                    (i => i.IsApproveed==false && i.User.Name==Name);
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<UserTrackViewModel> SearchByTrackName(string TrackName, int pageIndex = 0, int pageSize = 20)
+        {
+            var query =
+                UserTrackRepo.Get
+                    (i => i.IsApproveed==false&& i.Track.Name==TrackName);
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+
+
         public void Remove(int id)
         {
             UserTrackRepo.Remove(UserTrackRepo.GetByID(id));

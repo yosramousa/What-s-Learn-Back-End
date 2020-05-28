@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class tes : DbMigration
+    public partial class test : DbMigration
     {
         public override void Up()
         {
@@ -32,6 +32,7 @@
                         File = c.String(nullable: false, maxLength: 1000),
                         Description = c.String(nullable: false, maxLength: 250),
                         CourseID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Course", t => t.CourseID, cascadeDelete: true)
@@ -57,6 +58,7 @@
                         Link = c.String(nullable: false, maxLength: 1000),
                         Description = c.String(nullable: false, maxLength: 250),
                         CourseID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Course", t => t.CourseID, cascadeDelete: true)
@@ -70,6 +72,7 @@
                         Vedio = c.String(nullable: false, maxLength: 1000),
                         Description = c.String(nullable: false, maxLength: 250),
                         CourseID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Course", t => t.CourseID, cascadeDelete: true)
@@ -82,6 +85,7 @@
                         ID = c.Int(nullable: false, identity: true),
                         TrackID = c.Int(nullable: false),
                         CourseID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Track", t => t.TrackID, cascadeDelete: true)
@@ -139,6 +143,7 @@
                         File = c.String(nullable: false, maxLength: 1000),
                         Description = c.String(nullable: false, maxLength: 250),
                         MainCategoryID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.MainCategory", t => t.MainCategoryID, cascadeDelete: true)
@@ -152,6 +157,7 @@
                         Link = c.String(nullable: false, maxLength: 1000),
                         Description = c.String(nullable: false, maxLength: 250),
                         MainCategoryID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.MainCategory", t => t.MainCategoryID, cascadeDelete: true)
@@ -165,6 +171,7 @@
                         Vedio = c.String(nullable: false, maxLength: 1000),
                         Description = c.String(nullable: false, maxLength: 250),
                         MainCategoryID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.MainCategory", t => t.MainCategoryID, cascadeDelete: true)
@@ -178,6 +185,7 @@
                         File = c.String(nullable: false, maxLength: 1000),
                         Description = c.String(nullable: false, maxLength: 250),
                         SubCategoryID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.SubCategory", t => t.SubCategoryID, cascadeDelete: true)
@@ -191,6 +199,7 @@
                         Link = c.String(nullable: false, maxLength: 1000),
                         Description = c.String(nullable: false, maxLength: 250),
                         SubCategoryID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.SubCategory", t => t.SubCategoryID, cascadeDelete: true)
@@ -204,6 +213,7 @@
                         Vedio = c.String(nullable: false, maxLength: 1000),
                         Description = c.String(nullable: false, maxLength: 250),
                         SubCategoryID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.SubCategory", t => t.SubCategoryID, cascadeDelete: true)
@@ -217,6 +227,7 @@
                         File = c.String(nullable: false, maxLength: 1000),
                         Description = c.String(nullable: false, maxLength: 250),
                         TrackID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Track", t => t.TrackID, cascadeDelete: true)
@@ -230,6 +241,7 @@
                         Link = c.String(),
                         Description = c.String(),
                         TrackID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Track", t => t.TrackID, cascadeDelete: true)
@@ -243,6 +255,7 @@
                         Vedio = c.String(nullable: false, maxLength: 1000),
                         Description = c.String(nullable: false, maxLength: 250),
                         TrackID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Track", t => t.TrackID, cascadeDelete: true)
@@ -257,6 +270,7 @@
                         TrackID = c.Int(nullable: false),
                         Date = c.DateTime(nullable: false),
                         IsApproveed = c.Boolean(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.User", t => t.UserID, cascadeDelete: true)
@@ -271,6 +285,7 @@
                         ID = c.Int(nullable: false, identity: true),
                         courseID = c.Int(nullable: false),
                         UserTrackID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.UserTrack", t => t.UserTrackID, cascadeDelete: true)
@@ -303,6 +318,7 @@
                         ID = c.Int(nullable: false, identity: true),
                         Title = c.String(nullable: false, maxLength: 250),
                         UserID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.User", t => t.UserID, cascadeDelete: true)
@@ -316,6 +332,7 @@
                         UserID = c.Int(nullable: false),
                         SkillID = c.Int(nullable: false),
                         Level = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Skill", t => t.SkillID, cascadeDelete: true)
@@ -329,6 +346,7 @@
                     {
                         ID = c.Int(nullable: false, identity: true),
                         Skill = c.String(nullable: false, maxLength: 250),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -339,6 +357,7 @@
                         ID = c.Int(nullable: false, identity: true),
                         Link = c.String(nullable: false, maxLength: 250),
                         UserID = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.User", t => t.UserID, cascadeDelete: true)
@@ -354,6 +373,7 @@
                         Text = c.String(nullable: false, maxLength: 1000),
                         SendTime = c.DateTime(nullable: false),
                         IsRead = c.Boolean(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             

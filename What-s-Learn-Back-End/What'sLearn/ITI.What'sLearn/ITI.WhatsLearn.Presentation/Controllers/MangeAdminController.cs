@@ -1,0 +1,170 @@
+﻿using ITI.WhatsLearn.Entities;
+using ITI.WhatsLearn.Services;
+using ITI.WhatsLearn.ViewModel;
+using ITI.WhatsLearnServices;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+
+namespace ITI.WhatsLearn.Presentation.Controllers
+{
+    public class MangeAdminsController : ApiController
+    {
+
+        private readonly AdminService adminService;
+        public MangeAdminsController(AdminService _adminService)
+        {
+            adminService = _adminService;
+        }
+        [HttpGet]
+        public ResultViewModel<IEnumerable<MangeAdminViewModel>> GetList(int PageIndex, int PageSize)
+        {
+
+            ResultViewModel<IEnumerable<MangeAdminViewModel>> result
+              = new ResultViewModel<IEnumerable<MangeAdminViewModel>>();
+
+            try
+            {
+                var admins = adminService.GetAll(PageIndex, PageSize)?.Select(u => new MangeAdminViewModel
+                {
+                    ID = u.ID,
+                    Name = u.Name,
+                    Status = u.IsActive ? "Active" : "Not Active",
+                });
+                result.Successed = true;
+                result.Data = admins;
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+
+        }
+        [HttpGet]
+        public ResultViewModel<IEnumerable<MangeAdminViewModel>> Search(int SerachOption, String SerachText, int PageIndex, int PageSize)
+        {
+            ResultViewModel<IEnumerable<MangeAdminViewModel>> result
+              = new ResultViewModel<IEnumerable<MangeAdminViewModel>>();
+            IEnumerable<AdminViewModel> admins = new List<AdminViewModel>();
+            try
+            {
+
+                if (SerachOption == 0)//By Name
+                {
+                    admins = adminService.SearchByName(SerachText, pageIndex: PageIndex, pageSize: PageSize);
+
+                }
+                var Admins = admins.Select(u => new MangeAdminViewModel
+                {
+                    ID = u.ID,
+                    Name = u.Name,
+                    Status = u.IsActive ? "Active" : "Disable",
+                   
+
+                });
+                result.Successed = true;
+                result.Data = Admins;
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+
+        }
+        [HttpGet]
+        public String Delete(int id)
+        {
+            if (adminService.GetByID(id) != null)
+            {
+                adminService.Remove(id);
+                return "Admin Deleted Sucessfully";
+            }
+            else
+                return "Admin Not Found !";
+
+
+        }
+        [HttpGet]
+        public ResultViewModel<AdminViewModel> Details(int id)
+        {
+            ResultViewModel<AdminViewModel> result
+                = new ResultViewModel<AdminViewModel>();
+
+            try
+            {
+                Admin admin = adminService.GetByID(id);
+                result.Successed = true;
+                result.Message = "Sucess";
+                result.Data = admin.ToViewModel();
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Admin Not Found !!";
+            }
+            return result;
+        }
+        [HttpGet]
+        public String ChangeStatus(int id)
+        {
+            try
+            {
+                adminService.ChangeStatus(id);
+                //Admin u = adminService.GetByID(id);
+                //u.IsActive = !u.IsActive;
+                //adminService.Update(u.ToEditableViewModel());
+                return "Status Updated Sucessfully";
+            }
+            catch (Exception e)
+            {
+                return "Status Not Updated ";
+            }
+        }
+
+        [HttpPost]
+        public ResultViewModel<AdminEditViewModel> Post(AdminEditViewModel Admin)
+        {
+            ResultViewModel<AdminEditViewModel> result
+                = new ResultViewModel<AdminEditViewModel>();
+
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                
+                    result.Message = "In Valid Model State";
+                }
+                else
+                {
+                    AdminEditViewModel selectedAdmin
+                        = adminService.Add(Admin);
+
+                    result.Successed = true;
+                    result.Data = selectedAdmin;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Semething Went Wrong";
+            }
+            return result;
+        }
+
+        //Name
+        //Stauts
+
+        //Details >>AdminProfile
+        //Delete 
+        //Search (Name :0 ,Track:1)
+        //Pagntion (PageSize , PageIndex), Filte
+
+    }
+}

@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.ViewModel
 {
-    public class UserTrackViewModel
+     public  class UserTracksViewModel
     {
-        public int ID { get; set; }
-        public string UserName { get; set; }
         public string TrackName { get; set; }
-        public DateTime Date { get; set; }
         public int Progress { get; set; }
-
-        public bool IsApproveed { get; set; } = false;
-
+        public List<String> FinshedCourses { get; set; }
+        public List<String> FutureCourses { get; set; }
+        public string CuurentCourse { get; set; }
 
     }
 }

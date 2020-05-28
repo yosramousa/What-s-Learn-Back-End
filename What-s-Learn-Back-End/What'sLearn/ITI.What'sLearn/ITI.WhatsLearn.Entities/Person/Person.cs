@@ -17,6 +17,6 @@ namespace ITI.WhatsLearn.Entities
         public string Phone { get; set; }
         public bool IsActive { get; set; } = true;
         public string Image { get; set; }
-        public bool IsDeleted { get; set; } = false;
+    
     }
 }

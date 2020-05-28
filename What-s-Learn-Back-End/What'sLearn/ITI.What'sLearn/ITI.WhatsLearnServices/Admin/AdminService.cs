@@ -30,15 +30,24 @@ namespace ITI.WhatsLearnServices
             unitOfWork.Commit();
             return PP.ToEditableViewModel();
         }
-        public AdminViewModel GetByID(int id)
+        public Admin GetByID(int id)
         {
-            return AdminRepo.GetByID(id)?.ToViewModel();
+            return AdminRepo.GetByID(id);
         }
-        public IEnumerable<AdminViewModel> GetAll( int pageIndex, int pageSize = 20)
+
+        public void ChangeStatus(int id)
+        {
+
+            Admin admin = GetByID(id);
+            admin.IsActive = !admin.IsActive;
+            unitOfWork.Commit();
+           
+        }
+        public IEnumerable<AdminViewModel> GetAll(int pageIndex, int pageSize = 20)
         {
             var query =
                 AdminRepo.GetAll();
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderByDescending(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<AdminViewModel> Get(string Email, string Password)
@@ -47,6 +56,15 @@ namespace ITI.WhatsLearnServices
                 AdminRepo.Get
                     (i => i.Email == Email && i.Password == Password);
 
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+
+        public IEnumerable<AdminViewModel> SearchByName(string Name, int pageIndex = 0, int pageSize = 20)
+        {
+            var query =
+                AdminRepo.Get
+                    (i => i.Name == Name);
+            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
 

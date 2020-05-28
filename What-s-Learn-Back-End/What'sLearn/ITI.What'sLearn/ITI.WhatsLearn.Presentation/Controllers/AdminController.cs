@@ -19,14 +19,14 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         }
 
         [HttpGet]
-        public ResultViewModel<IEnumerable<AdminViewModel>> GetList(int pageIndex, int pageSize = 20)
+        public ResultViewModel<IEnumerable<AdminViewModel>> GetList(int PageIndex, int PageSize)
         {
             ResultViewModel<IEnumerable<AdminViewModel>> result
                = new ResultViewModel<IEnumerable<AdminViewModel>>();
 
             try
             {
-                var admins = adminService.GetAll(pageIndex, pageSize);
+                var admins = adminService.GetAll(pageIndex:PageIndex,pageSize: PageSize);
                 result.Successed = true;
                 result.Data = admins;
             }
@@ -74,7 +74,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             {
                 var admin = adminService.GetByID(id);
                 result.Successed = true;
-                result.Data = admin;
+                result.Data = admin.ToViewModel();
             }
             catch (Exception ex)
             {

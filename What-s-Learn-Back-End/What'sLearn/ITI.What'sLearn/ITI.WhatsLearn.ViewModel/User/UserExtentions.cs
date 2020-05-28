@@ -26,7 +26,8 @@ namespace ITI.WhatsLearn.ViewModel
                 IsActive = model.IsActive,
                 IsDeleted = model.IsDeleted,
                 Password = model.Password,
-                Phone = model.Phone
+                Phone = model.Phone,
+                Tracks=model.Tracks.Select(i=>i.Track.ToViewModel()).ToList()
             };
         }
         public static User ToModel(this UserEditViewModel editModel)

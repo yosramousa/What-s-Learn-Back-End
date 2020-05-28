@@ -33,7 +33,11 @@ namespace ITI.WhatsLearn.Reposatories
         }
         public void Remove(T T)
         {
-            dbSet.Remove(T);
+            T.IsDeleted = true;
+            //if (!dbSet.Local.Any(i => i.ID == T.ID))
+            //  dbSet.Attach(T);
+           Context.Entry(T).State = EntityState.Modified;
+            // dbSet.Remove(T);
         }
         public T GetByID(int id)
         {

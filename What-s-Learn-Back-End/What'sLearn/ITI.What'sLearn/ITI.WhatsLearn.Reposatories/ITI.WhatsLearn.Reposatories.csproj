@@ -53,9 +53,15 @@
   <ItemGroup>
     <Compile Include="EntitiesContext\EntitiesContext.cs" />
     <Compile Include="Generic\Generic.cs" />
+<<<<<<< HEAD:What-s-Learn-Back-End/What-s-Learn-Back-End/What'sLearn/ITI.What'sLearn/ITI.WhatsLearn.Reposatories/ITI.WhatsLearn.Reposatories.csproj
+    <Compile Include="Migrations\202005281731543_Init.cs" />
+    <Compile Include="Migrations\202005281731543_Init.designer.cs">
+      <DependentUpon>202005281731543_Init.cs</DependentUpon>
+=======
     <Compile Include="Migrations\202005280259540_test.cs" />
     <Compile Include="Migrations\202005280259540_test.designer.cs">
       <DependentUpon>202005280259540_test.cs</DependentUpon>
+>>>>>>> b1df7ede4a62a97a9a2169d7bb14264b51a28b29:What-s-Learn-Back-End/What'sLearn/ITI.What'sLearn/ITI.WhatsLearn.Reposatories/ITI.WhatsLearn.Reposatories.csproj
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,8 +78,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD:What-s-Learn-Back-End/What-s-Learn-Back-End/What'sLearn/ITI.What'sLearn/ITI.WhatsLearn.Reposatories/ITI.WhatsLearn.Reposatories.csproj
+    <EmbeddedResource Include="Migrations\202005281731543_Init.resx">
+      <DependentUpon>202005281731543_Init.cs</DependentUpon>
+=======
     <EmbeddedResource Include="Migrations\202005280259540_test.resx">
       <DependentUpon>202005280259540_test.cs</DependentUpon>
+>>>>>>> b1df7ede4a62a97a9a2169d7bb14264b51a28b29:What-s-Learn-Back-End/What'sLearn/ITI.What'sLearn/ITI.WhatsLearn.Reposatories/ITI.WhatsLearn.Reposatories.csproj
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

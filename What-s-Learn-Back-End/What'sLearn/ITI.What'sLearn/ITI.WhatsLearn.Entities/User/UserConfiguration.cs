@@ -17,6 +17,10 @@ namespace ITI.WhatsLearn.Entities
                .HasMaxLength(250)
                .IsRequired();
 
+            Property(i => i.SignedTime)
+               .HasColumnName("SignedTime")
+               .IsRequired();
+
             HasMany(i => i.Certificates).
                 WithRequired(i => i.User);
             HasMany(i => i.SocialLinks).

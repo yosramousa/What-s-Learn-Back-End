@@ -142,6 +142,11 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+<<<<<<< HEAD:What-s-Learn-Back-End/What-s-Learn-Back-End/What'sLearn/ITI.What'sLearn/ITI.WhatsLearn.Presentation/ITI.WhatsLearn.Presentation.csproj
+    <Compile Include="Controllers\AdminPanal\DashBoardController.cs" />
+    <Compile Include="Controllers\AdminPanal\ManageCategoryController.cs" />
+=======
+>>>>>>> b1df7ede4a62a97a9a2169d7bb14264b51a28b29:What-s-Learn-Back-End/What'sLearn/ITI.What'sLearn/ITI.WhatsLearn.Presentation/ITI.WhatsLearn.Presentation.csproj
     <Compile Include="Controllers\AdminPanal\ManageSkillsController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\CourseDocumentController.cs" />

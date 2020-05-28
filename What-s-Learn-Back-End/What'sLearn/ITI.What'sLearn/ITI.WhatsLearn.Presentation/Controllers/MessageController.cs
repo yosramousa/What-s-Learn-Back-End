@@ -18,14 +18,34 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         }
 
         [HttpGet]
-        public ResultViewModel<IEnumerable<MessageViewModel>> GetList(int pageIndex, int pageSize = 20)
+        public ResultViewModel<IEnumerable<MessageViewModel>> GetAll(int pageIndex, int pageSize = 20)
         {
             ResultViewModel<IEnumerable<MessageViewModel>> result
                = new ResultViewModel<IEnumerable<MessageViewModel>>();
 
             try
             {
-                var Messages = messageService.GetAll(pageIndex, pageSize);
+                var Messages = messageService.GetAll(pageIndex, pageSize).Where( i.IsDeleted == false);
+                result.Successed = true;
+                result.Data = Messages;
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+        }
+
+
+        public ResultViewModel<IEnumerable<MessageViewModel>> GetUnReaded(int pageIndex, int pageSize = 20)
+        {
+            ResultViewModel<IEnumerable<MessageViewModel>> result
+               = new ResultViewModel<IEnumerable<MessageViewModel>>();
+
+            try
+            {
+                var Messages = messageService.GetAll(pageIndex, pageSize).Where(i=>i.IsRead==false&&i.IsDeleted==false);
                 result.Successed = true;
                 result.Data = Messages;
             }
@@ -44,18 +64,14 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    result.Message = "In Valid Model State";
-                }
-                else
-                {
+              
+                
                     MessageEditViewModel selectedMessage
                         = messageService.Add(Message);
 
                     result.Successed = true;
                     result.Data = selectedMessage;
-                }
+                
             }
             catch (Exception ex)
             {

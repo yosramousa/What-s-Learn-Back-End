@@ -52,5 +52,14 @@ namespace ITI.WhatsLearn.Reposatories
         {
             return GetAll().Where(filter);
         }
+
+        public int Count()
+        {
+            return dbSet.Where(i => i.IsDeleted == false).Count();
+        }
+
+        
+
+
     }
 }

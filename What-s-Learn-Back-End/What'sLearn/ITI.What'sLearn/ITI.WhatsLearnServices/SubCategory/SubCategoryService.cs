@@ -39,7 +39,7 @@ namespace ITI.WhatsLearnServices
         {
             var query =
                 SubCategoryRepo.GetAll();
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<SubCategoryViewModel> Get(Expression<Func<SubCategory, bool>> filter)
@@ -54,6 +54,10 @@ namespace ITI.WhatsLearnServices
             SubCategoryRepo.Remove(SubCategoryRepo.GetByID(id));
             unitOfWork.Commit();
 
+        }
+        public int Count()
+        {
+            return SubCategoryRepo.Count();
         }
     }
 }

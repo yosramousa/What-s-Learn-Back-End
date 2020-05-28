@@ -1,5 +1,4 @@
-﻿
-namespace ITI.WhatsLearn.Reposatories.Migrations
+﻿namespace ITI.WhatsLearn.Reposatories.Migrations
 {
     using System;
     using System.Data.Entity;

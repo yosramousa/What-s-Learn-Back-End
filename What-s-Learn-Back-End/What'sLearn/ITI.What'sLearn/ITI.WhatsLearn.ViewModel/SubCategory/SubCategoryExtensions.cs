@@ -20,8 +20,8 @@ namespace ITI.WhatsLearn.ViewModel
                 Documents = model.SubCategoryDocuments.Select(i => i.ToViewModel()).ToArray(),
                 Vedios = model.SubCategoryVedios.Select(i => i.ToViewModel()).ToArray(),
                 Links = model.SubCategoryLinks.Select(i => i.ToViewModel()).ToArray(),
-                MainCategoryName=model.MainCategory.Name
-                //TrackCourses = model.TrackCourses.Select(i => i.ToViewModel()).ToArray()
+                Parent = model.MainCategory.Name,
+                Child = model.Tracks.Select(i => i.Name).ToList()
             };
         }
         public static SubCategory ToModel(this SubCategoryEditViewModel editModel)
@@ -48,7 +48,9 @@ namespace ITI.WhatsLearn.ViewModel
                 Image = model.Image,
                 Links = model.SubCategoryLinks.Select(i => i.ToEditableViewModel()).ToArray(),
                 Documents = model.SubCategoryDocuments.Select(i => i.ToEditableViewModel()).ToArray(),
-                Vedios = model.SubCategoryVedios.Select(i => i.ToEditableViewModel()).ToArray()
+                Vedios = model.SubCategoryVedios.Select(i => i.ToEditableViewModel()).ToArray(),
+                 Parent = model.MainCategory.Name,
+                Child = model.Tracks.Select(i => i.Name).ToList()
             };
         }
 

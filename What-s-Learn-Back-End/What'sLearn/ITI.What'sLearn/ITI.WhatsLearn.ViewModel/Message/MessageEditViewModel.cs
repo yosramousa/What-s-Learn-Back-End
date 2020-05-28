@@ -24,6 +24,8 @@ namespace ITI.WhatsLearn.ViewModel
         public string Text { get; set; }
         [Required]
         public DateTime SendTime { get; set; } = DateTime.Now;
-       
+
+        public bool IsDeleted { get; set; }
+
     }
 }

@@ -8,15 +8,19 @@ using System.Web;
 
 namespace ITI.WhatsLearn.ViewModel
 {
-   public  class CourseEditViewModel
+   public  class CourseEditViewModel :ManageCategoryViewModel
     {
+        
+       
         [Required]
-        public int ID { get; set; }
+        public override int ID { get; set; }
 
         [Required]
         [MaxLength(250)]
-        public string Name { get; set; }
+        public override string Name { get; set; }
 
+        public override string Parent { get; set; }
+        public override List<string> Child { get; set; }
         [Required]
         [MaxLength(1000)]
         public string Discription { get; set; }

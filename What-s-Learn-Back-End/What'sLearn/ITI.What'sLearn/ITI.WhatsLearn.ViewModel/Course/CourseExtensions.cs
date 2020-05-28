@@ -20,10 +20,8 @@ namespace ITI.WhatsLearn.ViewModel
                 Documents = model.CourseDocuments.Select(i => i.ToViewModel()).ToArray(),
                 Vedios = model.CourseVedios.Select(i => i.ToViewModel()).ToArray(),
                 Links = model.CourseLinks.Select(i => i.ToViewModel()).ToArray(),
-
-                
-
-
+                Parent = model.Tracks.FirstOrDefault().Track.Name,
+                Child = null
             };
         }
         public static Course ToModel(this CourseEditViewModel editModel)
@@ -51,7 +49,8 @@ namespace ITI.WhatsLearn.ViewModel
                 Links = model.CourseLinks.Select(i => i.ToEditableViewModel()).ToArray(),
                 Documents = model.CourseDocuments.Select(i => i.ToEditableViewModel()).ToArray(),
                 Videos = model.CourseVedios.Select(i => i.ToEditableViewModel()).ToArray(),
-
+                Parent = model.Tracks.FirstOrDefault().Track.Name,
+                Child = null
             };
         }
 

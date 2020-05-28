@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPanal\ManageCategoryViewModel.cs" />
     <Compile Include="Admin\AdminEditViewModel.cs" />
     <Compile Include="Admin\AdminExtentions.cs" />
     <Compile Include="Admin\AdminViewModel.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="CourseVedio\CourseVedioEditViewModel.cs" />
     <Compile Include="CourseVedio\CourseVedioExtensions.cs" />
     <Compile Include="CourseVedio\CourseVedioViewModel.cs" />
+    <Compile Include="DashBoard\DashBoardViewModel.cs" />
     <Compile Include="FinishedCourse\FinishedCourseEditViewModel.cs" />
     <Compile Include="FinishedCourse\FinishedCourseExtentions.cs" />
     <Compile Include="FinishedCourse\FinishedCourseViewModel.cs" />
@@ -133,6 +135,10 @@
     <ProjectReference Include="..\ITI.WhatsLearn.Entities\ITI.WhatsLearn.Entities.csproj">
       <Project>{D6B1BE35-2000-42A3-B3C8-834D0E8D7AB0}</Project>
       <Name>ITI.WhatsLearn.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ITI.WhatsLearn.Reposatories\ITI.WhatsLearn.Reposatories.csproj">
+      <Project>{4D4F2C21-611B-4316-96F3-5ACE123737FE}</Project>
+      <Name>ITI.WhatsLearn.Reposatories</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

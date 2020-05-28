@@ -21,7 +21,8 @@ namespace ITI.WhatsLearn.ViewModel
                 Vedios = model.TrackVedios.Select(i => i.ToViewModel()).ToArray(),
                 Links = model.TrackLinks.Select(i => i.ToViewModel()).ToArray(),
                 SubCategoryName = model.SubCategory?.Name,
-                //Courses = model.Tracks.Select(i => i.ToViewModel()).ToArray()
+                Parent = model.SubCategory.Name,
+                Child = model.Courses.Select(i => i.Course.Name).ToList()
             };
         }
         public static Track ToModel(this TrackEditViewModel editModel)
@@ -49,7 +50,10 @@ namespace ITI.WhatsLearn.ViewModel
                 Links = model.TrackLinks.Select(i => i.ToEditableViewModel()).ToArray(),
                 Documents = model.TrackDocuments.Select(i => i.ToEditableViewModel()).ToArray(),
                 Videos = model.TrackVedios.Select(i => i.ToEditableViewModel()).ToArray(),
-                SubCategoryID = model.SubCategoryID
+                SubCategoryID = model.SubCategoryID,
+                Parent = model.SubCategory.Name,
+                Child = model.Courses.Select(i => i.Course.Name).ToList()
+
             };
         }
 

@@ -44,7 +44,14 @@ namespace ITI.WhatsLearn.Services
             query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-      
+
+        public IEnumerable<UserTrackViewModel> GetAll()
+        {
+            var query =
+                UserTrackRepo.GetAll();
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+
 
         public IEnumerable<UserTrackViewModel> GetEnrollRequest(int pageIndex, int pageSize = 20)
         {
@@ -91,6 +98,7 @@ namespace ITI.WhatsLearn.Services
                 unitOfWork.Commit();
             }
         }
+
 
     }
 }

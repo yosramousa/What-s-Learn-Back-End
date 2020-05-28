@@ -20,5 +20,7 @@ namespace ITI.WhatsLearn.ViewModel
         public DateTime Date { get; set; }
         [Required]
         public bool IsApproveed { get; set; } = false;
+        public int UserCount { get; set; }
+
     }
 }

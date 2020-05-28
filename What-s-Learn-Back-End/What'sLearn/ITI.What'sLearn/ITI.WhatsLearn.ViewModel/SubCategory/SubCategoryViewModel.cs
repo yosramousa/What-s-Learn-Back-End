@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.ViewModel
 {
-   public  class SubCategoryViewModel
+   public  class SubCategoryViewModel :ManageCategoryViewModel
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
+        public override int ID { get; set; }
+        public override string Name { get; set; }
         public string Discription { get; set; }
         public string Image { get; set; }
         public SubCategoryLinkViewModel[] Links { get; set; }
@@ -17,7 +17,8 @@ namespace ITI.WhatsLearn.ViewModel
         public SubCategoryVedioViewModel[] Vedios { get; set; }
         public String MainCategoryName { get; set; }
         public TrackCourseViewModel[] TrackCourses { get; set; }
-
+        public override string Parent { get; set; }
+        public override List<string> Child { get; set; }
 
 
     }

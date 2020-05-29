@@ -15,11 +15,6 @@ namespace ITI.WhatsLearn.ViewModel
         public int Progress { get; set; }
         public int UserCount { get; set; }
         public int TrackCount { get; set; }
-
-
-
         public bool IsApproveed { get; set; } = false;
-
-
     }
 }

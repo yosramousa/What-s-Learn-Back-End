@@ -19,9 +19,6 @@ namespace ITI.WhatsLearn.ViewModel
         public CourseViewModel[] Courses { get; set; }
         public override List<string> Child { get; set ; }
         public override string Parent { get; set; }
-       
-
-
-
+        public List<CourseViewModel> Childs { get; set ; }
     }
 }

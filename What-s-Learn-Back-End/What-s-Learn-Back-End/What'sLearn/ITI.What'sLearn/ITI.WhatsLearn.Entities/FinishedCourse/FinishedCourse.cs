@@ -8,9 +8,9 @@ namespace ITI.WhatsLearn.Entities
 {
     public class FinishedCourse:BaseModel
     {
-        public Course course { get; set; }
+        public virtual Course course { get; set; }
         public int  courseID { get; set; }
-        public UserTrack UserTrack { get; set; }
+        public virtual  UserTrack UserTrack { get; set; }
         public int UserTrackID { get; set; }
 
     }

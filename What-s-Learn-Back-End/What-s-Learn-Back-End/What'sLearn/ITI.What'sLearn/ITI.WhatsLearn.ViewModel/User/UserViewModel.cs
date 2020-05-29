@@ -23,6 +23,5 @@ namespace ITI.WhatsLearn.ViewModel
 
         public List<TrackViewModel> Tracks { get; set; }
         public DateTime SignedTime { get; set; } 
-
     }
 }

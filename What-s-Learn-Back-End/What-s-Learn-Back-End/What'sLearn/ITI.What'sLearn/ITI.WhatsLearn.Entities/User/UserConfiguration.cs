@@ -16,6 +16,9 @@ namespace ITI.WhatsLearn.Entities
                .HasColumnName("Education")
                .HasMaxLength(250)
                .IsRequired();
+            Property(i => i.SignedTime)
+              .HasColumnName("SignedTime")
+              .IsRequired();
 
             Property(i => i.SignedTime)
                .HasColumnName("SignedTime")

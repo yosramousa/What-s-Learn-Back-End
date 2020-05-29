@@ -1,4 +1,5 @@
 ﻿using BroadCaster.Helpers;
+using ITI.WhatsLearn.Presentation.Filters;
 using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
 using System;
@@ -7,17 +8,20 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Security;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
     public class AdminController : ApiController
     {
+        //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6IjEiLCJFbWFpbCI6InNhbGFoQG1lLmNvbSIsIlJvbGUiOiJBZG1pbiIsIk5hbWUiOiJzYWxhaCIsIm5iZiI6MTU5MDY4MzMxNywiZXhwIjoxNTkwNjg1MTE3LCJpYXQiOjE1OTA2ODMzMTd9.Vkh4j4ZXjbvT0ogyZPD7SmIkVPCMu_r9PC1KT5If-ik
         private readonly AdminService adminService;
         public AdminController(AdminService _adminService)
         {
             adminService = _adminService;
         }
 
+       // [AUTHORIZE(Roles = "Admin")]
         [HttpGet]
         public ResultViewModel<IEnumerable<AdminViewModel>> GetList(int PageIndex, int PageSize)
         {
@@ -38,6 +42,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             return result;
         }
         [HttpPost]
+        [AUTHORIZE(Roles = "Admin")]
         public ResultViewModel<AdminEditViewModel> Post(AdminEditViewModel Admin)
         {
             ResultViewModel<AdminEditViewModel> result
@@ -65,7 +70,9 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
         }
+       
         [HttpGet]
+        [AUTHORIZE(Roles = "Admin")]
         public ResultViewModel<AdminViewModel> GetByID(int id)
         {
             ResultViewModel<AdminViewModel> result
@@ -123,7 +130,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             return result;
         }
 
-      
+        [AUTHORIZE(Roles = "Admin")]
         [HttpGet]
         public ResultViewModel<AdminEditViewModel> Update(AdminEditViewModel Admin)
         {
@@ -151,6 +158,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
         }
+        [AUTHORIZE(Roles = "Admin")]
         [HttpGet]
         public ResultViewModel<AdminEditViewModel> Delete(int id)
         {

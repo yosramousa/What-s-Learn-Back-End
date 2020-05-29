@@ -32,7 +32,6 @@ namespace ITI.WhatsLearn.ViewModel
                 SendTime = editModel.SendTime,
                 IsDeleted = editModel.IsDeleted
 
-
             };
         }
         public static MessageEditViewModel ToEditableViewModel(this Message model)

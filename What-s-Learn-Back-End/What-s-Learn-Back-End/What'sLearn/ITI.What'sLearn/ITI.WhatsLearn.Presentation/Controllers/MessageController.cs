@@ -25,7 +25,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
             try
             {
-                var Messages = messageService.GetAll(pageIndex, pageSize).Where( i.IsDeleted == false);
+                var Messages = messageService.GetAll(pageIndex, pageSize).Where( i=>i.IsDeleted == false);
                 result.Successed = true;
                 result.Data = Messages;
             }

@@ -9,7 +9,7 @@ namespace ITI.WhatsLearn.ViewModel
      public  class UserTracksViewModel
     {
         public string TrackName { get; set; }
-        public int Progress { get; set; }
+        public float Progress { get; set; }
         public List<String> FinshedCourses { get; set; }
         public List<String> FutureCourses { get; set; }
         public string CuurentCourse { get; set; }

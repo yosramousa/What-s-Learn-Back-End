@@ -1,4 +1,5 @@
-﻿using ITI.WhatsLearn.ViewModel;
+﻿using ITI.WhatsLearn.Presentation.Filters;
+using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers.AdminPanal
 {
+   [AUTHORIZE(Roles = "Admin")]
     public class ManageSkillsController : ApiController
     {
         SkillService skillService;

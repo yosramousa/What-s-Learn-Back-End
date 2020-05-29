@@ -46,6 +46,8 @@ namespace ITI.WhatsLearn.Presentation
            name: "managecategoryDelete",
            routeTemplate: "{controller}/{action}/{SearchIn}/{Num}"
            );
+           
+         
 
            _ = config.Routes.MapHttpRoute(
      name: "managecategorysearche",

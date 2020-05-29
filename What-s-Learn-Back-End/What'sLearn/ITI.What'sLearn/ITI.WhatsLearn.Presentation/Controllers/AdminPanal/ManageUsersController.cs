@@ -12,7 +12,7 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
-   [AUTHORIZE(Roles = "Admin")]
+  // [AUTHORIZE(Roles = "Admin")]
     public class ManageUsersController : ApiController
     {
 
@@ -21,34 +21,35 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             userService = _userService;
         }
-        [HttpGet]
-        public ResultViewModel<IEnumerable<ManageUserViewModel>> GetList(int PageIndex, int PageSize)
-        {
+        //[HttpGet]
+        //public ResultViewModel<IEnumerable<ManageUserViewModel>> GetList(int PageIndex, int PageSize)
+        //{
 
-            ResultViewModel<IEnumerable<ManageUserViewModel>> result
-              = new ResultViewModel<IEnumerable<ManageUserViewModel>>();
+        //    ResultViewModel<IEnumerable<ManageUserViewModel>> result
+        //      = new ResultViewModel<IEnumerable<ManageUserViewModel>>();
 
-            try
-            {
-                var users = userService.GetAll(PageIndex, PageSize)?.Select(u => new ManageUserViewModel
-                {
-                    ID = u.ID,
-                    Name = u.Name,
-                    Status = u.IsActive ? "Active" : "Not Active",
-                    TracksName = u.Tracks.Select(i => i.Name).ToList()
+        //    try
+        //    {
+        //        var users = userService.GetAll(PageIndex, PageSize)?.Select(u => new ManageUserViewModel
+        //        {
+        //            ID = u.ID,
+        //            Name = u.Name,
+        //            Status = u.IsActive ? "Active" : "Not Active",
+        //            TracksName =String.Join(" - ",u.Tracks.Select(i => i.Name))
 
-                });
-                result.Successed = true;
-                result.Data = users;
-            }
-            catch (Exception ex)
-            {
-                result.Successed = false;
-                result.Message = "Something Went Wrong !!";
-            }
-            return result;
+        //        }); ; ;
+        //        result.Successed = true;
+        //        result.Data = users;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        result.Successed = false;
+        //        result.Message = "Something Went Wrong !!";
+        //    }
+        //    return result;
 
-        }
+        //}
+        //
         [HttpGet]
         public ResultViewModel<IEnumerable<ManageUserViewModel>> Search(int SerachOption, String SerachText, int PageIndex, int PageSize)
         {
@@ -57,13 +58,19 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             IEnumerable<UserViewModel> users = new List<UserViewModel>();
             try
             {
-
-                if (SerachOption == 0)//By Name
+                if (SerachOption == 0)
                 {
+                    users = userService.GetAll(PageIndex, PageSize);
+                }
+
+                if (SerachOption == 1)//By Name
+                {
+
                     users = userService.SearchByName(SerachText, pageIndex: PageIndex, pageSize: PageSize);
 
+
                 }
-                else if (SerachOption == 1)//BY TrackName
+                else if (SerachOption == 2)//BY TrackName
                 {
                     users = userService.SearchByTrackName(SerachText, pageIndex: PageIndex, pageSize: PageSize);
                 }
@@ -72,8 +79,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 {
                     ID = u.ID,
                     Name = u.Name,
-                    Status = u.IsActive ? "Active" : "Disable",
-                    TracksName = u.Tracks.Select(i => i.Name).ToList()
+                    Status = u.IsActive ? "Active" : "Not Ative",
+                    TracksName = String.Join(" - ", u.Tracks.Select(i => i.Name))
 
                 });
                 result.Successed = true;
@@ -88,15 +95,15 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
         }
         [HttpGet]
-        public String Delete(int id)
+        public bool Delete(int id)
         {
             if (userService.GetByID(id) != null)
             {
                 userService.Remove(id);
-                return "User Deleted Sucessfully";
+                return true;
             }
             else
-                return "User Not Found !";
+                return false;
 
 
         }

@@ -8,51 +8,26 @@ using System.Linq;
 using System.Net.Http.Formatting;
 using System.Reflection;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ITI.WhatsLearn.Presentation
 {
     public static class WebApiConfig
     {
+
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-
-            // Web API routes
             config.MapHttpAttributeRoutes();
-
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "{controller}/{action}/{id}",
-                defaults: new { 
-                    id = RouteParameter.Optional 
+                defaults: new
+                {
+                    id = RouteParameter.Optional
                 }
             );
-            config.Routes.MapHttpRoute(
-              name: "PagintionApi",
-              routeTemplate: "{controller}/{action}/{PageIndex}/{PageSize}"
-            
-          );
-            config.Routes.MapHttpRoute(
-             name: "SerachionApi",
-             routeTemplate: "{controller}/{action}/{SerachOption}/{SerachText}/{PageIndex}/{PageSize}"
 
-         );
-            config.Routes.MapHttpRoute(
-            name: "managecategoryList",
-            routeTemplate: "{controller}/{action}/{PageIndex}/{PageSize}/{SearchIn}"
-            );
 
-            config.Routes.MapHttpRoute(
-           name: "managecategoryDelete",
-           routeTemplate: "{controller}/{action}/{SearchIn}/{Num}"
-           );
-           
-         
-
-           _ = config.Routes.MapHttpRoute(
-     name: "managecategorysearche",
-     routeTemplate: "{controller}/{action}/{PageIndex}/{PageSize}/{SearchBy}/{SearchIn}/{SearchText}"
-     );
             config.Formatters.Clear();
             config.Formatters.Add(new JsonMediaTypeFormatter());
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;

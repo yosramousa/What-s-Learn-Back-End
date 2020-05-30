@@ -102,16 +102,16 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
         }
         [HttpGet]
-        public ResultViewModel<IEnumerable<ManageCategoryViewModel>> SearchBy(int PageIndex, int PageSize,string SearchBy, string SearchIn , string SearchText)
+        public ResultViewModel<IEnumerable<ManageCategoryViewModel>> Search(int SearchBy, int SearchIn , string SearchText, int PageIndex, int PageSize)
         {
             ResultViewModel<IEnumerable<ManageCategoryViewModel>> result
             = new ResultViewModel<IEnumerable<ManageCategoryViewModel>>();
 
             try
             {
-                if (SearchIn == "MainCategory")
+                if (SearchIn == 1)//mainCategory
                 {
-                    if (SearchBy == "Parent")
+                    if (SearchBy == 1)//SearchByParent
                     {
                         
                         var searshResult = mainCategoryService.GetAll(PageIndex, PageSize).
@@ -125,7 +125,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                         result.Data = searshResult;
                     }
-                    else if (SearchBy == "Child")
+                    else if (SearchBy == 2) //searchbychild
                     {
 
                         var searshResult = mainCategoryService.GetAll(PageIndex, PageSize).
@@ -139,7 +139,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                         result.Data = searshResult;
                     }
-                    else if (SearchBy == "Name")
+                    else if (SearchBy == 3)//SearchByName
                     {
 
                         var searshResult = mainCategoryService.GetAll(PageIndex, PageSize).
@@ -153,7 +153,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                         result.Data = searshResult;
                     }
-                    else if (SearchBy == "ID")
+                    else if (SearchBy == 4) //SearchByID
                     {
 
                         var searshResult = mainCategoryService.GetAll(PageIndex, PageSize).
@@ -168,9 +168,9 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                         result.Data = searshResult;
                     }
                 }
-                else if (SearchIn == "SubCategory")
+                else if (SearchIn == 2)//SubCategory
                 {
-                    if (SearchBy == "Parent")
+                    if (SearchBy == 1)
                     {
 
                         var searshResult = subCategoryService.GetAll(PageIndex, PageSize).
@@ -184,7 +184,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                         result.Data = searshResult;
                     }
-                    else if (SearchBy == "Child")
+                    else if (SearchBy == 2)
                     {
 
                         var searshResult = subCategoryService.GetAll(PageIndex, PageSize).
@@ -198,7 +198,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                         result.Data = searshResult;
                     }
-                    else if (SearchBy == "Name")
+                    else if (SearchBy == 3)
                     {
 
                         var searshResult = subCategoryService.GetAll(PageIndex, PageSize).
@@ -212,7 +212,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                         result.Data = searshResult;
                     }
-                    else if (SearchBy == "ID")
+                    else if (SearchBy == 4)
                     {
 
                         var searshResult = subCategoryService.GetAll(PageIndex, PageSize).
@@ -227,9 +227,9 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                         result.Data = searshResult;
                     }
                 }
-                else if (SearchIn == "Track")
+                else if (SearchIn == 3)//Track
                 {
-                    if (SearchBy == "Parent")
+                    if (SearchBy == 1)
                     {
 
                         var searshResult = trackService.GetAll(PageIndex, PageSize).
@@ -243,7 +243,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                         result.Data = searshResult;
                     }
-                    else if (SearchBy == "Child")
+                    else if (SearchBy == 2)
                     {
 
                         var searshResult = trackService.GetAll(PageIndex, PageSize).
@@ -257,7 +257,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                         result.Data = searshResult;
                     }
-                    else if (SearchBy == "Name")
+                    else if (SearchBy == 3)
                     {
 
                         var searshResult = trackService.GetAll(PageIndex, PageSize).
@@ -271,7 +271,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                         result.Data = searshResult;
                     }
-                    else if (SearchBy == "ID")
+                    else if (SearchBy == 4)
                     {
 
                         var searshResult = trackService.GetAll(PageIndex, PageSize).
@@ -286,9 +286,9 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                         result.Data = searshResult;
                     }
                 }
-                else if (SearchIn == "Course")
+                else if (SearchIn == 4)//Course
                 {
-                    if (SearchBy == "Parent")
+                    if (SearchBy == 1)
                     {
 
                         var searshResult = courseService.GetAll(PageIndex, PageSize).
@@ -302,7 +302,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                         result.Data = searshResult;
                     }
-                    else if (SearchBy == "Child")
+                    else if (SearchBy == 2)
                     {
 
                         var searshResult = courseService.GetAll(PageIndex, PageSize).
@@ -316,7 +316,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                         result.Data = searshResult;
                     }
-                    else if (SearchBy == "Name")
+                    else if (SearchBy == 3)
                     {
 
                         var searshResult = courseService.GetAll(PageIndex, PageSize).
@@ -330,7 +330,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                         result.Data = searshResult;
                     }
-                    else if (SearchBy == "ID")
+                    else if (SearchBy == 4)
                     {
 
                         var searshResult = courseService.GetAll(PageIndex, PageSize).

@@ -9,10 +9,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
-  // [AUTHORIZE(Roles = "Admin")]
     public class ManageUsersController : ApiController
     {
 
@@ -135,7 +135,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                             FinshedCourses = i.FinishedCourses?.Select(x => x.course.Name).ToList(),
                             Progress = ((float)i.FinishedCourses.Count() / i.Track.Courses.Count()) * 100,
                             CuurentCourse = i.Track.Courses.Skip(i.FinishedCourses.Count()).First().Course.Name,
-                            FutureCourses = i.FinishedCourses.Count() > 0 ? i.Track.Courses.Skip(i.FinishedCourses.Count() + 1).Select(x => x.Course.Name).ToList() : i.Track.Courses.Select(x => x.Course.Name).ToList(),
+                            FutureCourses = i.FinishedCourses.Count() > 0 ? i.Track.Courses.Skip(i.FinishedCourses.Count() + 1).Select(x => x.Course.Name).ToList() : i.Track.Courses.Select(x => x.Course.Name).Skip(1).ToList(),
                         }).ToList()
                     };
 

@@ -42,7 +42,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             return result;
         }
         [HttpPost]
-        [AUTHORIZE(Roles = "Admin")]
+       // [AUTHORIZE(Roles = "Admin")]
         public ResultViewModel<AdminEditViewModel> Post(AdminEditViewModel Admin)
         {
             ResultViewModel<AdminEditViewModel> result
@@ -90,8 +90,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
         }
+        
         [HttpPost]
-
         public ResultViewModel<LoginModel> Login(LoginModel _loginModel)
         {
             ResultViewModel<LoginModel> result

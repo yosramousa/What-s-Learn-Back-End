@@ -9,10 +9,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
-    [AUTHORIZE(Roles ="Admin")]
     public class MangeAdminsController : ApiController
     {
 
@@ -48,17 +48,21 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
         }
         [HttpGet]
-        public ResultViewModel<IEnumerable<MangeAdminViewModel>> Search(int SerachOption, String SerachText, int PageIndex, int PageSize)
+        public ResultViewModel<IEnumerable<MangeAdminViewModel>> Search(int SearchOp, String SearchText, int PageIndex, int PageSize)
         {
             ResultViewModel<IEnumerable<MangeAdminViewModel>> result
               = new ResultViewModel<IEnumerable<MangeAdminViewModel>>();
             IEnumerable<AdminViewModel> admins = new List<AdminViewModel>();
             try
             {
-
-                if (SerachOption == 0)//By Name
+                if (SearchOp == 0)//By Name
                 {
-                    admins = adminService.SearchByName(SerachText, pageIndex: PageIndex, pageSize: PageSize);
+                    admins = adminService.GetAll( PageIndex, PageSize);
+
+                }
+                if (SearchOp == 1)//By Name
+                {
+                    admins = adminService.SearchByName(SearchText, pageIndex: PageIndex, pageSize: PageSize);
 
                 }
                 var Admins = admins.Select(u => new MangeAdminViewModel
@@ -138,7 +142,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         }
 
         [HttpPost]
-        public ResultViewModel<AdminEditViewModel> Post(AdminEditViewModel Admin)
+        public ResultViewModel<AdminEditViewModel> Post([FromBody]AdminEditViewModel Admin)
         {
             ResultViewModel<AdminEditViewModel> result
                 = new ResultViewModel<AdminEditViewModel>();

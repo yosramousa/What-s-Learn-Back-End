@@ -56,13 +56,14 @@ namespace ITI.WhatsLearnServices
             query = query.OrderByDescending(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<AdminViewModel> Get(string Email, string Password)
+        public AdminViewModel Get(string Email, string Password)
         {
             var query =
-                AdminRepo.Get
-                    (i => i.Email == Email && i.Password == Password);
+                //AdminRepo.Get
+                //    (i => i.Email == Email && i.Password == Password);
+                AdminRepo.GetAll().Where(i => i.Email == Email && i.Password == Password)?.FirstOrDefault();
 
-            return query.ToList().Select(i => i.ToViewModel());
+            return query?.ToViewModel();
         }
 
         public IEnumerable<AdminViewModel> SearchByName(string Name, int pageIndex = 0, int pageSize = 20)

@@ -102,7 +102,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             try
             {
-                AdminViewModel admin = adminService.Get(_loginModel.Email, _loginModel.Password)?.First();
+                AdminViewModel admin = adminService.Get(_loginModel.Email, _loginModel.Password);
                 if (admin == null)
                 {
                     result.Successed = false;

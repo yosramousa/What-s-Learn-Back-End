@@ -53,7 +53,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         }
 
        
-        [HttpGet]
+        [HttpPost]
         public ResultViewModel<AdminEditViewModel> Update(AdminEditViewModel Admin)
         {
             ResultViewModel<AdminEditViewModel> result

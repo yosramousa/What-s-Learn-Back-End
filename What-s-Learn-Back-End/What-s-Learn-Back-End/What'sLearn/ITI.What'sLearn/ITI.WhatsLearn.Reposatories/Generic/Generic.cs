@@ -50,7 +50,8 @@ namespace ITI.WhatsLearn.Reposatories
         }
         public IQueryable<T> Get(Expression<Func<T, bool>> filter)
         {
-            return GetAll().Where(filter);
+            return GetAll();
+                //.Where(filter);
         }
 
         public int Count()

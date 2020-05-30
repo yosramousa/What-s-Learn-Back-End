@@ -9,7 +9,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Cors;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
@@ -80,7 +79,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     ID = u.ID,
                     Name = u.Name,
                     Status = u.IsActive ? "Active" : "Not Ative",
-                    TracksName = String.Join(" - ", u.Tracks.Select(i => i.Name))
+                    TracksName = 
+                            string.Join(" - ", u.Tracks.Select(i => i.Name).ToArray())
 
                 });
                 result.Successed = true;

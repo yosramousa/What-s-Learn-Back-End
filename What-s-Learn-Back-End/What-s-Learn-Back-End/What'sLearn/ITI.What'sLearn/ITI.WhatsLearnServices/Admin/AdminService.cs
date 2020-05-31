@@ -53,7 +53,7 @@ namespace ITI.WhatsLearnServices
         {
             var query =
                 AdminRepo.GetAll();
-            query = query.OrderByDescending(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public AdminViewModel Get(string Email, string Password)
@@ -69,8 +69,7 @@ namespace ITI.WhatsLearnServices
         public IEnumerable<AdminViewModel> SearchByName(string Name, int pageIndex = 0, int pageSize = 20)
         {
             var query =
-                AdminRepo.Get
-                    (i => i.Name == Name);
+                AdminRepo.GetAll().Where(i => i.Name == Name);
             query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }

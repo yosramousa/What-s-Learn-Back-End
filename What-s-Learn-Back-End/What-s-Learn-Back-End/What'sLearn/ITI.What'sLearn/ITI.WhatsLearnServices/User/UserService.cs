@@ -61,16 +61,15 @@ namespace ITI.WhatsLearn.Services
         public IEnumerable<UserViewModel> SearchByName(string Name, int pageIndex=0, int pageSize = 20)
         {
             var query =
-                UserRepo.Get
-                    (i => i.Name == Name);
+                UserRepo.GetAll().Where(i => i.Name.ToLower() == Name.ToLower());
             query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<UserViewModel> SearchByTrackName(string TrackName, int pageIndex=0, int pageSize = 20)
         {
             var query =
-                UserRepo.Get
-                    (i => i.Tracks.Where(x => x.Track.Name == TrackName).Count() > 0);
+                UserRepo.GetAll().Where
+                    (i => i.Tracks.Where(x => x.Track.Name.ToLower() == TrackName.ToLower()).Count() > 0);
             query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }

@@ -141,6 +141,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminPanal\AdminProfileController.cs" />
     <Compile Include="Controllers\AdminPanal\DashBoardController.cs" />
+    <Compile Include="Controllers\AdminPanal\InboxController.cs" />
     <Compile Include="Controllers\AdminPanal\ManageCategoryController.cs" />
     <Compile Include="Controllers\AdminPanal\ManageSkillsController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="Controllers\CourseLinkController.cs" />
     <Compile Include="Controllers\CourseVedioController.cs" />
     <Compile Include="Controllers\AdminPanal\EnrollemntRequestController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\FinishedCourseController.cs" />
     <Compile Include="Controllers\MainCategoryController.cs" />
     <Compile Include="Controllers\MainCategoryDocumentController.cs" />
@@ -175,8 +177,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CustomMultipartFormDataStreamProvider.cs" />
     <Compile Include="Models\ResultViewModel.cs" />
     <Compile Include="Models\SecurityHelper.cs" />
+    <Compile Include="Models\UploadedFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -191,6 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ITI.WhatsLearn.Entities\ITI.WhatsLearn.Entities.csproj">

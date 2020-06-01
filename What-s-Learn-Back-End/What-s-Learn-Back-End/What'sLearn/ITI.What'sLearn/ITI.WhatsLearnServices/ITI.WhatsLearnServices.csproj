@@ -46,6 +46,7 @@
     <Compile Include="CourseLink\CourseLinkService.cs" />
     <Compile Include="CourseVedio\CourseVedioService.cs" />
     <Compile Include="Course\CourseService.cs" />
+    <Compile Include="DashBoard\DashBoardViewModel.cs" />
     <Compile Include="FinishedCourse\FinishedCourseService.cs" />
     <Compile Include="MainCategoryDocument\MainCategoryDocumentService.cs" />
     <Compile Include="MainCategoryLink\MainCategoryLinkService.cs" />

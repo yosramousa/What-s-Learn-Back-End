@@ -69,6 +69,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     ID = u.ID,
                     Name = u.Name,
                     Status = u.IsActive ? "Active" : "Disable",
+                    Image=u.Image
 
 
                 });

@@ -11,6 +11,8 @@ namespace ITI.WhatsLearn.ViewModel
         public virtual int ID { get; set; }
         public virtual string Name { get; set; }
         public virtual string Parent { get; set; }
-        public virtual List<string> Child { get; set; }
+        public  string Image { get; set; }
+        public virtual List<string> Childs { get; set; }
+        public virtual List<string> Users { get; set; }
     }
 }

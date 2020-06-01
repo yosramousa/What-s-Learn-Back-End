@@ -22,7 +22,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Links = model.SubCategoryLinks.Select(i => i.ToViewModel()).ToList(),
                 Parent = model.MainCategory.Name,
                 ParentID=model.MainCategoryID,
-                Child = model.Tracks.Select(i => i.Name).ToList()
+                Childs = model.Tracks.Select(i => i.Name).ToList()
             };
         }
         public static SubCategory ToModel(this SubCategoryEditViewModel editModel)
@@ -55,6 +55,17 @@ namespace ITI.WhatsLearn.ViewModel
                 Child = model.Tracks?.Select(i => i.Name).ToList()
             };
         }
+        public static ManageCategoryViewModel ToManageCategoryViewModel(this SubCategoryViewModel model)
+        {
+            return new ManageCategoryViewModel
+            {
+                ID = model.ID,
+                Name = model.Name,
+                Childs = model.Childs,
+                Parent = model.Parent,
+                Image = model.Image
 
+            };
+        }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
-//using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
 using System;
 using System.Collections.Generic;
@@ -43,49 +42,25 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 if (SearchIn == "MainCategory")
                 {
                     var searshResult = mainCategoryService.GetAll(PageIndex, PageSize).
-                        Select(i => new ManageCategoryViewModel()
-                        {
-                            ID = i.ID,
-                            Name = i.Name,
-                            Child = i.Child,
-                            Parent = i.Parent
-                        }).OrderBy(i => i.ID);
+                       Select(i => i.ToManageCategoryViewModel()).OrderBy(i => i.ID);
                     result.Data = searshResult;
                 }
                 else if (SearchIn == "SubCategory")
                 {
                     var searshResult = subCategoryService.GetAll(PageIndex, PageSize).
-                        Select(i => new ManageCategoryViewModel()
-                        {
-                            ID = i.ID,
-                            Name = i.Name,
-                            Child = i.Child,
-                            Parent = i.Parent
-                        });
+                       Select(i => i.ToManageCategoryViewModel());
                     result.Data = searshResult;
                 }
                 else if (SearchIn == "Track")
                 {
                     var searshResult = trackService.GetAll(PageIndex, PageSize).
-                        Select(i => new ManageCategoryViewModel()
-                        {
-                            ID = i.ID,
-                            Name = i.Name,
-                            Child = i.Child,
-                            Parent = i.Parent
-                        });
+                       Select(i => i.ToManageCategoryViewModel());
                     result.Data = searshResult;
                 }
                 else if (SearchIn == "Course")
                 {
                     var searshResult = courseService.GetAll(PageIndex, PageSize).
-                        Select(i => new ManageCategoryViewModel()
-                        {
-                            ID = i.ID,
-                            Name = i.Name,
-                            Child = i.Child,
-                            Parent = i.Parent
-                        });
+                        Select(i => i.ToManageCategoryViewModel());
                     result.Data = searshResult;
                 }
 
@@ -114,13 +89,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 {
                     if (SearchBy == 0)
                     {
-                        var searshResult = mainCategoryService.GetAll(PageIndex, PageSize).Select(i => new ManageCategoryViewModel()
-                        {
-                            ID = i.ID,
-                            Name = i.Name,
-                            Child = i.Child,
-                            Parent = i.Parent
-                        });
+                        var searshResult = mainCategoryService.GetAll(PageIndex, PageSize).Select(i => i.ToManageCategoryViewModel());
                         result.Data = searshResult;
 
                     }
@@ -128,13 +97,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     {
 
                         var searshResult = mainCategoryService.GetAll(PageIndex, PageSize).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                             Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
@@ -142,13 +105,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     {
 
                         var searshResult = mainCategoryService.SearchByChilds(SearchText, PageIndex, PageSize).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                              Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
@@ -156,14 +113,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     {
 
                         var searshResult = mainCategoryService.SearchByName(SearchText, PageIndex, PageSize)
-
-                             .Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                            .Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
@@ -173,16 +123,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                         bool VaildID = int.TryParse(SearchText, out ID);
                         if (VaildID)
                         {
-
                             var searshResult = mainCategoryService.GetAll(PageIndex, PageSize).Where(i => i.ID == ID)
-                                 .Select(i => new ManageCategoryViewModel()
-                                 {
-                                     ID = i.ID,
-                                     Name = i.Name,
-                                     Child = i.Child,
-                                     Parent = i.Parent
-                                 });
-
+                                .Select(i => i.ToManageCategoryViewModel());
                             result.Data = searshResult;
                         }
                     }
@@ -191,14 +133,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 {
                     if (SearchBy == 0)
                     {
-                        var searshResult = subCategoryService.GetAll(PageIndex, PageSize).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                        var searshResult = subCategoryService.GetAll(PageIndex, PageSize)
+                              .Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
 
@@ -206,28 +142,15 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     else if (SearchBy == 1)
                     {
 
-                        var searshResult = subCategoryService.SearchByName(SearchText, PageIndex, PageSize).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                        var searshResult = subCategoryService.SearchByName(SearchText, PageIndex, PageSize)
+                            .Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
                     else if (SearchBy == 2)
                     {
-
-                        var searshResult = subCategoryService.SearchByChilds(SearchText, PageIndex, PageSize).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                        var searshResult = subCategoryService.SearchByChilds(SearchText, PageIndex, PageSize)
+                            .Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
@@ -235,13 +158,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     {
 
                         var searshResult = subCategoryService.SearchByName(SearchText, PageIndex, PageSize).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                            Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
@@ -253,13 +170,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                         {
 
                             var searshResult = subCategoryService.SeachByID(ID).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                            Select(i => i.ToManageCategoryViewModel());
 
 
                             result.Data = searshResult;
@@ -272,13 +183,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     {
 
                         var searshResult = trackService.GetAll(PageIndex, PageSize).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                            Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
@@ -286,13 +191,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     {
 
                         var searshResult = trackService.SearchByParentName(SearchText, PageIndex, PageSize).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                             Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
@@ -300,13 +199,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     {
 
                         var searshResult = trackService.SearchByChilds(SearchText, PageIndex, PageSize).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                             Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
@@ -314,13 +207,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     {
 
                         var searshResult = trackService.SearchByName(SearchText, PageIndex, PageSize).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                             Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
@@ -330,17 +217,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                         bool VaildID = int.TryParse(SearchText, out ID);
                         if (VaildID)
                         {
-
-
-
                             var searshResult = trackService.SeachByID(ID).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                             Select(i => i.ToManageCategoryViewModel());
 
                             result.Data = searshResult;
                         }
@@ -352,13 +230,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     {
 
                         var searshResult = courseService.GetAll(PageIndex, PageSize).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                            Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
@@ -366,13 +238,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     {
 
                         var searshResult = courseService.SearchByParentName(SearchText, PageIndex, PageSize).
-                            Select(i => new ManageCategoryViewModel()
-                            {
-                                ID = i.ID,
-                                Name = i.Name,
-                                Child = i.Child,
-                                Parent = i.Parent
-                            });
+                           Select(i => i.ToManageCategoryViewModel());
                         result.Data = searshResult;
 
 
@@ -388,13 +254,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
 
                         var searshResult = courseService.SearchByName(SearchText, PageIndex, PageSize).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                             Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
@@ -404,16 +264,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                         bool VaildID = int.TryParse(SearchText, out ID);
                         if (VaildID)
                         {
-
-
                             var searshResult = courseService.SeachByID(ID).
-                             Select(i => new ManageCategoryViewModel()
-                             {
-                                 ID = i.ID,
-                                 Name = i.Name,
-                                 Child = i.Child,
-                                 Parent = i.Parent
-                             });
+                             Select(i => i.ToManageCategoryViewModel());
 
                             result.Data = searshResult;
                         }
@@ -422,12 +274,13 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                 else
                 {
+                    
                     List<ManageCategoryViewModel> res = new List<ManageCategoryViewModel>();
                     var searshResult = new ManageCategoryViewModel()
                     {
                         ID = 1,
                         Name = "Main Category Parent",
-                        Child = mainCategoryService.GetAll(PageIndex, PageSize).Select(i => i.Name).ToList(),
+                        Childs = mainCategoryService.GetAll(PageIndex, PageSize).Select(i => i.Name).ToList(),
                         Parent = ""
                     };
                     res.Add(searshResult);
@@ -510,7 +363,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
             return "";
 
-        }   
+        }
 
         //public ResultViewModel<LevelViewModel> GetByID(int level, int ID)
         //{

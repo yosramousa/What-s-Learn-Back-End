@@ -17,12 +17,13 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = model.Name,
                 Discription = model.Discription,
                 Image = model.Image,
-                Documents = model.CourseDocuments.Count()>0? model.CourseDocuments.Select(i => i.ToViewModel()).ToList():null,
-                Vedios = model.CourseVedios.Count()>0?model.CourseVedios.Select(i => i.ToViewModel()).ToList():null,
+                Documents = model.CourseDocuments.Count() > 0 ? model.CourseDocuments.Select(i => i.ToViewModel()).ToList() : null,
+                Vedios = model.CourseVedios.Count() > 0 ? model.CourseVedios.Select(i => i.ToViewModel()).ToList() : null,
                 Links = model.CourseLinks?.Select(i => i.ToViewModel()).ToList(),
-                Parent = model.Tracks.Count()>0? model.Tracks.FirstOrDefault().Track.Name:"",
-                
-                Child = null
+                Parent = model.Tracks.Count() > 0 ? string.Join(" - ", model.Tracks.Select(i => i.Track.Name)) : "",
+
+                Childs = null,
+                Tracks=model.Tracks.Select(i=>i.Track.Name).ToList()
             };
         }
         public static Course ToModel(this CourseEditViewModel editModel)
@@ -36,8 +37,8 @@ namespace ITI.WhatsLearn.ViewModel
                 CourseLinks = editModel.Links?.Select(i => i.ToModel()).ToList(),
                 CourseDocuments = editModel.Documents?.Select(i => i.ToModel()).ToList(),
                 CourseVedios = editModel.Vedios?.Select(i => i.ToModel()).ToList(),
-                
-                
+
+
 
             };
         }
@@ -53,7 +54,21 @@ namespace ITI.WhatsLearn.ViewModel
                 Documents = model.CourseDocuments?.Select(i => i.ToEditableViewModel()).ToList(),
                 Vedios = model.CourseVedios?.Select(i => i.ToEditableViewModel()).ToList(),
                 Parent = model.Tracks?.FirstOrDefault()?.Track.Name,
-                Child = null
+                Childs = null,
+                
+            };
+        }
+        public static ManageCategoryViewModel ToManageCategoryViewModel(this CourseViewModel model)
+        {
+            return new ManageCategoryViewModel
+            {
+                ID = model.ID,
+                Name = model.Name,
+                Childs = model.Tracks,
+                Parent = model.Parent,
+                Image = model.Image,
+                
+
             };
         }
 

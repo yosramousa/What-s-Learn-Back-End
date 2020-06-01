@@ -20,6 +20,12 @@ namespace ITI.WhatsLearn.ViewModel
                 Discription = model.Discription,
                 Image = model.Image,
                 Parent = null,
+                Documents = model.MainCategoryDocuments.Select(i => i.ToViewModel()).ToList(),
+                Vedios = model.MainCategoryVedios.Select(i => i.ToViewModel()).ToList(),
+                Links = model.MainCategoryLinks.Select(i => i.ToViewModel()).ToList(),
+
+
+
                 Child = model.SubCategories.Select(i => i.Name).ToList()
                 
             };
@@ -49,7 +55,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Documents = model.MainCategoryDocuments.Select(i => i.ToEditableViewModel()).ToArray(),
                 Vedios = model.MainCategoryVedios.Select(i => i.ToEditableViewModel()).ToArray(),
                 Parent = null,
-                Child = model.SubCategories.Select(i => i.Name).ToList()
+                Child = model.SubCategories?.Select(i => i.Name).ToList()
             };
         }
 

@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Services
 {
-    public class CourseService
+    public class TrackDocumentService
     {
         
         UnitOfWork unitOfWork;
         Generic<Course> CourseRepo;
-        public CourseService(UnitOfWork _unitOfWork)
+        public TrackDocumentService(UnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
             CourseRepo = unitOfWork.CourseRepo;
@@ -46,7 +46,7 @@ namespace ITI.WhatsLearn.Services
         {
             var query =
                 CourseRepo.GetAll();
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)

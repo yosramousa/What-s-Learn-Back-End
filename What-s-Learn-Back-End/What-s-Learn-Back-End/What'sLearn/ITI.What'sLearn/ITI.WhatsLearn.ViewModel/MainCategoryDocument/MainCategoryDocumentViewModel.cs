@@ -8,8 +8,11 @@ namespace ITI.WhatsLearn.ViewModel
 {
    public  class MainCategoryDocumentViewModel
     {
-        public int iD { get; set; }
+        public int ID { get; set; }
         public string File { get; set; }
         public string Description { get; set; }
+        public int ParentID { get; set; }
+
+
     }
 }

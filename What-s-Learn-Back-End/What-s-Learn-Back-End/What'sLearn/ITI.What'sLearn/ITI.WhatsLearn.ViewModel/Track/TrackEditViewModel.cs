@@ -26,7 +26,7 @@ namespace ITI.WhatsLearn.ViewModel
 
         public String Image { get; set; }
         [Required]
-        public int SubCategoryID { get; set; }
+        public int ParentID { get; set; }
 
         [Required]
         public TrackLinkEditViewModel[] Links { get; set; }
@@ -35,7 +35,7 @@ namespace ITI.WhatsLearn.ViewModel
         public TrackDocumentEditViewModel[] Documents { get; set; }
 
         [Required]
-        public TrackVedioEditViewModel[] Videos { get; set; }
+        public TrackVedioEditViewModel[] Vedios { get; set; }
 
 
     }

@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.ViewModel
 {
-   public  class MainCategoryVedioViewModel
+   public  class MainCategoryVedioViewModel:LevelVedioViewModel
     {
-        public int ID { get; set; }
-        public string Vedio { get; set; }
-        public string Description { get; set; }
+        public int ParentID { get; set; }
+
 
 
     }

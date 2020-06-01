@@ -47,7 +47,7 @@ namespace ITI.WhatsLearn.Services
             var query =
                 SubCategoryDocumentRepo.Get
                     (i => i.ID == id || i.Description ==description);
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)

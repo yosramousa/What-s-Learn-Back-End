@@ -65,6 +65,11 @@
     <Compile Include="FinishedCourse\FinishedCourseEditViewModel.cs" />
     <Compile Include="FinishedCourse\FinishedCourseExtentions.cs" />
     <Compile Include="FinishedCourse\FinishedCourseViewModel.cs" />
+    <Compile Include="Level\LevelEditViewModel.cs" />
+    <Compile Include="Level\LevelViewModel.cs" />
+    <Compile Include="Level\LevelDocumentViewModel.cs" />
+    <Compile Include="Level\LevelLinkViewModel.cs" />
+    <Compile Include="Level\LevelVedioViewModel.cs" />
     <Compile Include="Login\LoginModel.cs" />
     <Compile Include="Skill\SkillEditViewModel.cs" />
     <Compile Include="Skill\SkillExtensions.cs" />

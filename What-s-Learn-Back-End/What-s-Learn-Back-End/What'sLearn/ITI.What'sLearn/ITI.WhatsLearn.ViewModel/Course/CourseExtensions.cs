@@ -17,10 +17,11 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = model.Name,
                 Discription = model.Discription,
                 Image = model.Image,
-                Documents = model.CourseDocuments.Select(i => i.ToViewModel()).ToArray(),
-                Vedios = model.CourseVedios.Select(i => i.ToViewModel()).ToArray(),
-                Links = model.CourseLinks.Select(i => i.ToViewModel()).ToArray(),
-                Parent = model.Tracks.FirstOrDefault().Track.Name,
+                Documents = model.CourseDocuments.Count()>0? model.CourseDocuments.Select(i => i.ToViewModel()).ToList():null,
+                Vedios = model.CourseVedios.Count()>0?model.CourseVedios.Select(i => i.ToViewModel()).ToList():null,
+                Links = model.CourseLinks?.Select(i => i.ToViewModel()).ToList(),
+                Parent = model.Tracks.Count()>0? model.Tracks.FirstOrDefault().Track.Name:"",
+                
                 Child = null
             };
         }
@@ -32,9 +33,11 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = editModel.Name,
                 Discription = editModel.Discription,
                 Image = editModel.Image,
-                CourseLinks = editModel.Links.Select(i => i.ToModel()).ToList(),
-                CourseDocuments = editModel.Documents.Select(i => i.ToModel()).ToList(),
-                CourseVedios = editModel.Videos.Select(i => i.ToModel()).ToList(),
+                CourseLinks = editModel.Links?.Select(i => i.ToModel()).ToList(),
+                CourseDocuments = editModel.Documents?.Select(i => i.ToModel()).ToList(),
+                CourseVedios = editModel.Vedios?.Select(i => i.ToModel()).ToList(),
+                
+                
 
             };
         }
@@ -46,10 +49,10 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = model.Name,
                 Discription = model.Discription,
                 Image = model.Image,
-                Links = model.CourseLinks.Select(i => i.ToEditableViewModel()).ToArray(),
-                Documents = model.CourseDocuments.Select(i => i.ToEditableViewModel()).ToArray(),
-                Videos = model.CourseVedios.Select(i => i.ToEditableViewModel()).ToArray(),
-                Parent = model.Tracks.FirstOrDefault().Track.Name,
+                Links = model.CourseLinks?.Select(i => i.ToEditableViewModel()).ToList(),
+                Documents = model.CourseDocuments?.Select(i => i.ToEditableViewModel()).ToList(),
+                Vedios = model.CourseVedios?.Select(i => i.ToEditableViewModel()).ToList(),
+                Parent = model.Tracks?.FirstOrDefault()?.Track.Name,
                 Child = null
             };
         }

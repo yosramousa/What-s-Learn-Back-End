@@ -15,7 +15,8 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = model.ID,
                 Link = model.Link,
-                Description = model.Description
+                Description = model.Description,
+                ParentID=model.CourseID
 
 
             };
@@ -27,7 +28,8 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = editmodel.ID,
                 Link = editmodel.Link,
-                Description = editmodel.Description
+                Description = editmodel.Description,
+                CourseID=editmodel.ParentID
 
 
             };
@@ -39,7 +41,8 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = model.ID,
                 Link = model.Link,
-                Description = model.Description
+                Description = model.Description,
+                ParentID=model.CourseID
             };
         }
 

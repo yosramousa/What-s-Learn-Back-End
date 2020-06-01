@@ -9,7 +9,6 @@ namespace ITI.WhatsLearn.ViewModel
 {
    public  class MainCategoryVedioEditViewModel
     {
-        [Required]
         public int ID { get; set; }
         [Required]
         [MaxLength(1000)]
@@ -17,6 +16,9 @@ namespace ITI.WhatsLearn.ViewModel
         [Required]
         [MaxLength(250)]
         public string Description { get; set; }
+        [Required]
+        public int ParentID { get; set; }
+
 
 
     }

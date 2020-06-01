@@ -48,7 +48,7 @@ namespace ITI.WhatsLearn.Services
             var query =
                 UserCertificateRepo.Get
                     (i => i.ID == id);
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)

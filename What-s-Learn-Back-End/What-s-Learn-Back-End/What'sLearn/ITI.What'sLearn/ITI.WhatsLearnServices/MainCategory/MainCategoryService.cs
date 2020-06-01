@@ -15,13 +15,25 @@ namespace ITI.WhatsLearnServices
 
         UnitOfWork unitOfWork;
         Generic<MainCategory> MainCategoryRepo;
+        Generic<MainCategoryDocument> MainCategoryDocumentRepo;
+        Generic<MainCategoryLink> MainCategoryLinkRepo;
+        Generic<MainCategoryVedio> MainCategoryVedioRepo;
+
+
         Generic<SubCategory> subCategoryRepo;
+
+
 
         public MainCategoryService(UnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
             MainCategoryRepo = unitOfWork.MainCategoryRepo;
             subCategoryRepo = unitOfWork.SubCategoryRepo;
+            MainCategoryDocumentRepo = unitOfWork.MainCategoryDocumentRepo;
+            MainCategoryLinkRepo = unitOfWork.MainCategoryLinkRepo;
+            MainCategoryVedioRepo = unitOfWork.MainCategoryVedioRepo;
+
+
         }
         public MainCategoryEditViewModel Add(MainCategoryEditViewModel MainCategory)
         {
@@ -32,6 +44,24 @@ namespace ITI.WhatsLearnServices
         public MainCategoryEditViewModel Update(MainCategoryEditViewModel MainCategory)
         {
             MainCategory c = MainCategoryRepo.Update(MainCategory.ToModel());
+            foreach ( MainCategoryDocument doc in c.MainCategoryDocuments)
+            {
+
+                MainCategoryDocumentRepo.Update(doc);
+
+            }
+            foreach (MainCategoryLink   doc in c.MainCategoryLinks)
+            {
+
+                MainCategoryLinkRepo.Update(doc);
+
+            }
+            foreach (MainCategoryVedio  doc in c.MainCategoryVedios)
+            {
+
+                MainCategoryVedioRepo.Update(doc);
+
+            }
             unitOfWork.Commit();
             return c.ToEditableViewModel();
         }
@@ -43,18 +73,26 @@ namespace ITI.WhatsLearnServices
         public IEnumerable<MainCategoryViewModel> GetAll(int pageIndex, int pageSize = 20)
         {
             var query =
-                MainCategoryRepo.GetAll();
-            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+                MainCategoryRepo.GetAll(); 
+             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<MainCategoryViewModel> GetByName(string Name)
+        public IEnumerable<MainCategoryViewModel> SearchByChilds(string ChildName ,int pageIndex, int pageSize = 20)
         {
             var query =
-                MainCategoryRepo.Get(i=>i.Name==Name);
+                MainCategoryRepo.Get(i => i.SubCategories.Select(x=>x.Name).Contains(ChildName));
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<MainCategoryViewModel> SearchByName(string Name,int pageIndex, int pageSize = 20)
+        {
+            var query =
+                MainCategoryRepo.Get(i=>i.Name.Contains( Name));
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
 
-      
+
         public void Remove(int id)
         {
             MainCategoryRepo.Remove(MainCategoryRepo.GetByID(id));

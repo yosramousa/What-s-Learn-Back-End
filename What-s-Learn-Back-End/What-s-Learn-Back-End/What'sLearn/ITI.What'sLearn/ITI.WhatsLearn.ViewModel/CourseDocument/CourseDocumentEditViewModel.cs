@@ -17,6 +17,7 @@ namespace ITI.WhatsLearn.ViewModel
         public HttpPostedFileBase Document { get; set; }
         [Required]
         public String File { get; set; }
+        public int ParentID { get; set; }
 
         [Required]
         [MaxLength(1000)]

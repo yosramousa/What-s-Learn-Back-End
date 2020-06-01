@@ -21,5 +21,7 @@ namespace ITI.WhatsLearn.ViewModel
         [Required]
         [MaxLength(1000)]
         public string Description { get; set; }
+        public int ParentID { get; set; }
+
     }
 }

@@ -21,7 +21,7 @@ namespace ITI.WhatsLearn.ViewModel
         [MaxLength(1000)]
         public string Discription { get; set; }
         [Required]
-        public int MainCategoryID { get; set; }
+        public int ParentID { get; set; }
 
         public HttpPostedFileBase Photo { get; set; }
 

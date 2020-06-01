@@ -41,7 +41,7 @@ namespace ITI.WhatsLearn.Services
         {
             var query =
                 UserTrackRepo.GetAll();
-            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
 
@@ -58,7 +58,7 @@ namespace ITI.WhatsLearn.Services
             var query =
                 UserTrackRepo.Get
                     (i => i.IsApproveed==false);
-            query = query.OrderByDescending(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
 
@@ -67,7 +67,7 @@ namespace ITI.WhatsLearn.Services
             var query =
                 UserTrackRepo.Get
                     (i => i.IsApproveed==false && i.User.Name==Name);
-            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<UserTrackViewModel> SearchByTrackName(string TrackName, int pageIndex = 0, int pageSize = 20)
@@ -75,7 +75,7 @@ namespace ITI.WhatsLearn.Services
             var query =
                 UserTrackRepo.Get
                     (i => i.IsApproveed==false&& i.Track.Name==TrackName);
-            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
 

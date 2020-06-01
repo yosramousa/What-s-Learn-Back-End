@@ -82,7 +82,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
         }
-        [HttpGet]
+        [HttpPost]
         public ResultViewModel<MainCategoryEditViewModel> Update(MainCategoryEditViewModel MainCategory)
         {
             ResultViewModel<MainCategoryEditViewModel> result

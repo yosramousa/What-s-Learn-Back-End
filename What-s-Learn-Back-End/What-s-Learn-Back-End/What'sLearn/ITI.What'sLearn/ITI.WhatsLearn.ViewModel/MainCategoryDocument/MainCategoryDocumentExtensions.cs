@@ -13,9 +13,11 @@ namespace ITI.WhatsLearn.ViewModel
         {
             return new MainCategoryDocumentViewModel()
             {
-                iD=model.ID,
+                ID=model.ID,
                 File = model.File,
-                Description = model.Description
+                Description = model.Description,
+                ParentID=model.MainCategoryID
+
 
 
             };
@@ -27,7 +29,9 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = editmodel.ID,
                 File = editmodel.File,
-                Description = editmodel.Description
+                Description = editmodel.Description,
+                MainCategoryID=editmodel.ParentID
+               
 
 
             };
@@ -40,7 +44,8 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = model.ID,
                 File = model.File,
-                Description = model.Description
+                Description = model.Description,
+                ParentID=model.MainCategoryID
             };
         }
     }

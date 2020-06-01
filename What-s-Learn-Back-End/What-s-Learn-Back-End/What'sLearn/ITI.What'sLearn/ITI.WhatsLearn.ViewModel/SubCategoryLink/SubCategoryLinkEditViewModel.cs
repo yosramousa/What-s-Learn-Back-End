@@ -16,5 +16,7 @@ namespace ITI.WhatsLearn.ViewModel
         public string Link { get; set; }
         [MaxLength(250)]
         public string Description { get; set; }
+        public int ParentID { get; set; }
+
     }
 }

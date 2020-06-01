@@ -1,4 +1,5 @@
-﻿using ITI.WhatsLearn.ViewModel;
+﻿using ITI.WhatsLearn.Entities;
+using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
 using System;
 using System.Collections.Generic;
@@ -37,10 +38,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             return result;
         }
         [HttpPost]
-        public ResultViewModel<SubCategoryEditViewModel> Post(SubCategoryEditViewModel SubCategory)
+        public ResultViewModel<SubCategory> Post(SubCategoryEditViewModel SubCategory)
         {
-            ResultViewModel<SubCategoryEditViewModel> result
-                = new ResultViewModel<SubCategoryEditViewModel>();
+            ResultViewModel<SubCategory> result
+                = new ResultViewModel<SubCategory>();
 
             try
             {
@@ -50,7 +51,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 }
                 else
                 {
-                    SubCategoryEditViewModel selectedSubCategory
+                    SubCategory selectedSubCategory
                         = subCategoryService.Add(SubCategory);
 
                     result.Successed = true;
@@ -82,7 +83,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
         }
-        [HttpGet]
+        [HttpPost]
         public ResultViewModel<SubCategoryEditViewModel> Update(SubCategoryEditViewModel SubCategory)
         {
             ResultViewModel<SubCategoryEditViewModel> result

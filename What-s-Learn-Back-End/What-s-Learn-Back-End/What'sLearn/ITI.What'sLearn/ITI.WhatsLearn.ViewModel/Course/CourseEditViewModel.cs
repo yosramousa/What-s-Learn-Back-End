@@ -29,16 +29,15 @@ namespace ITI.WhatsLearn.ViewModel
         public HttpPostedFileBase Photo { get; set; }
 
         public String Image { get; set; }
-        [Required]
-        public int SubCategoryID { get; set; }
+        public int ParentID { get; set; }
 
         [Required]
-        public CourseLinkEditViewModel[] Links { get; set; }
-
+        public List<CourseLinkEditViewModel> Links { get; set; }
         [Required]
-        public CourseDocumentEditViewModel[] Documents { get; set; }
 
+        public List<CourseDocumentEditViewModel> Documents { get; set; }
         [Required]
-        public CourseVedioEditViewModel[] Videos { get; set; }
+
+        public List<CourseVedioEditViewModel> Vedios { get; set; }
     }
 }

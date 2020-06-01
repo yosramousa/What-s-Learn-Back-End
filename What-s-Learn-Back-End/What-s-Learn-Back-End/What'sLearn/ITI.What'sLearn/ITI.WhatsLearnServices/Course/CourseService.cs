@@ -8,17 +8,27 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITI.WhatsLearnServices
+namespace ITI.WhatsLearn.Services
 {
     public class CourseService
     {
         UnitOfWork unitOfWork;
         Generic<Course> CourseRepo;
+        Generic<CourseDocument> CourseDocumentRepo;
+        Generic<CourseVedio> CourseVedioRepo;
+
+        Generic<CourseLink> CourseLinkRepo;
         public CourseService(UnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
             CourseRepo = unitOfWork.CourseRepo;
+            CourseDocumentRepo = unitOfWork.CourseDocumentRepo;
+            CourseVedioRepo = unitOfWork.CourseVedioRepo;
+            CourseLinkRepo = unitOfWork.CourseLinkRepo;
+
         }
+
+
         public CourseEditViewModel Add(CourseEditViewModel course)
         {
             Course c = CourseRepo.Add(course.ToModel());
@@ -28,6 +38,25 @@ namespace ITI.WhatsLearnServices
         public CourseEditViewModel Update(CourseEditViewModel course)
         {
             Course c = CourseRepo.Update(course.ToModel());
+
+            foreach (CourseDocument doc in c.CourseDocuments)
+            {
+
+                CourseDocumentRepo.Update(doc);
+
+            }
+            foreach (CourseLink doc in c.CourseLinks)
+            {
+
+                CourseLinkRepo.Update(doc);
+
+            }
+            foreach (CourseVedio doc in c.CourseVedios)
+            {
+
+                CourseVedioRepo.Update(doc);
+
+            }
             unitOfWork.Commit();
             return c.ToEditableViewModel();
         }
@@ -35,11 +64,11 @@ namespace ITI.WhatsLearnServices
         {
             return CourseRepo.GetByID(id)?.ToViewModel();
         }
-        public IEnumerable<CourseViewModel> Get(int pageIndex, int pageSize = 20)
+        public IEnumerable<CourseViewModel> GetAll(int pageIndex, int pageSize = 20)
         {
             var query =
                 CourseRepo.GetAll();
-            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<CourseViewModel> Get(Expression<Func<Course, bool>> filter)
@@ -54,5 +83,33 @@ namespace ITI.WhatsLearnServices
             unitOfWork.Commit();
 
         }
+        public IEnumerable<CourseViewModel> SeachByID(int ID)
+        {
+            var query =
+                CourseRepo.Get(i => i.ID == ID);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<CourseViewModel> SearchByName(string Name, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                CourseRepo.Get(i => i.Name.Contains(Name));
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+
+            return query.ToList().Select(i => i.ToViewModel());
+
+
+        }
+
+        public IEnumerable<CourseViewModel> SearchByParentName(string Parent, int pageIndex, int pageSize = 20)
+        {
+            var query = CourseRepo.Get(i => i.Tracks.Select(x => x.Track.Name).Contains(Parent));
+
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+
+            return query.ToList().Select(i => i.ToViewModel());
+
+
+        }
+
     }
 }

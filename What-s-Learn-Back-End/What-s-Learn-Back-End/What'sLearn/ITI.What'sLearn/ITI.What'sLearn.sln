@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITI.WhatsLearn.Presentation", "ITI.WhatsLearn.Presentation\ITI.WhatsLearn.Presentation.csproj", "{41C03590-70FD-4C30-BBB9-64328ECDBFBB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITI.WhatsLearn.Entities", "ITI.WhatsLearn.Entities\ITI.WhatsLearn.Entities.csproj", "{D6B1BE35-2000-42A3-B3C8-834D0E8D7AB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITI.WhatsLearn.Presentation", "ITI.WhatsLearn.Presentation\ITI.WhatsLearn.Presentation.csproj", "{41C03590-70FD-4C30-BBB9-64328ECDBFBB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITI.WhatsLearn.Reposatories", "ITI.WhatsLearn.Reposatories\ITI.WhatsLearn.Reposatories.csproj", "{4D4F2C21-611B-4316-96F3-5ACE123737FE}"
 EndProject
@@ -19,14 +19,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{41C03590-70FD-4C30-BBB9-64328ECDBFBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41C03590-70FD-4C30-BBB9-64328ECDBFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{41C03590-70FD-4C30-BBB9-64328ECDBFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{41C03590-70FD-4C30-BBB9-64328ECDBFBB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6B1BE35-2000-42A3-B3C8-834D0E8D7AB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6B1BE35-2000-42A3-B3C8-834D0E8D7AB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6B1BE35-2000-42A3-B3C8-834D0E8D7AB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6B1BE35-2000-42A3-B3C8-834D0E8D7AB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41C03590-70FD-4C30-BBB9-64328ECDBFBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41C03590-70FD-4C30-BBB9-64328ECDBFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41C03590-70FD-4C30-BBB9-64328ECDBFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41C03590-70FD-4C30-BBB9-64328ECDBFBB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D4F2C21-611B-4316-96F3-5ACE123737FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D4F2C21-611B-4316-96F3-5ACE123737FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D4F2C21-611B-4316-96F3-5ACE123737FE}.Release|Any CPU.ActiveCfg = Release|Any CPU

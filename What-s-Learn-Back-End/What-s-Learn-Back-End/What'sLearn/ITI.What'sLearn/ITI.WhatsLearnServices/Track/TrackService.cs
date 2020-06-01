@@ -15,22 +15,50 @@ namespace ITI.WhatsLearn.Services
         
         UnitOfWork unitOfWork;
         Generic<Track> TrackRepo;
+        Generic<TrackDocument> TrackDocumentRepo;
+        Generic<TrackVedio> TrackVedioRepo;
+
+        Generic<TrackLink> TrackLinkRepo;
         public TrackService(UnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
             TrackRepo = unitOfWork.TrackRepo;
+            TrackDocumentRepo = unitOfWork.TrackDocumentRepo;
+            TrackVedioRepo = unitOfWork.TrackVedioRepo;
+            TrackLinkRepo = unitOfWork.TrackLinkRepo;
+
         }
-        public TrackEditViewModel Add(TrackEditViewModel P)
+      
+        public Track Add(TrackEditViewModel P)
         {
             Track PP = TrackRepo.Add(P.ToModel());
             unitOfWork.Commit();
-            return PP.ToEditableViewModel();
+            return PP;
         }
-        public TrackEditViewModel Update(TrackEditViewModel P)
+        public Track Update(TrackEditViewModel P)
         {
             Track PP = TrackRepo.Update(P.ToModel());
+
+            foreach (TrackDocument doc in PP.TrackDocuments)
+            {
+
+                TrackDocumentRepo.Update(doc);
+
+            }
+            foreach (TrackLink doc in PP.TrackLinks)
+            {
+
+                TrackLinkRepo.Update(doc);
+
+            }
+            foreach (TrackVedio doc in PP.TrackVedios)
+            {
+
+                TrackVedioRepo.Update(doc);
+
+            }
             unitOfWork.Commit();
-            return PP.ToEditableViewModel();
+            return PP;
         }
         public Track GetByID(int id)
         {
@@ -46,7 +74,7 @@ namespace ITI.WhatsLearn.Services
         {
             var query =
               TrackRepo.GetAll();
-            query = query.OrderByDescending(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)
@@ -59,5 +87,41 @@ namespace ITI.WhatsLearn.Services
         {
             return TrackRepo.Count();
         }
+
+        public IEnumerable<TrackViewModel> SeachByID(int ID)
+        {
+            var query =
+                TrackRepo.Get(i => i.ID == ID);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<TrackViewModel> SearchByName(string Name, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                TrackRepo.Get(i => i.Name.Contains(Name));
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+
+            return query.ToList().Select(i => i.ToViewModel());
+
+
+        }
+
+        public IEnumerable<TrackViewModel> SearchByChilds(string ChildName, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                TrackRepo.Get(i => i.Courses.Select(x => x.Course.Name).Contains(ChildName));
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<TrackViewModel> SearchByParentName(string Parent, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                TrackRepo.Get(i => i.SubCategory.Name.Contains(Parent));
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+
+            return query.ToList().Select(i => i.ToViewModel());
+
+
+        }
+
     }
 }

@@ -40,7 +40,7 @@ namespace ITI.WhatsLearnServices
         {
             var query =
                 MainCategoryLinkRepo.GetAll();
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<MainCategoryLinkViewModel> Get(Expression<Func<MainCategoryLink, bool>> filter)

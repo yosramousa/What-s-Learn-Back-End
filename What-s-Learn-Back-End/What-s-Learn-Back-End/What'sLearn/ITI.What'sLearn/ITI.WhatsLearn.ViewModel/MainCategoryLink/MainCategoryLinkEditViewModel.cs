@@ -9,14 +9,15 @@ namespace ITI.WhatsLearn.ViewModel
 {
     public  class MainCategoryLinkEditViewModel
     {
-        [Required]
+      
         public int ID { get; set; }
         [Required]
         [MaxLength(1000)]
         public string Link { get; set; }
         [MaxLength(250)]
         public string Description { get; set; }
-
+        [Required]
+        public int ParentID { get; set; }
 
 
     }

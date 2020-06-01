@@ -39,10 +39,10 @@ namespace ITI.WhatsLearn.Presentation
 
 
         [HttpPost]
-        public ResultViewModel<TrackEditViewModel> Post(TrackEditViewModel Track)
+        public ResultViewModel<Track> Post(TrackEditViewModel Track)
         {
-            ResultViewModel<TrackEditViewModel> result
-                = new ResultViewModel<TrackEditViewModel>();
+            ResultViewModel<Track> result
+                = new ResultViewModel<Track>();
 
             try
             {
@@ -52,7 +52,7 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    TrackEditViewModel selectedTrack
+                    Track selectedTrack
                         = trackService.Add(Track);
                    
                     result.Successed = true;
@@ -68,10 +68,10 @@ namespace ITI.WhatsLearn.Presentation
         }
 
         [HttpPost]
-        public ResultViewModel<TrackEditViewModel> Update(TrackEditViewModel track)
+        public ResultViewModel<Track> Update(TrackEditViewModel track)
         {
-            ResultViewModel<TrackEditViewModel> result
-                = new ResultViewModel<TrackEditViewModel>();
+            ResultViewModel<Track> result
+                = new ResultViewModel<Track>();
 
             try
             {
@@ -81,7 +81,7 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    TrackEditViewModel selectedEmp
+                    Track selectedEmp
                         = trackService.Update(track);
 
                     result.Successed = true;

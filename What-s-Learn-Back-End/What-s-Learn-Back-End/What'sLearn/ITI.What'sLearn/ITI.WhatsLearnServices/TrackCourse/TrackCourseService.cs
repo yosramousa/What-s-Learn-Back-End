@@ -47,7 +47,7 @@ namespace ITI.WhatsLearn.Services
             var query =
                 TrackCourseRepo.Get
                     (i => i.ID == id || i.Track.Name == TrackCoursename );
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)

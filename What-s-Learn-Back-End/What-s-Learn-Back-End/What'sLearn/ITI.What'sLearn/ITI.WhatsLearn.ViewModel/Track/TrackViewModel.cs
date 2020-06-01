@@ -16,6 +16,8 @@ namespace ITI.WhatsLearn.ViewModel
         public TrackDocumentViewModel[] Documents { get; set; }
         public TrackVedioViewModel[] Vedios { get; set; }
         public String SubCategoryName { get; set; }
+        public int ParentID { get; set; }
+
         public CourseViewModel[] Courses { get; set; }
         public override List<string> Child { get; set ; }
         public override string Parent { get; set; }

@@ -30,6 +30,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers.AdminPanal
             try
             {
                 var skills = skillService.GetAll(pageIndex: PageIndex, pageSize: PageSize);
+                
                 result.Successed = true;
                 result.Data = skills;
             }
@@ -42,15 +43,15 @@ namespace ITI.WhatsLearn.Presentation.Controllers.AdminPanal
 
         }
        [HttpGet]
-       public string Delete(int id)
+       public bool Delete(int id)
         {
             if (skillService.GetByID(id)!= null)
             {
                 skillService.Remove(id);
-                return "skill Deleted Sucessfully";
+                return true;
             }
             else
-                return "skill Not Found !";
+                return false;
         }
         [HttpPost]
         public ResultViewModel<SkillEditViewModel> Post(SkillEditViewModel skill)

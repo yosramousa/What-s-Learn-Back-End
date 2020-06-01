@@ -72,7 +72,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 {
                     trackName = n.Key,
                     Count = n.Count()
-                }).OrderBy(n => n.Count).Take(5);
+                }).OrderBy(n => n.Count).Take(4);
 
             foreach (var x in userTracks)
             {

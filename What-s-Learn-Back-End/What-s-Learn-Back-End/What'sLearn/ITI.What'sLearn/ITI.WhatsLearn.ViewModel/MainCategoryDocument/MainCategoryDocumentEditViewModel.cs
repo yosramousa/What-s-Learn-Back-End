@@ -11,13 +11,14 @@ namespace ITI.WhatsLearn.ViewModel
 {
    public  class MainCategoryDocumentEditViewModel
     {
-        [Required]
 
-        public int ID { get; set; }
-        [Required]
+        public int ID { get; set; } = 0;
+        //[Required]
         public HttpPostedFileBase Document { get; set; }
         [Required]
         public String File { get; set; }
+        [Required]
+        public int ParentID { get; set; }
 
         [Required]
         [MaxLength(1000)]

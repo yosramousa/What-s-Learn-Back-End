@@ -17,10 +17,11 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = model.Name,
                 Discription = model.Discription,
                 Image = model.Image,
-                Documents = model.SubCategoryDocuments.Select(i => i.ToViewModel()).ToArray(),
-                Vedios = model.SubCategoryVedios.Select(i => i.ToViewModel()).ToArray(),
-                Links = model.SubCategoryLinks.Select(i => i.ToViewModel()).ToArray(),
+                Documents = model.SubCategoryDocuments.Select(i => i.ToViewModel()).ToList(),
+                Vedios = model.SubCategoryVedios.Select(i => i.ToViewModel()).ToList(),
+                Links = model.SubCategoryLinks.Select(i => i.ToViewModel()).ToList(),
                 Parent = model.MainCategory.Name,
+                ParentID=model.MainCategoryID,
                 Child = model.Tracks.Select(i => i.Name).ToList()
             };
         }
@@ -35,7 +36,7 @@ namespace ITI.WhatsLearn.ViewModel
                 SubCategoryLinks = editModel.Links.Select(i=>i.ToModel()).ToList(),
                 SubCategoryDocuments = editModel.Documents.Select(i => i.ToModel()).ToList(),
                 SubCategoryVedios = editModel.Vedios.Select(i => i.ToModel()).ToList(),
-                MainCategoryID=editModel.MainCategoryID
+                MainCategoryID=editModel.ParentID
             };
         }
         public static SubCategoryEditViewModel ToEditableViewModel(this SubCategory model)
@@ -46,11 +47,12 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = model.Name,
                 Discription = model.Discription,
                 Image = model.Image,
-                Links = model.SubCategoryLinks.Select(i => i.ToEditableViewModel()).ToArray(),
-                Documents = model.SubCategoryDocuments.Select(i => i.ToEditableViewModel()).ToArray(),
-                Vedios = model.SubCategoryVedios.Select(i => i.ToEditableViewModel()).ToArray(),
-                 Parent = model.MainCategory.Name,
-                Child = model.Tracks.Select(i => i.Name).ToList()
+                Links = model.SubCategoryLinks?.Select(i => i.ToEditableViewModel()).ToArray(),
+                Documents = model.SubCategoryDocuments?.Select(i => i.ToEditableViewModel()).ToArray(),
+                Vedios = model.SubCategoryVedios?.Select(i => i.ToEditableViewModel()).ToArray(),
+                 Parent = model.MainCategory?.Name,
+                 ParentID=model.MainCategoryID,
+                Child = model.Tracks?.Select(i => i.Name).ToList()
             };
         }
 

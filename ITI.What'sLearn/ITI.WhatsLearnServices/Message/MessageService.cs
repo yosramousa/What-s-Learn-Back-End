@@ -39,7 +39,7 @@ namespace ITI.WhatsLearnServices
         {
             var query =
                 MessageRepo.GetAll();
-            query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderByDescending(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
 
@@ -69,6 +69,11 @@ namespace ITI.WhatsLearnServices
             MessageRepo.Remove(MessageRepo.GetByID(id));
             unitOfWork.Commit();
 
+        }
+
+        public int Count()
+        {
+            return MessageRepo.Count();
         }
     }
 }

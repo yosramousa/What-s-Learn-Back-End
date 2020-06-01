@@ -56,12 +56,14 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     var searshResult = trackService.GetAll(PageIndex, PageSize).
                        Select(i => i.ToManageCategoryViewModel());
                     result.Data = searshResult;
+
                 }
                 else if (SearchIn == "Course")
                 {
                     var searshResult = courseService.GetAll(PageIndex, PageSize).
                         Select(i => i.ToManageCategoryViewModel());
                     result.Data = searshResult;
+                    result.Count = courseService.Count();
                 }
 
 

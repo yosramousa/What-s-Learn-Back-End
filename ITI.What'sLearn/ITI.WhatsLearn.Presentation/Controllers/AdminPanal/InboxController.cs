@@ -1,4 +1,5 @@
-﻿using ITI.WhatsLearn.ViewModel;
+﻿using ITI.WhatsLearn.Presentation.Filters;
+using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
+    [AUTHORIZE(Roles = "Admin")]
+
     public class InboxController : ApiController
     {
         private readonly MessageService messageService;
@@ -25,18 +28,20 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
             try
             {
-                var Messages = messageService.GetAll(pageIndex, pageSize).Where(i => i.IsDeleted == false)
+                var Messages = messageService.GetAll(pageIndex, pageSize);
                     ;
                 result.Successed = true;
-                result.Data = Messages.Select(i=>new InboxViewModel()
+                result.Count = messageService.Count();
+                result.Data = Messages.Select(i => new InboxViewModel()
                 {
                     FullName = i.FullName,
                     Text = i.Text,
                     ID = i.ID,
                     Email = i.Email,
-                    IsReaded =i.IsRead,
-                    Time = (DateTime.Now -i.SendTime  ).TotalMinutes.ToString()
-                });
+                    IsReaded = i.IsRead,
+                    PriefMessage = String.Join(" ", i.Text.Split(' ').Take(4)),
+                    Time = i.SendTime.ToString()
+                }) ;
 
 
             }
@@ -47,9 +52,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
         }
-
+        
         [HttpGet]
-
         public ResultViewModel<IEnumerable<MessageViewModel>> GetUnReaded(int pageIndex, int pageSize = 20)
         {
             ResultViewModel<IEnumerable<MessageViewModel>> result
@@ -150,8 +154,11 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     FullName = i.FullName,
                     Text = i.Text,
                     ID = i.ID,
+                    Email = i.Email,
                     IsReaded = i.IsRead,
-                    Time = (i.SendTime - DateTime.Now).ToString()
+                    PriefMessage = String.Join(" ", i.Text.Split(' ').Take(4)),
+                    Time = i.SendTime.ToString()
+
                 });
 
             }

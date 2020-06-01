@@ -31,6 +31,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             {
                 var tracksRequest = userTrackService.GetEnrollRequest(pageIndex: PageIndex, pageSize: PageSize);
                 result.Successed = true;
+                result.Count = userTrackService.Count();
+
                 result.Data = tracksRequest.Select(i => new EnrollemntRequestViewModel()
                 {
                     ID = i.ID,
@@ -74,6 +76,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                 });
                 result.Successed = true;
+                result.Count = userTrackService.Count();
                 result.Data = EnrollRequests;
             }
             catch (Exception ex)

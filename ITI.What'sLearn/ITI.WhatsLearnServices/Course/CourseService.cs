@@ -111,5 +111,10 @@ namespace ITI.WhatsLearn.Services
 
         }
 
+        public int Count()
+        {
+            return CourseRepo.Count();
+        }
+
     }
 }

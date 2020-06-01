@@ -21,7 +21,6 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             adminService = _adminService;
         }
 
-       // [AUTHORIZE(Roles = "Admin")]
         [HttpGet]
         public ResultViewModel<IEnumerable<AdminViewModel>> GetList(int PageIndex, int PageSize)
         {
@@ -42,7 +41,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             return result;
         }
         [HttpPost]
-       // [AUTHORIZE(Roles = "Admin")]
+        [AUTHORIZE(Roles = "Admin")]
         public ResultViewModel<AdminEditViewModel> Post(AdminEditViewModel Admin)
         {
             ResultViewModel<AdminEditViewModel> result

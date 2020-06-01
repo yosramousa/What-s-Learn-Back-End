@@ -84,6 +84,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                 });
                 result.Successed = true;
+                result.Count = userService.Count();
                 result.Data = Users;
             }
             catch (Exception ex)

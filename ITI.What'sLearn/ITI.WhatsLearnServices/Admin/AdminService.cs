@@ -34,7 +34,6 @@ namespace ITI.WhatsLearnServices
         {
             return AdminRepo.GetByID(id);
         }
-
         public bool ChangeStatus(int id)
         {
            
@@ -61,25 +60,34 @@ namespace ITI.WhatsLearnServices
             var query =
                 //AdminRepo.Get
                 //    (i => i.Email == Email && i.Password == Password);
-                AdminRepo.GetAll().Where(i => i.Email == Email && i.Password == Password)?.FirstOrDefault();
+                AdminRepo.GetAll().Where(i => i.Email == Email && i.Password == Password && i.IsActive==true)?.FirstOrDefault();
 
             return query?.ToViewModel();
         }
-
         public IEnumerable<AdminViewModel> SearchByName(string Name, int pageIndex = 0, int pageSize = 20)
         {
             var query =
                 AdminRepo.Get
-                    (i => i.Name == Name);
+                    (i => i.Name.Contains(Name));
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-
-
+        public IEnumerable<AdminViewModel> SearchByEmail(string Email, int pageIndex = 0, int pageSize = 20)
+        {
+            var query =
+                AdminRepo.Get
+                    (i => i.Email.Contains(Email));
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
         public void Remove(int id)
         {
             AdminRepo.Remove(AdminRepo.GetByID(id));
             unitOfWork.Commit();
+        }
+        public int GetAdminCount()
+        {
+            return AdminRepo.Count();
         }
     }
 }

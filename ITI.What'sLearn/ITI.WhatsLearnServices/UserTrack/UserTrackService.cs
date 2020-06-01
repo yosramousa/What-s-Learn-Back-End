@@ -98,6 +98,10 @@ namespace ITI.WhatsLearn.Services
             }
         }
 
+        public int Count()
+        {
+            return UserTrackRepo.Count();
+        }
 
     }
 }

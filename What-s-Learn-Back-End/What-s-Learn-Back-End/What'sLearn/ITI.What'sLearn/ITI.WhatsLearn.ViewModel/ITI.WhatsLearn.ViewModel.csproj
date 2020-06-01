@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPanal\InboxViewModel.cs" />
     <Compile Include="AdminPanal\ManageCategoryViewModel.cs" />
     <Compile Include="Admin\AdminEditViewModel.cs" />
     <Compile Include="Admin\AdminExtentions.cs" />

@@ -143,6 +143,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminPanal\AdminProfileController.cs" />
+    <Compile Include="Controllers\AdminPanal\DashBoardController.cs" />
+    <Compile Include="Controllers\AdminPanal\InboxController.cs" />
+    <Compile Include="Controllers\AdminPanal\ManageCategoryController.cs" />
     <Compile Include="Controllers\AdminPanal\ManageSkillsController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\CourseDocumentController.cs" />

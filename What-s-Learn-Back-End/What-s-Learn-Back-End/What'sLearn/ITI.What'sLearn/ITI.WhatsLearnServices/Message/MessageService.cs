@@ -42,6 +42,22 @@ namespace ITI.WhatsLearnServices
             query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
+
+        public IEnumerable<MessageViewModel> GetByName(string SearchText, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                MessageRepo.GetAll().Where(i => i.FullName.ToLower() == SearchText.ToLower()); 
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<MessageViewModel> GetByEmail(string SearchText,int pageIndex, int pageSize = 20)
+        {
+            var query =
+                MessageRepo.GetAll().Where(i=>i.FullName.ToLower() == SearchText.ToLower());
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+
         public IEnumerable<MessageViewModel> Get(Expression<Func<Message, bool>> filter)
         {
             var query =

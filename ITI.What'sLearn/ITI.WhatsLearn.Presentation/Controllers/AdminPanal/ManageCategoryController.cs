@@ -277,7 +277,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                 else
                 {
-                    
+
                     List<ManageCategoryViewModel> res = new List<ManageCategoryViewModel>();
                     var searshResult = new ManageCategoryViewModel()
                     {
@@ -426,6 +426,87 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         //    }
 
 
+        [HttpGet]
+        public ResultViewModel<IEnumerable<ManageCategoryViewModel>> SortByNameAsc(int level, int PageIndex, int PageSize)
+        {
+            ResultViewModel<IEnumerable<ManageCategoryViewModel>> result
+              = new ResultViewModel<IEnumerable<ManageCategoryViewModel>>();
+            IEnumerable<MainCategoryViewModel> admins = new List<MainCategoryViewModel>();
+            int count = 0;
+
+            try
+            {
+                if (level == 1)
+                {
+                    admins = mainCategoryService.SortBYNameAsc(out count, PageIndex, PageSize);
+                    //  Admins = admins.Select(u => u.ToManageCategoryViewModel());
+                }
+                else if (level == 2)
+                {
+
+                }
+                else if (level == 2)
+                {
+
+                }
+                else
+                {
+
+                }
+                result.Successed = true;
+                result.Data = admins.Select(u => u.ToManageCategoryViewModel());
+
+                result.Count = count;
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+
+        }
+        [HttpGet]
+        public ResultViewModel<IEnumerable<ManageCategoryViewModel>> SortByNameDesc(int level, int PageIndex, int PageSize)
+        {
+            ResultViewModel<IEnumerable<ManageCategoryViewModel>> result
+              = new ResultViewModel<IEnumerable<ManageCategoryViewModel>>();
+            IEnumerable<MainCategoryViewModel> admins = new List<MainCategoryViewModel>();
+            int count = 0;
+
+            try
+            {
+                if (level == 1)
+                {
+                    admins = mainCategoryService.SortBYNameDesc(out count, PageIndex, PageSize);
+                    //  Admins = admins.Select(u => u.ToManageCategoryViewModel());
+                }
+                else if (level == 2)
+                {
+
+                }
+                else if (level == 2)
+                {
+
+                }
+                else
+                {
+
+                }
+
+                var Admins = admins.Select(u => u.ToManageCategoryViewModel());
+                result.Successed = true;
+                result.Data = Admins;
+                result.Count = count;
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+
+        }
 
     }
 

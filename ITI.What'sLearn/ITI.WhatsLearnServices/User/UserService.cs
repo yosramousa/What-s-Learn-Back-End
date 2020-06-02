@@ -102,7 +102,30 @@ namespace ITI.WhatsLearn.Services
         {
             return UserRepo.Count();
         }
-        
+        public IEnumerable<UserViewModel> SortBYNameAsc(out int count, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                UserRepo.GetAll();
+            count = query.Count();
+            query = query.OrderBy(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<UserViewModel> SortBYNameDesc(out int count, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                UserRepo.GetAll();
+            count = query.Count();
+            query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<UserViewModel> SortBYStatus(out int count, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                UserRepo.GetAll();
+            count = query.Count();
+            query = query.OrderByDescending(i => i.IsActive).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
 
     }
 }

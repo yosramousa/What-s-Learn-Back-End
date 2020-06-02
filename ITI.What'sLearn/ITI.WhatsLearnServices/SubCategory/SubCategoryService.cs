@@ -122,5 +122,22 @@ namespace ITI.WhatsLearnServices
         {
             return SubCategoryRepo.Count();
         }
+        public IEnumerable<SubCategoryViewModel> SortBYNameAsc(out int count, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                SubCategoryRepo.GetAll();
+            count = query.Count();
+            query = query.OrderBy(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<SubCategoryViewModel> SortBYNameDesc(out int count, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                SubCategoryRepo.GetAll();
+            count = query.Count();
+            query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+
     }
 }

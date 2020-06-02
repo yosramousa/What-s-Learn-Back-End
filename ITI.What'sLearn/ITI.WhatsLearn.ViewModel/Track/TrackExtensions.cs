@@ -17,13 +17,15 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = model.Name,
                 Discription = model.Discription,
                 Image = model.Image,
-                Documents = model.TrackDocuments.Select(i => i.ToViewModel()).ToArray(),
-                Vedios = model.TrackVedios.Select(i => i.ToViewModel()).ToArray(),
-                Links = model.TrackLinks.Select(i => i.ToViewModel()).ToArray(),
+                Documents = model.TrackDocuments.Select(i => i.ToViewModel()).ToList(),
+                Vedios = model.TrackVedios.Select(i => i.ToViewModel()).ToList(),
+                Links = model.TrackLinks.Select(i => i.ToViewModel()).ToList(),
                 SubCategoryName = model.SubCategory?.Name,
                 Parent = model.SubCategory.Name,
                 ParentID=model.SubCategoryID,
-                Childs = model.Courses.Select(i => i.Course.Name).ToList()
+                Childs = model.Courses.Select(i => i.Course.Name).ToList(),
+                Users=model.Users.Select(i=>i.User.Name).ToList()
+                
             };
         }
         public static Track ToModel(this TrackEditViewModel editModel)
@@ -37,7 +39,8 @@ namespace ITI.WhatsLearn.ViewModel
                 TrackLinks = editModel.Links.Select(i => i.ToModel()).ToList(),
                 TrackDocuments = editModel.Documents.Select(i => i.ToModel()).ToList(),
                 TrackVedios = editModel.Vedios.Select(i => i.ToModel()).ToList(),
-                SubCategoryID = editModel.ParentID
+                SubCategoryID = editModel.ParentID,
+                
             };
         }
         public static TrackEditViewModel ToEditableViewModel(this Track model)

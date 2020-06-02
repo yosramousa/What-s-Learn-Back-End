@@ -91,8 +91,6 @@ namespace ITI.WhatsLearnServices
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-
-
         public void Remove(int id)
         {
             MainCategoryRepo.Remove(MainCategoryRepo.GetByID(id));
@@ -103,6 +101,22 @@ namespace ITI.WhatsLearnServices
         public int Count()
         {
             return MainCategoryRepo.Count();
+        }
+        public IEnumerable<MainCategoryViewModel> SortBYNameAsc(out int count, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                MainCategoryRepo.GetAll();
+            count = query.Count();
+            query = query.OrderBy(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<MainCategoryViewModel> SortBYNameDesc(out int count, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                MainCategoryRepo.GetAll();
+            count = query.Count();
+            query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
         }
 
     }

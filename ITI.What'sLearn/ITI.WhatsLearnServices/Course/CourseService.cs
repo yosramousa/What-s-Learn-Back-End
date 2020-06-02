@@ -115,6 +115,22 @@ namespace ITI.WhatsLearn.Services
         {
             return CourseRepo.Count();
         }
+        public IEnumerable<CourseViewModel> SortBYNameAsc(out int count, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                 CourseRepo.GetAll();
+            count = query.Count();
+            query = query.OrderBy(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<CourseViewModel> SortBYNameDesc(out int count, int pageIndex, int pageSize = 20)
+        {
+            var query =
+                 CourseRepo.GetAll();
+            count = query.Count();
+            query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
 
     }
 }

@@ -48,14 +48,45 @@ namespace ITI.WhatsLearnServices
 
            
         }
-        public IEnumerable<AdminViewModel> GetAll(out int count,int pageIndex, int pageSize = 20)
+        public IEnumerable<AdminViewModel> GetAll(out int count ,int SortBy,int pageIndex, int pageSize = 20)
         {
             var query =
                 AdminRepo.GetAll();
             count = query.Count();
-            query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            switch (SortBy)
+            {
+                case 0:
+                    query = query.OrderBy(i => i.ID);
+                    break;
+                case 1:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.Name);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.Name);
+                    break;
+                case 4:
+                    query = query.OrderBy(i => i.Email).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+
+                case 5:
+                    query = query.OrderBy(i => i.Email);
+                    break;
+                case 6:
+                    query = query.OrderBy(i => i.IsActive);
+                    break;
+                case 7:
+                    query = query.OrderByDescending(i => i.IsActive);
+                    break;
+                default:
+                    break;
+            }
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
+        
         public AdminViewModel Get(string Email, string Password)
         {
             var query =
@@ -65,21 +96,83 @@ namespace ITI.WhatsLearnServices
 
             return query?.ToViewModel();
         }
-        public IEnumerable<AdminViewModel> SearchByName(string Name, out int Length, int pageIndex = 0, int pageSize = 20)
+        public IEnumerable<AdminViewModel> SearchByName( int SortBy,string Name, out int Length, int pageIndex = 0, int pageSize = 20)
         {
             var query =
                 AdminRepo.Get
                     (i => i.Name.Contains(Name));//
+          
             Length = query.Count();
-            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            switch (SortBy)
+            {
+                case 0:
+                    query = query.OrderBy(i => i.ID);
+                    break;
+                case 1:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.Name);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.Name);
+                    break;
+                case 4:
+                    query = query.OrderBy(i => i.Email).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+
+                case 5:
+                    query = query.OrderBy(i => i.Email);
+                    break;
+                case 6:
+                    query = query.OrderBy(i => i.IsActive);
+                    break;
+                case 7:
+                    query = query.OrderByDescending(i => i.IsActive);
+                    break;
+                default:
+                    break;
+            }
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<AdminViewModel> SearchByEmail(string Email, int pageIndex = 0, int pageSize = 20)
+        public IEnumerable<AdminViewModel> SearchByEmail(out int count, int SortBy, string Email, int pageIndex = 0, int pageSize = 20)
         {
             var query =
                 AdminRepo.Get
                     (i => i.Email.Contains(Email));
-            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            count = query.Count();
+            switch (SortBy)
+            {
+                case 0:
+                    query = query.OrderBy(i => i.ID);
+                    break;
+                case 1:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.Name);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.Name);
+                    break;
+                case 4:
+                    query = query.OrderBy(i => i.Email).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+
+                case 5:
+                    query = query.OrderBy(i => i.Email);
+                    break;
+                case 6:
+                    query = query.OrderBy(i => i.IsActive);
+                    break;
+                case 7:
+                    query = query.OrderByDescending(i => i.IsActive);
+                    break;
+                default:
+                    break;
+            }
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)
@@ -91,5 +184,7 @@ namespace ITI.WhatsLearnServices
         {
             return AdminRepo.Count();
         }
+
+
     }
 }

@@ -31,29 +31,111 @@ namespace ITI.WhatsLearnServices
             unitOfWork.Commit();
             return c.ToEditableViewModel();
         }
-        public MessageViewModel GetByID(int id)
+        public MessageEditViewModel GetByID(int id)
         {
-            return MessageRepo.GetByID(id)?.ToViewModel();
+            return MessageRepo.GetByID(id)?.ToEditableViewModel();
         }
-        public IEnumerable<MessageViewModel> GetAll( int pageIndex, int pageSize = 20)
+        public IEnumerable<MessageViewModel> GetAll( out int count , int SortBy , int pageIndex, int pageSize = 20)
         {
             var query =
                 MessageRepo.GetAll();
-            query = query.OrderByDescending(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+
+            count = query.Count();
+
+            switch (SortBy)
+            {
+                case 0:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 1:
+                    query = query.OrderBy(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.FullName);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.FullName);
+                    break;
+                case 4:
+                    query = query.OrderBy(i => i.SendTime);
+                    break;
+                case 5:
+                    query = query.OrderByDescending(i => i.SendTime);
+                    break;
+
+                default:
+                    break;
+            }
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
 
-        public IEnumerable<MessageViewModel> GetByName(string SearchText, int pageIndex, int pageSize = 20)
+        public IEnumerable<MessageViewModel> GetByName(out int count,int SortBy,string SearchText, int pageIndex, int pageSize = 20)
         {
+
             var query =
-                MessageRepo.GetAll().Where(i => i.FullName.ToLower() == SearchText.ToLower()); 
+                MessageRepo.GetAll().Where(i => i.FullName.Contains(SearchText));
+            count = query.Count();
+
+            switch (SortBy)
+            {
+                case 0:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 1:
+                    query = query.OrderBy(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.FullName);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.FullName);
+                    break;
+                case 4:
+                    query = query.OrderBy(i => i.SendTime);
+                    break;
+                case 5:
+                    query = query.OrderByDescending(i => i.SendTime);
+                    break;
+
+                default:
+                    break;
+            }
+
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<MessageViewModel> GetByEmail(string SearchText,int pageIndex, int pageSize = 20)
+        public IEnumerable<MessageViewModel> GetByEmail(out int count,int SortBy,string SearchText,int pageIndex, int pageSize = 20)
         {
             var query =
-                MessageRepo.GetAll().Where(i=>i.FullName.ToLower() == SearchText.ToLower());
+                MessageRepo.GetAll().Where(i=>i.FullName.Contains(SearchText));
+            count = query.Count();
+
+            switch (SortBy)
+            {
+                case 0:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 1:
+                    query = query.OrderBy(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.FullName);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.FullName);
+                    break;
+                case 4:
+                    query = query.OrderBy(i => i.SendTime);
+                    break;
+                case 5:
+                    query = query.OrderByDescending(i => i.SendTime);
+                    break;
+
+                default:
+                    break;
+            }
+
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }

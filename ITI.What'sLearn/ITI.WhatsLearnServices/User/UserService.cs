@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Services
 {
+
     public class UserService
     {
 
@@ -43,11 +44,44 @@ namespace ITI.WhatsLearn.Services
 
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<UserViewModel> GetAll(int pageIndex, int pageSize = 20)
+        public IEnumerable<UserViewModel> GetAll(out int count ,int SortBy,int pageIndex, int pageSize = 20)
         {
             var query =
                 UserRepo.GetAll();
-            query = query.OrderByDescending(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            count = query.Count();
+
+            switch (SortBy)
+            {
+                case 1:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.Name);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.Name);
+                    break;
+                case 4:
+                    query = query.OrderBy(i => i.Email);
+                    break;
+
+                case 5:
+                    query = query.OrderByDescending(i => i.Email);
+                    break;
+                case 6:
+                    query = query.OrderBy(i => i.IsActive);
+                    break;
+
+                case 7:
+                    query = query.OrderByDescending(i => i.IsActive);
+                    break;
+                default:
+                    query = query.OrderBy(i => i.ID);
+
+                    break;
+            }
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+           // query = query.OrderByDescending(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<UserViewModel> Get(string Email, string Password)
@@ -58,19 +92,85 @@ namespace ITI.WhatsLearn.Services
 
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<UserViewModel> SearchByName(string Name, int pageIndex=0, int pageSize = 20)
+        public IEnumerable<UserViewModel> SearchByName(out int count ,int SortBy,string Name, int pageIndex=0, int pageSize = 20)
         {
             var query =
                 UserRepo.GetAll().Where(i => i.Name.ToLower() == Name.ToLower());
-            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            count = query.Count();
+
+            switch (SortBy)
+            {
+                case 0:
+                    query = query.OrderBy(i => i.ID);
+                    break;
+                case 1:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.Name);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.Name);
+                    break;
+                case 4:
+                    query = query.OrderBy(i => i.Email);
+                    break;
+
+                case 5:
+                    query = query.OrderByDescending(i => i.Email);
+                    break;
+                case 6:
+                    query = query.OrderBy(i => i.IsActive);
+                    break;
+
+                case 7:
+                    query = query.OrderByDescending(i => i.IsActive);
+                    break;
+                default:
+                    break;
+            }
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<UserViewModel> SearchByTrackName(string TrackName, int pageIndex=0, int pageSize = 20)
+        public IEnumerable<UserViewModel> SearchByTrackName(out int count, int SortBy, string TrackName, int pageIndex=0, int pageSize = 20)
         {
             var query =
                 UserRepo.GetAll().Where
                     (i => i.Tracks.Where(x => x.Track.Name.ToLower() == TrackName.ToLower()).Count() > 0);
-            query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            count = query.Count();
+
+            switch (SortBy)
+            {
+                case 0:
+                    query = query.OrderBy(i => i.ID);
+                    break;
+                case 1:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.Name);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.Name);
+                    break;
+                case 4:
+                    query = query.OrderBy(i => i.Email);
+                    break;
+
+                case 5:
+                    query = query.OrderByDescending(i => i.Email);
+                    break;
+                case 6:
+                    query = query.OrderBy(i => i.IsActive);
+                    break;
+
+                case 7:
+                    query = query.OrderByDescending(i => i.IsActive);
+                    break;
+                default:
+                    break;
+            }
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public void Remove(int id)
@@ -102,7 +202,6 @@ namespace ITI.WhatsLearn.Services
         {
             return UserRepo.Count();
         }
-        
 
     }
 }

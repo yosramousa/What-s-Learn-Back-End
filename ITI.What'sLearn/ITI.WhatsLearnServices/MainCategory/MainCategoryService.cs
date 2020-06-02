@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITI.WhatsLearnServices
+namespace ITI.WhatsLearn.Services
 {
     public class MainCategoryService
     {
@@ -70,25 +70,90 @@ namespace ITI.WhatsLearnServices
             MainCategoryViewModel m = MainCategoryRepo.GetByID(id)?.ToViewModel();
             return m;
         }
-        public IEnumerable<MainCategoryViewModel> GetAll(int pageIndex, int pageSize = 20)
+        public IEnumerable<MainCategoryViewModel> GetAll(out int count, int SortBy ,int pageIndex, int pageSize = 20)
         {
             var query =
-                MainCategoryRepo.GetAll(); 
-             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+                MainCategoryRepo.GetAll();
+            count = query.Count();
+            switch (SortBy)
+            {
+                case 0:
+                case 4:
+                    query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+                case 1:
+                case 5:
+                    query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+             
+
+                default:
+                    break;
+            }
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<MainCategoryViewModel> SearchByChilds(string ChildName ,int pageIndex, int pageSize = 20)
+        public IEnumerable<MainCategoryViewModel> SearchByChilds(out int count ,int SortBy, string ChildName ,int pageIndex, int pageSize = 20)
         {
             var query =
                 MainCategoryRepo.Get(i => i.SubCategories.Select(x=>x.Name).Contains(ChildName));
-            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            count = query.Count();
+
+            switch (SortBy)
+            {
+                case 0:
+                case 4:
+                    query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+                case 1:
+                case 5:
+                    query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+
+
+                default:
+                    break;
+            }
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<MainCategoryViewModel> SearchByName(string Name,int pageIndex, int pageSize = 20)
+        public IEnumerable<MainCategoryViewModel> SearchByName(out int count ,int SortBy,string Name,int pageIndex, int pageSize = 20)
         {
             var query =
                 MainCategoryRepo.Get(i=>i.Name.Contains( Name));
-            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            count = query.Count();
+
+            switch (SortBy)
+            {
+                case 0:
+                case 4:
+                    query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+                case 1:
+                case 5:
+                    query = query.OrderByDescending(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+                    break;
+
+
+                default:
+                    break;
+            }
             return query.ToList().Select(i => i.ToViewModel());
         }
 

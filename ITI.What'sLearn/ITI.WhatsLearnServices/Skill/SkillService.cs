@@ -35,11 +35,31 @@ namespace ITI.WhatsLearnServices
         {
             return SkillRepo.GetByID(id)?.ToViewModel();
         }
-        public IEnumerable<SkillViewModel> GetAll( int pageIndex, int pageSize = 20)
+        public IEnumerable<SkillViewModel> GetAll(out int count ,int SortBy, int pageIndex, int pageSize = 20)
         {
             var query =
                 SkillRepo.GetAll();
-            query = query.OrderBy(i=> i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            count = query.Count();
+
+            switch (SortBy)
+            {
+                case 0:
+                    query = query.OrderBy(i => i.ID);
+                    break;
+                case 1:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.skill);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.skill);
+                    break;
+               
+                default:
+                    break;
+            }
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<SkillViewModel> Get(Expression<Func<Skill, bool>> filter)

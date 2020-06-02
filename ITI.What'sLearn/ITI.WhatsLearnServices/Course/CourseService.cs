@@ -64,11 +64,31 @@ namespace ITI.WhatsLearn.Services
         {
             return CourseRepo.GetByID(id)?.ToViewModel();
         }
-        public IEnumerable<CourseViewModel> GetAll(int pageIndex, int pageSize = 20)
+        public IEnumerable<CourseViewModel> GetAll(out int  count, int SortBy,int pageIndex, int pageSize = 20)
         {
             var query =
                 CourseRepo.GetAll();
-            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            count = query.Count();
+            switch (SortBy)
+            {
+               
+                case 1:
+                case 5:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.Name);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.Name);
+                    break;
+               
+                default:
+                    query = query.OrderBy(i => i.ID);
+
+                    break;
+            }
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<CourseViewModel> Get(Expression<Func<Course, bool>> filter)
@@ -89,23 +109,62 @@ namespace ITI.WhatsLearn.Services
                 CourseRepo.Get(i => i.ID == ID);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<CourseViewModel> SearchByName(string Name, int pageIndex, int pageSize = 20)
+        public IEnumerable<CourseViewModel> SearchByName(out int count ,int SortBy ,string Name, int pageIndex, int pageSize = 20)
         {
             var query =
                 CourseRepo.Get(i => i.Name.Contains(Name));
-            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            count = query.Count();
 
+            switch (SortBy)
+            {
+
+                case 1:
+                case 5:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.Name);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.Name);
+                    break;
+
+                default:
+                    query = query.OrderBy(i => i.ID);
+
+                    break;
+            }
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
 
 
         }
 
-        public IEnumerable<CourseViewModel> SearchByParentName(string Parent, int pageIndex, int pageSize = 20)
+        public IEnumerable<CourseViewModel> SearchByParentName(out int count,int SortBy ,string Parent, int pageIndex, int pageSize = 20)
         {
             var query = CourseRepo.Get(i => i.Tracks.Select(x => x.Track.Name).Contains(Parent));
+            count = query.Count();
 
-            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            switch (SortBy)
+            {
 
+                case 1:
+                case 5:
+                    query = query.OrderByDescending(i => i.ID);
+                    break;
+                case 2:
+                    query = query.OrderBy(i => i.Name);
+                    break;
+                case 3:
+                    query = query.OrderByDescending(i => i.Name);
+                    break;
+
+                default:
+                    query = query.OrderBy(i => i.ID);
+
+                    break;
+            }
+            query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
 
 

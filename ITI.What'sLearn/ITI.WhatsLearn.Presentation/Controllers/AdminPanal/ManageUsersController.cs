@@ -175,6 +175,108 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 return "Error";
             }
         }
+        [HttpGet]
+        public ResultViewModel<IEnumerable<ManageUserViewModel>> SortByNameAsc(int PageIndex, int PageSize)
+        {
+            ResultViewModel<IEnumerable<ManageUserViewModel>> result
+              = new ResultViewModel<IEnumerable<ManageUserViewModel>>();
+            IEnumerable<UserViewModel> admins = new List<UserViewModel>();
+            int count = 0;
+
+            try
+            {
+                admins = userService.SortBYNameAsc(out count, PageIndex, PageSize);
+
+
+                var Admins = admins.Select(u => new ManageUserViewModel
+                {
+                    ID = u.ID,
+                    Name = u.Name,
+                    Status = u.IsActive ? "Active" : "Disable",
+                    Image = u.Image
+
+
+                });
+                result.Successed = true;
+                result.Data = Admins;
+                result.Count = count;
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+
+        }
+        [HttpGet]
+        public ResultViewModel<IEnumerable<ManageUserViewModel>> SortByNameDesc(int PageIndex, int PageSize)
+        {
+            ResultViewModel<IEnumerable<ManageUserViewModel>> result
+              = new ResultViewModel<IEnumerable<ManageUserViewModel>>();
+            IEnumerable<UserViewModel> admins = new List<UserViewModel>();
+            int count = 0;
+
+            try
+            {
+                admins = userService.SortBYNameDesc(out count, PageIndex, PageSize);
+
+
+                var Admins = admins.Select(u => new ManageUserViewModel
+                {
+                    ID = u.ID,
+                    Name = u.Name,
+                    Status = u.IsActive ? "Active" : "Disable",
+                    Image = u.Image
+
+
+                });
+                result.Successed = true;
+                result.Data = Admins;
+                result.Count = count;
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+
+        }
+        [HttpGet]
+        public ResultViewModel<IEnumerable<ManageUserViewModel>> SortByStatus(int PageIndex, int PageSize)
+        {
+            ResultViewModel<IEnumerable<ManageUserViewModel>> result
+              = new ResultViewModel<IEnumerable<ManageUserViewModel>>();
+            IEnumerable<UserViewModel> admins = new List<UserViewModel>();
+            int count = 0;
+
+            try
+            {
+                admins = userService.SortBYStatus(out count, PageIndex, PageSize);
+
+
+                var Admins = admins.Select(u => new ManageUserViewModel
+                {
+                    ID = u.ID,
+                    Name = u.Name,
+                    Status = u.IsActive ? "Active" : "Disable",
+                    Image = u.Image
+
+
+                });
+                result.Successed = true;
+                result.Data = Admins;
+                result.Count = count;
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+
+        }
 
 
     }

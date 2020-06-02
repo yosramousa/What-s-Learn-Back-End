@@ -48,10 +48,11 @@ namespace ITI.WhatsLearnServices
 
            
         }
-        public IEnumerable<AdminViewModel> GetAll(int pageIndex, int pageSize = 20)
+        public IEnumerable<AdminViewModel> GetAll(out int count,int pageIndex, int pageSize = 20)
         {
             var query =
                 AdminRepo.GetAll();
+            count = query.Count();
             query = query.OrderBy(i=>i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
@@ -64,11 +65,12 @@ namespace ITI.WhatsLearnServices
 
             return query?.ToViewModel();
         }
-        public IEnumerable<AdminViewModel> SearchByName(string Name, int pageIndex = 0, int pageSize = 20)
+        public IEnumerable<AdminViewModel> SearchByName(string Name, out int Length, int pageIndex = 0, int pageSize = 20)
         {
             var query =
                 AdminRepo.Get
-                    (i => i.Name.Contains(Name));
+                    (i => i.Name.Contains(Name));//
+            Length = query.Count();
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }

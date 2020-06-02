@@ -26,10 +26,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             ResultViewModel<IEnumerable<AdminViewModel>> result
                = new ResultViewModel<IEnumerable<AdminViewModel>>();
-
+            int count = 0;
             try
             {
-                var admins = adminService.GetAll(pageIndex:PageIndex,pageSize: PageSize);
+                var admins = adminService.GetAll(out count,pageIndex:PageIndex,pageSize: PageSize);
                 result.Successed = true;
                 result.Data = admins;
             }

@@ -83,6 +83,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             ResultViewModel<IEnumerable<ManageCategoryViewModel>> result
             = new ResultViewModel<IEnumerable<ManageCategoryViewModel>>();
+            int count = 0;
 
             try
             {

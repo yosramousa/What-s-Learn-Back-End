@@ -1,0 +1,89 @@
+<html>
+
+
+<head>
+    <style>
+        article {
+            float: left;
+            width: 50%;
+            height: 80%;
+            background-color: gray;
+            margin-top: 5px;
+        }
+
+        article section {
+            padding: 20px;
+            margin: 30px;
+            text-align: center;
+        }
+
+        article section header {
+            background-color: rgb(161, 66, 66);
+            padding: 5px;
+            color: white;
+            text-align: center;
+        }
+        #myform{
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+
+        }
+        label{
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <section>
+            <header>
+                <h2>Registeran Form</h2>
+            </header>
+            <form id="myform" method="get" action="index.html">
+                <label for="username">Username:</label>
+                <input id="username" type="text" name="username" pattern="[a-z|A-Z]*"required><br />
+                <label for="password">Password:</label>
+                <input id="pass" type="password" name="password" pattern="[a-z|A-Z|0-9]{6,}"required><br />
+                <label for="password">Confirm Passord:</label>
+                <input id="password" type="password" name="password"pattern="[a-z|A-Z|0-9]{6,}" required><br />
+                <label for="email">Email:</label>
+                <input type="email" value="ali@yahoo.com" name="email" id="email"required><br />
+                <label for="Phone">Phone</label>
+                <input id="Phone" type="tel" name="Phone"required><br />
+                <label for="date">Date</label>
+                <input id="date" type="date" name="date"required><br />
+                <label for="age">Age</label>
+                <input id="age" type="number" name="Age" min="1" max="150" step="2"required><br />
+                <label for="color">Choose your Car Color</label>
+                <input type="color" value="#967112" name="color" id="color"required><br />
+                <label for="range">Choos your Limit of Price </label>
+                <input id="range" type="range" name="range" min="100000" max="250000" step="10" value="150000"required><br />
+                <input id="submit"type="submit" value="Sign In" required>
+            </form>
+        </section>
+    </article>
+   
+    <script>
+
+document.querySelector("#myform").addEventListener("submit", function (e) {
+            var pass = document.querySelector("#pass").value;
+            var password = document.querySelector("#password").value;
+            if (pass != password) {
+                alert("invalid password");  
+                e.preventDefault()
+              
+            }
+            console.log(pass);
+                console.log(password);
+        })
+;
+
+
+    </script>
+
+</body>
+
+</html>

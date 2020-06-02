@@ -26,10 +26,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
             ResultViewModel<IEnumerable<MangeAdminViewModel>> result
               = new ResultViewModel<IEnumerable<MangeAdminViewModel>>();
-
+            int count;
             try
             {
-                var admins = adminService.GetAll(PageIndex, PageSize)?.Select(u => new MangeAdminViewModel
+                var admins = adminService.GetAll(out count, PageIndex, PageSize)?.Select(u => new MangeAdminViewModel
                 {
                     ID = u.ID,
                     Name = u.Name,
@@ -52,16 +52,18 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             ResultViewModel<IEnumerable<MangeAdminViewModel>> result
               = new ResultViewModel<IEnumerable<MangeAdminViewModel>>();
             IEnumerable<AdminViewModel> admins = new List<AdminViewModel>();
+            int count = 0;
+
             try
             {
                 if (SearchOp == 0)//By Name
                 {
-                    admins = adminService.GetAll( PageIndex, PageSize);
+                    admins = adminService.GetAll(out count, PageIndex, PageSize);
 
                 }
                 if (SearchOp == 1)//By Name
                 {
-                    admins = adminService.SearchByName(SearchText, pageIndex: PageIndex, pageSize: PageSize);
+                    admins = adminService.SearchByName(SearchText,out count, pageIndex: PageIndex, pageSize: PageSize);
 
                 }
                 var Admins = admins.Select(u => new MangeAdminViewModel
@@ -75,6 +77,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 });
                 result.Successed = true;
                 result.Data = Admins;
+                result.Count = count;
             }
             catch (Exception ex)
             {

@@ -29,7 +29,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             int count = 0;
             try
             {
-                var admins = adminService.GetAll(out count,pageIndex:PageIndex,pageSize: PageSize);
+                var admins = adminService.GetAll(out count,0,pageIndex:PageIndex,pageSize: PageSize);
                 result.Successed = true;
                 result.Data = admins;
             }

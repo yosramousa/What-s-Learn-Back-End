@@ -12,6 +12,8 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
+    [AUTHORIZE(Roles = "Admin")]
+
     public class MangeAdminsController : ApiController
     {
 
@@ -47,7 +49,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
         }
         [HttpGet]
-        public ResultViewModel<IEnumerable<MangeAdminViewModel>> Search(int SearchOp, String SearchText, int PageIndex, int PageSize)
+        public ResultViewModel<IEnumerable<MangeAdminViewModel>> Search(int SortBy , int SearchOp, String SearchText, int PageIndex, int PageSize)
         {
             ResultViewModel<IEnumerable<MangeAdminViewModel>> result
               = new ResultViewModel<IEnumerable<MangeAdminViewModel>>();
@@ -56,23 +58,27 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
             try
             {
-                if (SearchOp == 0)//By Name
+                if (SearchOp == 0)//GetAll
                 {
-                    admins = adminService.GetAll(out count, PageIndex, PageSize);
+                    admins = adminService.GetAll(out count, SortBy, PageIndex, PageSize);
 
                 }
                 if (SearchOp == 1)//By Name
                 {
-                    admins = adminService.SearchByName(SearchText,out count, pageIndex: PageIndex, pageSize: PageSize);
+                    admins = adminService.SearchByName(SortBy, SearchText, out count, pageIndex: PageIndex, pageSize: PageSize);
 
+                }
+                if(SearchOp == 2)
+                {
+                    admins = adminService.SearchByEmail(out count, SortBy, SearchText, pageIndex: PageIndex, pageSize: PageSize);
                 }
                 var Admins = admins.Select(u => new MangeAdminViewModel
                 {
                     ID = u.ID,
                     Name = u.Name,
                     Status = u.IsActive ? "Active" : "Disable",
-                    Image=u.Image
-
+                    Image=u.Image,
+                    Email=u.Email
 
                 });
                 result.Successed = true;
@@ -174,117 +180,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             return result;
         }
 
-        //Name
-        //Stauts
-
-        //Details >>AdminProfile
-        //Add
-        //Delete 
-        //Search (Name :0 ,Track:1)
-        //Pagntion (PageSize , PageIndex), Filte
-
-        [HttpGet]
-        public ResultViewModel<IEnumerable<MangeAdminViewModel>> SortByNameAsc(int PageIndex, int PageSize)
-        {
-            ResultViewModel<IEnumerable<MangeAdminViewModel>> result
-              = new ResultViewModel<IEnumerable<MangeAdminViewModel>>();
-            IEnumerable<AdminViewModel> admins = new List<AdminViewModel>();
-            int count = 0;
-
-            try
-            {
-                admins = adminService.SortBYNameAsc(out count, PageIndex, PageSize);
-
-               
-                var Admins = admins.Select(u => new MangeAdminViewModel
-                {
-                    ID = u.ID,
-                    Name = u.Name,
-                    Status = u.IsActive ? "Active" : "Disable",
-                    Image = u.Image
-
-
-                });
-                result.Successed = true;
-                result.Data = Admins;
-                result.Count = count;
-            }
-            catch (Exception ex)
-            {
-                result.Successed = false;
-                result.Message = "Something Went Wrong !!";
-            }
-            return result;
-
-        }
-        [HttpGet]
-        public ResultViewModel<IEnumerable<MangeAdminViewModel>> SortByNameDesc(int PageIndex, int PageSize)
-        {
-            ResultViewModel<IEnumerable<MangeAdminViewModel>> result
-              = new ResultViewModel<IEnumerable<MangeAdminViewModel>>();
-            IEnumerable<AdminViewModel> admins = new List<AdminViewModel>();
-            int count = 0;
-
-            try
-            {
-                admins = adminService.SortBYNameDesc(out count, PageIndex, PageSize);
-
-
-                var Admins = admins.Select(u => new MangeAdminViewModel
-                {
-                    ID = u.ID,
-                    Name = u.Name,
-                    Status = u.IsActive ? "Active" : "Disable",
-                    Image = u.Image
-
-
-                });
-                result.Successed = true;
-                result.Data = Admins;
-                result.Count = count;
-            }
-            catch (Exception ex)
-            {
-                result.Successed = false;
-                result.Message = "Something Went Wrong !!";
-            }
-            return result;
-
-        }
-        [HttpGet]
-        public ResultViewModel<IEnumerable<MangeAdminViewModel>> SortByStatus(int PageIndex, int PageSize)
-        {
-            ResultViewModel<IEnumerable<MangeAdminViewModel>> result
-              = new ResultViewModel<IEnumerable<MangeAdminViewModel>>();
-            IEnumerable<AdminViewModel> admins = new List<AdminViewModel>();
-            int count = 0;
-
-            try
-            {
-                admins = adminService.SortBYStatus(out count, PageIndex, PageSize);
-
-
-                var Admins = admins.Select(u => new MangeAdminViewModel
-                {
-                    ID = u.ID,
-                    Name = u.Name,
-                    Status = u.IsActive ? "Active" : "Disable",
-                    Image = u.Image
-
-
-                });
-                result.Successed = true;
-                result.Data = Admins;
-                result.Count = count;
-            }
-            catch (Exception ex)
-            {
-                result.Successed = false;
-                result.Message = "Something Went Wrong !!";
-            }
-            return result;
-
-        }
-
+       
     }
+
+    
 }

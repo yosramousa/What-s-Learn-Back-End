@@ -12,6 +12,8 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
+    [AUTHORIZE(Roles = "Admin")]
+
     public class ManageUsersController : ApiController
     {
 
@@ -50,28 +52,29 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         //}
         //
         [HttpGet]
-        public ResultViewModel<IEnumerable<ManageUserViewModel>> Search(int SerachOption, String SerachText, int PageIndex, int PageSize)
+        public ResultViewModel<IEnumerable<ManageUserViewModel>> Search(int SortBy,int SerachOption, String SerachText, int PageIndex, int PageSize)
         {
             ResultViewModel<IEnumerable<ManageUserViewModel>> result
               = new ResultViewModel<IEnumerable<ManageUserViewModel>>();
             IEnumerable<UserViewModel> users = new List<UserViewModel>();
+            int count = 0;
             try
             {
                 if (SerachOption == 0)
                 {
-                    users = userService.GetAll(PageIndex, PageSize);
+                    users = userService.GetAll(out count, SortBy, PageIndex, PageSize);
                 }
 
                 if (SerachOption == 1)//By Name
                 {
 
-                    users = userService.SearchByName(SerachText, pageIndex: PageIndex, pageSize: PageSize);
+                    users = userService.SearchByName(out count, SortBy, SerachText, pageIndex: PageIndex, pageSize: PageSize);
 
 
                 }
                 else if (SerachOption == 2)//BY TrackName
                 {
-                    users = userService.SearchByTrackName(SerachText, pageIndex: PageIndex, pageSize: PageSize);
+                    users = userService.SearchByTrackName(out count, SortBy, SerachText, pageIndex: PageIndex, pageSize: PageSize);
                 }
 
                 var Users = users.Select(u => new ManageUserViewModel
@@ -175,109 +178,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 return "Error";
             }
         }
-        [HttpGet]
-        public ResultViewModel<IEnumerable<ManageUserViewModel>> SortByNameAsc(int PageIndex, int PageSize)
-        {
-            ResultViewModel<IEnumerable<ManageUserViewModel>> result
-              = new ResultViewModel<IEnumerable<ManageUserViewModel>>();
-            IEnumerable<UserViewModel> admins = new List<UserViewModel>();
-            int count = 0;
-
-            try
-            {
-                admins = userService.SortBYNameAsc(out count, PageIndex, PageSize);
-
-
-                var Admins = admins.Select(u => new ManageUserViewModel
-                {
-                    ID = u.ID,
-                    Name = u.Name,
-                    Status = u.IsActive ? "Active" : "Disable",
-                    Image = u.Image
-
-
-                });
-                result.Successed = true;
-                result.Data = Admins;
-                result.Count = count;
-            }
-            catch (Exception ex)
-            {
-                result.Successed = false;
-                result.Message = "Something Went Wrong !!";
-            }
-            return result;
-
-        }
-        [HttpGet]
-        public ResultViewModel<IEnumerable<ManageUserViewModel>> SortByNameDesc(int PageIndex, int PageSize)
-        {
-            ResultViewModel<IEnumerable<ManageUserViewModel>> result
-              = new ResultViewModel<IEnumerable<ManageUserViewModel>>();
-            IEnumerable<UserViewModel> admins = new List<UserViewModel>();
-            int count = 0;
-
-            try
-            {
-                admins = userService.SortBYNameDesc(out count, PageIndex, PageSize);
-
-
-                var Admins = admins.Select(u => new ManageUserViewModel
-                {
-                    ID = u.ID,
-                    Name = u.Name,
-                    Status = u.IsActive ? "Active" : "Disable",
-                    Image = u.Image
-
-
-                });
-                result.Successed = true;
-                result.Data = Admins;
-                result.Count = count;
-            }
-            catch (Exception ex)
-            {
-                result.Successed = false;
-                result.Message = "Something Went Wrong !!";
-            }
-            return result;
-
-        }
-        [HttpGet]
-        public ResultViewModel<IEnumerable<ManageUserViewModel>> SortByStatus(int PageIndex, int PageSize)
-        {
-            ResultViewModel<IEnumerable<ManageUserViewModel>> result
-              = new ResultViewModel<IEnumerable<ManageUserViewModel>>();
-            IEnumerable<UserViewModel> admins = new List<UserViewModel>();
-            int count = 0;
-
-            try
-            {
-                admins = userService.SortBYStatus(out count, PageIndex, PageSize);
-
-
-                var Admins = admins.Select(u => new ManageUserViewModel
-                {
-                    ID = u.ID,
-                    Name = u.Name,
-                    Status = u.IsActive ? "Active" : "Disable",
-                    Image = u.Image
-
-
-                });
-                result.Successed = true;
-                result.Data = Admins;
-                result.Count = count;
-            }
-            catch (Exception ex)
-            {
-                result.Successed = false;
-                result.Message = "Something Went Wrong !!";
-            }
-            return result;
-
-        }
-
+       
 
     }
 }

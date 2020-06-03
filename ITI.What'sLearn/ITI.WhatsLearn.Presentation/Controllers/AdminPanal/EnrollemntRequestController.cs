@@ -8,6 +8,7 @@ using System.Web.Http;
 using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearn.Entities;
 using ITI.WhatsLearn.Presentation.Filters;
+using System.Threading;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
@@ -55,17 +56,22 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             ResultViewModel<IEnumerable<EnrollemntRequestViewModel>> result
               = new ResultViewModel<IEnumerable<EnrollemntRequestViewModel>>();
             IEnumerable<UserTrackViewModel> enrollRequests = new List<UserTrackViewModel>();
+            int count = 0;
             try
             {
-
                 if (SerachOption == 0)//By Name
                 {
-                    enrollRequests = userTrackService.SearchByName(SerachText, pageIndex: PageIndex, pageSize: PageSize);
+                    enrollRequests = userTrackService.GetRequest(out count, pageIndex: PageIndex, pageSize: PageSize);
 
                 }
-                else if (SerachOption == 1)//BY TrackName
+                if (SerachOption == 1)//By Name
                 {
-                    enrollRequests = userTrackService.SearchByTrackName(SerachText, pageIndex: PageIndex, pageSize: PageSize);
+                    enrollRequests = userTrackService.SearchByName(out count,SerachText, pageIndex: PageIndex, pageSize: PageSize);
+
+                }
+                else if (SerachOption == 2)//BY TrackName
+                {
+                    enrollRequests = userTrackService.SearchByTrackName(out count,SerachText, pageIndex: PageIndex, pageSize: PageSize);
                 }
 
                 var EnrollRequests = enrollRequests.Select(i => new EnrollemntRequestViewModel
@@ -76,7 +82,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                 });
                 result.Successed = true;
-                result.Count = userTrackService.Count();
+                result.Count = count;
                 result.Data = EnrollRequests;
             }
             catch (Exception ex)

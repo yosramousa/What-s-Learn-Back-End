@@ -22,10 +22,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             ResultViewModel<IEnumerable<MessageViewModel>> result
                = new ResultViewModel<IEnumerable<MessageViewModel>>();
-
+            int count = 0;
             try
             {
-                var Messages = messageService.GetAll(pageIndex, pageSize).Where( i=>i.IsDeleted == false);
+                var Messages = messageService.GetAll(out count, 0, pageIndex, pageSize).Where( i=>i.IsDeleted == false);
                 result.Successed = true;
                 result.Data = Messages;
             }
@@ -42,10 +42,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             ResultViewModel<IEnumerable<MessageViewModel>> result
                = new ResultViewModel<IEnumerable<MessageViewModel>>();
-
+            int count = 0;
             try
             {
-                var Messages = messageService.GetAll(pageIndex, pageSize).Where(i=>i.IsRead==false&&i.IsDeleted==false);
+                var Messages = messageService.GetAll(out count, 0, pageIndex, pageSize).Where(i=>i.IsRead==false&&i.IsDeleted==false);
                 result.Successed = true;
                 result.Data = Messages;
             }
@@ -87,7 +87,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 = new ResultViewModel<MessageViewModel>();
             try
             {
-                var message = messageService.GetByID(id);
+                var message = messageService.GetByID(id).ToModel().ToViewModel();
                 result.Successed = true;
                 result.Data = message;
             }

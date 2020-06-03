@@ -23,9 +23,10 @@ namespace ITI.WhatsLearn.Presentation
         {
             ResultViewModel<IEnumerable<TrackViewModel>> result
                 = new ResultViewModel<IEnumerable<TrackViewModel>>();
+            int count = 0;
             try
             {
-                var Tracks = trackService.GetAll();
+                var Tracks = trackService.GetAll(out count, 0,0,100);
                 result.Successed = true;
                 result.Data = Tracks;
             }

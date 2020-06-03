@@ -44,10 +44,7 @@ namespace ITI.WhatsLearnServices
 
             switch (SortBy)
             {
-                case 0:
-                    query = query.OrderByDescending(i => i.ID);
-                    break;
-                case 1:
+                 case 1:
                     query = query.OrderBy(i => i.ID);
                     break;
                 case 2:
@@ -57,13 +54,15 @@ namespace ITI.WhatsLearnServices
                     query = query.OrderByDescending(i => i.FullName);
                     break;
                 case 4:
-                    query = query.OrderBy(i => i.SendTime);
+                    query = query.OrderBy(i => i.Email);
                     break;
                 case 5:
-                    query = query.OrderByDescending(i => i.SendTime);
+                    query = query.OrderByDescending(i => i.Email);
                     break;
 
                 default:
+                    query = query.OrderByDescending(i => i.ID);
+
                     break;
             }
             query = query.Skip(pageIndex * pageSize).Take(pageSize);

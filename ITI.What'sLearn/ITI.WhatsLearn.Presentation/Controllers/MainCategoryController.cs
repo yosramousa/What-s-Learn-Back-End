@@ -1,4 +1,5 @@
-﻿using ITI.WhatsLearn.ViewModel;
+﻿using ITI.WhatsLearn.Services;
+using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             ResultViewModel<IEnumerable<MainCategoryViewModel>> result
                = new ResultViewModel<IEnumerable<MainCategoryViewModel>>();
-
+            int count = 0;
             try
             {
-                var MainCategories = mainCategoryService.GetAll(pageIndex, pageSize);
+                var MainCategories = mainCategoryService.GetAll(out count, 0, pageIndex, pageSize);
                 result.Successed = true;
                 result.Data = MainCategories;
             }

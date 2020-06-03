@@ -1,4 +1,5 @@
 ﻿using ITI.WhatsLearn.Entities;
+using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
 using System;
@@ -23,10 +24,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             ResultViewModel<IEnumerable<SubCategoryViewModel>> result
                = new ResultViewModel<IEnumerable<SubCategoryViewModel>>();
-
+            int count = 0;
             try
             {
-                var SubCategories = subCategoryService.GetAll(pageIndex, pageSize);
+                var SubCategories = subCategoryService.GetAll(out count, 0, pageIndex, pageSize);
                 result.Successed = true;
                 result.Data = SubCategories;
             }

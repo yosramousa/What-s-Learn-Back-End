@@ -44,6 +44,16 @@ namespace ITI.WhatsLearn.Services
             return query.ToList().Select(i => i.ToViewModel());
         }
 
+
+        public IEnumerable<UserTrackViewModel> GetRequest(out int count ,int pageIndex, int pageSize = 20)
+        {
+            var query =
+                UserTrackRepo.GetAll().Where(u => u.IsApproveed == false);
+           query= query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            count = query.Count();
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+
         public IEnumerable<UserTrackViewModel> GetAll()
         {
             var query =
@@ -61,19 +71,22 @@ namespace ITI.WhatsLearn.Services
             return query.ToList().Select(i => i.ToViewModel());
         }
 
-        public IEnumerable<UserTrackViewModel> SearchByName(string Name, int pageIndex = 0, int pageSize = 20)
+        public IEnumerable<UserTrackViewModel> SearchByName(out int count,string Name, int pageIndex = 0, int pageSize = 20)
         {
             var query =
                 UserTrackRepo.GetAll().Where
                     (i => i.IsApproveed==false && i.User.Name.ToLower()==Name.ToLower());
+            count = query.Count();
+
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<UserTrackViewModel> SearchByTrackName(string TrackName, int pageIndex = 0, int pageSize = 20)
+        public IEnumerable<UserTrackViewModel> SearchByTrackName(out int count,string TrackName, int pageIndex = 0, int pageSize = 20)
         {
             var query =
                 UserTrackRepo.GetAll().Where
-                    (i => i.IsApproveed==false&& i.Track.Name.ToLower()==TrackName.ToLower());
+                    (i => i.IsApproveed==false&& i.Track.Name.Contains( TrackName));
+            count = query.Count();
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }

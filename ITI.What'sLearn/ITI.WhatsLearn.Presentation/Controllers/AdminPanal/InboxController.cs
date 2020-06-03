@@ -25,13 +25,13 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             ResultViewModel<IEnumerable<InboxViewModel>> result
                = new ResultViewModel<IEnumerable<InboxViewModel>>();
-
+            int count = 0;
             try
             {
-                var Messages = messageService.GetAll(pageIndex, pageSize);
+                var Messages = messageService.GetAll(out count, 0, pageIndex, pageSize);
                     ;
                 result.Successed = true;
-                result.Count = messageService.Count();
+                result.Count = count;
                 result.Data = Messages.Select(i => new InboxViewModel()
                 {
                     FullName = i.FullName,
@@ -58,10 +58,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             ResultViewModel<IEnumerable<MessageViewModel>> result
                = new ResultViewModel<IEnumerable<MessageViewModel>>();
-
+            int count = 0;
             try
             {
-                var Messages = messageService.GetAll(pageIndex, pageSize).Where(i => i.IsRead == false && i.IsDeleted == false);
+                var Messages = messageService.GetAll(out count,0,pageIndex, pageSize).Where(i => i.IsRead == false && i.IsDeleted == false);
                 result.Successed = true;
                 result.Data = Messages;
             }
@@ -74,10 +74,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         }
 
         [HttpGet]
-        public ResultViewModel<MessageViewModel> GetByID(int id)
+        public ResultViewModel<MessageEditViewModel> GetByID(int id)
         {
-            ResultViewModel<MessageViewModel> result
-                = new ResultViewModel<MessageViewModel>();
+            ResultViewModel<MessageEditViewModel> result
+                = new ResultViewModel<MessageEditViewModel>();
             try
             {
                 var message = messageService.GetByID(id);
@@ -119,48 +119,40 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             return result;
         }
         [HttpGet]
-        public ResultViewModel<IEnumerable<InboxViewModel>> Search(int SearchOption,string SearchText, int pageIndex, int pageSize = 20)
+        public ResultViewModel<IEnumerable<InboxViewModel>> Search(int SortBy,int SearchOption,string SearchText, int pageIndex, int pageSize = 20)
         {
             ResultViewModel<IEnumerable<InboxViewModel>> result
                = new ResultViewModel<IEnumerable<InboxViewModel>>();
             IEnumerable<MessageViewModel> Messages = new List<MessageViewModel>();
+            int count = 0;
             try
             {
 
                 if(SearchOption == 0)//All
                 {
-                     Messages = messageService.GetAll(pageIndex, pageSize);
+                     Messages = messageService.GetAll(out count , SortBy ,pageIndex, pageSize);
 
                 }
 
 
                 if (SearchOption == 1)//FullName
                 {
-                    Messages = messageService.GetByName(SearchText,pageIndex, pageSize);
+                    Messages = messageService.GetByName(out count, SortBy, SearchText,pageIndex, pageSize);
 
                 }
 
                 if (SearchOption == 2)//Email
                 {
-                    Messages = messageService.GetByEmail(SearchText, pageIndex, pageSize);
+                    Messages = messageService.GetByEmail(out count, SortBy, SearchText, pageIndex, pageSize);
 
                 }
 
-                Messages = messageService.GetAll(pageIndex, pageSize).Where(i => i.IsDeleted == false);
+                Messages = messageService.GetAll(out count, SortBy, pageIndex, pageSize).Where(i => i.IsDeleted == false);
                     
                 result.Successed = true;
-                result.Data = Messages.Select(i => new InboxViewModel()
-                {
-                    FullName = i.FullName,
-                    Text = i.Text,
-                    ID = i.ID,
-                    Email = i.Email,
-                    IsReaded = i.IsRead,
-                    PriefMessage = String.Join(" ", i.Text.Split(' ').Take(4)),
-                    Time = i.SendTime.ToString()
+                result.Count = count;
 
-                });
-
+                result.Data = Messages.Select(i => i.ToInboxViewModel());
             }
             catch (Exception ex)
             {

@@ -21,18 +21,19 @@ namespace ITI.WhatsLearn.Presentation.Controllers.AdminPanal
 
         }
         [HttpGet]
-        public ResultViewModel<IEnumerable<SkillViewModel>> GetList(int PageIndex, int PageSize)
+        public ResultViewModel<IEnumerable<SkillViewModel>> GetList( int SortBy,int PageIndex, int PageSize)
         {
 
             ResultViewModel<IEnumerable<SkillViewModel>> result
               = new ResultViewModel<IEnumerable<SkillViewModel>>();
-
+            int count = 0;
             try
             {
-                var skills = skillService.GetAll(pageIndex: PageIndex, pageSize: PageSize);
+                var skills = skillService.GetAll(out count, SortBy, pageIndex: PageIndex, pageSize: PageSize);
                 
                 result.Successed = true;
                 result.Data = skills;
+                result.Count = count;
             }
             catch (Exception ex)
             {

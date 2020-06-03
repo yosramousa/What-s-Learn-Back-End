@@ -23,10 +23,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             ResultViewModel<IEnumerable<SkillViewModel>> result
                = new ResultViewModel<IEnumerable<SkillViewModel>>();
-
+            int count = 0;
             try
             {
-                var Skills = skillService.GetAll(pageIndex, pageSize);
+                var Skills = skillService.GetAll(out count, 0, pageIndex, pageSize);
                 result.Successed = true;
                 result.Data = Skills;
             }

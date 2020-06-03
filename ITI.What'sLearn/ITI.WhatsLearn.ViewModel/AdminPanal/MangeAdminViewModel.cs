@@ -13,6 +13,7 @@ namespace ITI.WhatsLearn.ViewModel
         public string Name { get; set; }
         public string Status { get; set; }
         public string Image { get; set; }
+        public string Email { get; set; }
 
 
 

@@ -16,7 +16,6 @@ namespace ITI.WhatsLearn.ViewModel
                 ID = model.ID,
                 Education = model.Education,
                 SignedTime = model.SignedTime,
-
                 Name = model.Name,
                 Adress = model.Adress,
                 Age = model.Age,
@@ -27,7 +26,10 @@ namespace ITI.WhatsLearn.ViewModel
                 IsDeleted = model.IsDeleted,
                 Password = model.Password,
                 Phone = model.Phone,
-                Tracks=model.Tracks.Select(i=>i.Track.ToViewModel()).ToList()
+                Tracks = model.Tracks.Select(i => i.Track.ToViewModel()).ToList(),
+                Skills = model.Skills.Select(i=>i.ToViewModel()).ToList(),
+                Certificate=model.Certificates.Select(i => i.ToViewModel()).ToList(),
+                SocialLinks = model.SocialLinks.Select(i=>i.ToViewModel()).ToList()
             };
         }
         public static User ToModel(this UserEditViewModel editModel)
@@ -47,7 +49,10 @@ namespace ITI.WhatsLearn.ViewModel
                 Password = editModel.Password,
                 Phone = editModel.Phone,
                 SignedTime = editModel.SignedTime,
-
+                Certificates = editModel.Certificates.Select(i=>i.ToModel()).ToList(),
+                SocialLinks = editModel.SocialLinks.Select(i=>i.ToModel()).ToList(),
+                Skills = editModel.Skills.Select(i=>i.ToModel()).ToList()
+              
             };
         }
         public static UserEditViewModel ToEditableViewModel(this User model)
@@ -67,7 +72,11 @@ namespace ITI.WhatsLearn.ViewModel
                 IsActive = model.IsActive,
                 IsDeleted = model.IsDeleted,
                 Password = model.Password,
-                Phone = model.Phone
+                Phone = model.Phone,
+                Skills = model.Skills.Select(i => i.ToEditableViewModel()).ToList(),
+                Certificates = model.Certificates.Select(i => i.ToEditableViewModel()).ToList(),
+                SocialLinks = model.SocialLinks.Select(i => i.ToEditableViewModel()).ToList()
+
             };
         }
     }

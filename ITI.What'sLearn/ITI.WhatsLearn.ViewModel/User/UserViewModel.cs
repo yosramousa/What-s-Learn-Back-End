@@ -20,8 +20,10 @@ namespace ITI.WhatsLearn.ViewModel
         public bool IsActive { get; set; } 
         public string Image { get; set; }
         public bool IsDeleted { get; set; }
-
         public List<TrackViewModel> Tracks { get; set; }
+        public List<UserSkillViewModel> Skills { get; set; }
+        public List<UserCertificateViewModel> Certificate { get; set; }
+        public List<UserSocialLinkViewModel> SocialLinks { get; set; }
         public DateTime SignedTime { get; set; } 
     }
 }

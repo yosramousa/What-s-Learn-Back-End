@@ -106,7 +106,7 @@ namespace ITI.WhatsLearn.Presentation
             }
             return result;
         }
-        //[AUTHORIZE(Roles = "User,Admin")]
+        [AUTHORIZE(Roles = "User,Admin")]
         [HttpPost]
         public ResultViewModel<UserEditViewModel> Update(UserEditViewModel User)
         {
@@ -167,6 +167,8 @@ namespace ITI.WhatsLearn.Presentation
             else
                 return "User Not Found !";
         }
+
+
 
     }
 }

@@ -120,6 +120,8 @@
     <Compile Include="UserCertificate\UserCertificateEditViewModel.cs" />
     <Compile Include="UserCertificate\UserCertificateExtentions.cs" />
     <Compile Include="UserCertificate\UserCertificateViewModel.cs" />
+    <Compile Include="UserPanel\DataDetails.cs" />
+    <Compile Include="UserPanel\HomeViewModel.cs" />
     <Compile Include="UserSkill\UserSkillEditViewModel.cs" />
     <Compile Include="UserSkill\UserSkillExtentions.cs" />
     <Compile Include="UserSkill\UserSkillViewModel.cs" />

@@ -95,6 +95,13 @@ namespace ITI.WhatsLearn.Services
             }
             return query.ToList().Select(i => i.ToViewModel());
         }
+        public IEnumerable<SubCategoryViewModel> GetAll(int pageIndex, int pageSize)
+        {
+            var query =
+                SubCategoryRepo.GetAll();
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
         public IEnumerable<SubCategoryViewModel> SeachByID(int ID)
         {
             var query =
@@ -208,7 +215,6 @@ namespace ITI.WhatsLearn.Services
 
 
         }
-
         public void Remove(int id)
         {
             SubCategoryRepo.Remove(SubCategoryRepo.GetByID(id));
@@ -219,22 +225,16 @@ namespace ITI.WhatsLearn.Services
         {
             return SubCategoryRepo.Count();
         }
-        public IEnumerable<SubCategoryViewModel> SortBYNameAsc(out int count, int pageIndex, int pageSize = 20)
+       public IEnumerable<SubCategoryViewModel> GetByParentID(int ParentID , int pageIndex, int pageSize = 3)
         {
             var query =
-                SubCategoryRepo.GetAll();
-            count = query.Count();
-            query = query.OrderBy(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+              SubCategoryRepo.Get(i => i.MainCategoryID == ParentID);
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
-        }
-        public IEnumerable<SubCategoryViewModel> SortBYNameDesc(out int count, int pageIndex, int pageSize = 20)
-        {
-            var query =
-                SubCategoryRepo.GetAll();
-            count = query.Count();
-            query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
-            return query.ToList().Select(i => i.ToViewModel());
+
         }
 
+
     }
+   
 }

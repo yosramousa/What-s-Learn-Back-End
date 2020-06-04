@@ -41,12 +41,14 @@ namespace ITI.WhatsLearn.Services
             unitOfWork.Commit();
             return c.ToEditableViewModel();
         }
+   
         public MainCategoryEditViewModel Update(MainCategoryEditViewModel MainCategory)
         {
             MainCategory c = MainCategoryRepo.Update(MainCategory.ToModel());
+          
             foreach ( MainCategoryDocument doc in c.MainCategoryDocuments)
             {
-
+               
                 MainCategoryDocumentRepo.Update(doc);
 
             }
@@ -96,6 +98,14 @@ namespace ITI.WhatsLearn.Services
                 default:
                     break;
             }
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+
+        public IEnumerable<MainCategoryViewModel> GetAll( int pageIndex, int pageSize = 20)
+        {
+            var query =
+                MainCategoryRepo.GetAll();
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<MainCategoryViewModel> SearchByChilds(out int count ,int SortBy, string ChildName ,int pageIndex, int pageSize = 20)
@@ -167,22 +177,6 @@ namespace ITI.WhatsLearn.Services
         {
             return MainCategoryRepo.Count();
         }
-        public IEnumerable<MainCategoryViewModel> SortBYNameAsc(out int count, int pageIndex, int pageSize = 20)
-        {
-            var query =
-                MainCategoryRepo.GetAll();
-            count = query.Count();
-            query = query.OrderBy(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
-            return query.ToList().Select(i => i.ToViewModel());
-        }
-        public IEnumerable<MainCategoryViewModel> SortBYNameDesc(out int count, int pageIndex, int pageSize = 20)
-        {
-            var query =
-                MainCategoryRepo.GetAll();
-            count = query.Count();
-            query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
-            return query.ToList().Select(i => i.ToViewModel());
-        }
-
+  
     }
 }

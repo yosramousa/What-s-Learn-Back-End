@@ -74,5 +74,16 @@ namespace ITI.WhatsLearn.ViewModel
             };
         }
 
+        public static HomeViewModel ToHomeViewmodel(this TrackViewModel model)
+        {
+            return new HomeViewModel()
+            {
+                ID = model.ID,
+                Name = model.Name,
+                Discription = model.Discription,
+                Image = model.Image
+            };
+        }
+
     }
 }

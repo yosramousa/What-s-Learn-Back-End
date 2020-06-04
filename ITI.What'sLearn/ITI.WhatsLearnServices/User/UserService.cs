@@ -5,6 +5,7 @@ using ITI.WhatsLearn.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,10 +17,17 @@ namespace ITI.WhatsLearn.Services
 
         UnitOfWork unitOfWork;
         Generic<User> UserRepo;
+        Generic<UserCertificate> UserCertificateRepo;
+        Generic<UserSkill> UserSkillsRepo;
+        Generic<UserSocialLink> UserSocialLinkRepo;
+
         public UserService(UnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
             UserRepo = unitOfWork.UserRepo;
+            UserCertificateRepo = unitOfWork.UserCertificateRepo;
+            UserSkillsRepo = unitOfWork.UserSkillRepo;
+            UserSocialLinkRepo = unitOfWork.UserSocialLinkRepo;
         }
         public UserEditViewModel Add(UserEditViewModel P)
         {
@@ -27,11 +35,36 @@ namespace ITI.WhatsLearn.Services
             unitOfWork.Commit();
             return PP.ToEditableViewModel();
         }
-        public UserEditViewModel Update(UserEditViewModel P)
+        public UserEditViewModel Update(UserEditViewModel User)
         {
-            User PP = UserRepo.Update(P.ToModel());
+            User user = UserRepo.Update(User.ToModel());
+            var links = UserSocialLinkRepo.Get(i => i.UserID == user.ID);
+            var certs = UserCertificateRepo.Get(i => i.UserID == user.ID);
+            var skills = UserSkillsRepo.Get(i => i.UserID == user.ID);
+
+            foreach (var Cer in user.Certificates)
+            {
+                if(Cer.ID == 0)  UserCertificateRepo.Add(Cer);
+                else if (!certs.Contains(Cer)) UserCertificateRepo.Remove(Cer);
+                else UserCertificateRepo.Update(Cer);
+            }
+            foreach (var skill in user.Skills)
+            {
+                if (skill.ID == 0) UserSkillsRepo.Add(skill);
+                else if (!skills.Contains(skill)) UserSkillsRepo.Remove(skill);
+                else UserSkillsRepo.Update(skill);
+            }
+            foreach (var link in user.SocialLinks)
+            {
+                if (link.ID == 0) UserSocialLinkRepo.Add(link);
+                else if (!links.Contains(link)) UserSocialLinkRepo.Remove(link);
+                else UserSocialLinkRepo.Update(link);
+            }
             unitOfWork.Commit();
-            return PP.ToEditableViewModel();
+
+            return user.ToEditableViewModel();
+
+
         }
         public User GetByID(int id)
         {

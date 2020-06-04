@@ -32,11 +32,12 @@ namespace ITI.WhatsLearn.ViewModel
         [Required]
         public string Phone { get; set; }
         public DateTime SignedTime { get; set; } = DateTime.Now;
-
         public bool IsActive { get; set; } = true;
-
         public string Image { get; set; }
-        public HttpPostedFileBase Photo { get; set; }
         public bool IsDeleted { get; set; } = false;
+        public List<UserSkillEditViewModel> Skills { get; set; }
+        public List<UserCertificateEditViewModel> Certificates { get; set; }
+        public List<UserSocialLinkEditViewModel> SocialLinks { get; set; }
+
     }
 }

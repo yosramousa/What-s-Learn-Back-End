@@ -160,6 +160,8 @@
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\SubCategoryController.cs" />
+    <Compile Include="Controllers\UserPanel\HomeController.cs" />
+    <Compile Include="Controllers\UserPanel\UserProfileController.cs" />
     <Compile Include="Controllers\UserTrackController.cs" />
     <Compile Include="Controllers\SubCategoryVedioController .cs" />
     <Compile Include="Controllers\SubCategoryDocumentController.cs" />

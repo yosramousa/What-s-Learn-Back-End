@@ -64,6 +64,13 @@ namespace ITI.WhatsLearn.Services
         {
             return CourseRepo.GetByID(id)?.ToViewModel();
         }
+        public IEnumerable<CourseViewModel> GetAll(int pageIndex, int pageSize )
+        {
+            var query =
+                CourseRepo.GetAll();
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
         public IEnumerable<CourseViewModel> GetAll(out int  count, int SortBy,int pageIndex, int pageSize = 20)
         {
             var query =
@@ -166,30 +173,19 @@ namespace ITI.WhatsLearn.Services
             }
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
-
-
         }
-
         public int Count()
         {
             return CourseRepo.Count();
         }
-        public IEnumerable<CourseViewModel> SortBYNameAsc(out int count, int pageIndex, int pageSize = 20)
-        {
-            var query =
-                 CourseRepo.GetAll();
-            count = query.Count();
-            query = query.OrderBy(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
-            return query.ToList().Select(i => i.ToViewModel());
-        }
-        public IEnumerable<CourseViewModel> SortBYNameDesc(out int count, int pageIndex, int pageSize = 20)
-        {
-            var query =
-                 CourseRepo.GetAll();
-            count = query.Count();
-            query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
-            return query.ToList().Select(i => i.ToViewModel());
-        }
 
+        public IEnumerable<CourseViewModel> GetByParentID(int ParentID, int pageIndex, int pageSize)
+        {
+            var query =
+            CourseRepo.Get(i => i.Tracks.Select(u => u.ID ).Contains(ParentID));
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+
+        }
     }
 }

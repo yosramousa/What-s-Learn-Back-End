@@ -96,6 +96,13 @@ namespace ITI.WhatsLearn.Services
             }
             return query.ToList().Select(i => i.ToViewModel());
         }
+        public IEnumerable<TrackViewModel> GetAll(int pageIndex, int pageSize)
+        {
+            var query =
+                TrackRepo.GetAll();
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
         public void Remove(int id)
         {
             TrackRepo.Remove(TrackRepo.GetByID(id));
@@ -214,21 +221,13 @@ namespace ITI.WhatsLearn.Services
 
 
         }
-        public IEnumerable<TrackViewModel> SortBYNameAsc(out int count, int pageIndex, int pageSize = 20)
+        public IEnumerable<TrackViewModel> GetByParentID(int ParentID, int pageIndex, int pageSize)
         {
             var query =
-                TrackRepo.GetAll();
-            count = query.Count();
-            query = query.OrderBy(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
+              TrackRepo.Get(i => i.SubCategory.ID == ParentID);
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
-        }
-        public IEnumerable<TrackViewModel> SortBYNameDesc(out int count, int pageIndex, int pageSize = 20)
-        {
-            var query =
-                TrackRepo.GetAll();
-            count = query.Count();
-            query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
-            return query.ToList().Select(i => i.ToViewModel());
+
         }
 
     }

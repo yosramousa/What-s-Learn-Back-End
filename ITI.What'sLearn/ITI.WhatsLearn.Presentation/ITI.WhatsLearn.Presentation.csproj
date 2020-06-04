@@ -149,7 +149,7 @@
     <Compile Include="Controllers\CourseLinkController.cs" />
     <Compile Include="Controllers\CourseVedioController.cs" />
     <Compile Include="Controllers\AdminPanal\EnrollemntRequestController.cs" />
-    <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\AdminPanal\FileController.cs" />
     <Compile Include="Controllers\FinishedCourseController.cs" />
     <Compile Include="Controllers\MainCategoryController.cs" />
     <Compile Include="Controllers\MainCategoryDocumentController.cs" />

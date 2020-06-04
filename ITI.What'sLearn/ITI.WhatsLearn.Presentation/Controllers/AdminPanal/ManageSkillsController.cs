@@ -110,6 +110,23 @@ namespace ITI.WhatsLearn.Presentation.Controllers.AdminPanal
             }
             return result;
         }
-
+        [HttpGet]
+        public ResultViewModel<SkillViewModel> GetByID(int id)
+        {
+            ResultViewModel<SkillViewModel> result
+                = new ResultViewModel<SkillViewModel>();
+            try
+            {
+                var skill = skillService.GetByID(id);
+                result.Successed = true;
+                result.Data = skill;
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+        }
     }
 }

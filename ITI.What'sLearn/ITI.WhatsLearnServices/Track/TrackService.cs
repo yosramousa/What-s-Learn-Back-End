@@ -12,7 +12,7 @@ namespace ITI.WhatsLearn.Services
 {
     public class TrackService
     {
-        
+
         UnitOfWork unitOfWork;
         Generic<Track> TrackRepo;
         Generic<TrackDocument> TrackDocumentRepo;
@@ -28,7 +28,7 @@ namespace ITI.WhatsLearn.Services
             TrackLinkRepo = unitOfWork.TrackLinkRepo;
 
         }
-      
+
         public Track Add(TrackEditViewModel P)
         {
             Track PP = TrackRepo.Add(P.ToModel());
@@ -37,34 +37,94 @@ namespace ITI.WhatsLearn.Services
         }
         public Track Update(TrackEditViewModel P)
         {
-            Track PP = TrackRepo.Update(P.ToModel());
+            Track Track = TrackRepo.Update(P.ToModel());
 
-            foreach (TrackDocument doc in PP.TrackDocuments)
+            List<TrackDocument> NewDoc = Track.TrackDocuments.ToList();
+            List<TrackLink> NewLinks = Track.TrackLinks.ToList();
+
+            List<TrackVedio> NewVedios = Track.TrackVedios.ToList();
+
+            //Update or Add
+
+
+            foreach (TrackDocument doc in NewDoc)
             {
-
-                TrackDocumentRepo.Update(doc);
+                if (doc.ID == 0)
+                {
+                    TrackDocumentRepo.Add(doc);
+                }
+                else
+                    TrackDocumentRepo.Update(doc);
 
             }
-            foreach (TrackLink doc in PP.TrackLinks)
-            {
 
-                TrackLinkRepo.Update(doc);
+            foreach (TrackLink link in NewLinks)
+            {
+                if (link.ID == 0)
+                    TrackLinkRepo.Add(link);
+
+                else
+                    TrackLinkRepo.Update(link);
 
             }
-            foreach (TrackVedio doc in PP.TrackVedios)
+
+            foreach (TrackVedio Vedio in NewVedios)
             {
+                if (Vedio.ID == 0)
+                    TrackVedioRepo.Add(Vedio);
+                else
 
-                TrackVedioRepo.Update(doc);
+                    TrackVedioRepo.Update(Vedio);
 
+            }
+
+            //Delete
+
+            var Docs = TrackDocumentRepo.GetAll().Where(i => i.TrackID == Track.ID);
+            foreach (var doc in Docs)
+            {
+                if (!NewDoc.Contains(doc))
+                {
+                    TrackDocumentRepo.Remove(doc);
+
+                }
+            }
+
+
+            var Links = TrackLinkRepo.GetAll().Where(i => i.TrackID == Track.ID);
+            foreach (var link in Links)
+            {
+                if (!NewLinks.Contains(link))
+                {
+                    TrackLinkRepo.Remove(link);
+
+                }
+            }
+
+            var Vedios = TrackVedioRepo.GetAll().Where(i => i.TrackID == Track.ID);
+            foreach (var vedio in Vedios)
+            {
+                if (!NewVedios.Contains(vedio))
+                {
+                    TrackVedioRepo.Remove(vedio);
+
+                }
             }
             unitOfWork.Commit();
-            return PP;
+            return Track;
         }
         public Track GetByID(int id)
         {
-            return TrackRepo.GetByID(id);
+            Track m = TrackRepo.GetByID(id);
+            m.TrackDocuments = Documents(m);
+
+            m.TrackLinks = Links(m);
+
+            m.TrackVedios = Vedios(m);
+            return m;
+
         }
-        
+
         public IEnumerable<TrackViewModel> GetAll(out int count, int SortBy, int pageIndex, int pageSize = 20)
         {
             var query =
@@ -114,7 +174,7 @@ namespace ITI.WhatsLearn.Services
 
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<TrackViewModel> SearchByName(out int count,int SortBy ,string Name, int pageIndex, int pageSize = 20)
+        public IEnumerable<TrackViewModel> SearchByName(out int count, int SortBy, string Name, int pageIndex, int pageSize = 20)
         {
             var query =
                 TrackRepo.Get(i => i.Name.Contains(Name));
@@ -148,7 +208,7 @@ namespace ITI.WhatsLearn.Services
 
 
         }
-        public IEnumerable<TrackViewModel> SearchByChilds(out int count ,int SortBy ,string ChildName, int pageIndex, int pageSize = 20)
+        public IEnumerable<TrackViewModel> SearchByChilds(out int count, int SortBy, string ChildName, int pageIndex, int pageSize = 20)
         {
             var query =
                 TrackRepo.Get(i => i.Courses.Select(x => x.Course.Name).Contains(ChildName));
@@ -180,7 +240,7 @@ namespace ITI.WhatsLearn.Services
             }
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<TrackViewModel> SearchByParentName(out int count ,int SortBy, string Parent, int pageIndex, int pageSize = 20)
+        public IEnumerable<TrackViewModel> SearchByParentName(out int count, int SortBy, string Parent, int pageIndex, int pageSize = 20)
         {
             var query =
                 TrackRepo.Get(i => i.SubCategory.Name.Contains(Parent));
@@ -229,6 +289,22 @@ namespace ITI.WhatsLearn.Services
             count = query.Count();
             query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
+        }
+        public List<TrackDocument> Documents(Track m)
+        {
+            return m.TrackDocuments.Where(d => d.IsDeleted == false).ToList();
+
+        }
+        public List<TrackVedio> Vedios(Track m)
+        {
+            return m.TrackVedios.Where(i => i.IsDeleted == false).ToList();
+
+        }
+        public List<TrackLink> Links(Track m)
+        {
+            return m.TrackLinks.Where(i => i.IsDeleted == false).ToList();
+
+
         }
 
     }

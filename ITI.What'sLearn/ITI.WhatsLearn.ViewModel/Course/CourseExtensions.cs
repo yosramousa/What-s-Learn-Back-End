@@ -17,9 +17,9 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = model.Name,
                 Discription = model.Discription,
                 Image = model.Image,
-                Documents = model.CourseDocuments.Count() > 0 ? model.CourseDocuments.Select(i => i.ToViewModel()).ToList() : null,
-                Vedios = model.CourseVedios.Count() > 0 ? model.CourseVedios.Select(i => i.ToViewModel()).ToList() : null,
-                Links = model.CourseLinks?.Select(i => i.ToViewModel()).ToList(),
+                Documents = model.CourseDocuments.Count() > 0 ? model.CourseDocuments.Select(i => i.ToViewModel()).ToList() : new List<CourseDocumentViewModel>(),
+                Vedios = model.CourseVedios.Count() > 0 ? model.CourseVedios.Select(i => i.ToViewModel()).ToList() : new List<CourseVedioViewModel>(),
+                Links = model.CourseLinks.Count()>0? model.CourseLinks.Select(i => i.ToViewModel()).ToList(): new List<CourseLinkViewModel>(),
                 Parent = model.Tracks.Count() > 0 ? string.Join(" - ", model.Tracks.Select(i => i.Track.Name)) : "",
 
                 Childs = null,

@@ -13,8 +13,8 @@ namespace ITI.WhatsLearn.ViewModel
         [Required]
 
         public int ID { get; set; }
-        [Required]
-        public HttpPostedFileBase Document { get; set; }
+       // [Required]
+        //public HttpPostedFileBase Document { get; set; }
         [Required]
         public String File { get; set; }
         public int ParentID { get; set; }

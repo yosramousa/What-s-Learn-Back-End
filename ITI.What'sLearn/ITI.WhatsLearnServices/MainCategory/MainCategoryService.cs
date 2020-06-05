@@ -158,7 +158,7 @@ namespace ITI.WhatsLearn.Services
             return query.ToList().Select(i => i.ToViewModel());
         }
 
-        public IEnumerable<MainCategoryViewModel> GetAll( int pageIndex, int pageSize = 20)
+        public IEnumerable<MainCategoryViewModel> GetAll( int pageIndex, int pageSize )
         {
             var query =
                 MainCategoryRepo.GetAll();
@@ -266,7 +266,6 @@ namespace ITI.WhatsLearn.Services
 
 
         }
+
     }
-
 }
-

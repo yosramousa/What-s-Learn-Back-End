@@ -15,9 +15,9 @@ namespace ITI.WhatsLearn.Services
         UnitOfWork unitOfWork;
         Generic<SubCategory> SubCategoryRepo;
 
-         Generic<SubCategoryDocument> SubCategoryDocumentRepo;
-         Generic<SubCategoryVedio > SubCategoryVedioRepo;
-        
+        Generic<SubCategoryDocument> SubCategoryDocumentRepo;
+        Generic<SubCategoryVedio> SubCategoryVedioRepo;
+
         Generic<SubCategoryLink> SubCategoryLinkRepo;
         public SubCategoryService(UnitOfWork _unitOfWork)
         {
@@ -37,34 +37,88 @@ namespace ITI.WhatsLearn.Services
         public SubCategoryEditViewModel Update(SubCategoryEditViewModel subCategory)
         {
             SubCategory sub = SubCategoryRepo.Update(subCategory.ToModel());
+            List<SubCategoryDocument> NewDoc = sub.SubCategoryDocuments.ToList();
+            List<SubCategoryLink> NewLinks = sub.SubCategoryLinks.ToList();
 
-            foreach (SubCategoryDocument doc in sub.SubCategoryDocuments)
+            List<SubCategoryVedio> NewVedios = sub.SubCategoryVedios.ToList();
+
+            //Update Or Add
+            foreach (SubCategoryDocument doc in NewDoc)
             {
-
-                SubCategoryDocumentRepo.Update(doc);
+                if (doc.ID == 0)
+                {
+                    SubCategoryDocumentRepo.Add(doc);
+                }
+                else
+                    SubCategoryDocumentRepo.Update(doc);
 
             }
-            foreach (SubCategoryLink doc in sub.SubCategoryLinks)
+            foreach (SubCategoryLink link in NewLinks)
             {
+                if (link.ID == 0)
+                    SubCategoryLinkRepo.Add(link);
 
-                SubCategoryLinkRepo.Update(doc);
+                else
+                    SubCategoryLinkRepo.Update(link);
 
             }
-            foreach (SubCategoryVedio doc in sub.SubCategoryVedios)
+            foreach (SubCategoryVedio Vedio in NewVedios
+                )
             {
+                if (Vedio.ID == 0)
+                    SubCategoryVedioRepo.Add(Vedio);
+                else
 
-                SubCategoryVedioRepo.Update(doc);
+                    SubCategoryVedioRepo.Update(Vedio);
 
             }
+            
+            ////Delete
 
+            var Docs = SubCategoryDocumentRepo.GetAll().Where(i => i.SubCategoryID == sub.ID);
+            foreach (var doc in Docs)
+            {
+                if (!NewDoc.Contains(doc))
+                {
+                    SubCategoryDocumentRepo.Remove(doc);
+
+                }
+            }
+
+            var Links = SubCategoryLinkRepo.GetAll().Where(i => i.SubCategoryID == sub.ID);
+            foreach (var link in Links)
+            {
+                if (!sub.SubCategoryLinks.Contains(link))
+                {
+                    SubCategoryLinkRepo.Remove(link);
+
+                }
+            }
+
+            var Vedios = SubCategoryVedioRepo.GetAll().Where(i => i.SubCategoryID == sub.ID);
+            foreach (var vedio in Vedios)
+            {
+                if (!NewVedios.Contains(vedio))
+                {
+                    SubCategoryVedioRepo.Remove(vedio);
+
+                }
+            }
             unitOfWork.Commit();
             return sub.ToEditableViewModel();
         }
         public SubCategoryViewModel GetByID(int id)
         {
-            return SubCategoryRepo.GetByID(id)?.ToViewModel();
+            SubCategory sub= SubCategoryRepo.GetByID(id);
+            sub.SubCategoryDocuments = Documents(sub);
+
+            sub.SubCategoryLinks = Links(sub);
+
+            sub.SubCategoryVedios = Vedios(sub);
+            return sub.ToViewModel();
+
         }
-        public IEnumerable<SubCategoryViewModel> GetAll( out int count ,int SortBy ,int pageIndex, int pageSize = 20)
+        public IEnumerable<SubCategoryViewModel> GetAll(out int count, int SortBy, int pageIndex, int pageSize = 20)
         {
             var query =
                 SubCategoryRepo.GetAll();
@@ -105,8 +159,8 @@ namespace ITI.WhatsLearn.Services
         public IEnumerable<SubCategoryViewModel> SeachByID(int ID)
         {
             var query =
-                SubCategoryRepo.Get(i=>i.ID==ID);
-               return query.ToList().Select(i => i.ToViewModel());
+                SubCategoryRepo.Get(i => i.ID == ID);
+            return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<SubCategoryViewModel> Get(Expression<Func<SubCategory, bool>> filter)
         {
@@ -114,10 +168,10 @@ namespace ITI.WhatsLearn.Services
                 SubCategoryRepo.Get(filter);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<SubCategoryViewModel> SearchByName(out int count,int SortBy,string Name,int pageIndex, int pageSize = 20)
+        public IEnumerable<SubCategoryViewModel> SearchByName(out int count, int SortBy, string Name, int pageIndex, int pageSize = 20)
         {
             var query =
-                SubCategoryRepo.Get(i=>i.Name.Contains(Name));
+                SubCategoryRepo.Get(i => i.Name.Contains(Name));
             count = query.Count();
 
             switch (SortBy)
@@ -149,7 +203,7 @@ namespace ITI.WhatsLearn.Services
 
         }
 
-        public IEnumerable<SubCategoryViewModel> SearchByChilds( out int count, int SortBy,string ChildName, int pageIndex, int pageSize = 20)
+        public IEnumerable<SubCategoryViewModel> SearchByChilds(out int count, int SortBy, string ChildName, int pageIndex, int pageSize = 20)
         {
             var query =
                 SubCategoryRepo.Get(i => i.Tracks.Select(x => x.Name).Contains(ChildName));
@@ -181,7 +235,7 @@ namespace ITI.WhatsLearn.Services
             }
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<SubCategoryViewModel> SearchByParentName(out int count,int SortBy, string Parent, int pageIndex, int pageSize = 20)
+        public IEnumerable<SubCategoryViewModel> SearchByParentName(out int count, int SortBy, string Parent, int pageIndex, int pageSize = 20)
         {
             var query =
                 SubCategoryRepo.Get(i => i.MainCategory.Name.Contains(Parent));
@@ -231,6 +285,23 @@ namespace ITI.WhatsLearn.Services
               SubCategoryRepo.Get(i => i.MainCategoryID == ParentID);
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
+
+        }
+
+        public List<SubCategoryDocument> Documents(SubCategory m)
+        {
+            return m.SubCategoryDocuments.Where(d => d.IsDeleted == false).ToList();
+
+        }
+        public List<SubCategoryVedio> Vedios(SubCategory m)
+        {
+            return m.SubCategoryVedios.Where(i => i.IsDeleted == false).ToList();
+
+        }
+        public List<SubCategoryLink> Links(SubCategory m)
+        {
+            return m.SubCategoryLinks.Where(i => i.IsDeleted == false).ToList();
+
 
         }
 

@@ -147,7 +147,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                 }
 
-                Messages = messageService.GetAll(out count, SortBy, pageIndex, pageSize).Where(i => i.IsDeleted == false);
+            //    Messages = messageService.GetAll(out count, SortBy, pageIndex, pageSize).Where(i => i.IsDeleted == false);
                     
                 result.Successed = true;
                 result.Count = count;

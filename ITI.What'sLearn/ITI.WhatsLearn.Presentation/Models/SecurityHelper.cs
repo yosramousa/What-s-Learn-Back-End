@@ -55,7 +55,7 @@ namespace BroadCaster.Helpers
                              new Claim("Name",_login.Name)
 
                           }),
-                Expires = DateTime.UtcNow.AddMinutes(30),
+                Expires = DateTime.UtcNow.AddMinutes(120),
                 SigningCredentials = new SigningCredentials(securityKey,
                 SecurityAlgorithms.HmacSha256Signature)
             };

@@ -45,7 +45,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             {
                 if (SearchIn == "MainCategory")
                 {
-                    var searshResult = mainCategoryService.GetAll(out count ,0,PageIndex, PageSize).
+                    var searshResult = mainCategoryService.GetAll(out count, 0, PageIndex, PageSize).
                        Select(i => i.ToManageCategoryViewModel()).OrderBy(i => i.ID);
                     result.Data = searshResult;
                 }
@@ -83,7 +83,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
         }
         [HttpGet]
-        public ResultViewModel<IEnumerable<ManageCategoryViewModel>> Search(int SortBy,int SearchBy, int SearchIn, string SearchText, int PageIndex, int PageSize)
+        public ResultViewModel<IEnumerable<ManageCategoryViewModel>> Search(int SortBy, int SearchBy, int SearchIn, string SearchText, int PageIndex, int PageSize)
         {
             ResultViewModel<IEnumerable<ManageCategoryViewModel>> result
             = new ResultViewModel<IEnumerable<ManageCategoryViewModel>>();
@@ -139,7 +139,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 {
                     if (SearchBy == 0)
                     {
-                        var searshResult = subCategoryService.GetAll(out count, 0, PageIndex, PageSize)
+                        var searshResult = subCategoryService.GetAll(out count, SortBy, PageIndex, PageSize)
                               .Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
@@ -148,14 +148,14 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     else if (SearchBy == 1)
                     {
 
-                        var searshResult = subCategoryService.SearchByName(out count, 0, SearchText, PageIndex, PageSize)
+                        var searshResult = subCategoryService.SearchByName(out count, SortBy, SearchText, PageIndex, PageSize)
                             .Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
                     }
                     else if (SearchBy == 2)
                     {
-                        var searshResult = subCategoryService.SearchByChilds(out count, 0, SearchText, PageIndex, PageSize)
+                        var searshResult = subCategoryService.SearchByChilds(out count, SortBy, SearchText, PageIndex, PageSize)
                             .Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
@@ -163,7 +163,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     else if (SearchBy == 3)
                     {
 
-                        var searshResult = subCategoryService.SearchByName(out count, 0, SearchText, PageIndex, PageSize).
+                        var searshResult = subCategoryService.SearchByName(out count, SortBy, SearchText, PageIndex, PageSize).
                             Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
@@ -188,7 +188,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     if (SearchBy == 0)
                     {
 
-                        var searshResult = trackService.GetAll(out count, 0, PageIndex, PageSize).
+                        var searshResult = trackService.GetAll(out count, SortBy, PageIndex, PageSize).
                             Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
@@ -196,7 +196,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     else if (SearchBy == 1)
                     {
 
-                        var searshResult = trackService.SearchByParentName(out count, 0, SearchText, PageIndex, PageSize).
+                        var searshResult = trackService.SearchByParentName(out count, SortBy, SearchText, PageIndex, PageSize).
                              Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
@@ -204,7 +204,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     else if (SearchBy == 2)
                     {
 
-                        var searshResult = trackService.SearchByChilds(out count, 0, SearchText, PageIndex, PageSize).
+                        var searshResult = trackService.SearchByChilds(out count, SortBy, SearchText, PageIndex, PageSize).
                              Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
@@ -212,7 +212,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     else if (SearchBy == 3)
                     {
 
-                        var searshResult = trackService.SearchByName(out count, 0, SearchText, PageIndex, PageSize).
+                        var searshResult = trackService.SearchByName(out count, SortBy, SearchText, PageIndex, PageSize).
                              Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
@@ -235,7 +235,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     if (SearchBy == 0)
                     {
 
-                        var searshResult = courseService.GetAll(out count, 0, PageIndex, PageSize).
+                        var searshResult = courseService.GetAll(out count, SortBy, PageIndex, PageSize).
                             Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
@@ -243,7 +243,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     else if (SearchBy == 1)
                     {
 
-                        var searshResult = courseService.SearchByParentName(out count, 0, SearchText, PageIndex, PageSize).
+                        var searshResult = courseService.SearchByParentName(out count, SortBy, SearchText, PageIndex, PageSize).
                            Select(i => i.ToManageCategoryViewModel());
                         result.Data = searshResult;
 
@@ -259,7 +259,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     {
 
 
-                        var searshResult = courseService.SearchByName(out count, 0, SearchText, PageIndex, PageSize).
+                        var searshResult = courseService.SearchByName(out count, SortBy, SearchText, PageIndex, PageSize).
                              Select(i => i.ToManageCategoryViewModel());
 
                         result.Data = searshResult;
@@ -286,7 +286,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     {
                         ID = 1,
                         Name = "Main Category Parent",
-                        Childs = mainCategoryService.GetAll(out count, 0, PageIndex, PageSize).Select(i => i.Name).ToList(),
+                        Childs = mainCategoryService.GetAll(out count, SortBy, PageIndex, PageSize).Select(i => i.Name).ToList(),
                         Parent = ""
                     };
                     res.Add(searshResult);
@@ -294,6 +294,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     result.Data = res;
 
                 }
+                result.Count = count;
+                if (SearchIn == 0)
+                    count = 0;
+                
                 result.Successed = true;
 
             }

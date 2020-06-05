@@ -35,34 +35,90 @@ namespace ITI.WhatsLearn.Services
             unitOfWork.Commit();
             return c.ToEditableViewModel();
         }
-        public CourseEditViewModel Update(CourseEditViewModel course)
+        public CourseEditViewModel Update(CourseEditViewModel P)
         {
-            Course c = CourseRepo.Update(course.ToModel());
+            Course c = CourseRepo.Update(P.ToModel());
 
-            foreach (CourseDocument doc in c.CourseDocuments)
+            List<CourseDocument> NewDoc = c.CourseDocuments.ToList();
+            List<CourseLink> NewLinks = c.CourseLinks.ToList();
+
+            List<CourseVedio> NewVedios = c.CourseVedios.ToList();
+
+
+            foreach (CourseDocument doc in NewDoc)
             {
-
-                CourseDocumentRepo.Update(doc);
+                if (doc.ID == 0)
+                {
+                    CourseDocumentRepo.Add(doc);
+                }
+                else
+                    CourseDocumentRepo.Update(doc);
 
             }
-            foreach (CourseLink doc in c.CourseLinks)
-            {
 
-                CourseLinkRepo.Update(doc);
+            foreach (CourseLink link in NewLinks)
+            {
+                if (link.ID == 0)
+                    CourseLinkRepo.Add(link);
+
+                else
+                    CourseLinkRepo.Update(link);
 
             }
-            foreach (CourseVedio doc in c.CourseVedios)
+
+            foreach (CourseVedio Vedio in NewVedios)
             {
+                if (Vedio.ID == 0)
+                    CourseVedioRepo.Add(Vedio);
+                else
 
-                CourseVedioRepo.Update(doc);
+                    CourseVedioRepo.Update(Vedio);
 
+            }
+
+            var Docs = CourseDocumentRepo.GetAll().Where(i => i.CourseID == c.ID);
+            foreach (var doc in Docs)
+            {
+                if (!NewDoc.Contains(doc))
+                {
+                    CourseDocumentRepo.Remove(doc);
+
+                }
+            }
+
+
+
+            var Links = CourseLinkRepo.GetAll().Where(i => i.CourseID == c.ID);
+            foreach (var Link in Links)
+            {
+                if (!c.CourseLinks.Contains(Link))
+                {
+                    CourseLinkRepo.Remove(Link);
+
+                }
+            }
+            var Vedios = CourseVedioRepo.GetAll().Where(i => i.CourseID == c.ID);
+            foreach (var vedio in Vedios)
+            {
+                if (!c.CourseVedios.Contains(vedio))
+                {
+                    CourseVedioRepo.Remove(vedio);
+
+                }
             }
             unitOfWork.Commit();
             return c.ToEditableViewModel();
         }
         public CourseViewModel GetByID(int id)
         {
-            return CourseRepo.GetByID(id)?.ToViewModel();
+            Course m = CourseRepo.GetByID(id);
+            m.CourseDocuments = Documents(m);
+
+            m.CourseLinks = Links(m);
+
+            m.CourseVedios = Vedios(m);
+            return m.ToViewModel();
+
         }
         public IEnumerable<CourseViewModel> GetAll(int pageIndex, int pageSize )
         {
@@ -78,7 +134,7 @@ namespace ITI.WhatsLearn.Services
             count = query.Count();
             switch (SortBy)
             {
-               
+
                 case 1:
                 case 5:
                     query = query.OrderByDescending(i => i.ID);
@@ -89,7 +145,7 @@ namespace ITI.WhatsLearn.Services
                 case 3:
                     query = query.OrderByDescending(i => i.Name);
                     break;
-               
+
                 default:
                     query = query.OrderBy(i => i.ID);
 
@@ -116,7 +172,7 @@ namespace ITI.WhatsLearn.Services
                 CourseRepo.Get(i => i.ID == ID);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<CourseViewModel> SearchByName(out int count ,int SortBy ,string Name, int pageIndex, int pageSize = 20)
+        public IEnumerable<CourseViewModel> SearchByName(out int count, int SortBy, string Name, int pageIndex, int pageSize = 20)
         {
             var query =
                 CourseRepo.Get(i => i.Name.Contains(Name));
@@ -147,7 +203,7 @@ namespace ITI.WhatsLearn.Services
 
         }
 
-        public IEnumerable<CourseViewModel> SearchByParentName(out int count,int SortBy ,string Parent, int pageIndex, int pageSize = 20)
+        public IEnumerable<CourseViewModel> SearchByParentName(out int count, int SortBy, string Parent, int pageIndex, int pageSize = 20)
         {
             var query = CourseRepo.Get(i => i.Tracks.Select(x => x.Track.Name).Contains(Parent));
             count = query.Count();
@@ -185,6 +241,22 @@ namespace ITI.WhatsLearn.Services
             CourseRepo.Get(i => i.Tracks.Select(u => u.ID ).Contains(ParentID));
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
+
+        }
+        public List<CourseDocument> Documents(Course m)
+        {
+            return m.CourseDocuments.Where(d => d.IsDeleted == false).ToList();
+
+        }
+        public List<CourseVedio> Vedios(Course m)
+        {
+            return m.CourseVedios.Where(i => i.IsDeleted == false).ToList();
+
+        }
+        public List<CourseLink> Links(Course m)
+        {
+            return m.CourseLinks.Where(i => i.IsDeleted == false).ToList();
+
 
         }
     }

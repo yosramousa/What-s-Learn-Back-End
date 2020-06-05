@@ -250,6 +250,23 @@ namespace ITI.WhatsLearn.Services
             query = query.OrderByDescending(i => i.Name).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
+        public List<MainCategoryDocument> Documents(MainCategory m)
+        {
+            return m.MainCategoryDocuments.Where(d => d.IsDeleted == false).ToList();
 
+        }
+        public List<MainCategoryVedio> Vedios(MainCategory m)
+        {
+            return m.MainCategoryVedios.Where(i => i.IsDeleted == false).ToList();
+
+        }
+        public List<MainCategoryLink> Links(MainCategory m)
+        {
+            return m.MainCategoryLinks.Where(i => i.IsDeleted == false).ToList();
+
+
+        }
     }
+
 }
+

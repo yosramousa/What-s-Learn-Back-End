@@ -72,15 +72,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ITI.WhatsLearn.Entities\ITI.WhatsLearn.Entities.csproj">
-      <Project>{D6B1BE35-2000-42A3-B3C8-834D0E8D7AB0}</Project>
+      <Project>{d6b1be35-2000-42a3-b3c8-834d0e8d7ab0}</Project>
       <Name>ITI.WhatsLearn.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\ITI.WhatsLearn.Reposatories\ITI.WhatsLearn.Reposatories.csproj">
-      <Project>{4D4F2C21-611B-4316-96F3-5ACE123737FE}</Project>
+      <Project>{4d4f2c21-611b-4316-96f3-5ace123737fe}</Project>
       <Name>ITI.WhatsLearn.Reposatories</Name>
     </ProjectReference>
     <ProjectReference Include="..\ITI.WhatsLearn.ViewModel\ITI.WhatsLearn.ViewModel.csproj">
-      <Project>{C3D1E8DE-7607-4226-8EE4-52DA9ACCFB8E}</Project>
+      <Project>{c3d1e8de-7607-4226-8ee4-52da9accfb8e}</Project>
       <Name>ITI.WhatsLearn.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>

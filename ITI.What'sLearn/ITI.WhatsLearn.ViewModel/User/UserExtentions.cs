@@ -27,9 +27,9 @@ namespace ITI.WhatsLearn.ViewModel
                 Password = model.Password,
                 Phone = model.Phone,
                 Tracks = model.Tracks.Select(i => i.Track.ToViewModel()).ToList(),
-                Skills = model.Skills.Select(i=>i.ToViewModel()).ToList(),
-                Certificate=model.Certificates.Select(i => i.ToViewModel()).ToList(),
-                SocialLinks = model.SocialLinks.Select(i=>i.ToViewModel()).ToList()
+                Skills = model.Skills.Select(i => i.ToViewModel()).ToList(),
+                Certificate = model.Certificates.Select(i => i.ToViewModel()).ToList(),
+                SocialLinks = model.SocialLinks.Select(i => i.ToViewModel()).ToList()
             };
         }
         public static User ToModel(this UserEditViewModel editModel)
@@ -49,10 +49,10 @@ namespace ITI.WhatsLearn.ViewModel
                 Password = editModel.Password,
                 Phone = editModel.Phone,
                 SignedTime = editModel.SignedTime,
-                Certificates = editModel.Certificates.Select(i=>i.ToModel()).ToList(),
-                SocialLinks = editModel.SocialLinks.Select(i=>i.ToModel()).ToList(),
-                Skills = editModel.Skills.Select(i=>i.ToModel()).ToList()
-              
+                Certificates = editModel.Certificates.Select(i => i.ToModel()).ToList(),
+                SocialLinks = editModel.SocialLinks.Select(i => i.ToModel()).ToList(),
+                Skills = editModel.Skills.Select(i => i.ToModel()).ToList()
+
             };
         }
         public static UserEditViewModel ToEditableViewModel(this User model)
@@ -78,6 +78,30 @@ namespace ITI.WhatsLearn.ViewModel
                 SocialLinks = model.SocialLinks.Select(i => i.ToEditableViewModel()).ToList()
 
             };
+        }
+
+        public static UserProfileViewModel ToUserProfileViewModel(this User model)
+        {
+            return new UserProfileViewModel()
+            {
+                ID = model.ID,
+                Name = model.Name,
+                Adress = model.Adress,
+                Age = model.Age,
+                Education = model.Education,
+                Gender = model.Gender,
+                Phone = model.Phone,
+                Image = model.Image,
+                Skills = model.Skills.Select(i => i.ToViewModel()).ToList(),
+                Certificates = model.Certificates.Select(i => i.ToViewModel()).ToList(),
+                Links=model.SocialLinks.Select(i=>i.ToViewModel()).ToList(),
+                Tracks = model.Tracks.Select(i => i.ToUserProfileTracksViewModel()).ToList()
+               
+
+
+
+            };
+
         }
     }
 }

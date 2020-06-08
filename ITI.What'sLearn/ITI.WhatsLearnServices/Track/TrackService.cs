@@ -5,6 +5,7 @@ using ITI.WhatsLearn.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -281,10 +282,11 @@ namespace ITI.WhatsLearn.Services
 
 
         }
-        public IEnumerable<TrackViewModel> GetByParentID(int ParentID, int pageIndex, int pageSize)
+        public IEnumerable<TrackViewModel> GetByParentID(out int count,int ParentID, int pageIndex, int pageSize)
         {
             var query =
               TrackRepo.Get(i => i.SubCategory.ID == ParentID);
+            count = query.Count();
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
 
@@ -304,6 +306,13 @@ namespace ITI.WhatsLearn.Services
             return m.TrackLinks.Where(i => i.IsDeleted == false).ToList();
 
 
+        }
+
+        public IEnumerable<TrackViewModel> Get(Expression<Func<Track, bool>> filter)
+        {
+            var query =
+                TrackRepo.Get(filter);
+            return query.ToList().Select(i => i.ToViewModel());
         }
 
     }

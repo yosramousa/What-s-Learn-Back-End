@@ -43,11 +43,11 @@ namespace ITI.WhatsLearnServices
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<FinishedCourseViewModel> Get(Expression<Func<FinishedCourse, bool>> filter)
+        public IEnumerable<FinishedCourse> Get(Expression<Func<FinishedCourse, bool>> filter)
         {
             var query =
                 FinishedCourseRepo.Get(filter);
-            return query.ToList().Select(i => i.ToViewModel());
+            return query.ToList();
         }
         public void Remove(int id)
         {

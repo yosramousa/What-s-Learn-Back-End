@@ -1,0 +1,15 @@
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Release\ITI.WhatsLearn.ViewModel.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Release\ITI.WhatsLearn.ViewModel.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Release\ITI.WhatsLearn.Entities.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Release\ITI.WhatsLearn.Reposatories.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Release\EntityFramework.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Release\ITI.WhatsLearn.Entities.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Release\ITI.WhatsLearn.Entities.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Release\ITI.WhatsLearn.Reposatories.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Release\ITI.WhatsLearn.Reposatories.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Release\EntityFramework.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Release\ITI.WhatsLearn.ViewModel.csprojAssemblyReference.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Release\ITI.WhatsLearn.ViewModel.csproj.CoreCompileInputs.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Release\ITI.WhatsLearn.ViewModel.csproj.CopyComplete
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Release\ITI.WhatsLearn.ViewModel.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Release\ITI.WhatsLearn.ViewModel.pdb

@@ -39,5 +39,7 @@ namespace ITI.WhatsLearn.ViewModel
         [Required]
 
         public List<CourseVedioEditViewModel> Vedios { get; set; }
+        public bool IsFinshed { get; set; }
+
     }
 }

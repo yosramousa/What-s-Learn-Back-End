@@ -1,0 +1,15 @@
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Release\ITI.WhatsLearn.Reposatories.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Release\ITI.WhatsLearn.Reposatories.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Release\ITI.WhatsLearn.Reposatories.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Release\EntityFramework.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Release\EntityFramework.SqlServer.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Release\ITI.WhatsLearn.Entities.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Release\ITI.WhatsLearn.Entities.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Release\ITI.WhatsLearn.Entities.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Release\EntityFramework.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\bin\Release\EntityFramework.SqlServer.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Release\ITI.WhatsLearn.Reposatories.csprojAssemblyReference.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Release\ITI.WhatsLearn.Reposatories.csproj.CoreCompileInputs.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Release\ITI.WhatsLearn.Reposatories.csproj.CopyComplete
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Release\ITI.WhatsLearn.Reposatories.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.Reposatories\obj\Release\ITI.WhatsLearn.Reposatories.pdb

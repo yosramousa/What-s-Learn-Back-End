@@ -15,7 +15,7 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = model.ID,
                 Link = model.link,
-                UserName = model.User.Name
+                //UserName = model.User.Name
 
 
 

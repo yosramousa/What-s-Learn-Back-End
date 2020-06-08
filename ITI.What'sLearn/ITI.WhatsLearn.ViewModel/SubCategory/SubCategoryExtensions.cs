@@ -21,7 +21,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Vedios = model.SubCategoryVedios.Select(i => i.ToViewModel()).ToList(),
                 Links = model.SubCategoryLinks.Select(i => i.ToViewModel()).ToList(),
                 Parent = model.MainCategory.Name,
-                ParentID=model.MainCategoryID,
+                ParentID = model.MainCategoryID,
                 Childs = model.Tracks.Select(i => i.Name).ToList()
             };
         }
@@ -33,10 +33,10 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = editModel.Name,
                 Discription = editModel.Discription,
                 Image = editModel.Image,
-                SubCategoryLinks = editModel.Links.Select(i=>i.ToModel()).ToList(),
+                SubCategoryLinks = editModel.Links.Select(i => i.ToModel()).ToList(),
                 SubCategoryDocuments = editModel.Documents.Select(i => i.ToModel()).ToList(),
                 SubCategoryVedios = editModel.Vedios.Select(i => i.ToModel()).ToList(),
-                MainCategoryID=editModel.ParentID
+                MainCategoryID = editModel.ParentID
             };
         }
         public static SubCategoryEditViewModel ToEditableViewModel(this SubCategory model)
@@ -50,8 +50,8 @@ namespace ITI.WhatsLearn.ViewModel
                 Links = model.SubCategoryLinks?.Select(i => i.ToEditableViewModel()).ToArray(),
                 Documents = model.SubCategoryDocuments?.Select(i => i.ToEditableViewModel()).ToArray(),
                 Vedios = model.SubCategoryVedios?.Select(i => i.ToEditableViewModel()).ToArray(),
-                 Parent = model.MainCategory?.Name,
-                 ParentID=model.MainCategoryID,
+                Parent = model.MainCategory?.Name,
+                ParentID = model.MainCategoryID,
                 Child = model.Tracks?.Select(i => i.Name).ToList()
             };
         }
@@ -78,5 +78,24 @@ namespace ITI.WhatsLearn.ViewModel
                 Image = model.Image
             };
         }
+        public static LevelSerachViewModel TolevelSerachViewModel(this SubCategoryViewModel model)
+        {
+            return new LevelSerachViewModel()
+            {
+                ID = model.ID,
+                Name = model.Name
+            };
+        }
+        public static MenuVewModel ToMenuVewModel(this SubCategory model)
+        {
+            return new MenuVewModel()
+            {
+                ID = model.ID,
+                Name = model.Name,
+                Childs = model.Tracks.Select(i => i.ToMenuVewModel()).ToList()
+
+            };
+        }
+
     }
 }

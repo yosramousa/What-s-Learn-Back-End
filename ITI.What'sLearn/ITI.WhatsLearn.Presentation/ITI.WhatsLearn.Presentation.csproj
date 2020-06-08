@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -55,6 +56,10 @@
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -128,11 +133,47 @@
     <Reference Include="System.Web.Http.WebHost">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Release\roslyn\csc.exe" />
+    <Content Include="bin\Release\roslyn\csi.exe" />
+    <Content Include="bin\Release\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\Release\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\Release\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\Release\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\Release\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\Release\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\Release\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\Release\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\Release\roslyn\Microsoft.Win32.Primitives.dll" />
+    <Content Include="bin\Release\roslyn\System.AppContext.dll" />
+    <Content Include="bin\Release\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\Release\roslyn\System.Console.dll" />
+    <Content Include="bin\Release\roslyn\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\Release\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\Release\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\Release\roslyn\System.Globalization.Calendars.dll" />
+    <Content Include="bin\Release\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\Release\roslyn\System.IO.Compression.ZipFile.dll" />
+    <Content Include="bin\Release\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\Release\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\Release\roslyn\System.Net.Http.dll" />
+    <Content Include="bin\Release\roslyn\System.Net.Sockets.dll" />
+    <Content Include="bin\Release\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\Release\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="bin\Release\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\Release\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\Release\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\Release\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\Release\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\Release\roslyn\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\Release\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\Release\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\Release\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\Release\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\Release\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\Release\roslyn\vbc.exe" />
+    <Content Include="bin\Release\roslyn\VBCSCompiler.exe" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -160,6 +201,7 @@
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\SubCategoryController.cs" />
+    <Compile Include="Controllers\UserPanel\ContactUSController.cs" />
     <Compile Include="Controllers\UserPanel\HomeController.cs" />
     <Compile Include="Controllers\UserPanel\UserProfileController.cs" />
     <Compile Include="Controllers\UserTrackController.cs" />
@@ -187,6 +229,16 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Release\roslyn\csc.exe.config" />
+    <Content Include="bin\Release\roslyn\csc.rsp" />
+    <Content Include="bin\Release\roslyn\csi.exe.config" />
+    <Content Include="bin\Release\roslyn\csi.rsp" />
+    <Content Include="bin\Release\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\Release\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\Release\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\Release\roslyn\vbc.exe.config" />
+    <Content Include="bin\Release\roslyn\vbc.rsp" />
+    <Content Include="bin\Release\roslyn\VBCSCompiler.exe.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -209,7 +261,7 @@
       <Name>ITI.WhatsLearn.Reposatories</Name>
     </ProjectReference>
     <ProjectReference Include="..\ITI.WhatsLearn.ViewModel\ITI.WhatsLearn.ViewModel.csproj">
-      <Project>{C3D1E8DE-7607-4226-8EE4-52DA9ACCFB8E}</Project>
+      <Project>{c3d1e8de-7607-4226-8ee4-52da9accfb8e}</Project>
       <Name>ITI.WhatsLearn.ViewModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\ITI.WhatsLearnServices\ITI.WhatsLearnServices.csproj">
@@ -246,16 +298,16 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
+  
   -->
 </Project>

@@ -122,6 +122,11 @@
     <Compile Include="UserCertificate\UserCertificateViewModel.cs" />
     <Compile Include="UserPanel\DataDetails.cs" />
     <Compile Include="UserPanel\HomeViewModel.cs" />
+    <Compile Include="UserPanel\LevelViewModel.cs" />
+    <Compile Include="UserPanel\MenuVewModel.cs" />
+    <Compile Include="UserPanel\UserProfileCourseViewModel.cs" />
+    <Compile Include="UserPanel\UserProfileTracksViewModel.cs" />
+    <Compile Include="UserPanel\UserProfileViewModel.cs" />
     <Compile Include="UserSkill\UserSkillEditViewModel.cs" />
     <Compile Include="UserSkill\UserSkillExtentions.cs" />
     <Compile Include="UserSkill\UserSkillViewModel.cs" />
@@ -149,6 +154,5 @@
       <Name>ITI.WhatsLearn.Reposatories</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

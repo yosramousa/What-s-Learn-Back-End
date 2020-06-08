@@ -34,7 +34,7 @@ namespace ITI.WhatsLearn.Services
         }
         public UserTrack GetByID(int id)
         {
-           
+
             return UserTrackRepo.GetByID(id);
         }
         public IEnumerable<UserTrackViewModel> GetAll(int pageIndex, int pageSize = 20)
@@ -45,11 +45,11 @@ namespace ITI.WhatsLearn.Services
         }
 
 
-        public IEnumerable<UserTrackViewModel> GetRequest(out int count ,int pageIndex, int pageSize = 20)
+        public IEnumerable<UserTrackViewModel> GetRequest(out int count, int pageIndex, int pageSize = 20)
         {
             var query =
                 UserTrackRepo.GetAll().Where(u => u.IsApproveed == false);
-           query= query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             count = query.Count();
             return query.ToList().Select(i => i.ToViewModel());
         }
@@ -67,25 +67,25 @@ namespace ITI.WhatsLearn.Services
             var query =
                 UserTrackRepo.GetAll().Where(i => i.IsApproveed == false).OrderBy(i => i.ID).Skip(pageIndex * pageSize)
                 .Take(pageSize);
-            
+
             return query.ToList().Select(i => i.ToViewModel());
         }
 
-        public IEnumerable<UserTrackViewModel> SearchByName(out int count,string Name, int pageIndex = 0, int pageSize = 20)
+        public IEnumerable<UserTrackViewModel> SearchByName(out int count, string Name, int pageIndex = 0, int pageSize = 20)
         {
             var query =
                 UserTrackRepo.GetAll().Where
-                    (i => i.IsApproveed==false && i.User.Name.ToLower()==Name.ToLower());
+                    (i => i.IsApproveed == false && i.User.Name.ToLower() == Name.ToLower());
             count = query.Count();
 
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        public IEnumerable<UserTrackViewModel> SearchByTrackName(out int count,string TrackName, int pageIndex = 0, int pageSize = 20)
+        public IEnumerable<UserTrackViewModel> SearchByTrackName(out int count, string TrackName, int pageIndex = 0, int pageSize = 20)
         {
             var query =
                 UserTrackRepo.GetAll().Where
-                    (i => i.IsApproveed==false&& i.Track.Name.Contains( TrackName));
+                    (i => i.IsApproveed == false && i.Track.Name.Contains(TrackName));
             count = query.Count();
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
@@ -104,7 +104,7 @@ namespace ITI.WhatsLearn.Services
         }
         public void Remove(int id)
         {
-            if (UserTrackRepo.GetByID(id)!= null)
+            if (UserTrackRepo.GetByID(id) != null)
             {
                 UserTrackRepo.Remove(UserTrackRepo.GetByID(id));
                 unitOfWork.Commit();
@@ -115,6 +115,33 @@ namespace ITI.WhatsLearn.Services
         {
             return UserTrackRepo.Count();
         }
+        public int GetUserTracksCount(int UserID)
+        {
+            return UserTrackRepo.
+                 Get(i => i.IsApproveed
+                 && i.UserID == UserID
+                 && i.Track.Courses.Count() > i.FinishedCourses.Count())
+                 .Count();
+
+        }
+        public void RemoveUserTrack(int TrackID, int UserID)
+        {
+            UserTrack T = Get(UserID, TrackID);
+            if (T != null)
+            {
+                UserTrackRepo.Remove(T);
+                unitOfWork.Commit();
+            }
+        }
+        public UserTrack Get(int UserID, int TrackID)
+        {
+            UserTrack T = UserTrackRepo.
+                 Get(i =>  i.IsApproveed &&i.TrackID == TrackID && i.UserID == UserID).FirstOrDefault();
+
+
+            return T;
+        }
+
 
     }
 }

@@ -118,6 +118,7 @@ namespace ITI.WhatsLearn.Services
             return sub.ToViewModel();
 
         }
+        
         public IEnumerable<SubCategoryViewModel> GetAll(out int count, int SortBy, int pageIndex, int pageSize = 20)
         {
             var query =
@@ -279,10 +280,11 @@ namespace ITI.WhatsLearn.Services
         {
             return SubCategoryRepo.Count();
         }
-       public IEnumerable<SubCategoryViewModel> GetByParentID(int ParentID , int pageIndex, int pageSize = 3)
+       public IEnumerable<SubCategoryViewModel> GetByParentID(out int count,int ParentID , int pageIndex, int pageSize = 3)
         {
             var query =
               SubCategoryRepo.Get(i => i.MainCategoryID == ParentID);
+            count = query.Count();
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
 

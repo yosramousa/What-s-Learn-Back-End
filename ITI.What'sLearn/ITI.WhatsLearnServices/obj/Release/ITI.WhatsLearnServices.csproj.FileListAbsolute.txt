@@ -1,0 +1,17 @@
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\ITI.WhatsLearnServices.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\ITI.WhatsLearnServices.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\ITI.WhatsLearn.Entities.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\ITI.WhatsLearn.Reposatories.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\ITI.WhatsLearn.ViewModel.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\EntityFramework.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\ITI.WhatsLearn.Entities.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\ITI.WhatsLearn.Entities.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\ITI.WhatsLearn.Reposatories.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\ITI.WhatsLearn.Reposatories.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\ITI.WhatsLearn.ViewModel.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\EntityFramework.xml
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Release\ITI.WhatsLearnServices.csprojAssemblyReference.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Release\ITI.WhatsLearnServices.csproj.CoreCompileInputs.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Release\ITI.WhatsLearnServices.csproj.CopyComplete
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Release\ITI.WhatsLearnServices.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Release\ITI.WhatsLearnServices.pdb

@@ -11,5 +11,8 @@ namespace ITI.WhatsLearn.ViewModel
         public int ID { get; set; }
         public string Link { get; set; }
         public string UserName { get; set; }
+        public bool IsDeleted { get; set; }
+        public int UserID { get; set; }
+
     }
 }

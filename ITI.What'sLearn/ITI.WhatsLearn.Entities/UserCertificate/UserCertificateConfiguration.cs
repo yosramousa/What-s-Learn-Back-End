@@ -16,6 +16,11 @@ namespace ITI.WhatsLearn.Entities
                 .HasColumnName("Title")
                 .HasMaxLength(250)
                 .IsRequired();
+
+            Property(i => i.Image)
+             .HasColumnName("Image")
+             .HasMaxLength(250);
+            
             HasRequired(i => i.User)
                 .WithMany(i => i.Certificates)
                 .HasForeignKey(i => i.UserID);

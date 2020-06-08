@@ -28,7 +28,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Phone = model.Phone,
                 Tracks = model.Tracks.Select(i => i.Track.ToViewModel()).ToList(),
                 Skills = model.Skills.Select(i=>i.ToViewModel()).ToList(),
-                Certificate=model.Certificates.Select(i => i.ToViewModel()).ToList(),
+                Certificates =model.Certificates.Select(i => i.ToViewModel()).ToList(),
                 SocialLinks = model.SocialLinks.Select(i=>i.ToViewModel()).ToList()
             };
         }
@@ -49,9 +49,9 @@ namespace ITI.WhatsLearn.ViewModel
                 Password = editModel.Password,
                 Phone = editModel.Phone,
                 SignedTime = editModel.SignedTime,
-                Certificates = editModel.Certificates.Select(i=>i.ToModel()).ToList(),
-                SocialLinks = editModel.SocialLinks.Select(i=>i.ToModel()).ToList(),
-                Skills = editModel.Skills.Select(i=>i.ToModel()).ToList()
+                Certificates = editModel.Certificates?.Select(i=>i.ToModel()).ToList(),
+                SocialLinks = editModel.SocialLinks?.Select(i=>i.ToModel()).ToList(),
+                Skills = editModel.Skills?.Select(i=>i.ToModel()).ToList()
               
             };
         }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
@@ -16,10 +18,18 @@ namespace ITI.WhatsLearn.Entities
                 .HasColumnName("Name")
                 .HasMaxLength(250)
                 .IsRequired();
-            Property(i => i.Email)
-               .HasColumnName("Email")
-               .HasMaxLength(250)
-               .IsRequired();
+
+           
+            Property(i=>i.Email)
+                .HasColumnAnnotation(IndexAnnotation.AnnotationName,
+                         new IndexAnnotation(
+                     new IndexAttribute("IX_Email") { IsUnique = true }))
+                .HasColumnName("Email")
+                .HasMaxLength(250)
+                .IsRequired();
+
+
+
             Property(i => i.Password)
                .HasColumnName("Password")
                .HasMaxLength(250)

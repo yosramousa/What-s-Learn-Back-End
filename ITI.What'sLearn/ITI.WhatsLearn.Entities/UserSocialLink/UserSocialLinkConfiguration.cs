@@ -16,6 +16,7 @@ namespace ITI.WhatsLearn.Entities
                 .HasColumnName("Link")
                 .HasMaxLength(250)
                 .IsRequired();
+
             HasRequired(i => i.User)
                 .WithMany(i => i.SocialLinks)
                 .HasForeignKey(i => i.UserID);

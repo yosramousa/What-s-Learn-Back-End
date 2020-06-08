@@ -10,12 +10,15 @@ namespace ITI.WhatsLearn.ViewModel
 {
     public class UserCertificateEditViewModel
     {
-        [Required]
-        public int ID { get; set; }
+
+        public int ID { get; set; } = 0;
         [Required]
         [MaxLength(250)]
         public string Title { get; set; }
         [Required]
         public virtual int UserID{ get; set; }
+        
+        public bool IsDeleted { get; set; } = false;
+        public string Image { get; set; } = "image";
     }
 }

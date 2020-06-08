@@ -19,7 +19,8 @@ namespace ITI.WhatsLearn.ViewModel
                 Text = model.Text,
                 Email = model.Email,
                 SendTime = model.SendTime,
-                IsDeleted = model.IsDeleted
+                IsDeleted = model.IsDeleted,
+                Subject = model.Subject
             };
         }
         public static Message ToModel(this MessageEditViewModel editModel)
@@ -31,7 +32,8 @@ namespace ITI.WhatsLearn.ViewModel
                 Text = editModel.Text,
                 Email = editModel.Email,
                 SendTime = editModel.SendTime,
-                IsDeleted = editModel.IsDeleted
+                IsDeleted = editModel.IsDeleted,
+                Subject = editModel.Subject
 
             };
         }
@@ -44,7 +46,8 @@ namespace ITI.WhatsLearn.ViewModel
                 Text = model.Text,
                 Email = model.Email,
                 SendTime = model.SendTime,
-                IsDeleted = model.IsDeleted
+                IsDeleted = model.IsDeleted,
+                Subject=model.Subject
 
             };
         }

@@ -12,9 +12,10 @@ namespace ITI.WhatsLearn.ViewModel
         [Required]
         public int ID { get; set; }
         [Required]
-        [EmailAddress]
         [MaxLength(50)]
         public string FullName { get; set; }
+        [Required]
+        public string Subject { get; set; }
         [Required]
         [EmailAddress]
         [MaxLength(50)]
@@ -22,7 +23,7 @@ namespace ITI.WhatsLearn.ViewModel
         [Required]
         [MaxLength(1000)]
         public string Text { get; set; }
-        [Required]
+        
         public DateTime SendTime { get; set; } = DateTime.Now;
 
         public bool IsDeleted { get; set; } = false;

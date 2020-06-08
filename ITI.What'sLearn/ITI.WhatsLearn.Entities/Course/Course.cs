@@ -12,7 +12,7 @@ namespace ITI.WhatsLearn.Entities
         public string Name { get; set; }
         public string Discription { get; set; }
         public string Image { get; set; }
-       
+       public string Icon { get; set; }
         public virtual ICollection<CourseLink> CourseLinks { get; set; }
         public virtual ICollection<CourseDocument> CourseDocuments { get; set; }
         public virtual ICollection<CourseVedio> CourseVedios { get; set; }

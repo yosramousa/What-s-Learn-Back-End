@@ -12,7 +12,8 @@ namespace ITI.WhatsLearn.Entities
         public string Name { get; set; }
         public string Discription { get; set; }
         public string Image { get; set; }
-       
+        public string Icon { get; set; }
+
         public virtual SubCategory SubCategory { get; set; }
         public int SubCategoryID { get; set; }
 

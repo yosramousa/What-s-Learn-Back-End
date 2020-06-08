@@ -1,5 +1,5 @@
 ﻿using ITI.WhatsLearn.ViewModel;
-using ITI.WhatsLearnServices;
+using ITI.WhatsLearn.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -137,6 +137,26 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
 
+        }
+        [HttpGet]
+        public ResultViewModel<IEnumerable<SkillViewModel>> GetAllSkills()
+        {
+            ResultViewModel<IEnumerable<SkillViewModel>> result =
+                new ResultViewModel<IEnumerable<SkillViewModel>>();
+
+            try
+            {
+                result.Data = skillService.GetAll();
+                result.Message = "Skills gotten succesfuly";
+                result.Successed = true;
+            }
+            catch
+            {
+
+                result.Message = "Something went wrong!!";
+                result.Successed = false;
+            }
+            return result;
         }
     }
 }

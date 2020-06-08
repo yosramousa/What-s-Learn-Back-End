@@ -16,8 +16,10 @@ namespace ITI.WhatsLearn.ViewModel
                 ID = model.ID,
                 UserName = model.User.Name,
                 SkillName = model.Skill.skill,
-                Level = model.Level
-
+                Level = model.Level,
+                IsDeleted=model.IsDeleted,
+                SkillID = model.SkillID,
+                UserID = model.UserID
 
             };
         }
@@ -28,7 +30,10 @@ namespace ITI.WhatsLearn.ViewModel
                 ID = editModel.ID,
                 UserID = editModel.UserID,
                 SkillID = editModel.SkillID,
-                Level = editModel.Level
+                Level = editModel.Level,
+                IsDeleted = editModel.IsDeleted,
+                
+
             };
         }
         public static UserSkillEditViewModel ToEditableViewModel(this UserSkill model)
@@ -38,7 +43,9 @@ namespace ITI.WhatsLearn.ViewModel
                 ID = model.ID,
                 UserID = model.UserID,
                 SkillID = model.SkillID,
-                Level = model.Level
+                Level = model.Level,
+                IsDeleted = model.IsDeleted,
+                SkillName =model.Skill?.skill
 
             };
         }

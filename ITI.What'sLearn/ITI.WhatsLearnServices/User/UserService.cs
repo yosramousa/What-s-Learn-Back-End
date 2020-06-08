@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,25 +42,41 @@ namespace ITI.WhatsLearn.Services
             var links = UserSocialLinkRepo.Get(i => i.UserID == user.ID);
             var certs = UserCertificateRepo.Get(i => i.UserID == user.ID);
             var skills = UserSkillsRepo.Get(i => i.UserID == user.ID);
-
-            foreach (var Cer in user.Certificates)
+            var NewCerts = user.Certificates;
+            var NewSkill = user.Skills;
+            var NewLinks = user.SocialLinks;
+            foreach (var Cer in NewCerts)
             {
                 if(Cer.ID == 0)  UserCertificateRepo.Add(Cer);
-                else if (!certs.Contains(Cer)) UserCertificateRepo.Remove(Cer);
-                else UserCertificateRepo.Update(Cer);
+                //else UserCertificateRepo.Update(Cer);
             }
-            foreach (var skill in user.Skills)
+            foreach(var C in certs)
             {
-                if (skill.ID == 0) UserSkillsRepo.Add(skill);
-                else if (!skills.Contains(skill)) UserSkillsRepo.Remove(skill);
+                if (!NewCerts.Contains(C)) UserCertificateRepo.Remove(C);
+            }
+            foreach (var skill in NewSkill)
+            {
+                if (skill.ID == 0)
+                {
+                    if(skill.User!=user)
+                    UserSkillsRepo.Add(skill);
+                }
                 else UserSkillsRepo.Update(skill);
             }
-            foreach (var link in user.SocialLinks)
+            foreach (var S in skills)
+            {
+                if (!NewSkill.Contains(S)) UserSkillsRepo.Remove(S);
+            }
+            foreach (var link in NewLinks)
             {
                 if (link.ID == 0) UserSocialLinkRepo.Add(link);
-                else if (!links.Contains(link)) UserSocialLinkRepo.Remove(link);
                 else UserSocialLinkRepo.Update(link);
             }
+            foreach (var L in links)
+            {
+                if (!NewLinks.Contains(L)) UserSocialLinkRepo.Remove(L);
+            }
+
             unitOfWork.Commit();
 
             return user.ToEditableViewModel();
@@ -121,7 +138,7 @@ namespace ITI.WhatsLearn.Services
         {
             var query =
                 UserRepo.Get
-                    (i => i.Email == Email && i.Password == Password);
+                    (i => i.Email == Email && i.Password == Password && i.IsActive==true);
 
             return query.ToList().Select(i => i.ToViewModel());
         }

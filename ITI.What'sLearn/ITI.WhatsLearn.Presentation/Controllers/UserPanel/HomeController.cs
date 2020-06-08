@@ -1,5 +1,6 @@
 ﻿using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
+using ITI.WhatsLearnServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,18 +16,21 @@ namespace ITI.WhatsLearn.Presentation.Controllers.UserPanel
         private readonly SubCategoryService subCategoryService;
         private readonly TrackService trackService;
         private readonly CourseService courseService;
+       
         public HomeController
             (
              MainCategoryService _mainCategoryService,
              SubCategoryService _subCategoryService,
              TrackService _trackService,
              CourseService _courseService
+            
             )
         {
             mainCategoryService = _mainCategoryService;
             subCategoryService = _subCategoryService;
             trackService = _trackService;
             courseService = _courseService;
+      
         }
         [HttpGet]
 
@@ -82,6 +86,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers.UserPanel
             return result;
         }
 
-
+      
+      
     }
 }

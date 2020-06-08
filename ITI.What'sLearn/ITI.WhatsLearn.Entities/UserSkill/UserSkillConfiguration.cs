@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
@@ -21,6 +23,19 @@ namespace ITI.WhatsLearn.Entities
             .WithMany(i => i.Skills)
             .HasForeignKey(i => i.SkillID);
 
+            Property(i => i.UserID)
+              .HasColumnAnnotation(IndexAnnotation.AnnotationName,
+                       new IndexAnnotation(
+                   new IndexAttribute("IX_UserSkill", 1) { IsUnique = true }))
+              .HasColumnName("UserID")
+              .IsRequired();
+
+            Property(i => i.SkillID)
+             .HasColumnAnnotation(IndexAnnotation.AnnotationName,
+                      new IndexAnnotation(
+                  new IndexAttribute("IX_UserSkill", 2) { IsUnique = true }))
+             .HasColumnName("SkillID")
+             .IsRequired();
 
         }
     }

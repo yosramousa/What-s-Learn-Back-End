@@ -8,9 +8,11 @@ namespace ITI.WhatsLearn.ViewModel
 {
     public class UserSocialLinkEditViewModel
     {
-        public int ID { get; set; }
+        public int ID { get; set; } = 0;
         public string Link { get; set; }
 
         public int UserID { get; set; }
+        public bool IsDeleted { get; set; } = false;
+
     }
 }

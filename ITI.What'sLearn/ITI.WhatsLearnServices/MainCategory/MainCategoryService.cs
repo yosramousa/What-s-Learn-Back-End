@@ -157,7 +157,6 @@ namespace ITI.WhatsLearn.Services
             }
             return query.ToList().Select(i => i.ToViewModel());
         }
-
         public IEnumerable<MainCategoryViewModel> GetAll( int pageIndex, int pageSize )
         {
             var query =
@@ -229,7 +228,6 @@ namespace ITI.WhatsLearn.Services
             unitOfWork.Commit();
 
         }
-
         public int Count()
         {
             return MainCategoryRepo.Count();

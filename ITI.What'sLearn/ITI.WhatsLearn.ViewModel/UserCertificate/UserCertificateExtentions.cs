@@ -13,9 +13,13 @@ namespace ITI.WhatsLearn.ViewModel
         {
             return new UserCertificateViewModel()
             {
-                ID = model.ID,
+               ID = model.ID,
                Title=model.Title,
-               UserName=model.User.Name
+               UserName=model.User.Name,
+               IsDeleted = model.IsDeleted,
+               Image =model.Image,
+               UserID = model.UserID
+
             };
         }
         public static UserCertificate ToModel(this UserCertificateEditViewModel editModel)
@@ -24,7 +28,9 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = editModel.ID,
                Title=editModel.Title,
-               UserID=editModel.UserID
+               UserID=editModel.UserID,
+               IsDeleted =editModel.IsDeleted,
+               Image = editModel.Image
             };
         }
         public static UserCertificateEditViewModel ToEditableViewModel(this UserCertificate model)
@@ -33,7 +39,11 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = model.ID,
                 Title=model.Title,
-                UserID=model.UserID
+                UserID=model.UserID,
+                IsDeleted =model.IsDeleted,
+                Image = model.Image
+                
+
             };
         }
     }

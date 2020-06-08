@@ -11,6 +11,7 @@ namespace ITI.WhatsLearn.Entities
         public string Name { get; set; }
         public string Discription { get; set; }
         public string Image { get; set; }
+        public string Icon { get; set; }
       
         public virtual ICollection<SubCategoryLink> SubCategoryLinks { get; set; }
         public virtual ICollection<SubCategoryDocument> SubCategoryDocuments { get; set; }

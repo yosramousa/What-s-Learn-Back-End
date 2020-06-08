@@ -109,7 +109,7 @@ namespace ITI.WhatsLearn.Services
             unitOfWork.Commit();
             return c.ToEditableViewModel();
         }
-        public CourseViewModel GetByID(int id)
+        public Course GetByID(int id)
         {
             Course m = CourseRepo.GetByID(id);
             m.CourseDocuments = Documents(m);
@@ -117,7 +117,7 @@ namespace ITI.WhatsLearn.Services
             m.CourseLinks = Links(m);
 
             m.CourseVedios = Vedios(m);
-            return m.ToViewModel();
+            return m;
 
         }
         public IEnumerable<CourseViewModel> GetAll(int pageIndex, int pageSize )
@@ -235,10 +235,12 @@ namespace ITI.WhatsLearn.Services
             return CourseRepo.Count();
         }
 
-        public IEnumerable<CourseViewModel> GetByParentID(int ParentID, int pageIndex, int pageSize)
+        public IEnumerable<CourseViewModel> GetByParentID(out int count,int ParentID, int pageIndex, int pageSize)
         {
             var query =
-            CourseRepo.Get(i => i.Tracks.Select(u => u.ID ).Contains(ParentID));
+            CourseRepo.Get(i => i.Tracks.Select(u => u.TrackID).Contains(ParentID));
+            count = query.Count();
+
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
 

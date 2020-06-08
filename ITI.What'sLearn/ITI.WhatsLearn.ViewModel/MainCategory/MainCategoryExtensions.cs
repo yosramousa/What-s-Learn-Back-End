@@ -81,5 +81,24 @@ namespace ITI.WhatsLearn.ViewModel
                 Image = model.Image
             };
         }
+        public static LevelSerachViewModel TolevelSerachViewModel(this MainCategoryViewModel model)
+        {
+            return new LevelSerachViewModel()
+            {
+                ID = model.ID,
+                Name = model.Name
+            };
+        }
+
+        public static MenuVewModel ToMenuVewModel(this MainCategory model)
+        {
+            return new MenuVewModel()
+            {
+                ID = model.ID,
+                Name = model.Name,
+                Childs = model.SubCategories.Select(i => i.ToMenuVewModel()).ToList()
+            };
+        }
+
     }
 }

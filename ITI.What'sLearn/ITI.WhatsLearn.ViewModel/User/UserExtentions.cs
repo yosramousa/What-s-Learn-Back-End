@@ -79,5 +79,29 @@ namespace ITI.WhatsLearn.ViewModel
 
             };
         }
+
+        public static UserProfileViewModel ToUserProfileViewModel(this User model)
+        {
+            return new UserProfileViewModel()
+            {
+                ID = model.ID,
+                Name = model.Name,
+                Adress = model.Adress,
+                Age = model.Age,
+                Education = model.Education,
+                Gender = model.Gender,
+                Phone = model.Phone,
+                Image = model.Image,
+                Skills = model.Skills.Select(i => i.ToViewModel()).ToList(),
+                Certificates = model.Certificates.Select(i => i.ToViewModel()).ToList(),
+                Links=model.SocialLinks.Select(i=>i.ToViewModel()).ToList(),
+                Tracks = model.Tracks.Select(i => i.ToUserProfileTracksViewModel()).ToList()
+               
+
+
+
+            };
+
+        }
     }
 }

@@ -15,11 +15,11 @@ namespace ITI.WhatsLearn.ViewModel
             return new UserTrackViewModel()
             {
                 ID = model.ID,
-                TrackName=model.Track.Name,
-                UserName=model.User.Name,
-                Date=model.Date,
-                IsApproveed=model.IsApproveed,
-              UserCount=model.Track.Users.Count
+                TrackName = model.Track.Name,
+                UserName = model.User.Name,
+                Date = model.Date,
+                IsApproveed = model.IsApproveed,
+                UserCount = model.Track.Users.Count
             };
         }
         public static UserTrack ToModel(this UserTrackEditViewModel editModel)
@@ -38,13 +38,55 @@ namespace ITI.WhatsLearn.ViewModel
             return new UserTrackEditViewModel()
             {
                 ID = model.ID,
-                UserID=model.UserID,
-                TrackID=model.TrackID,
-                Date=model.Date,
-                IsApproveed=model.IsApproveed,
+                UserID = model.UserID,
+                TrackID = model.TrackID,
+                Date = model.Date,
+                IsApproveed = model.IsApproveed,
                 UserCount = model.Track.Users.Count
 
             };
         }
+
+        public static UserProfileTracksViewModel ToUserProfileTracksViewModel(this UserTrack model)
+        {
+            UserProfileTracksViewModel m = new UserProfileTracksViewModel()
+            {
+                ID = model.TrackID,
+                Name = model.Track?.Name,
+                Progess = ((float)model.FinishedCourses.Count() / model.Track.Courses.Count()) * 100,
+                Courses = model.Track.Courses.Select(i => i.Course.ToUserProfileCourseViewModel()).ToList()
+            };
+            m.Courses.ForEach(x =>
+            {
+                if (model.FinishedCourses.Select(i => i.course.ID).ToList().Contains(x.ID))
+                {
+                    x.IsFinshed = true;
+
+                }
+            }); return m;
+
+        }
+        //public static UserProfileViewModel ToUserProfileViewModel(this UserTrack model)
+        //{
+        //    return new UserProfileViewModel()
+        //    {
+        //        //ID = model.ID,
+        //        //Name = model.Name,
+        //        //Adress = model.Adress,
+        //        //Age = model.Age,
+        //        //Education = model.Education,
+        //        //Gender = model.Gender,
+        //        //Phone = model.Phone,
+        //        //Image = model.Image,
+        //        //Skills = model.Skills.Select(i => i.ToViewModel()).ToList(),
+        //        //Certificates = model.Certificates.Select(i => i.ToViewModel()).ToList(),
+        //        //Tracks = model.Tracks.Select(i => i.ToUserProfileTracksViewModel()).ToList()
+
+
+
+
+        //    };
+
+        //}
     }
 }

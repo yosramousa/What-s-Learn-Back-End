@@ -126,6 +126,16 @@ namespace ITI.WhatsLearn.Services
 
             return m.ToViewModel();
         }
+        public IEnumerable<MainCategoryViewModel> GetAll()
+        {
+            var query = MainCategoryRepo.GetAll();
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+        public IEnumerable<MainCategory> Get()
+        {
+            var query = MainCategoryRepo.GetAll();
+            return query.ToList();
+        }
         public IEnumerable<MainCategoryViewModel> GetAll(out int count, int SortBy, int pageIndex, int pageSize = 20)
         {
             var query =
@@ -250,17 +260,17 @@ namespace ITI.WhatsLearn.Services
         }
         public List<MainCategoryDocument> Documents(MainCategory m)
         {
-            return m.MainCategoryDocuments.Where(d => d.IsDeleted == false).ToList();
+            return m.MainCategoryDocuments.Where(d => d.IsDeleted == false)?.ToList();
 
         }
         public List<MainCategoryVedio> Vedios(MainCategory m)
         {
-            return m.MainCategoryVedios.Where(i => i.IsDeleted == false).ToList();
+            return m.MainCategoryVedios.Where(i => i.IsDeleted == false)?.ToList();
 
         }
         public List<MainCategoryLink> Links(MainCategory m)
         {
-            return m.MainCategoryLinks.Where(i => i.IsDeleted == false).ToList();
+            return m.MainCategoryLinks.Where(i => i.IsDeleted == false)?.ToList();
 
 
         }

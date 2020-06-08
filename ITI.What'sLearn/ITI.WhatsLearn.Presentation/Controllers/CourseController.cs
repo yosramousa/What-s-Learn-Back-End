@@ -73,7 +73,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             {
                 var course = courseService.GetByID(id);
                 result.Successed = true;
-                result.Data = course;
+                result.Data = course.ToViewModel();
             }
             catch (Exception ex)
             {

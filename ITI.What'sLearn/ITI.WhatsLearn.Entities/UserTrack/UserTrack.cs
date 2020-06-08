@@ -18,5 +18,6 @@ namespace ITI.WhatsLearn.Entities
 
         public virtual ICollection<FinishedCourse> FinishedCourses { get; set; }
 
+
     }
 }

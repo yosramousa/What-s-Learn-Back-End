@@ -22,10 +22,10 @@ namespace ITI.WhatsLearn.ViewModel
                 Links = model.TrackLinks.Select(i => i.ToViewModel()).ToList(),
                 SubCategoryName = model.SubCategory?.Name,
                 Parent = model.SubCategory.Name,
-                ParentID=model.SubCategoryID,
+                ParentID = model.SubCategoryID,
                 Childs = model.Courses.Select(i => i.Course.Name).ToList(),
-                Users=model.Users.Select(i=>i.User.Name).ToList()
-                
+                Users = model.Users.Select(i => i.User.Name).ToList()
+
             };
         }
         public static Track ToModel(this TrackEditViewModel editModel)
@@ -40,7 +40,7 @@ namespace ITI.WhatsLearn.ViewModel
                 TrackDocuments = editModel.Documents.Select(i => i.ToModel()).ToList(),
                 TrackVedios = editModel.Vedios.Select(i => i.ToModel()).ToList(),
                 SubCategoryID = editModel.ParentID,
-                
+
             };
         }
         public static TrackEditViewModel ToEditableViewModel(this Track model)
@@ -51,12 +51,12 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = model.Name,
                 Discription = model.Discription,
                 Image = model.Image,
-                Links = model.TrackLinks.Count()>0 ? model.TrackLinks.Select(i => i.ToEditableViewModel()).ToArray():null,
-                Documents = model.TrackDocuments.Count()>0 ? model.TrackDocuments.Select(i => i.ToEditableViewModel()).ToArray():null,
-                Vedios = model.TrackVedios.Count()>0? model.TrackVedios.Select(i => i.ToEditableViewModel())?.ToArray():null,
+                Links = model.TrackLinks.Count() > 0 ? model.TrackLinks.Select(i => i.ToEditableViewModel()).ToArray() : null,
+                Documents = model.TrackDocuments.Count() > 0 ? model.TrackDocuments.Select(i => i.ToEditableViewModel()).ToArray() : null,
+                Vedios = model.TrackVedios.Count() > 0 ? model.TrackVedios.Select(i => i.ToEditableViewModel())?.ToArray() : null,
                 ParentID = model.SubCategoryID,
-                Parent = model.SubCategory!=null? model.SubCategory.Name:"",
-                Childs = model.Courses.Count()>0? model.Courses.Select(i => i.Course.Name).ToList():null
+                Parent = model.SubCategory != null ? model.SubCategory.Name : "",
+                Childs = model.Courses.Count() > 0 ? model.Courses.Select(i => i.Course.Name).ToList() : null
 
             };
         }
@@ -69,7 +69,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Childs = model.Childs,
                 Parent = model.Parent,
                 Image = model.Image,
-                Users=model.Users
+                Users = model.Users
 
             };
         }
@@ -82,6 +82,25 @@ namespace ITI.WhatsLearn.ViewModel
                 Name = model.Name,
                 Discription = model.Discription,
                 Image = model.Image
+            };
+        }
+
+        public static LevelSerachViewModel TolevelSerachViewModel(this TrackViewModel model)
+        {
+            return new LevelSerachViewModel()
+            {
+                ID = model.ID,
+                Name = model.Name
+            };
+        }
+        public static MenuVewModel ToMenuVewModel(this Track model)
+        {
+            return new MenuVewModel()
+            {
+                 ID=model.ID,
+                 Name=model.Name,
+                 Childs=null
+
             };
         }
 

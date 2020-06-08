@@ -81,5 +81,22 @@ namespace ITI.WhatsLearn.ViewModel
                 Image = model.Image
             };
         }
+        public static UserProfileCourseViewModel ToUserProfileCourseViewModel(this Course model)
+        {
+
+            return new UserProfileCourseViewModel()
+            {
+                ID = model.ID,
+                Name = model.Name,
+                Discription = model.Discription,
+                Image = model.Image,
+                Links = model.CourseLinks.Select(i => i.ToViewModel()).ToList(),
+                Documents = model.CourseDocuments.Select(i => i.ToViewModel()).ToList(),
+                Vedios = model.CourseVedios.Select(v => v.ToViewModel()).ToList(),
+
+
+
+            };
+        }
     }
 }

@@ -13,6 +13,8 @@ namespace ITI.WhatsLearn.ViewModel
         public List<CourseDocumentViewModel> Documents { get; set; }
         public List<CourseVedioViewModel> Vedios { get; set; }
         public List<String> Tracks { get; set; }
+        public bool IsFinshed { get; set; }
+
        
 
 

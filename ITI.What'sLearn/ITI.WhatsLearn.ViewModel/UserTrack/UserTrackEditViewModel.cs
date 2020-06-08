@@ -18,7 +18,7 @@ namespace ITI.WhatsLearn.ViewModel
         public int TrackID{ get; set; }
         [Required]
         public DateTime Date { get; set; }
-        [Required]
+      //  [Required]
         public bool IsApproveed { get; set; } = false;
         public int UserCount { get; set; }
 

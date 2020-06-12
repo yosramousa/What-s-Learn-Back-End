@@ -49,8 +49,9 @@ namespace ITI.WhatsLearn.Services
         {
             var query =
                 UserTrackRepo.GetAll().Where(u => u.IsApproveed == false);
-            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             count = query.Count();
+            query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
+       
             return query.ToList().Select(i => i.ToViewModel());
         }
 

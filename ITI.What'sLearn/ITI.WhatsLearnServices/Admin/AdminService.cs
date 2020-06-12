@@ -86,7 +86,11 @@ namespace ITI.WhatsLearnServices
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-        
+        public int Count()
+        {
+            return AdminRepo.GetAll().Count();
+        }
+
         public AdminViewModel Get(string Email, string Password)
         {
             var query =

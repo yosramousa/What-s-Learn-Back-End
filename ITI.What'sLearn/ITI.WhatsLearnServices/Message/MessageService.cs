@@ -31,9 +31,9 @@ namespace ITI.WhatsLearnServices
             unitOfWork.Commit();
             return c.ToEditableViewModel();
         }
-        public MessageEditViewModel GetByID(int id)
+        public Message GetByID(int id)
         {
-            return MessageRepo.GetByID(id)?.ToEditableViewModel();
+            return MessageRepo.GetByID(id);
         }
         public IEnumerable<MessageViewModel> GetAll( out int count , int SortBy , int pageIndex, int pageSize = 20)
         {
@@ -65,7 +65,7 @@ namespace ITI.WhatsLearnServices
 
                     break;
             }
-            query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            query = query.Skip(pageIndex * pageSize).Take(pageSize).OrderBy(i => i.IsRead);
             return query.ToList().Select(i => i.ToViewModel());
         }
 
@@ -155,6 +155,22 @@ namespace ITI.WhatsLearnServices
         public int Count()
         {
             return MessageRepo.Count();
+        }
+
+        public bool ISseen(int id)
+        {
+
+            Message m = GetByID(id);
+            if ( m!= null)
+            {
+                m.IsRead = true;
+               // Update(m);
+                unitOfWork.Commit();
+                return true;
+            }
+            return false;
+
+
         }
     }
 }

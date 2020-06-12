@@ -21,7 +21,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         }
 
         [HttpGet]
-        public ResultViewModel<IEnumerable<InboxViewModel>> GetAll(int pageIndex, int pageSize )
+        public ResultViewModel<IEnumerable<InboxViewModel>> GetAll(int pageIndex, int pageSize)
         {
             ResultViewModel<IEnumerable<InboxViewModel>> result
                = new ResultViewModel<IEnumerable<InboxViewModel>>();
@@ -29,7 +29,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             try
             {
                 var Messages = messageService.GetAll(out count, 0, pageIndex, pageSize);
-                    ;
+                ;
                 result.Successed = true;
                 result.Count = count;
                 result.Data = Messages.Select(i => new InboxViewModel()
@@ -41,7 +41,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     IsReaded = i.IsRead,
                     PriefMessage = String.Join(" ", i.Text.Split(' ').Take(4)),
                     Time = i.SendTime.ToString()
-                }) ;
+                });
 
 
             }
@@ -52,7 +52,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
         }
-        
+
         [HttpGet]
         public ResultViewModel<IEnumerable<MessageViewModel>> GetUnReaded(int pageIndex, int pageSize = 20)
         {
@@ -61,7 +61,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             int count = 0;
             try
             {
-                var Messages = messageService.GetAll(out count,0,pageIndex, pageSize).Where(i => i.IsRead == false && i.IsDeleted == false);
+                var Messages = messageService.GetAll(out count, 0, pageIndex, pageSize).Where(i => i.IsRead == false && i.IsDeleted == false);
                 result.Successed = true;
                 result.Data = Messages;
             }
@@ -82,7 +82,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             {
                 var message = messageService.GetByID(id);
                 result.Successed = true;
-                result.Data = message;
+                result.Data = message.ToEditableViewModel();
             }
             catch (Exception ex)
             {
@@ -119,7 +119,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             return result;
         }
         [HttpGet]
-        public ResultViewModel<IEnumerable<InboxViewModel>> Search(int SortBy,int SearchOption,string SearchText, int pageIndex, int pageSize = 20)
+        public ResultViewModel<IEnumerable<InboxViewModel>> Search(int SortBy, int SearchOption, string SearchText, int pageIndex, int pageSize = 20)
         {
             ResultViewModel<IEnumerable<InboxViewModel>> result
                = new ResultViewModel<IEnumerable<InboxViewModel>>();
@@ -128,16 +128,16 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             try
             {
 
-                if(SearchOption == 0)//All
+                if (SearchOption == 0)//All
                 {
-                     Messages = messageService.GetAll(out count , SortBy ,pageIndex, pageSize);
+                    Messages = messageService.GetAll(out count, SortBy, pageIndex, pageSize);
 
                 }
 
 
                 if (SearchOption == 1)//FullName
                 {
-                    Messages = messageService.GetByName(out count, SortBy, SearchText,pageIndex, pageSize);
+                    Messages = messageService.GetByName(out count, SortBy, SearchText, pageIndex, pageSize);
 
                 }
 
@@ -147,8 +147,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
                 }
 
-            //    Messages = messageService.GetAll(out count, SortBy, pageIndex, pageSize).Where(i => i.IsDeleted == false);
-                    
+                //    Messages = messageService.GetAll(out count, SortBy, pageIndex, pageSize).Where(i => i.IsDeleted == false);
+
                 result.Successed = true;
                 result.Count = count;
 
@@ -162,6 +162,27 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             return result;
         }
 
+        [HttpGet]
+        public ResultViewModel<MessageEditViewModel> IsSeen(int id)
+        {
+            ResultViewModel<MessageEditViewModel> result
+              = new ResultViewModel<MessageEditViewModel>();
+
+            try
+            {
+                messageService.ISseen(id);
+
+                result.Successed = true;
+                //  result.Data = selectedMessage;
+
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Semething Went Wrong";
+            }
+            return result;
+        }
 
     }
 }

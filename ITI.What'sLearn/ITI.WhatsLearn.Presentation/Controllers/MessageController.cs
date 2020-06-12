@@ -87,7 +87,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 = new ResultViewModel<MessageViewModel>();
             try
             {
-                var message = messageService.GetByID(id).ToModel().ToViewModel();
+                var message = messageService.GetByID(id).ToViewModel();
                 result.Successed = true;
                 result.Data = message;
             }

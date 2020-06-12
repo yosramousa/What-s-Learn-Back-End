@@ -53,7 +53,7 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = model.TrackID,
                 Name = model.Track?.Name,
-                Progess = ((float)model.FinishedCourses.Count() / model.Track.Courses.Count()) * 100,
+                Progess = model.FinishedCourses.Count()>0?((float)model.FinishedCourses.Count() / model.Track.Courses.Count()) * 100:0,
                 Courses = model.Track.Courses.Select(i => i.Course.ToUserProfileCourseViewModel()).ToList()
             };
             m.Courses.ForEach(x =>

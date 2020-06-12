@@ -115,6 +115,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     _loginModel.Name = admin.Name;
                     _loginModel.Token = SecurityHelper.GenerateToken(_loginModel);
                     _loginModel.Password = null;
+                    _loginModel.Image = admin.Image;
 
                 
                     result.Data = _loginModel;

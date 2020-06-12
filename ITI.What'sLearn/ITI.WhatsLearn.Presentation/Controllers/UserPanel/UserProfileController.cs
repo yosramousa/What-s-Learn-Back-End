@@ -167,7 +167,25 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
         }
-         
+        [HttpGet]
+        public ResultViewModel<UserProfileCourseViewModel> GetCourseByID(int id)
+        {
+            ResultViewModel<UserProfileCourseViewModel> result
+                = new ResultViewModel<UserProfileCourseViewModel>();
+            try
+            {
+                var course = courseService.GetByID(id);
+                result.Successed = true;
+                result.Data = course.ToUserProfileCourseViewModel();
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+        }
+
     }
 }
 

@@ -52,7 +52,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         //}
         //
         [HttpGet]
-        public ResultViewModel<IEnumerable<ManageUserViewModel>> Search(int SortBy,int SerachOption, String SerachText, int PageIndex, int PageSize)
+        public ResultViewModel<IEnumerable<ManageUserViewModel>> Search(int SortBy, int SerachOption, String SerachText, int PageIndex, int PageSize)
         {
             ResultViewModel<IEnumerable<ManageUserViewModel>> result
               = new ResultViewModel<IEnumerable<ManageUserViewModel>>();
@@ -82,7 +82,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     ID = u.ID,
                     Name = u.Name,
                     Status = u.IsActive ? "Active" : "Not Ative",
-                    TracksName = 
+                    TracksName =
                             string.Join(" - ", u.Tracks.Select(i => i.Name).ToArray())
 
                 });
@@ -133,14 +133,15 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                         Gender = user.Gender,
                         Phone = user.Phone,
                         Image = user.Image,
-                        Tracks = user.Tracks.Select(i => new UserTracksViewModel
+                        Tracks = user.Tracks.Count() > 0 ? user.Tracks.Select(i => new UserTracksViewModel
                         {
+                            ID = i.TrackID,
                             TrackName = i.Track.Name,
-                            FinshedCourses = i.FinishedCourses?.Select(x => x.course.Name).ToList(),
-                            Progress = ((float)i.FinishedCourses.Count() / i.Track.Courses.Count()) * 100,
-                            CuurentCourse = i.Track.Courses.Skip(i.FinishedCourses.Count()).First().Course.Name,
+                            FinshedCourses = i.FinishedCourses.Count() > 0 ? i.FinishedCourses.Select(x => x.course.Name).ToList() : null,
+                            Progress = i.FinishedCourses.Count() > 0 ? Math.Ceiling( ((float)i.FinishedCourses.Count() / i.Track.Courses.Count()) * 100 ): 0,
+                            CuurentCourse = i.Track.Courses.Count() > 0 ? i.Track.Courses.Skip(i.FinishedCourses.Count()).First().Course.Name : null,
                             FutureCourses = i.FinishedCourses.Count() > 0 ? i.Track.Courses.Skip(i.FinishedCourses.Count() + 1).Select(x => x.Course.Name).ToList() : i.Track.Courses.Select(x => x.Course.Name).Skip(1).ToList(),
-                        }).ToList()
+                        }).ToList() : null
                     };
 
                     result.Successed = true;
@@ -178,7 +179,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 return "Error";
             }
         }
-       
+
 
     }
 }

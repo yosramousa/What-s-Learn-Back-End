@@ -29,6 +29,7 @@ namespace ITI.WhatsLearn.Services
         public UserSocialLinkEditViewModel Update(UserSocialLinkEditViewModel P)
         {
             UserSocialLink PP = UserSocialLinkRepo.Update(P.ToModel());
+
             unitOfWork.Commit();
             return PP.ToEditableViewModel();
         }
@@ -36,9 +37,9 @@ namespace ITI.WhatsLearn.Services
         {
             return UserSocialLinkRepo.GetByID(id);
         }
-        public IEnumerable<UserSocialLinkViewModel> GetAll(){
+        public IEnumerable<UserSocialLinkViewModel> GetAll(int ID){
             var query =
-                UserSocialLinkRepo.GetAll();
+                UserSocialLinkRepo.GetAll().Where(i=>i.UserID==ID);
                
             return query.ToList().Select(i => i.ToViewModel());
         }

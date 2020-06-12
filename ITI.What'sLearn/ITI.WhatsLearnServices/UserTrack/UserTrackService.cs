@@ -44,7 +44,6 @@ namespace ITI.WhatsLearn.Services
             return query.ToList().Select(i => i.ToViewModel());
         }
 
-
         public IEnumerable<UserTrackViewModel> GetRequest(out int count, int pageIndex, int pageSize = 20)
         {
             var query =
@@ -60,7 +59,6 @@ namespace ITI.WhatsLearn.Services
                 UserTrackRepo.GetAll();
             return query.ToList().Select(i => i.ToViewModel());
         }
-
 
         public IEnumerable<UserTrackViewModel> GetEnrollRequest(int pageIndex, int pageSize = 20)
         {
@@ -90,7 +88,6 @@ namespace ITI.WhatsLearn.Services
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
             return query.ToList().Select(i => i.ToViewModel());
         }
-
         public void Approve(int id)
         {
 
@@ -110,7 +107,6 @@ namespace ITI.WhatsLearn.Services
                 unitOfWork.Commit();
             }
         }
-
         public int Count()
         {
             return UserTrackRepo.Count();
@@ -141,7 +137,18 @@ namespace ITI.WhatsLearn.Services
 
             return T;
         }
-
+        public bool CheckToEnroll(int UserID ,int TrackID)
+        {
+            try
+            {
+                UserTrackRepo.GetAll().Where(i => i.UserID == UserID && i.TrackID == TrackID).First();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
     }
 }

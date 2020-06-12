@@ -42,7 +42,7 @@ namespace ITI.WhatsLearn.ViewModel
                 TrackID = model.TrackID,
                 Date = model.Date,
                 IsApproveed = model.IsApproveed,
-                UserCount = model.Track.Users.Count
+                UserCount = model.Track?.Users?.Count
 
             };
         }
@@ -66,6 +66,15 @@ namespace ITI.WhatsLearn.ViewModel
             }); return m;
 
         }
+        public static UserFinishedTrackViewModel ToFinishedTracks(this UserTrack model)
+        {
+            return new UserFinishedTrackViewModel()
+            {
+                TrackID = model.TrackID,
+                TrackName = model.Track.Name
+            };
+        }
+
         //public static UserProfileViewModel ToUserProfileViewModel(this UserTrack model)
         //{
         //    return new UserProfileViewModel()

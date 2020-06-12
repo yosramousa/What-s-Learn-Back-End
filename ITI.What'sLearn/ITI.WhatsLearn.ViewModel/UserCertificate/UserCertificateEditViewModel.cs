@@ -17,8 +17,7 @@ namespace ITI.WhatsLearn.ViewModel
         public string Title { get; set; }
         [Required]
         public virtual int UserID{ get; set; }
-        
         public bool IsDeleted { get; set; } = false;
-        public string Image { get; set; } = "image";
+        public string Image { get; set; } 
     }
 }

@@ -146,8 +146,9 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                                 cliams = SecurityHelper.Validate(Token);
                 int UserID = int.Parse(cliams.First(i => i.Key == "ID").Value);
 
-                if (userTrackService.GetUserTracksCount(UserID) < 2)
+                if (userTrackService.GetUserTracksCount(UserID) < 2 && userTrackService.CheckToEnroll(UserID,TrackID))
                 {
+                    
                     UserTrackEditViewModel userTrack = userTrackService.Add(new UserTrackEditViewModel()
                     {
                         ID = 0,
@@ -198,6 +199,29 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
 
+
+        }
+
+        [HttpGet]
+        public ResultViewModel<IEnumerable<HomeViewModel>> GetMainCategory()
+        {
+            ResultViewModel<IEnumerable<HomeViewModel>> result =
+                new ResultViewModel<IEnumerable<HomeViewModel>>();
+            int count = 0;
+            try
+            {
+                result.Data = mainCategoryService.GetAll(out count, 0, 0, 4).Select(i => i.ToHomeViewmodel()).ToList();
+                result.Successed = true;
+                result.Count = count;
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+
+            }
+
+            return result;
 
         }
 

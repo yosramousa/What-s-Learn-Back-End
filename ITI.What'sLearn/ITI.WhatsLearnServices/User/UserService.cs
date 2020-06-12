@@ -39,43 +39,43 @@ namespace ITI.WhatsLearn.Services
         public UserEditViewModel Update(UserEditViewModel User)
         {
             User user = UserRepo.Update(User.ToModel());
-            var links = UserSocialLinkRepo.Get(i => i.UserID == user.ID);
-            var certs = UserCertificateRepo.Get(i => i.UserID == user.ID);
-            var skills = UserSkillsRepo.Get(i => i.UserID == user.ID);
-            var NewCerts = user.Certificates;
-            var NewSkill = user.Skills;
-            var NewLinks = user.SocialLinks;
-            foreach (var Cer in NewCerts)
-            {
-                if(Cer.ID == 0)  UserCertificateRepo.Add(Cer);
-                //else UserCertificateRepo.Update(Cer);
-            }
-            foreach(var C in certs)
-            {
-                if (!NewCerts.Contains(C)) UserCertificateRepo.Remove(C);
-            }
-            foreach (var skill in NewSkill)
-            {
-                if (skill.ID == 0)
-                {
-                    if(skill.User!=user)
-                    UserSkillsRepo.Add(skill);
-                }
-                else UserSkillsRepo.Update(skill);
-            }
-            foreach (var S in skills)
-            {
-                if (!NewSkill.Contains(S)) UserSkillsRepo.Remove(S);
-            }
-            foreach (var link in NewLinks)
-            {
-                if (link.ID == 0) UserSocialLinkRepo.Add(link);
-                else UserSocialLinkRepo.Update(link);
-            }
-            foreach (var L in links)
-            {
-                if (!NewLinks.Contains(L)) UserSocialLinkRepo.Remove(L);
-            }
+            //var links = UserSocialLinkRepo.Get(i => i.UserID == user.ID);
+            //var certs = UserCertificateRepo.Get(i => i.UserID == user.ID);
+            //var skills = UserSkillsRepo.Get(i => i.UserID == user.ID);
+            //var NewCerts = user.Certificates;
+            //var NewSkill = user.Skills;
+            //var NewLinks = user.SocialLinks;
+            //foreach (var Cer in NewCerts)
+            //{
+            //    if(Cer.ID == 0)  UserCertificateRepo.Add(Cer);
+            //    //else UserCertificateRepo.Update(Cer);
+            //}
+            //foreach(var C in certs)
+            //{
+            //    if (!NewCerts.Contains(C)) UserCertificateRepo.Remove(C);
+            //}
+            //foreach (var skill in NewSkill)
+            //{
+            //    if (skill.ID == 0)
+            //    {
+            //        if(skill.User!=user)
+            //        UserSkillsRepo.Add(skill);
+            //    }
+            //    else UserSkillsRepo.Update(skill);
+            //}
+            //foreach (var S in skills)
+            //{
+            //    if (!NewSkill.Contains(S)) UserSkillsRepo.Remove(S);
+            //}
+            //foreach (var link in NewLinks)
+            //{
+            //    if (link.ID == 0) UserSocialLinkRepo.Add(link);
+            //    else UserSocialLinkRepo.Update(link);
+            //}
+            //foreach (var L in links)
+            //{
+            //    if (!NewLinks.Contains(L)) UserSocialLinkRepo.Remove(L);
+            //}
 
             unitOfWork.Commit();
 

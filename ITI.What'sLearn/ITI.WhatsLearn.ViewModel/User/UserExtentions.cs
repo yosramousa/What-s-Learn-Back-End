@@ -73,9 +73,9 @@ namespace ITI.WhatsLearn.ViewModel
                 IsDeleted = model.IsDeleted,
                 Password = model.Password,
                 Phone = model.Phone,
-                Skills = model.Skills.Select(i => i.ToEditableViewModel()).ToList(),
-                Certificates = model.Certificates.Select(i => i.ToEditableViewModel()).ToList(),
-                SocialLinks = model.SocialLinks.Select(i => i.ToEditableViewModel()).ToList()
+                Skills = model.Skills?.Select(i => i.ToEditableViewModel()).ToList(),
+                Certificates = model.Certificates?.Select(i => i.ToEditableViewModel()).ToList(),
+                SocialLinks = model.SocialLinks?.Select(i => i.ToEditableViewModel()).ToList()
 
             };
         }
@@ -92,16 +92,56 @@ namespace ITI.WhatsLearn.ViewModel
                 Gender = model.Gender,
                 Phone = model.Phone,
                 Image = model.Image,
-                Skills = model.Skills.Select(i => i.ToViewModel()).ToList(),
-                Certificates = model.Certificates.Select(i => i.ToViewModel()).ToList(),
-                Links=model.SocialLinks.Select(i=>i.ToViewModel()).ToList(),
-                Tracks = model.Tracks.Select(i => i.ToUserProfileTracksViewModel()).ToList()
-               
-
-
+                Skills = model.Skills.Select(i => i.ToViewModel()).Where(i=>!i.IsDeleted).ToList(),
+                Certificates = model.Certificates.Select(i => i.ToViewModel()).Where(i => !i.IsDeleted).ToList(),
+                Links = model.SocialLinks.Select(i => i.ToViewModel()).Where(i => !i.IsDeleted).ToList(),
+                Tracks = model.Tracks.Where(i => !i.IsDeleted && i.IsApproveed && i.Track.Courses.Count > i.FinishedCourses.Count).Select(i => i.ToUserProfileTracksViewModel()).ToList(),
+                FinishedTracks = model.Tracks.Where(i => i.Track.Courses.Count == i.FinishedCourses.Count && !i.IsDeleted).Select(i => i.ToFinishedTracks()).ToList()
 
             };
 
         }
+      
+        public static UserProfileEditViewModel ToUserProfileEditViewModel(this UserEditViewModel model)
+        {
+            return new UserProfileEditViewModel()
+            {
+                ID = model.ID,
+                Name = model.Name,
+                Adress = model.Adress,
+                Age = model.Age,
+                Education = model.Education,
+                Gender = model.Gender,
+                Phone = model.Phone,
+                Image = model.Image,
+                Email =model.Email,
+                Password = model.Password
+               
+            };
+
+        }
+
+
+        public static UserEditViewModel ToUserEditViewModel(this UserProfileEditViewModel model)
+        {
+            return new UserEditViewModel()
+            {
+                ID = model.ID,
+                Name = model.Name,
+                Adress = model.Adress,
+                Age = model.Age,
+                Education = model.Education,
+                Gender = model.Gender,
+                Phone = model.Phone,
+                Image = model.Image,
+                Password = model.Password,
+                Email = model.Email
+
+            };
+
+        }
+
+
+
     }
 }

@@ -28,6 +28,7 @@ namespace ITI.WhatsLearn.Reposatories
         {
             //if (!dbSet.Local.Any(i => i.ID == T.ID))
             //    dbSet.Attach(T);
+
             Context.Entry(T).State = EntityState.Modified;
             return T;
         }

@@ -1,4 +1,5 @@
-﻿using ITI.WhatsLearn.Entities;
+﻿using BroadCaster.Helpers;
+using ITI.WhatsLearn.Entities;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
 using System;
@@ -25,7 +26,14 @@ namespace ITI.WhatsLearn.Presentation
                 = new ResultViewModel<IEnumerable<UserCertificateViewModel>>();
             try
             {
-                var UserCertificates = UserCertificateService.GetAll();
+                string Token = Request.Headers.Authorization?
+                 .Parameter;
+
+                Dictionary<string, string>
+                                cliams = SecurityHelper.Validate(Token);
+                string ID = cliams.FirstOrDefault(i => i.Key == "ID").Value;
+
+                var UserCertificates = UserCertificateService.GetAll(int.Parse(ID));
                 result.Successed = true;
                 result.Data = UserCertificates;
             }
@@ -68,7 +76,7 @@ namespace ITI.WhatsLearn.Presentation
         }
 
         [HttpPost]
-        public ResultViewModel<UserCertificateEditViewModel> Update(UserCertificateEditViewModel UserCertificate)
+        public ResultViewModel<UserCertificateEditViewModel> Update( UserCertificateEditViewModel UserCertificate)
         {
             ResultViewModel<UserCertificateEditViewModel> result
                 = new ResultViewModel<UserCertificateEditViewModel>();
@@ -81,11 +89,10 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    UserCertificateEditViewModel selectedEmp
-                        = UserCertificateService.Update(UserCertificate);
-
+                    UserCertificateEditViewModel selectedCert = UserCertificateService.Update(UserCertificate);
+                    
                     result.Successed = true;
-                    result.Data = selectedEmp;
+                    result.Data = selectedCert;
                 }
             }
             catch (Exception ex)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.ViewModel
 {
-    public class UserProfileViewModel
+    public class UserProfileEditViewModel
     {
         public int ID { get; set; }
         public string Name { get; set; }
@@ -15,14 +15,8 @@ namespace ITI.WhatsLearn.ViewModel
         public int Age { get; set; }
         public string Adress { get; set; }
         public char Gender { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
         public string Phone { get; set; }
-        public List<UserFinishedTrackViewModel> FinishedTracks { get; set; }
-        public List<UserSkillViewModel> Skills { get; set; }
-        public List<UserSocialLinkViewModel> Links { get; set; }
-
-        public List<UserCertificateViewModel> Certificates { get; set; }
-        public List<UserProfileTracksViewModel> Tracks { get; set; }
-
-
     }
 }

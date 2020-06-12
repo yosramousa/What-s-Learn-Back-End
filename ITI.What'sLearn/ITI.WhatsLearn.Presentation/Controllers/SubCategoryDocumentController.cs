@@ -12,22 +12,22 @@ namespace ITI.WhatsLearn.Presentation
 {
     public class SubCategoryDocumentController : ApiController
     {
-        private readonly UserSkillService UserSkillService;
-        public SubCategoryDocumentController(UserSkillService _UserSkillService)
+        private readonly SubCategoryDocumentService subCategoryDocumentService;
+        public SubCategoryDocumentController(SubCategoryDocumentService _subCategoryDocumentService)
         {
-            UserSkillService = _UserSkillService;
+            subCategoryDocumentService = _subCategoryDocumentService;
         }
 
         [HttpGet]
-        public ResultViewModel<IEnumerable<UserSkillViewModel>> GetList()
+        public ResultViewModel<IEnumerable<SubCategoryDocumentViewModel>> GetList()
         {
-            ResultViewModel<IEnumerable<UserSkillViewModel>> result
-                = new ResultViewModel<IEnumerable<UserSkillViewModel>>();
+            ResultViewModel<IEnumerable<SubCategoryDocumentViewModel>> result
+                = new ResultViewModel<IEnumerable<SubCategoryDocumentViewModel>>();
             try
             {
-                var UserSkills = UserSkillService.GetAll();
+                var subCatgoryDoc = subCategoryDocumentService.GetAll();
                 result.Successed = true;
-                result.Data = UserSkills;
+                result.Data = subCatgoryDoc ;
             }
             catch (Exception ex)
             {
@@ -39,10 +39,10 @@ namespace ITI.WhatsLearn.Presentation
 
 
         [HttpPost]
-        public ResultViewModel<UserSkillEditViewModel> Post(UserSkillEditViewModel UserSkill)
+        public ResultViewModel<SubCategoryDocumentEditViewModel> Post(SubCategoryDocumentEditViewModel UserSkill)
         {
-            ResultViewModel<UserSkillEditViewModel> result
-                = new ResultViewModel<UserSkillEditViewModel>();
+            ResultViewModel<SubCategoryDocumentEditViewModel> result
+                = new ResultViewModel<SubCategoryDocumentEditViewModel>();
 
             try
             {
@@ -52,8 +52,8 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    UserSkillEditViewModel selectedUserSkill
-                        = UserSkillService.Add(UserSkill);
+                    SubCategoryDocumentEditViewModel selectedUserSkill
+                        = subCategoryDocumentService.Add(UserSkill);
 
                     result.Successed = true;
                     result.Data = selectedUserSkill;
@@ -68,10 +68,10 @@ namespace ITI.WhatsLearn.Presentation
         }
 
         [HttpPost]
-        public ResultViewModel<UserSkillEditViewModel> Update(UserSkillEditViewModel UserSkill)
+        public ResultViewModel<SubCategoryDocumentEditViewModel> Update(SubCategoryDocumentEditViewModel UserSkill)
         {
-            ResultViewModel<UserSkillEditViewModel> result
-                = new ResultViewModel<UserSkillEditViewModel>();
+            ResultViewModel<SubCategoryDocumentEditViewModel> result
+                = new ResultViewModel<SubCategoryDocumentEditViewModel>();
 
             try
             {
@@ -81,8 +81,8 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    UserSkillEditViewModel selectedEmp
-                        = UserSkillService.Update(UserSkill);
+                    SubCategoryDocumentEditViewModel selectedEmp
+                        = subCategoryDocumentService.Update(UserSkill);
 
                     result.Successed = true;
                     result.Data = selectedEmp;
@@ -99,15 +99,15 @@ namespace ITI.WhatsLearn.Presentation
 
 
         [HttpGet]
-        public ResultViewModel<UserSkillViewModel> GetByID(int id)
+        public ResultViewModel<SubCategoryDocumentViewModel> GetByID(int id)
         {
-            ResultViewModel<UserSkillViewModel> result
-                = new ResultViewModel<UserSkillViewModel>();
+            ResultViewModel<SubCategoryDocumentViewModel> result
+                = new ResultViewModel<SubCategoryDocumentViewModel>();
             try
             {
-                var UserSkill = UserSkillService.GetByID(id)?.ToViewModel();
+                var subCategoryDoc = subCategoryDocumentService.GetByID(id)?.ToViewModel();
                 result.Successed = true;
-                result.Data = UserSkill;
+                result.Data = subCategoryDoc;
             }
             catch (Exception ex)
             {
@@ -120,9 +120,9 @@ namespace ITI.WhatsLearn.Presentation
         [HttpGet]
         public string Delete(int id)
         {
-            if (UserSkillService.GetByID(id) != null)
+            if (subCategoryDocumentService.GetByID(id) != null)
             {
-                UserSkillService.Remove(id);
+                subCategoryDocumentService.Remove(id);
                 return "UserSkill Deleted Sucessfully";
             }
             else

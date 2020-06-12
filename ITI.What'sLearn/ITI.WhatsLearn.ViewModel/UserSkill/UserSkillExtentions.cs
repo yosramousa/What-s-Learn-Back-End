@@ -46,7 +46,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Level = model.Level,
                 IsDeleted = model.IsDeleted,
                 SkillName =model.Skill?.skill
-
+                
             };
         }
     }

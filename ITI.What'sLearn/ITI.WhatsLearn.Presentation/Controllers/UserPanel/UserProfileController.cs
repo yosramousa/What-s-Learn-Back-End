@@ -22,18 +22,18 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         private readonly FinishedCourseService finishedCourseService;
         private readonly TrackService trackService;
         private readonly CourseService courseService;
+        private readonly SkillService skillService;
+
         public UserProfileController(
             CourseService _courseService,
             
             UserService _UserService,
             UserTrackService _userTrackService, 
             TrackService _trackService,
-            FinishedCourseService _finishedCourseService
+            FinishedCourseService _finishedCourseService,
+            SkillService _skillService
             )
-        private readonly SkillService skillService;
-
-        public UserProfileController(UserService _UserService , SkillService _skillService)
-        {
+        { 
             userService = _UserService;
             userTrackService = _userTrackService;
             trackService = _trackService;
@@ -58,9 +58,38 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             string ID = cliams.FirstOrDefault(i => i.Key == "ID").Value;
             try
             {
-                var admin = userService.GetByID(int.Parse(ID));
+                var user = userService.GetByID(int.Parse(ID));
                 result.Successed = true;
-                result.Data = admin.ToUserProfileViewModel();
+                result.Data = user.ToUserProfileViewModel();
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+
+
+            return result;
+        }
+
+        [HttpGet]
+        public ResultViewModel<UserProfileEditViewModel> GetEditProfile()
+        {
+
+            ResultViewModel<UserProfileEditViewModel> result
+                   = new ResultViewModel<UserProfileEditViewModel>();
+
+            string Token = Request.Headers.Authorization?
+                    .Parameter;
+
+            Dictionary<string, string>
+                            cliams = SecurityHelper.Validate(Token);
+            string ID = cliams.FirstOrDefault(i => i.Key == "ID").Value;
+            try
+            {
+                var user = userService.GetByID(int.Parse(ID));
+                result.Successed = true;
+                result.Data = user.ToEditableViewModel().ToUserProfileEditViewModel();
             }
             catch (Exception ex)
             {
@@ -73,10 +102,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         }
 
         [HttpPost]
-        public ResultViewModel<UserEditViewModel> Update(UserEditViewModel User)
+        public ResultViewModel<UserProfileEditViewModel> UpdateProfile(UserProfileEditViewModel User)
         {
-            ResultViewModel<UserEditViewModel> result
-                = new ResultViewModel<UserEditViewModel>();
+            ResultViewModel<UserProfileEditViewModel> result
+                = new ResultViewModel<UserProfileEditViewModel>();
 
             try
             {
@@ -87,12 +116,12 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 else
                 {
                     UserEditViewModel selectedEmp
-                        = userService.Update(User);
+                        = userService.Update(User.ToUserEditViewModel());
 
                     result.Successed = true;
-                    result.Data = selectedEmp;
+                    result.Data = selectedEmp.ToUserProfileEditViewModel();
                 }
-        }
+            }
             catch (Exception ex)
             {
                 result.Successed = false;
@@ -101,29 +130,29 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             return result;
         }
 
-        [HttpGet]
-        public ResultViewModel<UserTrackEditViewModel> UnEnroll(int TrackID)
-        {
+        //[HttpGet]
+        //public ResultViewModel<UserTrackEditViewModel> UnEnroll(int TrackID)
+        //{
 
-            ResultViewModel<UserTrackEditViewModel> result = new ResultViewModel<UserTrackEditViewModel>();
-            try
-            {
-                string Token = Request.Headers.Authorization?
-                       .Parameter;
-                Dictionary<string, string>
-                                cliams = SecurityHelper.Validate(Token);
-                int UserID = int.Parse(cliams.First(i => i.Key == "ID").Value);
+        //    ResultViewModel<UserTrackEditViewModel> result = new ResultViewModel<UserTrackEditViewModel>();
+        //    try
+        //    {
+        //        string Token = Request.Headers.Authorization?
+        //               .Parameter;
+        //        Dictionary<string, string>
+        //                        cliams = SecurityHelper.Validate(Token);
+        //        int UserID = int.Parse(cliams.First(i => i.Key == "ID").Value);
 
-                userTrackService.RemoveUserTrack(TrackID, UserID);
-                result.Successed = true;
-            }
-            catch (Exception e)
-            {
-                result.Successed = false;
-                result.Message = "Error";
-            }
-            return result;
-        }
+        //        userTrackService.RemoveUserTrack(TrackID, UserID);
+        //        result.Successed = true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        result.Successed = false;
+        //        result.Message = "Error";
+        //    }
+        //    return result;
+        //}
         [HttpGet]
         public ResultViewModel<FinishedCourseEditViewModel> FinishCourse(int CourseID, int TrackID)
         {
@@ -142,9 +171,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     //Check If  User Finshed Previous Courses
                     var FinedCourses = finishedCourseService.Get(i => i.UserTrackID == UserTrackID).Select(i => i.course).ToList();//html
                     var TrackCourses = T.Track.Courses.Select(i => i.Course).ToList();//html css js
-                    var lastFinshedCourse = FinedCourses.Last();//html
+                    var lastFinshedCourse = FinedCourses.LastOrDefault();//html
                     var Course = courseService.GetByID(CourseID);//js
-                    if (TrackCourses.IndexOf(Course) == TrackCourses.IndexOf(lastFinshedCourse) + 1)
+                                        
+                if (TrackCourses.IndexOf(Course) == TrackCourses.IndexOf(lastFinshedCourse) + 1)
                     {
                         FinishedCourseEditViewModel F = finishedCourseService.Add(new FinishedCourseEditViewModel()
                         {
@@ -163,7 +193,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                         result.Message = "User Not Finshed Prequest Courses";
                     }
                 }
-            }
+        }
             catch (Exception e)
             {
                 result.Successed = false;
@@ -171,7 +201,48 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
         }
-         
+
+        [HttpGet]
+        public ResultViewModel<IEnumerable<SkillViewModel>> GetAllSkills()
+        {
+            ResultViewModel<IEnumerable<SkillViewModel>> result =
+                new ResultViewModel<IEnumerable<SkillViewModel>>();
+
+            try
+            {
+                result.Data = skillService.GetAll();
+                result.Message = "Skills gotten succesfuly";
+                result.Successed = true;
+            }
+            catch
+            {
+
+                result.Message = "Something went wrong!!";
+                result.Successed = false;
+            }
+            return result;
+        }
+        [HttpGet]
+        public ResultViewModel<CourseViewModel> GetByID(int id)
+        {
+            ResultViewModel<CourseViewModel> result
+                = new ResultViewModel<CourseViewModel>();
+            try
+            {
+                var course = courseService.GetByID(id);
+                result.Successed = true;
+                result.Data = course.ToViewModel();
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+        }
+
+
+
     }
 }
 

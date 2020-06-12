@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITI.WhatsLearnServices
+namespace ITI.WhatsLearn.Services
 {
     public class SkillService
     {
@@ -60,6 +60,14 @@ namespace ITI.WhatsLearnServices
                     break;
             }
             query = query.Skip(pageIndex * pageSize).Take(pageSize);
+            return query.ToList().Select(i => i.ToViewModel());
+        }
+
+        public IEnumerable<SkillViewModel> GetAll()
+        {
+            var query =
+                SkillRepo.GetAll();
+
             return query.ToList().Select(i => i.ToViewModel());
         }
         public IEnumerable<SkillViewModel> Get(Expression<Func<Skill, bool>> filter)

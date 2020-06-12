@@ -10,8 +10,12 @@ namespace ITI.WhatsLearn.ViewModel
     {
         public int ID { get; set; }
         public string Title { get; set; }
-        public  string UserName { get; set; }
-        public  string UserID { get; set; }
+        public virtual string UserName { get; set; }
+        public bool IsDeleted { get; set; }
+        public virtual int UserID { get; set; }
+
+        public string Image { get; set; } 
+
 
 
     }

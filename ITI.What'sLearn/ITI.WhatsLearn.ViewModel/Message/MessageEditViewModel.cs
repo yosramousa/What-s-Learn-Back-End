@@ -16,7 +16,6 @@ namespace ITI.WhatsLearn.ViewModel
         public string FullName { get; set; }
         [Required]
         public string Subject { get; set; }
-
         [Required]
         [EmailAddress]
         [MaxLength(50)]

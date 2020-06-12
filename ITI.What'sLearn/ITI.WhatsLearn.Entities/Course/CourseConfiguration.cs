@@ -30,6 +30,8 @@ namespace ITI.WhatsLearn.Entities
 
             Property(i => i.IsDeleted)
                 .IsRequired();
+            Property(i => i.Icon)
+                .HasColumnName("Icon");
 
             HasMany(i => i.CourseLinks)
                 .WithRequired(i => i.Course);

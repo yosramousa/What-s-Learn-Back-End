@@ -28,6 +28,11 @@ namespace ITI.WhatsLearn.Entities
                  .HasMaxLength(500)
                  .IsOptional();
 
+            Property(i => i.Icon)
+                 .HasColumnName("Icon")
+                 .HasMaxLength(500)
+                 .IsOptional();
+
             Property(i => i.IsDeleted)
                 .IsRequired();
 

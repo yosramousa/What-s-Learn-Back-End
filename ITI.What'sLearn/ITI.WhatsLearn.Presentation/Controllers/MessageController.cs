@@ -64,14 +64,20 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
             try
             {
-              
-                
+
+                if (!ModelState.IsValid)
+                {
+                    result.Message = "In Valid Model State";
+                }
+                else
+                {
                     MessageEditViewModel selectedMessage
-                        = messageService.Add(Message);
+                            = messageService.Add(Message);
 
                     result.Successed = true;
                     result.Data = selectedMessage;
-                
+                    result.Message = "Message Sent...";
+                }
             }
             catch (Exception ex)
             {

@@ -23,6 +23,11 @@ namespace ITI.WhatsLearn.Entities
                  .HasMaxLength(1000)
                  .IsRequired();
 
+            Property(i => i.Icon)
+                .HasColumnName("Icon")
+                .HasMaxLength(1000)
+                .IsRequired();
+
             Property(i => i.Image)
                  .HasColumnName("Image")
                  .HasMaxLength(500)

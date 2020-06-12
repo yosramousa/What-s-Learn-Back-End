@@ -33,8 +33,6 @@ namespace ITI.WhatsLearn.ViewModel
                 Description = editmodel.Description,
                 MainCategoryID = editmodel.ParentID
 
-
-
             };
 
         }

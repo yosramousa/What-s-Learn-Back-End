@@ -1,4 +1,5 @@
-﻿using ITI.WhatsLearn.Entities;
+﻿using BroadCaster.Helpers;
+using ITI.WhatsLearn.Entities;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
 using System;
@@ -25,7 +26,16 @@ namespace ITI.WhatsLearn.Presentation
                 = new ResultViewModel<IEnumerable<UserSocialLinkViewModel>>();
             try
             {
-                var UserSocialLinks = UserSocialLinkService.GetAll();
+                string Token = Request.Headers.Authorization?
+                .Parameter;
+
+                Dictionary<string, string>
+                                cliams = SecurityHelper.Validate(Token);
+                string ID = cliams.FirstOrDefault(i => i.Key == "ID").Value;
+
+
+                var UserSocialLinks = UserSocialLinkService.GetAll(int.Parse(ID));
+
                 result.Successed = true;
                 result.Data = UserSocialLinks;
             }
@@ -81,11 +91,10 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    UserSocialLinkEditViewModel selectedEmp
-                        = UserSocialLinkService.Update(UserSocialLink);
-
+                    UserSocialLinkEditViewModel selectedLink =UserSocialLinkService.Update(UserSocialLink);
+                    
                     result.Successed = true;
-                    result.Data = selectedEmp;
+                    result.Data = selectedLink;
                 }
             }
             catch (Exception ex)

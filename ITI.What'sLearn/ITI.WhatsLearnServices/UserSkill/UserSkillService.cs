@@ -15,6 +15,8 @@ namespace ITI.WhatsLearn.Services
         
         UnitOfWork unitOfWork;
         Generic<UserSkill> UserSkillRepo;
+       
+
         public UserSkillService(UnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
@@ -36,9 +38,9 @@ namespace ITI.WhatsLearn.Services
         {
             return UserSkillRepo.GetByID(id);
         }
-        public IEnumerable<UserSkillViewModel> GetAll(){
+        public IEnumerable<UserSkillViewModel> GetAll(int UserID){
             var query =
-                UserSkillRepo.GetAll();
+                UserSkillRepo.GetAll().Where(i=>i.UserID == UserID);
                
             return query.ToList().Select(i => i.ToViewModel());
         }

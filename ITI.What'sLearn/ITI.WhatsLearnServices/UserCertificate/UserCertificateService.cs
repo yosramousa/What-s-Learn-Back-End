@@ -26,9 +26,9 @@ namespace ITI.WhatsLearn.Services
             unitOfWork.Commit();
             return PP.ToEditableViewModel();
         }
-        public UserCertificateEditViewModel Update(UserCertificateEditViewModel P)
+        public UserCertificateEditViewModel Update(UserCertificateEditViewModel p)
         {
-            UserCertificate PP = UserCertificateRepo.Update(P.ToModel());
+            UserCertificate PP = UserCertificateRepo.Update(p.ToModel());
             unitOfWork.Commit();
             return PP.ToEditableViewModel();
         }
@@ -36,10 +36,10 @@ namespace ITI.WhatsLearn.Services
         {
             return UserCertificateRepo.GetByID(id);
         }
-        public IEnumerable<UserCertificateViewModel> GetAll()
+        public IEnumerable<UserCertificateViewModel> GetAll(int UserID)
         {
             var query =
-                UserCertificateRepo.GetAll();
+                UserCertificateRepo.GetAll().Where(i=>i.UserID == UserID);
 
             return query.ToList().Select(i => i.ToViewModel());
         }

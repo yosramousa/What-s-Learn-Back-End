@@ -20,7 +20,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Email = model.Email,
                 SendTime = model.SendTime,
                 IsDeleted = model.IsDeleted,
-                IsRead=model.IsRead
+                Subject = model.Subject
             };
         }
         public static Message ToModel(this MessageEditViewModel editModel)
@@ -33,7 +33,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Email = editModel.Email,
                 SendTime = editModel.SendTime,
                 IsDeleted = editModel.IsDeleted,
-               IsRead=editModel.IsRead
+                Subject = editModel.Subject
 
             };
         }
@@ -47,7 +47,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Email = model.Email,
                 SendTime = model.SendTime,
                 IsDeleted = model.IsDeleted,
-                IsRead=model.IsRead
+                Subject=model.Subject
 
             };
         }
@@ -64,7 +64,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Email = model.Email,
                 FullName = model.FullName,
                 ID = model.ID,
-                PriefMessage =  model.Text.Substring(0,10),
+                PriefMessage = String.Join(" ", model.Text.Split(' ').Take(4)),
                 Text = model.Text,
                 IsReaded = model.IsRead,
                 Time = time

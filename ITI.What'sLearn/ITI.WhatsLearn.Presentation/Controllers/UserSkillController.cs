@@ -1,4 +1,5 @@
-﻿using ITI.WhatsLearn.Entities;
+﻿using BroadCaster.Helpers;
+using ITI.WhatsLearn.Entities;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
 using System;
@@ -25,7 +26,14 @@ namespace ITI.WhatsLearn.Presentation
                 = new ResultViewModel<IEnumerable<UserSkillViewModel>>();
             try
             {
-                var UserSkills = UserSkillService.GetAll();
+                string Token = Request.Headers.Authorization?
+                  .Parameter;
+
+                Dictionary<string, string>
+                                cliams = SecurityHelper.Validate(Token);
+                string ID = cliams.FirstOrDefault(i => i.Key == "ID").Value;
+
+                var UserSkills = UserSkillService.GetAll(int.Parse(ID));
                 result.Successed = true;
                 result.Data = UserSkills;
             }
@@ -68,11 +76,11 @@ namespace ITI.WhatsLearn.Presentation
         }
 
         [HttpPost]
-        public ResultViewModel<UserSkillEditViewModel> Update(UserSkillEditViewModel UserSkill)
+        public ResultViewModel<UserSkillEditViewModel> Update(UserSkillEditViewModel UserSkills)
         {
             ResultViewModel<UserSkillEditViewModel> result
                 = new ResultViewModel<UserSkillEditViewModel>();
-
+           
             try
             {
                 if (!ModelState.IsValid)
@@ -81,11 +89,12 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    UserSkillEditViewModel selectedEmp
-                        = UserSkillService.Update(UserSkill);
+                    UserSkillEditViewModel selectedSkill = UserSkillService.Update(UserSkills);
+                        
+                    
 
                     result.Successed = true;
-                    result.Data = selectedEmp;
+                    result.Data = selectedSkill;
                 }
             }
             catch (Exception ex)

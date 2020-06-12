@@ -22,6 +22,11 @@ namespace ITI.WhatsLearn.Entities
                 .HasMaxLength(50)
                 .IsRequired();
 
+            Property(i => i.Subject)
+                .HasColumnName("Subject")
+                .IsRequired();
+                
+
             Property(i => i.Text)
                 .HasColumnName("Text")
                 .HasMaxLength(1000)

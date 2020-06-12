@@ -32,7 +32,7 @@ namespace ITI.WhatsLearn.Presentation
             }
             try
             {
-                UserViewModel user = UserService.Get(_loginModel.Email, _loginModel.Password)?.First();
+                UserViewModel user = UserService.Get(_loginModel.Email, _loginModel.Password)?.FirstOrDefault();
                 if (user == null)
                 {
                     result.Successed = false;

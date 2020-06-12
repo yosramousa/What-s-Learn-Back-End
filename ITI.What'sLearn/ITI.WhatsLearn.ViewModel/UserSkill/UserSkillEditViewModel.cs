@@ -9,16 +9,15 @@ namespace ITI.WhatsLearn.ViewModel
 {
     public class UserSkillEditViewModel
     {
+        
+        public int ID { get; set; } = 0;
         [Required]
-        public int ID { get; set; }
-        [Required]
-
         public int UserID { get; set; }
         [Required]
-
         public int SkillID { get; set; }
-        [Required]
-
+        public string SkillName { get; set; }
         public int Level { get; set; }
+        public bool IsDeleted { get; set; } = false;
+
     }
 }

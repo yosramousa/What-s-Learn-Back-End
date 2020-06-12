@@ -15,11 +15,9 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = model.ID,
                 Link = model.link,
-                //UserName = model.User.Name
-
-
-
-
+                UserName = model.User.Name,
+                IsDeleted =model.IsDeleted,
+                UserID = model.UserID
             };
         }
         public static UserSocialLink ToModel(this UserSocialLinkEditViewModel editModel)
@@ -28,7 +26,10 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = editModel.ID,
                 link = editModel.Link,
-                UserID = editModel.UserID
+                UserID = editModel.UserID,
+                IsDeleted = editModel.IsDeleted
+                
+
             };
         }
         public static UserSocialLinkEditViewModel ToEditableViewModel(this UserSocialLink model)
@@ -38,7 +39,9 @@ namespace ITI.WhatsLearn.ViewModel
                 ID = model.ID,
 
                 Link = model.link,
-                UserID = model.UserID
+                UserID = model.UserID,
+                IsDeleted = model.IsDeleted
+
 
             };
         }

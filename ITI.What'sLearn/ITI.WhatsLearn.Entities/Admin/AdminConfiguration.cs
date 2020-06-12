@@ -9,6 +9,10 @@ namespace ITI.WhatsLearn.Entities
 {
     public class  AdminConfiguration: EntityTypeConfiguration<Admin>
     {
-        public AdminConfiguration() { }
+        public AdminConfiguration()
+        {
+           
+
+        }
     }
 }

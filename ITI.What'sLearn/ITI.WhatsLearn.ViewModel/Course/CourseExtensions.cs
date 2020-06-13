@@ -37,9 +37,7 @@ namespace ITI.WhatsLearn.ViewModel
                 CourseLinks = editModel.Links?.Select(i => i.ToModel()).ToList(),
                 CourseDocuments = editModel.Documents?.Select(i => i.ToModel()).ToList(),
                 CourseVedios = editModel.Vedios?.Select(i => i.ToModel()).ToList(),
-
-
-
+                Icon = editModel.Icon
             };
         }
         public static CourseEditViewModel ToEditableViewModel(this Course model)

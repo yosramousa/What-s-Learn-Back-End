@@ -36,6 +36,8 @@ namespace ITI.WhatsLearn.Reposatories
         public Generic<UserSkill> UserSkillRepo { get; set; }
         public Generic<UserSocialLink> UserSocialLinkRepo { get; set; }
         public Generic<UserTrack> UserTrackRepo { get; set; }
+        public Generic<Configuration> ConfigurationRepo { get; set; }
+
 
         public UnitOfWork
             (
@@ -65,7 +67,9 @@ namespace ITI.WhatsLearn.Reposatories
              Generic<UserCertificate> userCertificateRepo,
              Generic<UserSkill> userSkillRepo,
              Generic<UserSocialLink> userSocialLinkRepo,
-             Generic<UserTrack> userTrackRepo
+             Generic<UserTrack> userTrackRepo,
+             Generic<Configuration>  configRepo
+
 
 
         )
@@ -123,7 +127,10 @@ namespace ITI.WhatsLearn.Reposatories
             UserSocialLinkRepo.Context = context;
             UserTrackRepo = userTrackRepo;
             UserTrackRepo.Context = context;
-         
+            ConfigurationRepo = configRepo;
+            ConfigurationRepo.Context = context;
+
+
 
         }
         public int Commit()

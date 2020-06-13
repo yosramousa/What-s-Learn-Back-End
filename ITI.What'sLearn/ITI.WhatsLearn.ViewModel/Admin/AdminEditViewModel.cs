@@ -27,7 +27,7 @@ namespace ITI.WhatsLearn.ViewModel
         [MaxLength(250)]
         public string Adress { get; set; }
         [Required]
-        public char Gender { get; set; }
+        public string Gender { get; set; }
         [Required]
         public string Phone { get; set; }
 

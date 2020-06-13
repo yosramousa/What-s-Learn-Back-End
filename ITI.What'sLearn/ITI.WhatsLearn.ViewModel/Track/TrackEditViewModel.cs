@@ -16,7 +16,7 @@ namespace ITI.WhatsLearn.ViewModel
         [Required]
         [MaxLength(250)]
         public  string Name { get; set; }
-
+        public string Icon { get; set; } = " ";
         [Required]
         [MaxLength(1000)]
         public string Discription { get; set; }

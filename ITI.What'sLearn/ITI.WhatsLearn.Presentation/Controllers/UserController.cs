@@ -16,9 +16,12 @@ namespace ITI.WhatsLearn.Presentation
     public class UserController : ApiController
     {
         private readonly UserService UserService;
-        public UserController(UserService _UserService)
+        private readonly ConfigurationService ConfigService;
+
+        public UserController(UserService _UserService, ConfigurationService _configService)
         {
             UserService = _UserService;
+            ConfigService = _configService;
         }
 
         [HttpPost]
@@ -46,6 +49,7 @@ namespace ITI.WhatsLearn.Presentation
                     _loginModel.Name = user.Name;
                     _loginModel.Token = SecurityHelper.GenerateToken(_loginModel);
                     _loginModel.Password = null;
+                    ConfigService.Increment("VisitorCount");
                    
                   
                     result.Data = _loginModel;

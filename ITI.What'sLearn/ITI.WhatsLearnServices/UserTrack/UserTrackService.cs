@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ITI.WhatsLearn.Services
@@ -142,8 +143,15 @@ namespace ITI.WhatsLearn.Services
         {
             try
             {
-                UserTrackRepo.GetAll().Where(i => i.UserID == UserID && i.TrackID == TrackID).First();
-                return true;
+                var user=   UserTrackRepo.GetAll().Where(i => i.UserID == UserID && i.TrackID == TrackID).FirstOrDefault();
+                if (user == null)
+                {
+                    return true;
+
+
+                }
+                else
+                    return false;
             }
             catch
             {

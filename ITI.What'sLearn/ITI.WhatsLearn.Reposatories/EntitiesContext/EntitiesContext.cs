@@ -41,9 +41,15 @@ namespace ITI.WhatsLearn.Reposatories
         public virtual DbSet<UserSkill> UserSkills { get; set; }
         public virtual DbSet<UserSocialLink> UserSocialLink { get; set; }
         public virtual DbSet<UserTrack> UserTrack { get; set; }
+       public virtual DbSet<Configuration> Configurations { get; set; }
+        
+        
+        
+
+    
 
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add
                 (new AdminConfiguration());
@@ -96,6 +102,8 @@ namespace ITI.WhatsLearn.Reposatories
                 (new UserSocialLinkConfiguration());
             modelBuilder.Configurations.Add
                 (new UserTrackConfigurations());
+            modelBuilder.Configurations.Add
+                (new ConfigurationConfig());
         }
     }
 }

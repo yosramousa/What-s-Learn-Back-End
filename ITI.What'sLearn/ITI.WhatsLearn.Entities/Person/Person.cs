@@ -13,7 +13,7 @@ namespace ITI.WhatsLearn.Entities
         public string Password { get; set; }
         public int Age { get; set; }
         public string Adress { get; set; }
-        public char Gender { get; set; }
+        public int Gender { get; set; }
         public string Phone { get; set; }
         public bool IsActive { get; set; } = true;
         public string Image { get; set; }

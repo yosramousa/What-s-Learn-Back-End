@@ -18,6 +18,7 @@ namespace ITI.WhatsLearn.ViewModel
         [Required]
         [MaxLength(250)]
         public  string Name { get; set; }
+        public string Icon { get; set; } = " ";
 
         public  string Parent { get; set; }
         public  List<string> Childs { get; set; }

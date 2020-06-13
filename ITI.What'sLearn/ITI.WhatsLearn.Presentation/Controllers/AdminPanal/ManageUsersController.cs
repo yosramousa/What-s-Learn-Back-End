@@ -130,7 +130,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                         Adress = user.Adress,
                         Age = user.Age,
                         Education = user.Education,
-                        Gender = user.Gender,
+                        Gender = user.Gender == 1 ? "Male" : "Female",
+
                         Phone = user.Phone,
                         Image = user.Image,
                         Tracks = user.Tracks.Count() > 0 ? user.Tracks.Select(i => new UserTracksViewModel
@@ -138,7 +139,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                             ID = i.TrackID,
                             TrackName = i.Track.Name,
                             FinshedCourses = i.FinishedCourses.Count() > 0 ? i.FinishedCourses.Select(x => x.course.Name).ToList() : null,
-                            Progress = i.FinishedCourses.Count() > 0 ? Math.Ceiling( ((float)i.FinishedCourses.Count() / i.Track.Courses.Count()) * 100 ): 0,
+                            Progress = i.FinishedCourses.Count() > 0 ? Math.Ceiling(((float)i.FinishedCourses.Count() / i.Track.Courses.Count()) * 100) : 0,
                             CuurentCourse = i.Track.Courses.Count() > 0 ? i.Track.Courses.Skip(i.FinishedCourses.Count()).First().Course.Name : null,
                             FutureCourses = i.FinishedCourses.Count() > 0 ? i.Track.Courses.Skip(i.FinishedCourses.Count() + 1).Select(x => x.Course.Name).ToList() : i.Track.Courses.Select(x => x.Course.Name).Skip(1).ToList(),
                         }).ToList() : null

@@ -23,7 +23,7 @@ namespace ITI.WhatsLearn.ViewModel
         [Required]
         [MaxLength(1000)]
         public string Text { get; set; }
-        [Required]
+      //  [Required]
         public DateTime SendTime { get; set; } = DateTime.Now;
 
         public bool IsDeleted { get; set; } = false;

@@ -40,6 +40,8 @@ namespace ITI.WhatsLearn.ViewModel
                 TrackDocuments = editModel.Documents.Select(i => i.ToModel()).ToList(),
                 TrackVedios = editModel.Vedios.Select(i => i.ToModel()).ToList(),
                 SubCategoryID = editModel.ParentID,
+                Icon = editModel.Icon
+
 
             };
         }

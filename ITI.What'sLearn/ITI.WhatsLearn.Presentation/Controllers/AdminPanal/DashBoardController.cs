@@ -20,12 +20,15 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         TrackService trackService;
         UserTrackService userTrackService;
         AdminService adminService;
+        private readonly ConfigurationService ConfigService;
+
         public DashBoardController(
             MainCategoryService _mainCategoryService,
             UserService  _userService,
             TrackService _trackService,
             UserTrackService _userTrackService,
-                    AdminService _adminService
+                    AdminService _adminService,
+                    ConfigurationService _configService
 
             )
         {
@@ -34,6 +37,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             trackService = _trackService;
             userTrackService = _userTrackService;
             adminService = _adminService;
+            ConfigService = _configService;
         }
         [HttpGet]
 
@@ -51,7 +55,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             Dictionary<string, int> result = new Dictionary<string, int>();
             result.Add("MainCategoryCount", mainCategoryService.Count());
-            result.Add("AdminCount", adminService.Count());
+            result.Add("VisitorCount", ConfigService.Count("VisitorCount"));
             result.Add("trackCount", trackService.Count());
             result.Add("UserCount", userService.Count());
 

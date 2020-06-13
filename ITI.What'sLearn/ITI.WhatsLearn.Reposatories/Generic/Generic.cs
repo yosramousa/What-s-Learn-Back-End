@@ -26,8 +26,8 @@ namespace ITI.WhatsLearn.Reposatories
         }
         public T Update(T T)
         {
-            //if (!dbSet.Local.Any(i => i.ID == T.ID))
-            //    dbSet.Attach(T);
+            if (!dbSet.Local.Any(i => i.ID == T.ID))
+                dbSet.Attach(T);
 
             Context.Entry(T).State = EntityState.Modified;
             return T;

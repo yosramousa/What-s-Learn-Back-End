@@ -17,9 +17,12 @@ namespace ITI.WhatsLearn.ViewModel
                 ID = model.ID,
                 TrackName = model.Track.Name,
                 UserName = model.User.Name,
-                Date = model.Date,
+                Date = model.EnrollDate,
                 IsApproveed = model.IsApproveed,
-                UserCount = model.Track.Users.Count
+                UserCount = model.Track.Users.Count,
+                TrackID=model.TrackID,
+                UserID=model.UserID
+,
             };
         }
         public static UserTrack ToModel(this UserTrackEditViewModel editModel)
@@ -29,8 +32,9 @@ namespace ITI.WhatsLearn.ViewModel
                 ID = editModel.ID,
                 TrackID = editModel.TrackID,
                 UserID = editModel.UserID,
-                Date = editModel.Date,
-                IsApproveed = editModel.IsApproveed
+                EnrollDate = editModel.Date,
+                IsApproveed = editModel.IsApproveed,
+                FinshedDate=editModel.FinshDate               
             };
         }
         public static UserTrackEditViewModel ToEditableViewModel(this UserTrack model)
@@ -40,7 +44,7 @@ namespace ITI.WhatsLearn.ViewModel
                 ID = model.ID,
                 UserID = model.UserID,
                 TrackID = model.TrackID,
-                Date = model.Date,
+                Date = model.EnrollDate,
                 IsApproveed = model.IsApproveed,
                 UserCount = model.Track?.Users?.Count
 

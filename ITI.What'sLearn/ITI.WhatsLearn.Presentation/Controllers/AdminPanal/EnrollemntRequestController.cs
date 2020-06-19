@@ -9,6 +9,8 @@ using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearn.Entities;
 using ITI.WhatsLearn.Presentation.Filters;
 using System.Threading;
+using Microsoft.AspNet.SignalR;
+using ITI.WhatsLearn.Presentation.Hubs;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
@@ -16,13 +18,16 @@ namespace ITI.WhatsLearn.Presentation.Controllers
     public class EnrollemntRequestController : ApiController
     {
         UserTrackService userTrackService;
+        private readonly IHubContext Hub;
+
         public EnrollemntRequestController(UserTrackService _userTrackService)
         {
             userTrackService = _userTrackService;
+            Hub = GlobalHost.ConnectionManager.GetHubContext<WhatsLearnHub>();
 
         }
         [HttpGet]
-        public ResultViewModel<IEnumerable<EnrollemntRequestViewModel>> GetList(int PageIndex, int PageSize)
+        public ResultViewModel<IEnumerable<EnrollemntRequestViewModel>> GetList()
         {
 
             ResultViewModel<IEnumerable<EnrollemntRequestViewModel>> result
@@ -30,7 +35,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
             try
             {
-                var tracksRequest = userTrackService.GetEnrollRequest(pageIndex: PageIndex, pageSize: PageSize);
+                var tracksRequest = userTrackService.GetEnrollRequest();
                 result.Successed = true;
                 result.Count = userTrackService.Count();
 
@@ -66,12 +71,12 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 }
                 if (SerachOption == 1)//By Name
                 {
-                    enrollRequests = userTrackService.SearchByName(out count,SerachText, pageIndex: PageIndex, pageSize: PageSize);
+                    enrollRequests = userTrackService.SearchByName(out count, SerachText, pageIndex: PageIndex, pageSize: PageSize);
 
                 }
                 else if (SerachOption == 2)//BY TrackName
                 {
-                    enrollRequests = userTrackService.SearchByTrackName(out count,SerachText, pageIndex: PageIndex, pageSize: PageSize);
+                    enrollRequests = userTrackService.SearchByTrackName(out count, SerachText, pageIndex: PageIndex, pageSize: PageSize);
                 }
 
                 var EnrollRequests = enrollRequests.Select(i => new EnrollemntRequestViewModel
@@ -99,8 +104,16 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             try
             {
-               
+
+
                 userTrackService.Approve(id);
+
+                int UserID = userTrackService.GetByID(id).UserID;
+                string TrackName = userTrackService.GetByID(id).Track.Name;
+                Hub.Clients.All.GetApproval(new { UserID, TrackName });
+                Hub.Clients.All.UpdatePieChart(userTrackService.GetPieChartData());
+
+
                 return "Track Approved Sucessfully";
             }
             catch (Exception e)
@@ -111,18 +124,27 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         }
 
         [HttpGet]
-        public string Cancel (int id)
+        public string Cancel(int id)
         {
             try
             {
+
+                int UserID = userTrackService.GetByID(id).UserID;
+                string TrackName = userTrackService.GetByID(id).Track.Name;
+
                 userTrackService.Remove(id);
+                Hub.Clients.All.GetNotApproved(new { UserID, TrackName });
+
                 return "Track Canceld Sucessfully";
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return "Error";
 
             }
         }
+
     }
+
+
 }

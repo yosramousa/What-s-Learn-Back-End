@@ -15,3 +15,7 @@ F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLea
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Release\ITI.WhatsLearnServices.csproj.CopyComplete
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Release\ITI.WhatsLearnServices.dll
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Release\ITI.WhatsLearnServices.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\ITI.WhatsLearnServices.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\EntityFramework.SqlServer.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\ITI.WhatsLearn.ViewModel.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Release\EntityFramework.SqlServer.xml

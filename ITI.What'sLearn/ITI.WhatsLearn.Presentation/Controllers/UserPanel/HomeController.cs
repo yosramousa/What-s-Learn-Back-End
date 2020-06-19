@@ -1,7 +1,10 @@
 ﻿using BroadCaster.Helpers;
+using ITI.WhatsLearn.Presentation.Filters;
+using ITI.WhatsLearn.Presentation.Hubs;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
+using Microsoft.AspNet.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +14,7 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
+
     public class HomeController : ApiController
     {
         private readonly MainCategoryService mainCategoryService;
@@ -18,6 +22,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         private readonly TrackService trackService;
         private readonly CourseService courseService;
         private readonly UserTrackService userTrackService;
+        private readonly UserService userService;
+        private readonly IHubContext Hub;
 
         public HomeController
             (
@@ -25,7 +31,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
              SubCategoryService _subCategoryService,
              TrackService _trackService,
              CourseService _courseService,
-             UserTrackService _userTrackService
+             UserTrackService _userTrackService,
+             UserService _userService
 
             )
         {
@@ -34,6 +41,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             trackService = _trackService;
             courseService = _courseService;
             userTrackService = _userTrackService;
+            userService = _userService;
+            Hub = GlobalHost.ConnectionManager.GetHubContext<WhatsLearnHub>();
         }
         [HttpGet]
 
@@ -45,7 +54,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
             try
             {
-                result.Data = mainCategoryService.GetAll(out count,0,PageIndex, PageSize).Select(i => i.ToHomeViewmodel());
+                result.Data = mainCategoryService.GetAll(out count, 0, PageIndex, PageSize).Select(i => i.ToHomeViewmodel());
                 result.Successed = true;
                 result.Count = count;
             }
@@ -53,7 +62,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             {
                 result.Successed = false;
                 result.Message = "Something Went Wrong !!";
-                
+
             }
             return result;
         }
@@ -71,15 +80,15 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 {
                     case 1:
                         details.LevelDetails = mainCategoryService.GetByID(ID);
-                        details.Childs = subCategoryService.GetByParentID(out count,ID, PageIndex, PageSize).Select(i => i.ToHomeViewmodel()).ToList();
+                        details.Childs = subCategoryService.GetByParentID(out count, ID, PageIndex, PageSize).Select(i => i.ToHomeViewmodel()).ToList();
                         break;
                     case 2:
                         details.LevelDetails = subCategoryService.GetByID(ID);
-                        details.Childs = trackService.GetByParentID(out count,ID, PageIndex, PageSize).Select(i => i.ToHomeViewmodel()).ToList();
+                        details.Childs = trackService.GetByParentID(out count, ID, PageIndex, PageSize).Select(i => i.ToHomeViewmodel()).ToList();
                         break;
                     case 3:
                         details.LevelDetails = trackService.GetByID(ID).ToViewModel();
-                        details.Childs = courseService.GetByParentID(out count,ID, PageIndex, PageSize).Select(i => i.ToHomeViewmodel()).ToList();
+                        details.Childs = courseService.GetByParentID(out count, ID, PageIndex, PageSize).Select(i => i.ToHomeViewmodel()).ToList();
                         //details.Childs = trackService.GetByID(ID).Courses.Select(i => i.Course.ToViewModel().ToHomeViewmodel()).ToList();
                         break;
                 }
@@ -96,12 +105,12 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         }
 
         [HttpGet]
-        public ResultViewModel<IEnumerable<LevelSerachViewModel>> GetList(int level = 1, int ParentID =1)
+        public ResultViewModel<IEnumerable<LevelSerachViewModel>> GetList(int level = 1, int ParentID = 1)
         {
             ResultViewModel<IEnumerable<LevelSerachViewModel>> result
           = new ResultViewModel<IEnumerable<LevelSerachViewModel>>();
 
-            
+
             try
             {
                 if (level == 1)
@@ -133,6 +142,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
         }
         [HttpGet]
+        [AUTHORIZE(Roles = "User")]
+
         public ResultViewModel<UserTrackEditViewModel> Enroll(int TrackID)
         {
 
@@ -141,30 +152,54 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             {
                 string Token = Request.Headers.Authorization?
                        .Parameter;
-
                 Dictionary<string, string>
                                 cliams = SecurityHelper.Validate(Token);
                 int UserID = int.Parse(cliams.First(i => i.Key == "ID").Value);
 
-                if (userTrackService.GetUserTracksCount(UserID) < 2 && userTrackService.CheckToEnroll(UserID,TrackID))
+                if (userTrackService.GetUserTracksCount(UserID) > 2)
                 {
-                    
+                    result.Successed = false;
+                    result.Message = "You exceeded the maximum number of uncomplete tracks ";
+                }
+
+                else if (!userTrackService.CheckToEnroll(UserID, TrackID))
+                {
+
+                    result.Successed = false;
+                    result.Message = "You Already Enrolled in this Track";
+
+                }
+
+                else
+
+                {
+
+
                     UserTrackEditViewModel userTrack = userTrackService.Add(new UserTrackEditViewModel()
                     {
                         ID = 0,
                         TrackID = TrackID,
                         UserID = UserID,
                         Date = DateTime.Now,
+                        FinshDate = DateTime.Now.AddMonths(1),
                         IsApproveed = false
                     });
+                    result.Message = "Enrollment Request Sent successfully";
                     result.Successed = true;
                     result.Data = userTrack;
-                }
-                else
-                {
 
-                    result.Successed = false;
-                    result.Message = "User exceeded the maximum number of incomplete tracks ";
+                    var track = trackService.GetByID(TrackID);
+                    var user = userService.GetByID(UserID);
+
+                    var returnedData = new
+                    {
+                        TrackName = track.Name,
+                        Date = DateTime.Now,
+                        UserName = user.Name,
+                        UserID = user.ID
+                    };
+                    Hub.Clients.All.GetEnrolledTrack(returnedData);
+
 
                 }
 
@@ -192,10 +227,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 result.Data = mainCategoryService.Get().Select(i => i.ToMenuVewModel()).ToList();
                 result.Successed = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 result.Successed = false;
-               
+
             }
             return result;
 

@@ -1,4 +1,5 @@
 ﻿using ITI.WhatsLearn.Entities;
+using ITI.WhatsLearn.Presentation.Filters;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
@@ -11,6 +12,8 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
+    [AUTHORIZE(Roles = "User,Admin")]
+
     public class SubCategoryController : ApiController
     {
         private readonly SubCategoryService subCategoryService;

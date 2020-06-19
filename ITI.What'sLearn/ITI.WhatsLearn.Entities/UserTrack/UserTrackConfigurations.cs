@@ -14,23 +14,22 @@ namespace ITI.WhatsLearn.Entities
         public UserTrackConfigurations()
         {
             ToTable("UserTrack");
-            Property(i => i.Date)
-              .HasColumnName("Date")
+            Property(i => i.EnrollDate)
+              .HasColumnName("EnrollDate")
               .IsRequired();
+
+            Property(i => i.FinshedDate)
+             .HasColumnName("FinshedDate");
+            
+
             Property(i => i.IsApproveed)
              .HasColumnName("IsApproveed")
              .IsRequired();
             Property(i=>i.UserID)
-                .HasColumnAnnotation(IndexAnnotation.AnnotationName,
-                         new IndexAnnotation(
-                     new IndexAttribute("IX_UserTrack",1) { IsUnique = true }))
                 .HasColumnName("UserID")
                 .IsRequired();
 
             Property(i => i.TrackID)
-                .HasColumnAnnotation(IndexAnnotation.AnnotationName,
-                         new IndexAnnotation(
-                     new IndexAttribute("IX_UserTrack", 2) { IsUnique = true }))
                 .HasColumnName("TrackID")
                 .IsRequired();
 

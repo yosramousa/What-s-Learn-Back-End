@@ -1,5 +1,4 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -54,12 +53,14 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -74,6 +75,9 @@
     <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.4.1.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
@@ -86,6 +90,9 @@
     <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
@@ -97,8 +104,13 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -109,8 +121,26 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Http.Owin, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.7\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -133,52 +163,477 @@
     <Reference Include="System.Web.Http.WebHost">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Release\roslyn\csc.exe" />
-    <Content Include="bin\Release\roslyn\csi.exe" />
-    <Content Include="bin\Release\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
-    <Content Include="bin\Release\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
-    <Content Include="bin\Release\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
-    <Content Include="bin\Release\roslyn\Microsoft.CodeAnalysis.dll" />
-    <Content Include="bin\Release\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
-    <Content Include="bin\Release\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
-    <Content Include="bin\Release\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
-    <Content Include="bin\Release\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
-    <Content Include="bin\Release\roslyn\Microsoft.Win32.Primitives.dll" />
-    <Content Include="bin\Release\roslyn\System.AppContext.dll" />
-    <Content Include="bin\Release\roslyn\System.Collections.Immutable.dll" />
-    <Content Include="bin\Release\roslyn\System.Console.dll" />
-    <Content Include="bin\Release\roslyn\System.Diagnostics.DiagnosticSource.dll" />
-    <Content Include="bin\Release\roslyn\System.Diagnostics.FileVersionInfo.dll" />
-    <Content Include="bin\Release\roslyn\System.Diagnostics.StackTrace.dll" />
-    <Content Include="bin\Release\roslyn\System.Globalization.Calendars.dll" />
-    <Content Include="bin\Release\roslyn\System.IO.Compression.dll" />
-    <Content Include="bin\Release\roslyn\System.IO.Compression.ZipFile.dll" />
-    <Content Include="bin\Release\roslyn\System.IO.FileSystem.dll" />
-    <Content Include="bin\Release\roslyn\System.IO.FileSystem.Primitives.dll" />
-    <Content Include="bin\Release\roslyn\System.Net.Http.dll" />
-    <Content Include="bin\Release\roslyn\System.Net.Sockets.dll" />
-    <Content Include="bin\Release\roslyn\System.Reflection.Metadata.dll" />
-    <Content Include="bin\Release\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll" />
-    <Content Include="bin\Release\roslyn\System.Security.Cryptography.Algorithms.dll" />
-    <Content Include="bin\Release\roslyn\System.Security.Cryptography.Encoding.dll" />
-    <Content Include="bin\Release\roslyn\System.Security.Cryptography.Primitives.dll" />
-    <Content Include="bin\Release\roslyn\System.Security.Cryptography.X509Certificates.dll" />
-    <Content Include="bin\Release\roslyn\System.Text.Encoding.CodePages.dll" />
-    <Content Include="bin\Release\roslyn\System.Threading.Tasks.Extensions.dll" />
-    <Content Include="bin\Release\roslyn\System.ValueTuple.dll" />
-    <Content Include="bin\Release\roslyn\System.Xml.ReaderWriter.dll" />
-    <Content Include="bin\Release\roslyn\System.Xml.XmlDocument.dll" />
-    <Content Include="bin\Release\roslyn\System.Xml.XPath.dll" />
-    <Content Include="bin\Release\roslyn\System.Xml.XPath.XDocument.dll" />
-    <Content Include="bin\Release\roslyn\vbc.exe" />
-    <Content Include="bin\Release\roslyn\VBCSCompiler.exe" />
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="assets\Imgs\123.jpg" />
+    <Content Include="assets\Imgs\7-Benefits-That-Highlight-The-Importance-Of-Soft-Skills-In-The-Workplace.png" />
+    <Content Include="assets\Imgs\css.png" />
+    <Content Include="assets\Imgs\HTMl.png" />
+    <Content Include="assets\Imgs\img-message.png" />
+    <Content Include="assets\Imgs\Is-Computer-science-hard-1024x574.jpg" />
+    <Content Include="assets\Imgs\javascript.png" />
+    <Content Include="assets\Imgs\kisspng-node-js-javascript-web-application-express-js-comp-5ae0f84e2a4242.1423638015246930701731.jpg" />
+    <Content Include="assets\Imgs\Logo\logo1.png" />
+    <Content Include="assets\Imgs\Logo\logo1png.png" />
+    <Content Include="assets\Imgs\Logo\logo2.png" />
+    <Content Include="assets\Imgs\Logo\logo3.png" />
+    <Content Include="assets\Imgs\Logo\logo4.png" />
+    <Content Include="assets\Imgs\Logo\logo5.png" />
+    <Content Include="assets\Imgs\Logo\logopng.png" />
+    <Content Include="assets\Imgs\main-qimg-f7c6c46d9ada84db77d452b3d65fdab5.png" />
+    <Content Include="assets\Imgs\pic.png" />
+    <Content Include="assets\Imgs\sara_n.jpg" />
+    <Content Include="assets\Imgs\Screenshot_3.jpg" />
+    <Content Include="assets\Imgs\shimaaedit_n.png" />
+    <Content Include="assets\Imgs\slider1.jpg" />
+    <Content Include="assets\Imgs\slider2.jpg" />
+    <Content Include="assets\Imgs\slider3.jpg" />
+    <Content Include="assets\Imgs\software.jpg" />
+    <Content Include="assets\Imgs\teamwork.jpg" />
+    <Content Include="assets\Imgs\teamwork2.jpg" />
+    <Content Include="assets\Imgs\teamwork3.jpg" />
+    <Content Include="assets\Imgs\yousraedit_n.png" />
     <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.1.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.1.min.js" />
+    <Content Include="Uploads\123.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_00602218-ecdc-4024-9523-419c1a867372.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_014e2de2-812d-448f-a2b6-d2c43420c42b.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_03f6f806-1055-424f-8768-d73b6b30ec43.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_06670714-f5a9-475f-92a8-e47e6e4131e8.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_0944affc-794a-4c4f-a6cd-ff40d144cf5c.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_14dc9d45-ce6c-491f-b98a-07261dc7af34.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_1a132f6c-5118-4089-b2f9-1646d950af3f.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_1cd9b9f9-30af-4677-b878-fbe5241790ba.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_1d968a68-f1ec-4e6b-918d-e290ef06d719.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_1f79ffea-b624-4086-ab80-27d14e3ea039.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_204cc96a-3171-4ffb-b725-1b336e292827.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_2076a249-67b1-474e-b8ce-f49e55409327.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_27185c71-7550-446a-b448-c1852f0a2693.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_289a14b0-8b90-4c83-bc78-d71b64630280.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_28cc8b64-c188-42d9-9788-ac44328accd6.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_398c8f25-6dad-4deb-83af-2938fd29496b.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_3a77f66c-ff54-4c3a-8239-56ec6e29bf1e.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_3b2c21d7-615f-4af4-966e-8cb4391aa6a4.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_4135da88-7c7d-4e97-ba61-d60f7810ee75.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_425f8c62-3abf-428a-ad1d-438687c3c1f2.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_444d4b0d-ee3b-42cb-ba52-8fdc128c7f0e.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_46ab0c06-6bfe-4da9-bede-1ee7ebae94cf.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_4d25a291-3ebf-4d4c-a937-749b7641d712.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_540cd43e-d977-492f-ba25-a99411e3ec43.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_5827a472-10c5-4786-8555-8459dc3c71b8.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_5a082aee-dd82-49d1-93aa-d1317c12505d.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_5bf7fd7f-a8cd-4324-a9aa-ea3cabe61ab5.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_61be0448-e0c6-49f9-8b8c-84a251fa95ed.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_63bf1a49-4b0c-4f65-b947-bdc23e78e01f.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_65dce8de-53ea-479b-bfa2-cc51341facdb.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_685adfdb-7a3e-434d-8552-397613f6a99d.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_6ad228d7-15bf-4b4f-9c60-ae844f619317.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_6ebc97fc-5901-4722-bb3b-209799c2dfc8.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_6f76842a-9af8-42ac-99eb-a2cda5093077.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_709c048a-e573-458a-b898-f0f6688ca4e0.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_72d84101-d9b0-4137-9a84-f7ac383896bb.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_760f8665-2d4f-4e11-aadd-4a379432e7bb.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_7649488d-9263-4072-8722-cff10def91f7.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_7723be8a-9ed7-4269-8c32-5ed8268f6201.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_792a4f83-5f98-4b46-94be-e7f1927c9f99.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_79d4c68f-bda8-4060-869f-5e663e0892ad.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_7d1184d8-7fc1-43d0-9b9a-b75652934320.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_831ffd01-32c1-4e0a-9687-c1e9f72e963c.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_84b355f9-3dbc-46f6-ab57-2df6b2bb64ec.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_872d0c46-3659-4788-8540-0c23c6c9dc19.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_88090863-fc33-4896-b211-909f175e951b.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_886969b2-d5ca-4813-ae48-6aaed905c2c8.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_8a456f08-f653-4f95-b42a-0d176bbd4251.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_8a7488f8-de90-402c-8de4-a74338a0da21.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_8ce8a3cb-b5fb-46f9-b965-1a645ae2b77a.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_92fd0516-c04c-438d-b59b-b75ab7396138.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_938568e0-1ef5-4bec-a927-de7b60ff110c.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_93dbaeb0-3de4-4dbb-a5b3-ff9a1ba9908a.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_94dbbe0e-147c-40ed-b059-8b593883d627.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_96740069-2920-4e39-a4c5-29194648768e.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_9b774804-94ee-4852-b9e8-08385b1da9f7.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_9cfddc23-009f-41b0-9862-ecface703942.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_9e8c3d7f-897d-44af-b345-a6a4ee3d2801.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_ab37235a-e504-478b-bc07-19d2bf21c9c1.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_ab904324-d28c-4757-b6d7-e4a9039af1ff.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_ad1579d9-a38b-4c1c-8c56-5d6731fb3c17.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_aebe3350-8d37-4419-a1e6-1201b8b92205.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_af7e1dff-ac0b-496b-8f75-511158c12540.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_b4ca4573-d5bc-4df4-8752-9d1f180ee769.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_b5f6fe3c-a017-40c9-8b66-556897339563.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_bb93f8fd-3543-4ad1-a62d-40fc8ff643f2.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_c008706d-e60d-4ec7-b4f8-753b696a853a.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_c43e6145-78e4-48dc-9119-bd9ce41ba3fc.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_c85d8939-1497-4904-8c14-e2c552c207c7.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_cac61716-100f-4987-ad86-1e08a4a6ab05.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_cb797a2f-e778-4fe9-8ca4-fdae588faa28.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_cfabf519-34be-40c8-89c0-1988a549f82b.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_d8f83287-ce87-4b3e-ac0f-1508d0e9ecc0.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_dc2929ed-683a-4ee1-90c6-8421af84654c.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_dc609243-ef5c-448d-a185-d8aa1a899209.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_e1b7074e-215d-4423-8958-c1cc3bf03465.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_e63fd64a-e8a3-4d77-86f0-9d48e42a1040.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_eee45c17-47dc-4cbd-90f5-2f60030b2c29.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_f3bc5263-4fdb-46aa-8b0b-a36f6d0b0493.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_f608a877-c3bd-4291-93a2-d88caa66629f.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_f6259f9e-554a-40e8-a70a-51cd065db284.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_fdcdaee1-d349-45d3-8a19-030d44d16974.jpg" />
+    <Content Include="Uploads\1457639c8fd1074_fddbb5d6-3572-46d1-a53c-76afa598fd76.jpg" />
+    <Content Include="Uploads\7-Benefits-That-Highlight-The-Importance-Of-Soft-Skills-In-The-Workplace.png" />
+    <Content Include="Uploads\asd_0311cd63-0915-4484-94fb-78351eec2b64.png" />
+    <Content Include="Uploads\asd_0545ea45-f369-4385-83ac-3f04630f9503.png" />
+    <Content Include="Uploads\asd_0627f875-46bb-43b4-8e29-cd7d8d3d5636.png" />
+    <Content Include="Uploads\asd_06d4872a-6ca7-410d-855d-119435d68e78.png" />
+    <Content Include="Uploads\asd_0b620dec-4c1c-475e-accb-45f9eaeb7718.png" />
+    <Content Include="Uploads\asd_0ea71ce8-88b6-4354-b45d-6230341b4001.png" />
+    <Content Include="Uploads\asd_10503997-a444-4579-beee-1f413c195ef0.png" />
+    <Content Include="Uploads\asd_10720bd7-1ab0-435b-9d9e-f9499016dc59.png" />
+    <Content Include="Uploads\asd_134114e3-2ef6-4e27-9be0-2ef71c901939.png" />
+    <Content Include="Uploads\asd_14aaa95e-0706-4b95-92d4-bb4122ba8bb5.png" />
+    <Content Include="Uploads\asd_1e2e6f78-db71-47a9-8a07-51f87d8f152d.png" />
+    <Content Include="Uploads\asd_24117cac-a0a3-4fe9-b51f-2b2404f22482.png" />
+    <Content Include="Uploads\asd_2548899a-5e0a-46c7-9ffd-f4efffd421c8.png" />
+    <Content Include="Uploads\asd_267f6e84-674e-4c33-b964-abc10d097e4a.png" />
+    <Content Include="Uploads\asd_28520b7f-b9c2-46f1-b9ee-314be9f2b19e.png" />
+    <Content Include="Uploads\asd_2a55cffe-c61b-497a-952c-eb9e86da8376.png" />
+    <Content Include="Uploads\asd_2bf19057-bc52-48d6-b7df-8e5b124ea1e8.png" />
+    <Content Include="Uploads\asd_34751107-8c05-4b5e-92e4-d84557c961bb.png" />
+    <Content Include="Uploads\asd_3ae357e1-b61a-4096-966d-a9358b77a226.png" />
+    <Content Include="Uploads\asd_3c2fedef-7e2f-44ef-9dd8-cbacbc03d8b5.png" />
+    <Content Include="Uploads\asd_3dbcd3d5-8c20-4652-87f6-a2a01893891b.png" />
+    <Content Include="Uploads\asd_3ebfa835-fe26-4fce-9506-a8e5d48cf130.png" />
+    <Content Include="Uploads\asd_406912e0-f8b8-444f-aacc-02c22637e1d5.png" />
+    <Content Include="Uploads\asd_42b762f6-3c4d-4766-b2f7-2d6cd72ef20f.png" />
+    <Content Include="Uploads\asd_42eaedfe-2737-40a8-82e0-6184f6dd7dde.png" />
+    <Content Include="Uploads\asd_48866bc9-f18c-40b7-82db-093f66bc2167.png" />
+    <Content Include="Uploads\asd_49d22444-e213-4f73-8666-cae91f141e41.png" />
+    <Content Include="Uploads\asd_4c1f9179-1467-40e3-bfe7-33ee879d963f.png" />
+    <Content Include="Uploads\asd_4e584876-0680-49d7-969f-7c8436cb3c62.png" />
+    <Content Include="Uploads\asd_510ab110-1ab7-4cd5-b9d7-d9e4809e0a45.png" />
+    <Content Include="Uploads\asd_5180af0e-8cac-4c6b-a561-cca45f7f4601.png" />
+    <Content Include="Uploads\asd_51bf906a-4349-45e1-8e14-b5bada685a71.png" />
+    <Content Include="Uploads\asd_534f6368-5be5-4226-ad0e-0daa29b67895.png" />
+    <Content Include="Uploads\asd_583b7a53-627e-4a69-952f-1eab975108dd.png" />
+    <Content Include="Uploads\asd_58e57566-3113-463e-9190-56ad6963cbf9.png" />
+    <Content Include="Uploads\asd_5b465902-45f0-40a7-9dd0-cb16a53d17f8.png" />
+    <Content Include="Uploads\asd_5e331923-8185-4de6-b7eb-18e3dd6a3f80.png" />
+    <Content Include="Uploads\asd_6270e9ea-8948-41b4-bec0-03705da083ac.png" />
+    <Content Include="Uploads\asd_6d01fef0-3e9a-4b73-a8a7-f41296f191b1.png" />
+    <Content Include="Uploads\asd_6d68ea07-728a-4a3f-a949-0c09097c441c.png" />
+    <Content Include="Uploads\asd_6f0c598b-1ad4-4265-b56c-6176963f289d.png" />
+    <Content Include="Uploads\asd_709d2b09-111e-4b70-bed1-76ff598be314.png" />
+    <Content Include="Uploads\asd_7c5564da-3a65-4a48-b72b-67c9b6a13c06.png" />
+    <Content Include="Uploads\asd_7e2c880c-e919-40e2-bfaa-9721bc4180e6.png" />
+    <Content Include="Uploads\asd_7e6dc7ae-5787-4ad4-a1aa-b8030b15dfcf.png" />
+    <Content Include="Uploads\asd_7ff8ddb0-3fce-4d9f-a0a6-ce6fac57222f.png" />
+    <Content Include="Uploads\asd_806e2010-a9c4-4687-88f4-96f4825c58fc.png" />
+    <Content Include="Uploads\asd_84754383-a793-43e0-8030-e611305e315e.png" />
+    <Content Include="Uploads\asd_8ab88760-263a-4613-bc00-3b5a17ec08d1.png" />
+    <Content Include="Uploads\asd_8b3c5c09-3896-46e3-8ba3-9ed0187a8c24.png" />
+    <Content Include="Uploads\asd_8c88e023-5266-4c57-989e-8f180a32446f.png" />
+    <Content Include="Uploads\asd_8d2436c6-bdd4-43fd-8a73-c35da3ca6b35.png" />
+    <Content Include="Uploads\asd_8f0f100f-78fa-490d-b80f-f03f9cc38d0c.png" />
+    <Content Include="Uploads\asd_8fcfeb63-0e4f-4cf5-ae67-c133bd6d636b.png" />
+    <Content Include="Uploads\asd_983fec03-35cc-4258-b6a9-0095722a1cad.png" />
+    <Content Include="Uploads\asd_9c35fe25-f873-434b-b205-bd05f13a4a4c.png" />
+    <Content Include="Uploads\asd_a17f7f24-bf5e-4ecd-a080-1bbf44fefcb9.png" />
+    <Content Include="Uploads\asd_a20992bb-c5c5-459c-82d8-d793ee17b79b.png" />
+    <Content Include="Uploads\asd_a5f71479-8549-4ad0-9520-eb78d1cf0944.png" />
+    <Content Include="Uploads\asd_a64cf6cb-7a8d-46ef-973b-bdbc4d7b220c.png" />
+    <Content Include="Uploads\asd_a966da81-32ff-43a3-a304-3ff981a420bb.png" />
+    <Content Include="Uploads\asd_ad172fef-3392-450f-a79d-20eaebd88767.png" />
+    <Content Include="Uploads\asd_ae3f18d6-1c82-4a08-a261-a19101a6f71a.png" />
+    <Content Include="Uploads\asd_aff91430-6678-4209-adbd-87e78d473d64.png" />
+    <Content Include="Uploads\asd_aff99e31-8b05-4dad-a2d4-9280acc88f71.png" />
+    <Content Include="Uploads\asd_b68d6e47-d07f-4681-a962-63f575a05157.png" />
+    <Content Include="Uploads\asd_b92c333d-fd7a-4f23-8f27-c55de11d2750.png" />
+    <Content Include="Uploads\asd_b96594d9-3a52-40bb-a4c2-5777a459468c.png" />
+    <Content Include="Uploads\asd_bb634002-502a-4b22-bdee-f5fe5bc17cb5.png" />
+    <Content Include="Uploads\asd_bc8c3eb9-4b34-41c4-8318-f0b47bc483b3.png" />
+    <Content Include="Uploads\asd_c0ad0715-f7d6-471b-8aa1-2992bd69dc26.png" />
+    <Content Include="Uploads\asd_c1da79e7-153d-4d10-8291-be385d1ebaf8.png" />
+    <Content Include="Uploads\asd_c2eeb78b-4d37-4a9c-a5c3-16fb3a8f885f.png" />
+    <Content Include="Uploads\asd_c725eb1e-7a6a-4b18-b906-2f9327424251.png" />
+    <Content Include="Uploads\asd_c7d264b9-7f72-4d47-b18a-063d680ed8d5.png" />
+    <Content Include="Uploads\asd_caffaedb-862f-479a-b1d3-01b9c5b3b691.png" />
+    <Content Include="Uploads\asd_d125bed6-4d46-4a96-82c4-8b3d57d2c937.png" />
+    <Content Include="Uploads\asd_d23ef4e9-e9ba-4cb8-ba89-11ca191d19f9.png" />
+    <Content Include="Uploads\asd_d3aa88d2-3f9f-41cf-b949-287c509d3a85.png" />
+    <Content Include="Uploads\asd_d46c63fe-9305-44ce-8ad0-c4a797c735d3.png" />
+    <Content Include="Uploads\asd_d48c200f-c24e-4992-9330-010f39947003.png" />
+    <Content Include="Uploads\asd_d7a728f1-0391-4ac8-a157-d5c884838888.png" />
+    <Content Include="Uploads\asd_d84a0de8-f995-4e70-8fc3-82eda0952f07.png" />
+    <Content Include="Uploads\asd_dd8d8fb7-8732-4c52-911e-410f543dc895.png" />
+    <Content Include="Uploads\asd_dd8fe637-a7b2-4322-b0ce-dd3b9504e2c0.png" />
+    <Content Include="Uploads\asd_e2c1956f-6577-4926-ad87-789aca7e913d.png" />
+    <Content Include="Uploads\asd_e3868630-91d8-436b-935f-eae7f3e73c15.png" />
+    <Content Include="Uploads\asd_e49ad395-e9d1-43e7-8b10-663c14668a0a.png" />
+    <Content Include="Uploads\asd_e8a18214-0b04-4b5b-872f-bb12e76ac156.png" />
+    <Content Include="Uploads\asd_eb9a1c49-9f30-4512-9cc0-564968c83286.png" />
+    <Content Include="Uploads\asd_ee1ddb5c-7ff6-4fff-b6e6-402d412a10a3.png" />
+    <Content Include="Uploads\asd_eeed0a82-06c9-4483-aad1-29eaaf80ad7d.png" />
+    <Content Include="Uploads\asd_f4d13424-6ac3-4dca-8769-a83962646b33.png" />
+    <Content Include="Uploads\asd_f704d735-3a6d-452f-a8d4-8d078e8b86c1.png" />
+    <Content Include="Uploads\asd_f76bc5fc-cca8-4209-bf34-f7c876bfc839.png" />
+    <Content Include="Uploads\asd_f7a06cc0-ad03-4dc7-ad75-d96ca6c012e9.png" />
+    <Content Include="Uploads\backend_1588b5b5-d178-48c5-a283-7adffcac458e.png" />
+    <Content Include="Uploads\backend_7525b844-136e-428d-9395-b19c192ec83e.png" />
+    <Content Include="Uploads\backend_b9029b2f-677e-4856-b0e4-0d771ddbfeed.png" />
+    <Content Include="Uploads\css.png" />
+    <Content Include="Uploads\HTMl.png" />
+    <Content Include="Uploads\Html5Form %281%29_0d06037b-8d3c-491d-873d-9e167a846049.html" />
+    <Content Include="Uploads\Html5Form %281%29_bec36560-86b1-4c6b-bb06-b865a80c6ef7.html" />
+    <Content Include="Uploads\img-message.png" />
+    <Content Include="Uploads\Is-Computer-science-hard-1024x574.jpg" />
+    <Content Include="Uploads\javascript.png" />
+    <Content Include="Uploads\kisspng-node-js-javascript-web-application-express-js-comp-5ae0f84e2a4242.1423638015246930701731.jpg" />
+    <Content Include="Uploads\logo1.png" />
+    <Content Include="Uploads\logo1png.png" />
+    <Content Include="Uploads\logo2.png" />
+    <Content Include="Uploads\logo3.png" />
+    <Content Include="Uploads\logo4.png" />
+    <Content Include="Uploads\logo5.png" />
+    <Content Include="Uploads\logopng.png" />
+    <Content Include="Uploads\main-qimg-f7c6c46d9ada84db77d452b3d65fdab5.png" />
+    <Content Include="Uploads\pic.png" />
+    <Content Include="Uploads\sara_n.jpg" />
+    <Content Include="Uploads\Screenshot %281%29_0536fd1c-c57f-43f7-b60b-5269e11945a8.png" />
+    <Content Include="Uploads\Screenshot %281%29_1f59239a-c2ac-4b05-94e5-a0ebd7a3a259.png" />
+    <Content Include="Uploads\Screenshot %281%29_20420574-7a40-43cb-86c3-9999f3e377fd.png" />
+    <Content Include="Uploads\Screenshot %281%29_3be49a9c-0bae-464e-9f80-467ffdf83dda.png" />
+    <Content Include="Uploads\Screenshot %281%29_59af3592-68ba-47d6-b43f-2a0559ddbb94.png" />
+    <Content Include="Uploads\Screenshot %281%29_6755df1e-177b-49fd-b80a-a442625775fe.png" />
+    <Content Include="Uploads\Screenshot %281%29_b73d3cef-2b6a-42f4-91fd-0d11ee025d30.png" />
+    <Content Include="Uploads\Screenshot %281%29_bf6db536-2f28-4a2e-bc92-61ef6aa20a87.png" />
+    <Content Include="Uploads\Screenshot %281%29_ee145484-946d-401d-9cfe-fdee3cf2d72a.png" />
+    <Content Include="Uploads\Screenshot %281%29_fa92e93d-6fd8-441d-b247-4d24070807df.png" />
+    <Content Include="Uploads\Screenshot %281%29_fb67ddb7-9888-48a9-a629-2beafce1c8b4.png" />
+    <Content Include="Uploads\Screenshot %2810%29_20eca0f4-0000-4869-adee-3b53611f03bf.png" />
+    <Content Include="Uploads\Screenshot %2810%29_5278d9aa-0020-4f2a-b9f0-ad8acca2a2b2.png" />
+    <Content Include="Uploads\Screenshot %2810%29_6e2f78c3-cb3b-4e85-af4c-ef7355c09355.png" />
+    <Content Include="Uploads\Screenshot %2810%29_a6c409b5-996e-4b77-b314-90403065f26d.png" />
+    <Content Include="Uploads\Screenshot %2810%29_ba66a42c-6e36-47a2-a2d4-0b7bd6739903.png" />
+    <Content Include="Uploads\Screenshot %2810%29_c2a6366b-e8af-4554-be34-d2320048f0ca.png" />
+    <Content Include="Uploads\Screenshot %2810%29_d4a9905a-2e51-49ef-b997-61fcd63a76c4.png" />
+    <Content Include="Uploads\Screenshot %2811%29_0c0d12c5-8f10-429e-8289-16fab133d20f.png" />
+    <Content Include="Uploads\Screenshot %2811%29_1e012b48-df21-4499-9112-276896dffadd.png" />
+    <Content Include="Uploads\Screenshot %2811%29_3efd54e1-22b2-452e-9bbe-501e6b001c4d.png" />
+    <Content Include="Uploads\Screenshot %2811%29_9be32f40-e27e-4b0c-aa3f-e0ab0960f662.png" />
+    <Content Include="Uploads\Screenshot %2812%29_7faca749-097c-4bea-8f51-9164a38fb79d.png" />
+    <Content Include="Uploads\Screenshot %2812%29_930a7b91-e7b9-4a04-88c4-52bac9a28819.png" />
+    <Content Include="Uploads\Screenshot %2812%29_a7f6cb52-fdbb-45d4-bf41-4048069b05bb.png" />
+    <Content Include="Uploads\Screenshot %2812%29_c1f20699-4c1f-4010-9960-29e7c14f7b6c.png" />
+    <Content Include="Uploads\Screenshot %2812%29_e7614c77-fe4b-4e9e-afec-b93b19366874.png" />
+    <Content Include="Uploads\Screenshot %2812%29_f8bf9585-7947-4bfa-a2ae-f3968d8fde86.png" />
+    <Content Include="Uploads\Screenshot %2813%29_02f52354-6b9b-48ce-9b95-ad4542c7b6f6.png" />
+    <Content Include="Uploads\Screenshot %2813%29_4276417a-b0f8-405a-91c3-dc559699240f.png" />
+    <Content Include="Uploads\Screenshot %2813%29_5a6be5d6-de8e-482e-8f9c-9feb82918cf7.png" />
+    <Content Include="Uploads\Screenshot %2813%29_5b12ad96-b191-4ee0-b7da-fa97924f953f.png" />
+    <Content Include="Uploads\Screenshot %2813%29_8e8a8bb2-9113-435f-9358-428f787725c7.png" />
+    <Content Include="Uploads\Screenshot %2813%29_a8175827-fc12-4fc2-b3ee-2f602f6c79d0.png" />
+    <Content Include="Uploads\Screenshot %2813%29_e27fec35-0ef5-4052-be40-bb597898269c.png" />
+    <Content Include="Uploads\Screenshot %2814%29_02b10454-4a5e-45ca-b4bb-8813726c51a0.png" />
+    <Content Include="Uploads\Screenshot %2814%29_0621b438-a2c8-47d3-a592-2f41fe4ed882.png" />
+    <Content Include="Uploads\Screenshot %2814%29_3a76c0f8-cbe3-48af-ad95-9fb259317628.png" />
+    <Content Include="Uploads\Screenshot %2814%29_54547693-a874-4aa8-bc57-0b3f5aeef91b.png" />
+    <Content Include="Uploads\Screenshot %2814%29_718fe2b0-6379-4484-8458-e05730446644.png" />
+    <Content Include="Uploads\Screenshot %2814%29_7f5e063c-22de-44ca-bef0-9d5db1875b72.png" />
+    <Content Include="Uploads\Screenshot %2814%29_8241200a-72ad-4dcf-9dab-5ac1f5075579.png" />
+    <Content Include="Uploads\Screenshot %2814%29_8e2218b8-0ef2-4694-aade-57b29bcfc104.png" />
+    <Content Include="Uploads\Screenshot %2814%29_920dbc4c-5b0e-4617-a30d-698f55566458.png" />
+    <Content Include="Uploads\Screenshot %2814%29_a05f7940-09b1-46e6-947a-1645a7119cf9.png" />
+    <Content Include="Uploads\Screenshot %2814%29_a09565cd-14d8-44fc-8d5f-a562230fb876.png" />
+    <Content Include="Uploads\Screenshot %2814%29_a9520408-4929-4d07-989c-e4d42b714ee0.png" />
+    <Content Include="Uploads\Screenshot %2814%29_b994dd71-28a9-4b6a-b829-3b28fe0abac8.png" />
+    <Content Include="Uploads\Screenshot %2814%29_bd67117c-e31b-4aee-ad0e-06e71f4d9417.png" />
+    <Content Include="Uploads\Screenshot %2814%29_f9272db0-b421-4915-8b1b-316834653420.png" />
+    <Content Include="Uploads\Screenshot %2815%29_0198ff7f-432f-4857-8737-fe941f1f4e4c.png" />
+    <Content Include="Uploads\Screenshot %2815%29_3a0a1fc5-3491-412f-9194-850350e29308.png" />
+    <Content Include="Uploads\Screenshot %2815%29_3ba26ec3-0387-424e-9e0f-cfec51d3e434.png" />
+    <Content Include="Uploads\Screenshot %2815%29_448394ac-389a-44fb-9825-14019b3b7cfb.png" />
+    <Content Include="Uploads\Screenshot %2815%29_49060557-ae41-4767-8892-34ae4a4380e4.png" />
+    <Content Include="Uploads\Screenshot %2815%29_611340b5-d232-4461-8a27-fcbd5a2b742a.png" />
+    <Content Include="Uploads\Screenshot %2815%29_f00812bd-6c2f-43f5-a9de-184d301066b3.png" />
+    <Content Include="Uploads\Screenshot %2815%29_f156bdbb-174c-48c4-8807-ace87d2a0daa.png" />
+    <Content Include="Uploads\Screenshot %2815%29_f3fde381-0531-4898-a7f0-9ea2cc6f27e1.png" />
+    <Content Include="Uploads\Screenshot %2815%29_fa35851c-e30a-4304-be21-75f67e2d5591.png" />
+    <Content Include="Uploads\Screenshot %2816%29_387bcc27-f1a2-4908-a0c1-9cfd53701e34.png" />
+    <Content Include="Uploads\Screenshot %2816%29_a18954ea-2ec0-4226-89e6-b99a07e0240f.png" />
+    <Content Include="Uploads\Screenshot %2817%29_f6c11887-091e-4d5c-80df-12693ca73d67.png" />
+    <Content Include="Uploads\Screenshot %2819%29_05772a88-f010-4d3f-86a8-31580de699e2.png" />
+    <Content Include="Uploads\Screenshot %282%29_060a62db-ca42-48a5-bc40-00ce6064311b.png" />
+    <Content Include="Uploads\Screenshot %282%29_0dbb257e-a074-49c4-b49b-6f500e089572.png" />
+    <Content Include="Uploads\Screenshot %282%29_0fcfef01-29c2-4b6e-878d-5b6c4b2391aa.png" />
+    <Content Include="Uploads\Screenshot %282%29_1c9a9937-06ff-4b50-89b0-298a3c65d2ee.png" />
+    <Content Include="Uploads\Screenshot %282%29_280a38f4-001d-4498-bd9b-4c085d8aa5a8.png" />
+    <Content Include="Uploads\Screenshot %282%29_338be801-0ddb-4d2b-ae50-2e0efcea86f3.png" />
+    <Content Include="Uploads\Screenshot %282%29_352fd43b-92aa-4141-9df5-8329aa0550d7.png" />
+    <Content Include="Uploads\Screenshot %282%29_3d4d97c5-9a71-42bd-a168-87f77d229e34.png" />
+    <Content Include="Uploads\Screenshot %282%29_44657360-693e-47ca-b31a-37cdec8903d0.png" />
+    <Content Include="Uploads\Screenshot %282%29_44fb209a-d405-4986-947e-819c10b545a8.png" />
+    <Content Include="Uploads\Screenshot %282%29_64ed85f7-9ae4-4286-9e96-5bd08f84d27b.png" />
+    <Content Include="Uploads\Screenshot %282%29_6ab39782-1c74-46fb-b888-88e2f21fd859.png" />
+    <Content Include="Uploads\Screenshot %282%29_8007ddfd-5858-4f4d-8684-4698ee026d3a.png" />
+    <Content Include="Uploads\Screenshot %282%29_8e4656e4-7e98-4ee8-a610-1e074748823e.png" />
+    <Content Include="Uploads\Screenshot %282%29_9d1e7d52-8592-4384-88cb-6b9524ae4ab1.png" />
+    <Content Include="Uploads\Screenshot %282%29_a0ce50b0-7061-4e3b-b246-7aedd155f912.png" />
+    <Content Include="Uploads\Screenshot %282%29_a23143e3-a42c-42a0-a993-8712530d8528.png" />
+    <Content Include="Uploads\Screenshot %282%29_ae49ce44-c74b-49b3-ac49-a22a73734455.png" />
+    <Content Include="Uploads\Screenshot %282%29_b8758f4a-7a00-4e7b-b027-6fbca355acdd.png" />
+    <Content Include="Uploads\Screenshot %282%29_be913ec5-dbeb-4d45-a87f-ec2bc29baa42.png" />
+    <Content Include="Uploads\Screenshot %282%29_d64f9463-74a9-49b1-9872-43ede7d202fb.png" />
+    <Content Include="Uploads\Screenshot %282%29_da9bf1e8-4e65-4d53-83c1-9de97c3402a3.png" />
+    <Content Include="Uploads\Screenshot %282%29_dbbdfa5f-016f-47e2-af96-26198dd8f721.png" />
+    <Content Include="Uploads\Screenshot %282%29_e37bfa2b-6e6c-43b5-87ec-89cd7b8a1a71.png" />
+    <Content Include="Uploads\Screenshot %282%29_e7ffb638-1c26-41b4-9621-2f383be814e3.png" />
+    <Content Include="Uploads\Screenshot %2820%29_66a14261-e7bd-4bb0-ad70-9bd821279363.png" />
+    <Content Include="Uploads\Screenshot %2822%29_c4e1819a-1d76-47d1-86c3-3d7349b96e62.png" />
+    <Content Include="Uploads\Screenshot %2823%29_9ed535cf-c804-4c6e-b724-cb38bc905e71.png" />
+    <Content Include="Uploads\Screenshot %283%29_21e36553-0bc7-4a0f-820f-18dcbf8d0c2d.png" />
+    <Content Include="Uploads\Screenshot %283%29_35a1ff7a-8bc3-4c67-85a4-25e49f0c222f.png" />
+    <Content Include="Uploads\Screenshot %283%29_49477bf9-a7b4-41b4-86e8-82bbd1677619.png" />
+    <Content Include="Uploads\Screenshot %283%29_5e4bcfe9-17cd-4026-99bf-0485fa9991f2.png" />
+    <Content Include="Uploads\Screenshot %283%29_68664162-93ba-4788-bfa9-fd3bff906bc0.png" />
+    <Content Include="Uploads\Screenshot %283%29_76c626bb-ca07-4453-a543-8d8ff3bc7307.png" />
+    <Content Include="Uploads\Screenshot %283%29_7843e2b6-3248-43f2-9ab9-a4c97200a141.png" />
+    <Content Include="Uploads\Screenshot %283%29_846589c4-8ab7-49e8-9199-8b519d4823b1.png" />
+    <Content Include="Uploads\Screenshot %283%29_9abdb7a4-590b-4842-8cad-10676bd80b62.png" />
+    <Content Include="Uploads\Screenshot %283%29_ade69f27-4462-4373-a297-a32f13d5bbfd.png" />
+    <Content Include="Uploads\Screenshot %283%29_bece5eb5-4586-4957-a6fd-aa4196c60e7b.png" />
+    <Content Include="Uploads\Screenshot %283%29_d78cd34b-b182-4568-bd18-734871160741.png" />
+    <Content Include="Uploads\Screenshot %283%29_d8aded18-246b-45ec-9cfb-e6def970f8ee.png" />
+    <Content Include="Uploads\Screenshot %283%29_f0ba329a-4400-4402-9464-ba1742ba8611.png" />
+    <Content Include="Uploads\Screenshot %283%29_f3918bea-c7ea-48d1-9d57-0476ad6a2233.png" />
+    <Content Include="Uploads\Screenshot %283%29_f3ae1906-460a-4c13-be9f-84a10d21abc2.png" />
+    <Content Include="Uploads\Screenshot %283%29_f7a96bdc-06e6-4fdd-97ad-069b516378e9.png" />
+    <Content Include="Uploads\Screenshot %283%29_ff3db248-2f66-4da5-a1c3-b45d372b2be8.png" />
+    <Content Include="Uploads\Screenshot %2832%29_fa3378dc-b878-42c4-b910-924f34052b20.png" />
+    <Content Include="Uploads\Screenshot %2833%29_d036daa7-13ab-4eda-a559-dd606e74c043.png" />
+    <Content Include="Uploads\Screenshot %2834%29_6ce5676e-e1e9-4d7e-95cd-860cb66fd31a.png" />
+    <Content Include="Uploads\Screenshot %2834%29_90de0b49-35fe-4105-bdf7-7326d71ffd2c.png" />
+    <Content Include="Uploads\Screenshot %2834%29_e4ca870b-1759-4c6d-a532-51e4ea15d7c2.png" />
+    <Content Include="Uploads\Screenshot %2834%29_f9821686-bb13-4d43-8c18-812f6527e165.png" />
+    <Content Include="Uploads\Screenshot %2836%29_1a16611e-c313-4c37-9fde-9003a8f23c62.png" />
+    <Content Include="Uploads\Screenshot %2836%29_646dbb69-a58f-477f-a179-141464f156f4.png" />
+    <Content Include="Uploads\Screenshot %2836%29_810bc8dc-18b7-4e80-8b0a-d074a6258190.png" />
+    <Content Include="Uploads\Screenshot %2836%29_ad3e03e5-eff3-4421-9f97-632e7d505f6a.png" />
+    <Content Include="Uploads\Screenshot %2836%29_b155f9a5-2558-4ded-9a19-55f1b8b6ccc6.png" />
+    <Content Include="Uploads\Screenshot %2837%29_110f99aa-d5f4-48fa-985d-ca4b792975da.png" />
+    <Content Include="Uploads\Screenshot %2837%29_145947b3-2f79-4bd9-9161-ad5cc7d467cd.png" />
+    <Content Include="Uploads\Screenshot %2837%29_1489675b-41c2-429f-83b2-6a17811c37f0.png" />
+    <Content Include="Uploads\Screenshot %2837%29_3dcfc366-d952-48f0-ac2c-54a3be9be9be.png" />
+    <Content Include="Uploads\Screenshot %2837%29_46b42b52-6597-4f6f-b2b4-d00c386d8912.png" />
+    <Content Include="Uploads\Screenshot %2837%29_500caaaf-f730-491b-b2e8-baae5758385a.png" />
+    <Content Include="Uploads\Screenshot %2837%29_822e6123-6702-4c58-9dcd-d966d16047fa.png" />
+    <Content Include="Uploads\Screenshot %2837%29_87ee64bd-01b4-473f-a44a-c636528b361d.png" />
+    <Content Include="Uploads\Screenshot %2837%29_8d50fd85-d303-4683-9ce0-4799919cfe06.png" />
+    <Content Include="Uploads\Screenshot %2837%29_90d71140-b1a5-4a86-bd32-c4ade2945548.png" />
+    <Content Include="Uploads\Screenshot %2837%29_a02a9973-b7cc-4a6e-bd35-5e0470e0b757.png" />
+    <Content Include="Uploads\Screenshot %2837%29_a46ea677-d207-4b52-9c5e-a0ed4dd77fd4.png" />
+    <Content Include="Uploads\Screenshot %2837%29_d265cfb5-1cf1-4fcb-b7bf-8a187af7be9c.png" />
+    <Content Include="Uploads\Screenshot %2837%29_dd2c86a6-c081-462c-9c15-510f58a879a2.png" />
+    <Content Include="Uploads\Screenshot %2837%29_ed2423e8-d1c7-43ef-a305-6464f6a615f5.png" />
+    <Content Include="Uploads\Screenshot %2837%29_f6dba394-b636-414f-884d-1aa0991a93e7.png" />
+    <Content Include="Uploads\Screenshot %2838%29_203e2522-c055-4373-aa42-6ba501511aa9.png" />
+    <Content Include="Uploads\Screenshot %2839%29_1191cb88-fd79-43d4-8d95-47d644128331.png" />
+    <Content Include="Uploads\Screenshot %284%29_20b4c8f9-076e-4334-b8dd-789fcca5710b.png" />
+    <Content Include="Uploads\Screenshot %284%29_433d529a-c60e-492b-bc3c-71228d07b5df.png" />
+    <Content Include="Uploads\Screenshot %284%29_45a5a280-2e8a-4f85-a061-49093a7ae4c6.png" />
+    <Content Include="Uploads\Screenshot %284%29_4f3d7e62-1dcb-4ae5-b59b-9512e809eb3c.png" />
+    <Content Include="Uploads\Screenshot %284%29_5abb5dca-4b69-4035-b71d-2a592ad29c66.png" />
+    <Content Include="Uploads\Screenshot %284%29_62963938-921e-4fd5-9ba5-9fb83b7e496c.png" />
+    <Content Include="Uploads\Screenshot %284%29_62dc84e8-dae7-41db-a0a3-327b9c3df7df.png" />
+    <Content Include="Uploads\Screenshot %284%29_6c5d1748-03b6-47aa-996b-2e14928ebfb4.png" />
+    <Content Include="Uploads\Screenshot %284%29_7430e105-46f6-4772-a6d2-6d7860edd9b2.png" />
+    <Content Include="Uploads\Screenshot %284%29_78b4e287-2e82-4c63-8cfe-0906cb6ab0b5.png" />
+    <Content Include="Uploads\Screenshot %284%29_878fced4-8814-4d4f-b3e7-be9d50a9d67c.png" />
+    <Content Include="Uploads\Screenshot %284%29_8ed53ac0-02f4-49dd-91d8-9d600603aef7.png" />
+    <Content Include="Uploads\Screenshot %284%29_9bc4df8c-3688-4acb-a2c0-e78eaf72d882.png" />
+    <Content Include="Uploads\Screenshot %284%29_9dbfab43-3174-4c6b-b799-ff3fa9fb65ef.png" />
+    <Content Include="Uploads\Screenshot %284%29_9e5c69a1-1656-4360-9754-1331e641e01f.png" />
+    <Content Include="Uploads\Screenshot %284%29_a154ef00-8f5f-48e9-8531-0cbba63a43b7.png" />
+    <Content Include="Uploads\Screenshot %284%29_af9d9699-0e26-4fbd-ae53-4859fadf455d.png" />
+    <Content Include="Uploads\Screenshot %284%29_be4e2c2a-0755-4940-8ea4-d66c8e05a622.png" />
+    <Content Include="Uploads\Screenshot %284%29_dc5a8944-861d-4e22-9992-ad1f52820ac0.png" />
+    <Content Include="Uploads\Screenshot %284%29_e30fe6ca-95ef-40bb-8ac5-273685794ee7.png" />
+    <Content Include="Uploads\Screenshot %284%29_e3e6666b-e37b-4d74-a38c-46a96a553c98.png" />
+    <Content Include="Uploads\Screenshot %284%29_f4e5a1c4-8dc7-43c9-bbe2-02bfff2a928f.png" />
+    <Content Include="Uploads\Screenshot %2840%29_b91bceba-1ecc-484b-875f-1742c539ebd2.png" />
+    <Content Include="Uploads\Screenshot %2840%29_fb8ee8cc-b3c8-4b6c-8e04-f1b43573e3f7.png" />
+    <Content Include="Uploads\Screenshot %2841%29_7a96da46-fe6b-44af-8448-d0b434ef7ec6.png" />
+    <Content Include="Uploads\Screenshot %2842%29_781bcb48-e782-46c3-8b90-e01f6b276df7.png" />
+    <Content Include="Uploads\Screenshot %2842%29_86f7d769-c4b0-4186-9ab5-169f8544d460.png" />
+    <Content Include="Uploads\Screenshot %2842%29_ce2af020-6cd9-413b-902d-8690a09e10ef.png" />
+    <Content Include="Uploads\Screenshot %2842%29_dd074d63-069d-4866-ba83-eac037d06e70.png" />
+    <Content Include="Uploads\Screenshot %2843%29_e95eff5e-2592-4ac5-81da-cd46e0000df8.png" />
+    <Content Include="Uploads\Screenshot %2844%29_b152d149-ccba-4cd7-8ce5-d72022a9d4fc.png" />
+    <Content Include="Uploads\Screenshot %285%29_1eb75be5-0c67-47eb-9f94-5fb12e22c4c6.png" />
+    <Content Include="Uploads\Screenshot %285%29_53ac1339-1ef6-48bd-81cf-84fea66690e0.png" />
+    <Content Include="Uploads\Screenshot %285%29_8abffddf-0c58-46f9-a4dc-6482c4184955.png" />
+    <Content Include="Uploads\Screenshot %285%29_8de5ea36-01eb-4529-9288-4d78fcd4e64c.png" />
+    <Content Include="Uploads\Screenshot %285%29_92674001-3599-495e-84f6-0516c2c19543.png" />
+    <Content Include="Uploads\Screenshot %285%29_9f3ae3d9-ac80-4b7f-b6d5-e7fda7a46a8f.png" />
+    <Content Include="Uploads\Screenshot %286%29_68225ef9-a1a4-4deb-9bf7-295d0b10116d.png" />
+    <Content Include="Uploads\Screenshot %286%29_7ecb1886-576e-4255-8889-9e9656e73997.png" />
+    <Content Include="Uploads\Screenshot %286%29_af098874-40a3-43ef-ad98-cf5de9aa12b6.png" />
+    <Content Include="Uploads\Screenshot %2861%29_0d30a2e7-ce8e-4115-bb81-6a6b18a34d55.png" />
+    <Content Include="Uploads\Screenshot %2861%29_3c255a44-5813-4099-988b-a2436d4d0c0d.png" />
+    <Content Include="Uploads\Screenshot %2865%29_5ed7c978-eaa5-4af3-b716-5a0e6a36fda9.png" />
+    <Content Include="Uploads\Screenshot %2866%29_33ec6e46-bb64-4574-814b-bf627dee6999.png" />
+    <Content Include="Uploads\Screenshot %2868%29_7fe90e98-c78f-4ff8-8440-88cf2dd9f49d.png" />
+    <Content Include="Uploads\Screenshot_3.jpg" />
+    <Content Include="Uploads\shimaaedit_n.png" />
+    <Content Include="Uploads\slider1.jpg" />
+    <Content Include="Uploads\slider2.jpg" />
+    <Content Include="Uploads\slider3.jpg" />
+    <Content Include="Uploads\software.jpg" />
+    <Content Include="Uploads\teamwork.jpg" />
+    <Content Include="Uploads\teamwork2.jpg" />
+    <Content Include="Uploads\teamwork3.jpg" />
+    <Content Include="Uploads\Userpass_53da8a14-26d4-4047-bde9-48b5a0bc7c69.txt" />
+    <Content Include="Uploads\Userpass_e9cf8b0c-dd0f-403d-9b69-5e752bcaef0e.txt" />
+    <Content Include="Uploads\Userpass_f8174fc7-6863-485b-ac35-fd1609574476.txt" />
+    <Content Include="Uploads\yousraedit_n.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminPanal\AdminProfileController.cs" />
     <Compile Include="Controllers\AdminPanal\DashBoardController.cs" />
@@ -222,6 +677,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CustomMultipartFormDataStreamProvider.cs" />
+    <Compile Include="Hubs\WhatsLearnHub.cs" />
     <Compile Include="Models\ResultViewModel.cs" />
     <Compile Include="Models\SecurityHelper.cs" />
     <Compile Include="Models\UploadedFile.cs" />
@@ -229,17 +685,30 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Release\roslyn\csc.exe.config" />
-    <Content Include="bin\Release\roslyn\csc.rsp" />
-    <Content Include="bin\Release\roslyn\csi.exe.config" />
-    <Content Include="bin\Release\roslyn\csi.rsp" />
-    <Content Include="bin\Release\roslyn\Microsoft.CSharp.Core.targets" />
-    <Content Include="bin\Release\roslyn\Microsoft.Managed.Core.targets" />
-    <Content Include="bin\Release\roslyn\Microsoft.VisualBasic.Core.targets" />
-    <Content Include="bin\Release\roslyn\vbc.exe.config" />
-    <Content Include="bin\Release\roslyn\vbc.rsp" />
-    <Content Include="bin\Release\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="assets\.gitkeep" />
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <None Include="packages.config" />
+    <Content Include="Uploads\MobadraShababRakameya_6a2b218c-2b2b-483d-8609-5b8e9bd41152.pdf" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -249,7 +718,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ITI.WhatsLearn.Entities\ITI.WhatsLearn.Entities.csproj">
@@ -261,11 +729,11 @@
       <Name>ITI.WhatsLearn.Reposatories</Name>
     </ProjectReference>
     <ProjectReference Include="..\ITI.WhatsLearn.ViewModel\ITI.WhatsLearn.ViewModel.csproj">
-      <Project>{c3d1e8de-7607-4226-8ee4-52da9accfb8e}</Project>
+      <Project>{C3D1E8DE-7607-4226-8EE4-52DA9ACCFB8E}</Project>
       <Name>ITI.WhatsLearn.ViewModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\ITI.WhatsLearnServices\ITI.WhatsLearnServices.csproj">
-      <Project>{E32D8CF6-328C-4917-AEF9-91AC6E3DC11E}</Project>
+      <Project>{e32d8cf6-328c-4917-aef9-91ac6e3dc11e}</Project>
       <Name>ITI.WhatsLearnServices</Name>
     </ProjectReference>
   </ItemGroup>
@@ -298,16 +766,16 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  
+  <Target Name="AfterBuild">
+  </Target>
   -->
 </Project>

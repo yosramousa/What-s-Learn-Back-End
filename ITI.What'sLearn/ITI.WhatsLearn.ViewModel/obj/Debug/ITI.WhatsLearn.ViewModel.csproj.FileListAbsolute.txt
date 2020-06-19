@@ -1,3 +1,5 @@
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.csprojAssemblyReference.cache
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.csproj.CoreCompileInputs.cache
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.ViewModel.dll
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.ViewModel.pdb
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.Entities.dll
@@ -8,8 +10,9 @@ F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLea
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.Reposatories.pdb
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.Reposatories.dll.config
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\EntityFramework.xml
-F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.csprojAssemblyReference.cache
-F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.csproj.CoreCompileInputs.cache
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.csproj.CopyComplete
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.dll
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\obj\Debug\ITI.WhatsLearn.ViewModel.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\ITI.WhatsLearn.ViewModel.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\EntityFramework.SqlServer.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearn.ViewModel\bin\Debug\EntityFramework.SqlServer.xml

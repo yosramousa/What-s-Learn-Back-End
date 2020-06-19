@@ -55,6 +55,9 @@ namespace ITI.WhatsLearn.Services
             TrackCourseRepo.Remove(TrackCourseRepo.GetByID(id));
             unitOfWork.Commit();
         }
-    
+         public bool ISExist(int TrackID,int CourseID)
+        {
+            return TrackCourseRepo.Get(i => i.TrackID == TrackID && i.CourseID == CourseID).Count()>0;
+        }
     }
 }

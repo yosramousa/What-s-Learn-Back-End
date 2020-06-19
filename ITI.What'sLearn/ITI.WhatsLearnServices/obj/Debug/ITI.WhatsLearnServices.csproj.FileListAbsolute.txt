@@ -1,3 +1,4 @@
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Debug\ITI.WhatsLearnServices.csproj.CoreCompileInputs.cache
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Debug\ITI.WhatsLearnServices.dll
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Debug\ITI.WhatsLearnServices.pdb
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Debug\ITI.WhatsLearn.Entities.dll
@@ -11,7 +12,10 @@ F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLea
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Debug\ITI.WhatsLearn.ViewModel.pdb
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Debug\EntityFramework.xml
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Debug\ITI.WhatsLearnServices.csprojAssemblyReference.cache
-F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Debug\ITI.WhatsLearnServices.csproj.CoreCompileInputs.cache
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Debug\ITI.WhatsLearnServices.csproj.CopyComplete
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Debug\ITI.WhatsLearnServices.dll
 F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\obj\Debug\ITI.WhatsLearnServices.pdb
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Debug\ITI.WhatsLearnServices.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Debug\EntityFramework.SqlServer.dll
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Debug\ITI.WhatsLearn.ViewModel.dll.config
+F:\ITI\Final Project\Back-End\What-s-Learn-Back-End\ITI.What'sLearn\ITI.WhatsLearnServices\bin\Debug\EntityFramework.SqlServer.xml

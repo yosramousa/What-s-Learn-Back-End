@@ -1,6 +1,8 @@
 ﻿using ITI.WhatsLearn.Presentation.Filters;
+using ITI.WhatsLearn.Presentation.Hubs;
 using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
+using Microsoft.AspNet.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +17,13 @@ namespace ITI.WhatsLearn.Presentation.Controllers
     public class InboxController : ApiController
     {
         private readonly MessageService messageService;
+        private readonly IHubContext Hub;
+
         public InboxController(MessageService _messageService)
         {
             messageService = _messageService;
+            Hub = GlobalHost.ConnectionManager.GetHubContext<WhatsLearnHub>();
+
         }
 
         [HttpGet]
@@ -94,6 +100,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
 
         [HttpGet]
+
         public ResultViewModel<MessageEditViewModel> Delete(int id)
         {
             ResultViewModel<MessageEditViewModel> result
@@ -173,6 +180,9 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 messageService.ISseen(id);
 
                 result.Successed = true;
+
+                Hub.Clients.All.MessageSeen(messageService.GetByID(id).Subject);
+
                 //  result.Data = selectedMessage;
 
             }

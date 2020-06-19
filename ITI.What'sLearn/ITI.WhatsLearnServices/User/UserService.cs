@@ -253,5 +253,17 @@ namespace ITI.WhatsLearn.Services
             return UserRepo.Count();
         }
 
+        public Dictionary<string, int> UpdateLineChart()
+        {
+
+            Dictionary<string, int> Chartresult = new Dictionary<string, int>();
+            for (int n = 1; n <= 12; n++)
+                Chartresult.Add(n.ToString(), GetAll().GroupBy(i => i.SignedTime.Month).
+                    Where(i => i.Key == n)
+                    .Select(j => j.Count()).FirstOrDefault());
+
+            return Chartresult;
+
+        }
     }
 }

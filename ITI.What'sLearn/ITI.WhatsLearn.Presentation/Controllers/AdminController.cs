@@ -14,12 +14,12 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 {
     public class AdminController : ApiController
     {
-        //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6IjEiLCJFbWFpbCI6InNhbGFoQG1lLmNvbSIsIlJvbGUiOiJBZG1pbiIsIk5hbWUiOiJzYWxhaCIsIm5iZiI6MTU5MDY4MzMxNywiZXhwIjoxNTkwNjg1MTE3LCJpYXQiOjE1OTA2ODMzMTd9.Vkh4j4ZXjbvT0ogyZPD7SmIkVPCMu_r9PC1KT5If-ik
         private readonly AdminService adminService;
         public AdminController(AdminService _adminService)
         {
             adminService = _adminService;
         }
+        [AUTHORIZE(Roles = "Admin")]
 
         [HttpGet]
         public ResultViewModel<IEnumerable<AdminViewModel>> GetList(int PageIndex, int PageSize)
@@ -29,7 +29,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             int count = 0;
             try
             {
-                var admins = adminService.GetAll(out count,0,pageIndex:PageIndex,pageSize: PageSize);
+                var admins = adminService.GetAll(out count, 0, pageIndex: PageIndex, pageSize: PageSize);
                 result.Successed = true;
                 result.Data = admins;
             }
@@ -55,11 +55,21 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 }
                 else
                 {
-                    AdminEditViewModel selectedAdmin
+
+                    if (adminService.CheckEmail(Admin.Email))
+                    {
+
+                        AdminEditViewModel selectedAdmin
                         = adminService.Add(Admin);
 
-                    result.Successed = true;
-                    result.Data = selectedAdmin;
+                        result.Successed = true;
+                        result.Data = selectedAdmin;
+                    }
+                    else
+                    {
+                        result.Successed = false;
+                        result.Message = "Eamil Already Tpken";
+                    }
                 }
             }
             catch (Exception ex)
@@ -69,7 +79,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             }
             return result;
         }
-       
+
         [HttpGet]
         [AUTHORIZE(Roles = "Admin")]
         public ResultViewModel<AdminViewModel> GetByID(int id)
@@ -86,10 +96,10 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             {
                 result.Successed = false;
                 result.Message = "Something Went Wrong !!";
-             }
+            }
             return result;
         }
-        
+
         [HttpPost]
         public ResultViewModel<LoginModel> Login(LoginModel _loginModel)
         {
@@ -117,7 +127,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                     _loginModel.Password = null;
                     _loginModel.Image = admin.Image;
 
-                
+
                     result.Data = _loginModel;
                 }
 

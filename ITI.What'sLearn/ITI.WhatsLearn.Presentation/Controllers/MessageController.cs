@@ -1,5 +1,8 @@
-﻿using ITI.WhatsLearn.ViewModel;
+﻿using ITI.WhatsLearn.Presentation.Filters;
+using ITI.WhatsLearn.Presentation.Hubs;
+using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
+using Microsoft.AspNet.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +12,18 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
+    [AUTHORIZE(Roles = "User,Admin")]
+
     public class MessageController : ApiController
     {
         private readonly MessageService messageService;
+        private readonly IHubContext Hub;
+
         public MessageController(MessageService _messageService)
         {
             messageService = _messageService;
+            Hub = GlobalHost.ConnectionManager.GetHubContext<WhatsLearnHub>();
+
         }
 
         [HttpGet]
@@ -73,6 +82,12 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 {
                     MessageEditViewModel selectedMessage
                             = messageService.Add(Message);
+
+                    Hub.Clients.All.MessageRecived(new {
+                        UserName=Message.FullName,
+                        PrefMessage=Message.Text.Substring(0,20),
+
+                    });
 
                     result.Successed = true;
                     result.Data = selectedMessage;

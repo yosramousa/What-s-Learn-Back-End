@@ -1,6 +1,9 @@
-﻿using ITI.WhatsLearn.Services;
+﻿using ITI.WhatsLearn.Presentation.Filters;
+using ITI.WhatsLearn.Presentation.Hubs;
+using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
+using Microsoft.AspNet.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +13,18 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
+    [AUTHORIZE(Roles = "User,Admin")]
+
     public class MainCategoryController : ApiController
     {
         private readonly MainCategoryService mainCategoryService;
+        private readonly IHubContext Hub;
+
         public MainCategoryController(MainCategoryService _mainCategoryService)
         {
             mainCategoryService = _mainCategoryService;
+            Hub = GlobalHost.ConnectionManager.GetHubContext<WhatsLearnHub>();
+
         }
 
         [HttpGet]
@@ -55,6 +64,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                         = mainCategoryService.Add(MainCategory);
 
                     result.Successed = true;
+                    Hub.Clients.All.MainCategoryCount(mainCategoryService.Count());
+
                     result.Data = selectedMainCategory;
                 }
             }

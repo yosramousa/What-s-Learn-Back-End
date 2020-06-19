@@ -1,5 +1,6 @@
 ﻿using BroadCaster.Helpers;
 using ITI.WhatsLearn.Entities;
+using ITI.WhatsLearn.Presentation.Filters;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
 using System;
@@ -11,6 +12,8 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation
 {
+    [AUTHORIZE(Roles = "User,Admin")]
+
     public class UserSkillController : ApiController
     {
         private readonly UserSkillService UserSkillService;
@@ -58,6 +61,12 @@ namespace ITI.WhatsLearn.Presentation
                 {
                     result.Message = "In Valid Model State";
                 }
+                else if (UserSkillService.GetAll(UserSkill.UserID).Where(i=>i.SkillID==UserSkill.SkillID).Count()>0)
+                {
+                    result.Successed = false;
+                    result.Message = "Skill Already Exist";
+
+                }
                 else
                 {
                     UserSkillEditViewModel selectedUserSkill
@@ -80,7 +89,7 @@ namespace ITI.WhatsLearn.Presentation
         {
             ResultViewModel<UserSkillEditViewModel> result
                 = new ResultViewModel<UserSkillEditViewModel>();
-           
+
             try
             {
                 if (!ModelState.IsValid)
@@ -90,8 +99,8 @@ namespace ITI.WhatsLearn.Presentation
                 else
                 {
                     UserSkillEditViewModel selectedSkill = UserSkillService.Update(UserSkills);
-                        
-                    
+
+
 
                     result.Successed = true;
                     result.Data = selectedSkill;

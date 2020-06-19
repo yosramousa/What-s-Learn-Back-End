@@ -96,7 +96,7 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = model.ID,
                 Name = model.Name,
-                Childs = model.SubCategories.Select(i => i.ToMenuVewModel()).ToList()
+                Childs = model.SubCategories.Where(i=>i.IsDeleted==false).Select(i => i.ToMenuVewModel()).ToList()
             };
         }
 

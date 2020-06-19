@@ -26,10 +26,10 @@ namespace ITI.WhatsLearn.ViewModel
                 IsDeleted = model.IsDeleted,
                 Password = model.Password,
                 Phone = model.Phone,
-                Tracks = model.Tracks.Select(i => i.Track.ToViewModel()).ToList(),
-                Skills = model.Skills.Select(i=>i.ToViewModel()).ToList(),
-                Certificates =model.Certificates.Select(i => i.ToViewModel()).ToList(),
-                SocialLinks = model.SocialLinks.Select(i=>i.ToViewModel()).ToList()
+                Tracks = model.Tracks?.Select(i => i.Track.ToViewModel()).ToList(),
+                Skills = model.Skills?.Select(i=>i.ToViewModel()).ToList(),
+                Certificates =model.Certificates?.Select(i => i.ToViewModel()).ToList(),
+                SocialLinks = model.SocialLinks?.Select(i=>i.ToViewModel()).ToList()
             };
         }
         public static User ToModel(this UserEditViewModel editModel)

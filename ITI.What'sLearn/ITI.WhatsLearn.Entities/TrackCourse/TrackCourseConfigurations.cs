@@ -21,16 +21,10 @@ namespace ITI.WhatsLearn.Entities
                 .WithMany(i => i.Tracks)
                 .HasForeignKey(i => i.CourseID);
             Property(i => i.TrackID)
-                .HasColumnAnnotation(IndexAnnotation.AnnotationName,
-                         new IndexAnnotation(
-                     new IndexAttribute("IX_TrackCourse", 1) { IsUnique = true }))
                 .HasColumnName("TrackID")
                 .IsRequired();
 
             Property(i => i.CourseID)
-              .HasColumnAnnotation(IndexAnnotation.AnnotationName,
-                       new IndexAnnotation(
-                   new IndexAttribute("IX_TrackCourse", 2) { IsUnique = true }))
               .HasColumnName("CourseID")
               .IsRequired();
 

@@ -53,7 +53,9 @@ namespace ITI.WhatsLearn.Services
         }
         public void Remove(int id)
         {
-            UserCertificateRepo.GetByID(id);
+            UserCertificateRepo.Remove(UserCertificateRepo.GetByID(id));
+            //UserCertificate cert= UserCertificateRepo.GetByID(id);
+            //cert.IsDeleted = true;
             unitOfWork.Commit();
         }
 

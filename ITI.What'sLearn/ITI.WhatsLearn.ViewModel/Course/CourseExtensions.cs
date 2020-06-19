@@ -21,7 +21,7 @@ namespace ITI.WhatsLearn.ViewModel
                 Vedios = model.CourseVedios.Count() > 0 ? model.CourseVedios.Select(i => i.ToViewModel()).ToList() : new List<CourseVedioViewModel>(),
                 Links = model.CourseLinks.Count()>0? model.CourseLinks.Select(i => i.ToViewModel()).ToList(): new List<CourseLinkViewModel>(),
                 Parent = model.Tracks.Count() > 0 ? string.Join(" - ", model.Tracks.Select(i => i.Track.Name)) : "",
-
+                
                 Childs = null,
                 Tracks=model.Tracks.Select(i=>i.Track.Name).ToList()
             };
@@ -96,5 +96,16 @@ namespace ITI.WhatsLearn.ViewModel
 
             };
         }
+
+        public static LevelSerachViewModel ToLevelSearchViewmodel(this CourseViewModel model)
+        {
+            return new LevelSerachViewModel()
+            {
+                ID = model.ID,
+                Name = model.Name,
+                
+            };
+        }
+
     }
 }

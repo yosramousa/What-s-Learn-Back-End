@@ -188,6 +188,12 @@ namespace ITI.WhatsLearnServices
         {
             return AdminRepo.Count();
         }
+        public bool CheckEmail(string Email)
+        {
+            return AdminRepo.Get(i => i.Email == Email).Count() == 0;
+
+         
+        }
 
 
     }

@@ -11,12 +11,12 @@ using System.Web.Http.Filters;
 
 namespace ITI.WhatsLearn.Presentation.Filters
 {
-  
+
     public class AUTHORIZE
         : AuthorizationFilterAttribute
     {
 
-        public string Roles{ get; set; }
+        public string Roles { get; set; }
         public override void OnAuthorization(HttpActionContext actionContext)
         {
             string jwt_token =
@@ -39,9 +39,11 @@ namespace ITI.WhatsLearn.Presentation.Filters
             {
                 actionContext.Response
                     = actionContext.Request.CreateResponse
-                    (HttpStatusCode.Unauthorized, "Not Authenticated");
+                    (HttpStatusCode.Unauthorized, "Not Authorized");
                 return;
             }
+
+
 
 
             string role = cliams.First(i => i.Key == "Role").Value;

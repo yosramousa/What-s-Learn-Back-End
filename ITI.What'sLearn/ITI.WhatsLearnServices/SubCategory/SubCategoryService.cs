@@ -292,7 +292,7 @@ namespace ITI.WhatsLearn.Services
 
         public List<SubCategoryDocument> Documents(SubCategory m)
         {
-            return m.SubCategoryDocuments.Where(d => d.IsDeleted == false).ToList();
+            return m.SubCategoryDocuments.Where(d => d.IsDeleted == false)?.ToList();
 
         }
         public List<SubCategoryVedio> Vedios(SubCategory m)

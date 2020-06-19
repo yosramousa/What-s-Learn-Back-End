@@ -297,7 +297,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 result.Count = count;
                 if (SearchIn == 0)
                     count = 0;
-                
+
                 result.Successed = true;
 
             }
@@ -375,7 +375,28 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
         }
 
-       
+
+        [HttpGet]
+        public ResultViewModel<IEnumerable<LevelSerachViewModel>> GetCourses()
+        {
+            ResultViewModel<IEnumerable<LevelSerachViewModel>> result
+          = new ResultViewModel<IEnumerable<LevelSerachViewModel>>();
+            try
+            {
+                var Courses = courseService.GetAll().Select(i => i.ToLevelSearchViewmodel());
+                result.Successed = true;
+                result.Data = Courses;
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Something Went Wrong !!";
+            }
+            return result;
+
+
+        }
+
     }
 
 }

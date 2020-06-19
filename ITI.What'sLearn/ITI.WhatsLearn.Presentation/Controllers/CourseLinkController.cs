@@ -1,4 +1,5 @@
-﻿using ITI.WhatsLearn.ViewModel;
+﻿using ITI.WhatsLearn.Presentation.Filters;
+using ITI.WhatsLearn.ViewModel;
 using ITI.WhatsLearnServices;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
+    [AUTHORIZE(Roles = "User,Admin")]
+
     public class CourseLinkController : ApiController
     {
         private readonly CourseLinkService courseLinkService;

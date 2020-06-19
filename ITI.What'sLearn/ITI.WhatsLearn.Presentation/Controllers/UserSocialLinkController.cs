@@ -1,5 +1,6 @@
 ﻿using BroadCaster.Helpers;
 using ITI.WhatsLearn.Entities;
+using ITI.WhatsLearn.Presentation.Filters;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
 using System;
@@ -11,6 +12,8 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation
 {
+    [AUTHORIZE(Roles = "User,Admin")]
+
     public class UserSocialLinkController : ApiController
     {
         private readonly UserSocialLinkService UserSocialLinkService;

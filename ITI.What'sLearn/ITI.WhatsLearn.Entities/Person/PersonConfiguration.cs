@@ -14,16 +14,15 @@ namespace ITI.WhatsLearn.Entities
         public PersonConfiguration()
         {
 
-            Property(i => i.Name)
+              Property(i => i.Name)
                 .HasColumnName("Name")
                 .HasMaxLength(250)
                 .IsRequired();
 
-           
+
+           ;
             Property(i=>i.Email)
-                .HasColumnAnnotation(IndexAnnotation.AnnotationName,
-                         new IndexAnnotation(
-                     new IndexAttribute("IX_Email") { IsUnique = true }))
+
                 .HasColumnName("Email")
                 .HasMaxLength(250)
                 .IsRequired();

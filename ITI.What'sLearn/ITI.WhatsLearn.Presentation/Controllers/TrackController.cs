@@ -1,6 +1,9 @@
 ﻿using ITI.WhatsLearn.Entities;
+using ITI.WhatsLearn.Presentation.Filters;
+using ITI.WhatsLearn.Presentation.Hubs;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
+using Microsoft.AspNet.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +13,19 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation
 {
+   
+    [AUTHORIZE(Roles = "User,Admin")]
+
     public class TrackController : ApiController
     {
         private readonly TrackService trackService;
+        private readonly IHubContext Hub;
+
         public TrackController(TrackService _trackService)
         {
             trackService = _trackService;
+            Hub = GlobalHost.ConnectionManager.GetHubContext<WhatsLearnHub>();
+
         }
 
         [HttpGet]
@@ -57,6 +67,10 @@ namespace ITI.WhatsLearn.Presentation
                         = trackService.Add(Track);
                    
                     result.Successed = true;
+                    Hub.Clients.All.TrackCount(trackService.Count());
+                    Hub.Clients.All.TrackAdd(Track.Name);
+
+
                     result.Data = selectedTrack;
                 }
             }
@@ -86,6 +100,7 @@ namespace ITI.WhatsLearn.Presentation
                         = trackService.Update(track);
 
                     result.Successed = true;
+
                     result.Data = selectedEmp;
                 }
             }

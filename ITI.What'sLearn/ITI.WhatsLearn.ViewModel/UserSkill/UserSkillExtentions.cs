@@ -27,11 +27,14 @@ namespace ITI.WhatsLearn.ViewModel
         {
             return new UserSkill()
             {
+                
                 ID = editModel.ID,
                 UserID = editModel.UserID,
                 SkillID = editModel.SkillID,
                 Level = editModel.Level,
                 IsDeleted = editModel.IsDeleted,
+               
+               
                 
 
             };

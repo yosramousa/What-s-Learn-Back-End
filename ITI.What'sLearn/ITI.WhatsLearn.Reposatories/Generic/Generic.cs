@@ -65,8 +65,12 @@ namespace ITI.WhatsLearn.Reposatories
             return dbSet.Where(i => i.IsDeleted == false).Count();
         }
 
-        
 
+        public IQueryable<T> GetDeleted()
+        {
+            return dbSet;
+
+        }
 
     }
 }

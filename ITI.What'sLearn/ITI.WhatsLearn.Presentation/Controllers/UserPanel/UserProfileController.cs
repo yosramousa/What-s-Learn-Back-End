@@ -14,7 +14,8 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
-    [AUTHORIZE(Roles = "User")]
+     [AUTHORIZE(Roles = "User")]
+
     public class UserProfileController : ApiController
     {
         private readonly UserService userService;
@@ -70,6 +71,47 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
 
             return result;
+        }
+        [HttpGet]
+        public ResultViewModel<UserProfileCourseViewModel> GetCourse(int CourseID,int TrackID)
+        {
+            ResultViewModel<UserProfileCourseViewModel> result
+                  = new ResultViewModel<UserProfileCourseViewModel>();
+
+            try
+            {
+
+                string Token = Request.Headers.Authorization?
+                        .Parameter;
+
+                Dictionary<string, string>
+                                cliams = SecurityHelper.Validate(Token);
+                string ID = cliams.FirstOrDefault(i => i.Key == "ID").Value;
+
+                UserProfileCourseViewModel c = courseService.GetByID(CourseID).ToUserProfileCourseViewModel();
+                c.IsFinshed =
+                    userTrackService.Get(int.Parse(ID), TrackID).FinishedCourses.Select(i => i.courseID).Contains(CourseID);
+
+
+                //UserProfileCourseViewModel c =
+                //    userTrackService.Get(int.Parse(ID), TrackID).
+                //    Track.Courses.Where(i => i.CourseID == CourseID).
+                //    FirstOrDefault().Course.ToUserProfileCourseViewModel();
+
+                result.Data = c;
+                result.Successed = true;
+
+            }
+            catch (Exception e)
+            {
+                result.Successed = false;
+
+            }
+            return result;
+             
+
+
+
         }
 
         [HttpGet]

@@ -261,5 +261,14 @@ namespace ITI.WhatsLearn.Services
 
 
         }
+
+
+        public IEnumerable<CourseViewModel> GetAll()
+        {
+            var query =
+                CourseRepo.GetAll();
+            return query.ToList().Select(i=>i.ToViewModel());
+        }
+
     }
 }

@@ -94,7 +94,7 @@ namespace ITI.WhatsLearn.ViewModel
             {
                 ID = model.ID,
                 Name = model.Name,
-                Childs = model.Tracks.Select(i => i.ToMenuVewModel()).ToList()
+                Childs = model.Tracks.Where(i=>i.IsDeleted==false).Select(i => i.ToMenuVewModel()).ToList()
 
             };
         }

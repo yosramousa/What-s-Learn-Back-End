@@ -13,8 +13,11 @@ namespace ITI.WhatsLearn.Entities
 
         public virtual Track Track { get; set; }
         public int TrackID { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime EnrollDate { get; set; }
+        public DateTime FinshedDate { get; set; }
+
         public bool IsApproveed { get; set; } = false;
+
 
         public virtual ICollection<FinishedCourse> FinishedCourses { get; set; }
 

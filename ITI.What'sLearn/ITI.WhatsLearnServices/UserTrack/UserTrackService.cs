@@ -51,7 +51,7 @@ namespace ITI.WhatsLearn.Services
                 UserTrackRepo.GetAll().Where(u => u.IsApproveed == false);
             count = query.Count();
             query = query.OrderBy(i => i.ID).Skip(pageIndex * pageSize).Take(pageSize);
-       
+
             return query.ToList().Select(i => i.ToViewModel());
         }
 
@@ -62,10 +62,10 @@ namespace ITI.WhatsLearn.Services
             return query.ToList().Select(i => i.ToViewModel());
         }
 
-        public IEnumerable<UserTrackViewModel> GetEnrollRequest(int pageIndex, int pageSize = 20)
+        public IEnumerable<UserTrackViewModel> GetEnrollRequest(int pageIndex = 0, int pageSize = 5)
         {
             var query =
-                UserTrackRepo.GetAll().Where(i => i.IsApproveed == false).OrderBy(i => i.ID).Skip(pageIndex * pageSize)
+                UserTrackRepo.GetAll().Where(i => i.IsApproveed == false).OrderByDescending(i => i.ID).Skip(pageIndex * pageSize)
                 .Take(pageSize);
 
             return query.ToList().Select(i => i.ToViewModel());
@@ -134,16 +134,16 @@ namespace ITI.WhatsLearn.Services
         public UserTrack Get(int UserID, int TrackID)
         {
             UserTrack T = UserTrackRepo.
-                 Get(i =>  i.IsApproveed &&i.TrackID == TrackID && i.UserID == UserID).FirstOrDefault();
+                 Get(i => i.IsApproveed && i.TrackID == TrackID && i.UserID == UserID).FirstOrDefault();
 
 
             return T;
         }
-        public bool CheckToEnroll(int UserID ,int TrackID)
+        public bool CheckToEnroll(int UserID, int TrackID)
         {
             try
             {
-                var user=   UserTrackRepo.GetAll().Where(i => i.UserID == UserID && i.TrackID == TrackID).FirstOrDefault();
+                var user = UserTrackRepo.GetAll().Where(i => i.UserID == UserID && i.TrackID == TrackID).FirstOrDefault();
                 if (user == null)
                 {
                     return true;
@@ -157,6 +157,36 @@ namespace ITI.WhatsLearn.Services
             {
                 return false;
             }
+        }
+        public Dictionary<string, int> GetPieChartData()
+        {
+            Dictionary<string, int> result = new Dictionary<string, int>();
+
+            var userTracks = GetAll().Where(i=>i.IsApproveed==true)
+                .GroupBy(n => n.TrackName)
+                .Select(n => new
+                {
+                    trackName = n.Key,
+                    Count = n.Count()
+                }).OrderBy(n => n.Count).Take(4);
+
+            foreach (var x in userTracks)
+            {
+                result.Add(x.trackName, x.Count);
+            }
+
+            return result;
+
+
+
+        }
+       
+        public UserTrackViewModel GetDeletedEnrollRequest(int UserID,int TrackID)
+        {
+           return
+                UserTrackRepo.GetDeleted()
+                .Where(i=>i.IsApproveed==false && i.UserID == UserID && i.TrackID == TrackID).FirstOrDefault()
+                .ToViewModel();
         }
 
     }

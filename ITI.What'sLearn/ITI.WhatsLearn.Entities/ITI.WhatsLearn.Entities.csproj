@@ -55,6 +55,8 @@
     <Compile Include="Admin\AdminConfiguration.cs" />
     <Compile Include="BaseModel\BaseModel.cs" />
     <Compile Include="BaseModel\BaseModelConfiguration.cs" />
+    <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Configuration\configurationConcs.cs" />
     <Compile Include="CourseDocument\CourseDocument.cs" />
     <Compile Include="CourseDocument\CourseDocumentConfiguration.cs" />
     <Compile Include="CourseLink\CourseLink.cs" />

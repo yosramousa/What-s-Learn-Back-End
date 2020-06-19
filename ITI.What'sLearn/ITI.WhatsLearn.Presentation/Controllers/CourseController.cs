@@ -1,5 +1,9 @@
-﻿using ITI.WhatsLearn.Services;
+﻿using BroadCaster.Helpers;
+using ITI.WhatsLearn.Presentation.Filters;
+using ITI.WhatsLearn.Presentation.Hubs;
+using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
+using Microsoft.AspNet.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +13,25 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation.Controllers
 {
+    [AUTHORIZE(Roles = "User,Admin")]
+
     public class CourseController : ApiController
     {
+        private readonly IHubContext Hub;
+
         private readonly CourseService courseService;
-        public CourseController(CourseService _courseService)
+        private readonly UserTrackService userTrackService;
+
+        private readonly TrackService TrackService;
+
+        public CourseController(CourseService _courseService ,UserTrackService _userTrackService,TrackService _trackService)
         {
+            
             courseService = _courseService;
+            TrackService = _trackService;
+            userTrackService = _userTrackService;
+            Hub = GlobalHost.ConnectionManager.GetHubContext<WhatsLearnHub>();
+
         }
 
         [HttpGet]
@@ -42,6 +59,15 @@ namespace ITI.WhatsLearn.Presentation.Controllers
             ResultViewModel<CourseEditViewModel> result
                 = new ResultViewModel<CourseEditViewModel>();
 
+            string Token = Request.Headers.Authorization?
+                   .Parameter;
+
+            Dictionary<string, string>
+                            cliams = SecurityHelper.Validate(Token);
+            int UserID = int.Parse(cliams.First(i => i.Key == "ID").Value);
+
+
+
             try
             {
                 if (!ModelState.IsValid)
@@ -52,6 +78,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
                 {
                     CourseEditViewModel selectedCourse
                         = courseService.Add(Course);
+                 
 
                     result.Successed = true;
                     result.Data = selectedCourse;

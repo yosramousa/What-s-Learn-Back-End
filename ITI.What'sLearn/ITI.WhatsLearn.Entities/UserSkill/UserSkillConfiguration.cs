@@ -13,6 +13,8 @@ namespace ITI.WhatsLearn.Entities
     {
         public UserSkillConfiguration()
         {
+
+
             ToTable("UserSkill");
             Property(i => i.Level)
                .HasColumnName("Level").IsRequired();
@@ -24,16 +26,10 @@ namespace ITI.WhatsLearn.Entities
             .HasForeignKey(i => i.SkillID);
 
             Property(i => i.UserID)
-              .HasColumnAnnotation(IndexAnnotation.AnnotationName,
-                       new IndexAnnotation(
-                   new IndexAttribute("IX_UserSkill", 1) { IsUnique = true }))
               .HasColumnName("UserID")
               .IsRequired();
 
             Property(i => i.SkillID)
-             .HasColumnAnnotation(IndexAnnotation.AnnotationName,
-                      new IndexAnnotation(
-                  new IndexAttribute("IX_UserSkill", 2) { IsUnique = true }))
              .HasColumnName("SkillID")
              .IsRequired();
 

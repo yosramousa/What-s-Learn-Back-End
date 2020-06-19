@@ -1,6 +1,9 @@
 ﻿using ITI.WhatsLearn.Entities;
+using ITI.WhatsLearn.Presentation.Filters;
+using ITI.WhatsLearn.Presentation.Hubs;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
+using Microsoft.AspNet.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +13,27 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation
 {
+    [AUTHORIZE(Roles = "User,Admin")]
+
     public class TrackCourseController : ApiController
     {
+        private readonly IHubContext Hub;
+        private readonly UserTrackService userTrackService;
+
         private readonly TrackCourseService TrackCourseService;
-        public TrackCourseController(TrackCourseService _TrackCourseService)
+
+        private readonly CourseService courseService;
+        private readonly TrackService TrackService;
+
+        public TrackCourseController(CourseService _courseService, TrackCourseService _TrackCourseService, UserTrackService _userTrackService, TrackService _trackService)
         {
+            courseService = _courseService;
+            TrackService = _trackService;
             TrackCourseService = _TrackCourseService;
+            userTrackService = _userTrackService;
+
+            Hub = GlobalHost.ConnectionManager.GetHubContext<WhatsLearnHub>();
+
         }
 
         [HttpGet]
@@ -54,6 +72,16 @@ namespace ITI.WhatsLearn.Presentation
                 {
                     TrackCourseEditViewModel selectedTrackCourse
                         = TrackCourseService.Add(TrackCourse);
+
+                    var Users = userTrackService.GetAll().Where(i => i.TrackID == TrackCourse.TrackID).Select(i => i.UserID);
+
+                    Hub.Clients.All.NewCourseAdded(new
+                    {
+                        Users,
+                        CourseName = courseService.GetByID(TrackCourse.CourseID).Name,
+                        TrackName = TrackService.GetByID(TrackCourse.TrackID).Name
+                    });
+
 
                     result.Successed = true;
                     result.Data = selectedTrackCourse;
@@ -96,8 +124,6 @@ namespace ITI.WhatsLearn.Presentation
             return result;
         }
 
-
-
         [HttpGet]
         public ResultViewModel<TrackCourseViewModel> GetByID(int id)
         {
@@ -128,6 +154,55 @@ namespace ITI.WhatsLearn.Presentation
             else
                 return "TrackCourse Not Found !";
         }
+
+
+        [HttpPost]
+        public ResultViewModel<IEnumerable<TrackCourseEditViewModel>> Add(List<TrackCourseEditViewModel> TrackCourses)
+        {
+            ResultViewModel<IEnumerable<TrackCourseEditViewModel>> result
+                = new ResultViewModel<IEnumerable<TrackCourseEditViewModel>>();
+
+
+
+            List<TrackCourseEditViewModel> courses = new List<TrackCourseEditViewModel>();
+
+            try
+            {
+                if (TrackCourses.Count() == 0)
+                {
+                    result.Message = "List Is Empty";
+                    result.Successed = false;
+                    
+                }
+                else
+                {
+                    foreach (var c in TrackCourses)
+                    {
+                        if (!TrackCourseService.ISExist(c.TrackID, c.CourseID))
+                            courses.Add(TrackCourseService.Add(c));
+                    }
+                    var Users = userTrackService.GetAll().Where(i => i.TrackID == TrackCourses.FirstOrDefault()?.TrackID).Select(i => i.UserID);
+
+                    Hub.Clients.All.NewCourseAdded(new
+                    {
+                        Users,
+                        CourseName = courseService.GetByID(TrackCourses.FirstOrDefault().CourseID).Name,
+                        TrackName = TrackService.GetByID(TrackCourses.FirstOrDefault().TrackID).Name
+                    });
+
+
+                    result.Successed = true;
+                     result.Data = courses;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Successed = false;
+                result.Message = "Semething Went Wrong";
+            }
+            return result;
+        }
+
 
     }
 }

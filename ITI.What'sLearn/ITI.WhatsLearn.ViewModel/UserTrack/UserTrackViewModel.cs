@@ -10,7 +10,10 @@ namespace ITI.WhatsLearn.ViewModel
     {
         public int ID { get; set; }
         public string UserName { get; set; }
+        public int UserID { get; set; }
+
         public string TrackName { get; set; }
+        public int TrackID { get; set; }
         public DateTime Date { get; set; }
         public int Progress { get; set; }
         public int UserCount { get; set; }

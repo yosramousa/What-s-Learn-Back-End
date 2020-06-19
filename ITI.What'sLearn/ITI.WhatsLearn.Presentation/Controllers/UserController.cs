@@ -1,8 +1,10 @@
 ﻿using BroadCaster.Helpers;
 using ITI.WhatsLearn.Entities;
 using ITI.WhatsLearn.Presentation.Filters;
+using ITI.WhatsLearn.Presentation.Hubs;
 using ITI.WhatsLearn.Services;
 using ITI.WhatsLearn.ViewModel;
+using Microsoft.AspNet.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,16 +14,21 @@ using System.Web.Http;
 
 namespace ITI.WhatsLearn.Presentation
 {
-  
+
+
     public class UserController : ApiController
     {
         private readonly UserService UserService;
         private readonly ConfigurationService ConfigService;
+        private readonly IHubContext Hub;
+
 
         public UserController(UserService _UserService, ConfigurationService _configService)
         {
             UserService = _UserService;
             ConfigService = _configService;
+            Hub = GlobalHost.ConnectionManager.GetHubContext<WhatsLearnHub>();
+
         }
 
         [HttpPost]
@@ -43,15 +50,20 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                     result.Successed = true;
+                    result.Successed = true;
                     _loginModel.Role = "User";
-                    _loginModel.ID =user.ID;
+                    _loginModel.ID = user.ID;
                     _loginModel.Name = user.Name;
                     _loginModel.Token = SecurityHelper.GenerateToken(_loginModel);
                     _loginModel.Password = null;
                     ConfigService.Increment("VisitorCount");
-                   
-                  
+
+                    Hub.Clients.All.VisitorCount(ConfigService.Count("VisitorCount"));
+
+
+
+
+
                     result.Data = _loginModel;
                 }
 
@@ -64,6 +76,9 @@ namespace ITI.WhatsLearn.Presentation
             return result;
         }
         [HttpGet]
+        [AUTHORIZE(Roles = "User,Admin")]
+
+
         public ResultViewModel<IEnumerable<UserViewModel>> GetList()
         {
             ResultViewModel<IEnumerable<UserViewModel>> result
@@ -81,8 +96,10 @@ namespace ITI.WhatsLearn.Presentation
             }
             return result;
         }
-       
+
         [HttpPost]
+        //  [AUTHORIZE(Roles = "User")]
+
         public ResultViewModel<UserEditViewModel> Post(UserEditViewModel User)
         {
             ResultViewModel<UserEditViewModel> result
@@ -96,22 +113,40 @@ namespace ITI.WhatsLearn.Presentation
                 }
                 else
                 {
-                    UserEditViewModel selectedUser
-                        = UserService.Add(User);
-                   
-                    result.Successed = true;
-                    result.Data = selectedUser;
+
+
+                    if (UserService.GetAll().Where(i => i.Email == User.Email).Count() == 0)
+                    {
+                        UserEditViewModel selectedUser
+                      = UserService.Add(User);
+
+                        Hub.Clients.All.UserCount(new { UserCount = UserService.Count(), ChartData = UserService.UpdateLineChart() });
+
+                        result.Successed = true;
+
+
+                        result.Data = selectedUser;
+
+                    }
+                    else
+                    {
+                        result.Successed = false;
+                        result.Message = "This Email Already Token";
+                    }
+
                 }
             }
             catch (Exception ex)
             {
+
                 result.Successed = false;
                 result.Message = "Semething Went Wrong";
             }
             return result;
         }
-        [AUTHORIZE(Roles = "User,Admin")]
         [HttpPost]
+        [AUTHORIZE(Roles = "User,Admin")]
+
         public ResultViewModel<UserEditViewModel> Update(UserEditViewModel User)
         {
             ResultViewModel<UserEditViewModel> result
@@ -140,15 +175,16 @@ namespace ITI.WhatsLearn.Presentation
             return result;
         }
         [HttpGet]
+
         [AUTHORIZE(Roles = "User,Admin")]
-        
+
         public ResultViewModel<UserViewModel> GetByID(int id)
         {
             ResultViewModel<UserViewModel> result
                 = new ResultViewModel<UserViewModel>();
             try
             {
-                var User =  UserService.GetByID(id)?.ToViewModel();
+                var User = UserService.GetByID(id)?.ToViewModel();
                 result.Successed = true;
                 result.Data = User;
             }
@@ -159,7 +195,9 @@ namespace ITI.WhatsLearn.Presentation
             }
             return result;
         }
-        [AUTHORIZE(Roles = "Admin")]
+
+        [AUTHORIZE(Roles = "User,Admin")]
+
         [HttpGet]
         public string Delete(int id)
         {
@@ -171,6 +209,7 @@ namespace ITI.WhatsLearn.Presentation
             else
                 return "User Not Found !";
         }
+
 
 
 

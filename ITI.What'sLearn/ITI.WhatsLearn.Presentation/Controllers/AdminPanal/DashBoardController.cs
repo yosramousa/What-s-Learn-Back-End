@@ -23,6 +23,7 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         private readonly ConfigurationService ConfigService;
 
         public DashBoardController(
+
             MainCategoryService _mainCategoryService,
             UserService  _userService,
             TrackService _trackService,
@@ -45,8 +46,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
         {
             Dictionary<string, Dictionary<string, int>> result = new Dictionary<string, Dictionary<string, int>>();
             result.Add("Statistic", GetData());
-            result.Add("MonthlyChart", GetDataForChart());
-            result.Add("PiChart", GetDataForCircleChart());
+            result.Add("MonthlyChart", userService.UpdateLineChart());
+            result.Add("PiChart", userTrackService.GetPieChartData());
             return result;
         }
 
@@ -61,40 +62,8 @@ namespace ITI.WhatsLearn.Presentation.Controllers
 
             return result;
         }
-        [HttpGet]
 
-        public Dictionary<string, int> GetDataForChart()
-        {
-            Dictionary<string, int> result = new Dictionary<string, int>();
-            for(int n=1;n<= 12; n++)
-                 result.Add(n.ToString(),userService.GetAll().GroupBy(i => i.SignedTime.Month)
-                     .Select(j =>  j.Count()).Skip(n-1).FirstOrDefault());
-            return result;
-        }
-        [HttpGet]
-
-        public Dictionary<string,int> GetDataForCircleChart()
-        {
-            Dictionary<string, int> result = new Dictionary<string, int>();
-
-            var userTracks = userTrackService.GetAll()
-                .GroupBy(n => n.TrackName)
-                .Select(n =>new
-                {
-                    trackName = n.Key,
-                    Count = n.Count()
-                }).OrderBy(n => n.Count).Take(4);
-
-            foreach (var x in userTracks)
-            {
-                result.Add(x.trackName, x.Count);
-            }
-
-
-            return result;
-
-        }
-
+       
 
     }
 }
